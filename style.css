@@ -1,0 +1,264 @@
+
+#wrapper {
+    overflow-x: hidden;
+    
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+
+
+}
+
+.sidebar-header{
+    background-color: #E6AD0F;
+}
+.sidebar-header img{
+    width: 180px;
+    height: 180px;
+    margin: 10px 30px 2px 30px;
+}
+#sidebar-wrapper .sidebar-heading {
+  padding: 0 5px 5px;
+  color: #fff; 
+  font-size: 1.11rem;
+  text-align: center;
+}
+
+.sidebar-menu{
+    background-color:#345587 ;
+    padding: 70px 5px;
+    height: 550px;
+}
+.sidebar-menu .list-group {
+  width: 15rem;
+}
+.sidebar-menu a{
+    color: white;
+    margin: 0 0 20px 30px;
+    padding-left: 20px;
+    font-weight: bold;
+}
+
+.sidebar-menu a:hover{
+    color:#E6AD0F;
+    border-left: #E6AD0F solid 3px;
+    text-decoration: none;
+}
+.sidebar-menu .active{
+    color:#E6AD0F;
+    border-left: #E6AD0F solid 3px;
+    text-decoration: none;
+}
+.sidebar-footer{
+    background-color:#E6AD0F;
+    color: white;
+}
+#page-content-wrapper {
+  min-width: 100vw;
+  background: #f3f3f3;
+}
+
+.main-header{
+    background-color: #345587;
+    height: 50px;
+}
+.main-header h4{
+    color: #fff;
+}
+.nav-item .nav-link {
+    text-align: center;
+    color: #E6AD0F;
+}
+.nav-item .nav-link p{
+    font-size: 10px;
+    color: #E6AD0F;
+    padding: 0;
+    margin: 0;
+}
+
+
+.section1-box{
+    background-color: #fff;
+    border: #345587 solid .5px;
+    border-bottom: #345587 solid 3px;
+    margin: 20px;
+}
+.section1-box .col-lg-6{
+    
+    border-bottom: #e3e3e3 solid .5px;
+    border-right: #e3e3e3 solid .5px;
+}
+.section1-box h1{
+    color: #E6AD0F;
+}
+.form-inline .btn{
+    background-color: #E6AD0F;
+    color: #fff;
+}
+.form-inline .btn-search{
+    background-color: #345587;
+}
+.table-head{
+    border: #345587 solid 2px;
+    border-bottom: #345587 solid 4px;
+}
+.table{
+    background-color: #fff;
+}
+
+.table-strip th , .table-strip td{
+    background-color: #E6F7FF;
+}
+
+.fa-edit{
+    color: green;
+}
+.fa-trash-alt{
+    color: red;
+}
+.section4-card{
+    border: #345587 solid 2px;
+    
+}
+.section4-card-title{
+    padding: 10px;
+    background-color: #E6AD0F;
+    color: #fff;
+}
+.section4-card-title h2{
+    text-align: center;
+    font-size:18px;
+}
+.progress{
+    margin-left: 30px;
+    height: 2rem;
+    font-size: 1.55rem;
+}
+.progress-bar{
+    background-color: #FBE19A;
+    color: #000;
+    border-bottom: #FBBC0C solid 2px;
+}
+.progress-bar-less{
+    background-color: #E6F7FF;
+    color: #000;
+    border-bottom: #41C2FF solid 2px;
+}
+.section4-table{
+    background-color: #FBE19A;
+    color: #000;
+    border-bottom: #FBBC0C solid 3px;
+}
+.section4-table-strip{
+    background-color: #E6F7FF;
+    border-bottom: #41C2FF solid 3px;
+    color: #000;
+}
+.section4-table td{
+    padding: 15px;
+}
+
+/*---emp_mang.php--*/
+.table-bordered td{
+    cursor: pointer;
+}
+.addemployee .modal-content{
+    background-color: #f3f3f3;
+}
+.addemployee .modal-header{
+    background-color: #345587;
+    color: #fff;
+}
+
+.addemployee .modal-header button{
+    color: #fff;
+}
+.addemployee .modal-body h6{
+    color: #345587;
+    font-weight: bold;
+}
+
+.addemployee .modal-footer .btn{
+    color: #fff;
+    font-weight: bold;
+}
+.addemployee .modal-footer .btn-one{
+    background-color: #FC904F;
+    
+}
+
+.addemployee .modal-footer .btn-two{
+    background-color: #345587;
+}
+.addemployee label{
+    font-size: 12px;
+    font-weight: bold;
+    color:#345587 ;
+    margin-right: 12px;
+}
+.addemployee input{
+    font-size: 12px;
+}
+
+/*emp_profile.php*/
+
+.col-lg-9 .emp_profile_section1 {
+    padding: 0; 
+}
+.emp_profile_section1 h6,h4{
+    color:#345587 ;
+}
+.emp_profile_section1 form{
+    background-color:#345587 ;
+    border: #345587 solid 2px;
+    
+}
+.emp_profile_section1 .form-inline button{
+    background-color: #345587;
+    font-size: 10px;
+    font-weight: bold;
+}
+.emp_profile_section1 .btn:hover{
+    background-color: #fff;
+    color: #345587;
+}
+.emp_profile_image{
+    border: #345587 solid 2px;
+    min-height: 192px;
+    
+}
+.emp_profile_section2{
+    border: #345587 solid 2px;
+    background: #fff;
+}
+.emp_profile_section2 .form-inline input {
+    font-size: 10px;
+    color: #345587;
+   
+}
+.emp_profile_section2 .form-inline label{
+    color: #345587;
+    font-size: 10px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+.emp_profile_section2 .form-inline select{
+    color: #345587;
+    font-size: 10px;
+}
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+  }
+}
