@@ -1,14 +1,15 @@
 
 #wrapper {
     overflow-x: hidden;
-    
+    padding: 0;
+    margin: 0;
  }
 
-#sidebar-wrapper {
+#sidebar-wrapper { 
   min-height: 100vh;
-  margin-left: -15rem;
-
-
+  /*margin-left: -15rem; */
+ 
+  
 }
 
 .sidebar-header{
@@ -46,17 +47,18 @@
     border-left: #E6AD0F solid 3px;
     text-decoration: none;
 }
-.sidebar-menu .active{
+/*
+.sidebar-menu a.active{
     color:#E6AD0F;
     border-left: #E6AD0F solid 3px;
     text-decoration: none;
-}
+}*/
 .sidebar-footer{
     background-color:#E6AD0F;
     color: white;
 }
 #page-content-wrapper {
-  min-width: 100vw;
+  min-width: 100vh;
   background: #f3f3f3;
 }
 
@@ -204,61 +206,124 @@
 
 /*emp_profile.php*/
 
-.col-lg-9 .emp_profile_section1 {
+.emp_profile_section1_tab {
+    margin: 0;
+    padding: 0;
+    color: #345587;
+  
+}
+.emp_profile_section1_tab.active{
+ 
+    border-bottom: #345587 solid 2px;
+}
+ .emp_profile_section2{
+    border: #345587 solid 2px;
+    background: #fff;
+    display: none;
+ }
+
+ .emp_profile_section2_tab{
+   
+    display: none;
+ }
+ 
+.emp_profile_section1 .emp_profile_section1_btn.active{
+    background: #fff;
+    color: #345587;
+}
+
+.emp_profile_section1 .emp_profile_section1_btn:hover{
+    background: #fff;
+    color: #345587;
+}
+
+ .col-lg-9 .emp_profile_section1 {
     padding: 0; 
 }
-.emp_profile_section1 h6,h4{
+ .emp_profile_section1 h6,h4{
     color:#345587 ;
 }
-.emp_profile_section1 form{
+ .emp_profile_section1 form{
     background-color:#345587 ;
     border: #345587 solid 2px;
     
 }
-.emp_profile_section1 .form-inline button{
+ .emp_profile_section1 .form-inline button{
     background-color: #345587;
     font-size: 10px;
     font-weight: bold;
 }
-.emp_profile_section1 .btn:hover{
-    background-color: #fff;
-    color: #345587;
-}
-.emp_profile_image{
+
+
+ .emp_profile_image{
     border: #345587 solid 2px;
     min-height: 192px;
     
 }
-.emp_profile_section2{
-    border: #345587 solid 2px;
-    background: #fff;
-}
-.emp_profile_section2 .form-inline input {
+
+ .emp_profile_section2 .form-inline input {
     font-size: 10px;
-    color: #345587;
+color: #345587;
    
 }
-.emp_profile_section2 .form-inline label{
+ .emp_profile_section2 .form-inline label{
     color: #345587;
     font-size: 10px;
     margin-right: 5px;
     font-weight: bold;
 }
-.emp_profile_section2 .form-inline select{
+ .emp_profile_section2 .form-inline select{
     color: #345587;
     font-size: 10px;
 }
-@media (min-width: 768px) {
-  #sidebar-wrapper {
-    margin-left: 0;
-  }
 
-  #page-content-wrapper {
-    min-width: 0;
-    width: 100%;
-  }
+.emp_profile_section2_tab .emp_profile_section2_tab_btn {
+    background-color: #E6F7FF;
+    color: #345587;
+}
+.emp_profile_section2_tab .emp_profile_section2_tab_btn.active {
+    background-color: #345587;
+    color: #fff;
+}
+.emp_profile_section2_header{
+    background-color:#345587 ;
+    color:#FC904F;
+    font-weight: 100;
+}
+.emp_profile_tab2{
+    background-color:#E6F7FF;
+    display: none;
+ }
+ .emp_profile_tab2 .form-inline input {
+    font-size: 10px;
+color: #345587;
+   
+}
+ .emp_profile_tab2 .form-inline label{
+    color: #345587;
+    font-size: 10px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+ .emp_profile_tab2 .form-inline select{
+    color: #345587;
+    font-size: 10px;
+}
+.emp_profile_tab2 .form-inline button{
+    background-color: #345587;
+    font-size: 10px;
+    font-weight: bold;
+}
+.emp_profile_tab2 p{
+    font-size: 12px;
+    color: #345587;
+    font-weight: bold;
+}
 
-  #wrapper.toggled #sidebar-wrapper {
-    margin-left: -15rem;
-  }
+
+/*LEAVE MANAGEMENT*/
+
+.leave_mang_header{
+    background-color: #345587;
+    color: #EFE20A;
 }
