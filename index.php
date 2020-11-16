@@ -1,6 +1,6 @@
 <?php include 'link.php'; ?>
 <?php include 'header.php'; ?>
-
+<?php include 'add_emp_modal.php'; ?>
 
   
 <!---Main body-->
@@ -43,7 +43,7 @@
 
         <!--section 2-->
         <form class="form-inline">
-          <button type="submit" class="btn mb-2 "><i class="fas fa-plus pr-2"></i>Add Employee</button> 
+        <button type="button" class="btn mb-2" data-toggle="modal" data-target="#addemployee" ><i class="fas fa-plus pr-2"></i>Add Employee</button> 
             <div class="form-group mx-sm-3 mb-2">
               <input type="text" class="form-control" id="" placeholder="Employee ID">
             </div>

@@ -27,6 +27,3 @@
     </ul>
     </div>
 
-<script>
-    $('.file-upload').file_upload();
-</script>

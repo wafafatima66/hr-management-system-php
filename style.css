@@ -504,3 +504,58 @@ color: #345587;
     padding: 5px;
     border: #345587 solid 2px;
 }
+/*ADD EVENT*/
+
+.addevent .modal-content{
+    background-color: #f3f3f3;
+}
+.addevent .modal-header{
+    background-color: #345587;
+    color: #fff;
+}
+
+.addevent .modal-header button{
+    color: #fff;
+}
+.addevent .modal-body h6{
+    color: #345587;
+    font-weight: bold;
+}
+
+.addevent .modal-footer .btn{
+    color: #fff;
+    font-weight: bold;
+    background-color: #345587;
+}
+
+.addevent label{
+    font-size: 12px;
+    font-weight: bold;
+    color:#345587 ;
+    margin-right: 12px;
+}
+.addevent input{
+    font-size: 12px;
+}
+.addevent select{
+    font-size: 12px;
+}
+/*REPORT*/
+.report_section h6{
+    color:#345587 ;
+}
+.report{
+    padding: 20px;
+}
+.report-1{
+    background-color: #DDEBAD;
+}
+.report-2{
+    background-color: #FAE099;
+}
+.report-3{
+    background-color: #98D6F3;
+}
+.report-4{
+    background-color: #F9BA95;
+}
