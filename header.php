@@ -15,13 +15,13 @@
      
         <div class="sidebar-menu" >
             <div class="list-group ">
-                <a href="#" class="sidebar-link" >Home</a>
+                <a href="index.php" class="sidebar-link" >Home</a>
                 <a href="emp_mang.php" class="sidebar-link">Employee Management</a>
-                <a href="#" class="sidebar-link" >Leave Management</a>
-                <a href="#" class="sidebar-link" >Documents</a>
-                <a href="#" class="sidebar-link">Training/Seminars</a>
-                <a href="#"  >Calendar and Events</a>
-                <a href="#" >Reports</a>
+                <a href="leave_mang.php" class="sidebar-link" >Leave Management</a>
+                <a href="doc.php" class="sidebar-link" >Documents</a>
+                <a href="training.php" class="sidebar-link">Training/Seminars</a>
+                <a href="calendar.php"  >Calendar and Events</a>
+                <a href="reports.php" >Reports</a>
               </div>
         </div>
 

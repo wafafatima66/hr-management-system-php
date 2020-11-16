@@ -326,8 +326,48 @@ color: #345587;
 
 
 /*LEAVE MANAGEMENT*/
-
+.leave_mang_section{
+    margin: 20px;
+   
+}
 .leave_mang_header{
     background-color: #345587;
+    padding: 5px;
+}
+.leave_mang_header h4{
     color: #EFE20A;
+    padding-left: 10px;
+}
+.leave_mang_section .form-inline input {
+    font-size: 10px;
+color: #345587;
+   
+}
+ .leave_mang_section .form-inline label{
+    color: #345587;
+    font-size: 10px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+ .leave_mang_section .form-inline select{
+    color: #345587;
+    font-size: 10px;
+}
+.leave_mang_section .form-inline button{
+    background-color: #345587;
+    font-size: 10px;
+    font-weight: bold;
+}
+.leave_mang_section .form-inline textarea{
+    color: #345587;
+    font-size: 12px;
+  
+}
+.leave_mang_section_body{
+    padding: 18px;
+    border: #345587 solid 2px;
+
+}
+.leave_mang_section1_body table td , .leave_mang_section1_body table th{
+    font-size: 10px;
 }
