@@ -402,3 +402,67 @@ color: #345587;
 .doc_section .active{
    background-color: #E6F7FF;
 } 
+
+/*training page*/
+.training_section_1 input{
+    font-size: 10px;
+}
+
+.training_section_2{
+    margin: 20px;
+}
+.training_section_2_header{
+    background-color: #345587;
+    padding: 5px;
+}
+.training_section_2_header h4{
+    color: #EFE20A;
+    padding-left: 10px;
+}
+.training_section_2_body{
+    padding: 18px;
+    border: #345587 solid 2px;
+
+}
+.training_section_1 th{
+    font-size: 12px;
+}
+.training_section_2 th{
+    font-size: 12px;
+}
+
+/*training modal*/
+.addtraining .modal-content{
+    background-color: #f3f3f3;
+}
+.addtraining .modal-header{
+    background-color: #345587;
+    color: #fff;
+}
+
+.addtraining .modal-header button{
+    color: #fff;
+}
+.addtraining .modal-body h6{
+    color: #345587;
+    font-weight: bold;
+}
+
+.addtraining .modal-footer .btn{
+    color: #fff;
+    font-weight: bold;
+    background-color: #345587;
+}
+
+.addtraining label{
+    font-size: 12px;
+    font-weight: bold;
+    color:#345587 ;
+    margin-right: 12px;
+}
+.addtraining input{
+    font-size: 12px;
+}
+.addtraining select{
+    font-size: 12px;
+}
