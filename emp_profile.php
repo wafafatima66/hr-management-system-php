@@ -4,7 +4,7 @@
 
 
 
-<div class="emp_profile">
+
 <!--head section-->
 <div class="container mt-5">
     <div class="row">
@@ -1054,7 +1054,7 @@
 
 <!--Ledger--->
 
-    <div class=" emp_profile_section2_tab pt-4 " id="tab-2">  
+    <div class=" emp_profile_section2_tab pt-4 " id="tab-2" >  
         <!--menu section--->
          <div class="container">
             <div class="row">
@@ -1638,7 +1638,7 @@
    
                         <!--File uploaad-->
                     <div class=" emp_profile_section2_tab  pt-4 " id="tab-3">  
-                        <div class="container">
+                     
                             <div class="row">
                                 <div class="col-lg-9">
                                         <div class="emp_profile_section2_header">
@@ -1646,20 +1646,22 @@
                                         </div>
                                 </div>
                             </div>
-                        </div>
+                       
                         <div class="container ">
 
                         </div>
                     </div>
                   
 
-                           
-</div>
+                    <div class="text-right">
+                        <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
+                        <button class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
+                    </div>
 
-<div class="text-right">
-        <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
-        <button class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
-        </div>
+                           
+                    </div>  <!-- /#page-content-wrapper -->
+  </div> <!-- /#wrapper -->
+
 
   
 <script>
