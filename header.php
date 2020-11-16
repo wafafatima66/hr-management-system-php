@@ -4,12 +4,13 @@
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
-        <div class="sidebar-header">
-          <img src="1.png" alt="">
-            <div class="sidebar-heading">
-              <h5>ALJEN BLESS TICANGAN</h5>
-              <h6>Administrator</h6>
-            </div>
+        <div class="sidebar-header d-flex flex-column pt-3">
+          <div class="text-center">
+            <img src="1.png" alt="">
+            <span style="font-weight:bold;">ALJEN BLESS TICANGAN</span>
+            <span>Administrator</span>
+          </div>
+           
         </div>
         
      
@@ -25,8 +26,8 @@
               </div>
         </div>
 
-        <div class="sidebar-footer p-2">
-          <h3 class="text-center">AMEX</h3>
+        <div class="sidebar-footer p-1">
+          <h6 class="text-center">AMEX</h6>
         </div>
     
     </div>

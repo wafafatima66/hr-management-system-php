@@ -19,30 +19,27 @@
     background-color: #E6AD0F;
 }
 .sidebar-header img{
-    width: 180px;
-    height: 180px;
-    margin: 10px 30px 2px 30px;
+    width: 210px;
+    height: 100px;
+    
 }
-#sidebar-wrapper .sidebar-heading {
-  padding: 0 5px 5px;
-  color: #fff; 
-  font-size: 1.11rem;
-  text-align: center;
+.sidebar-header span{
+    color: #fff;
 }
-
 .sidebar-menu{
     background-color:#345587 ;
-    padding: 70px 5px;
-    height: 550px;
+    padding: 30px 5px;
+   height: 340px;
 }
 .sidebar-menu .list-group {
   width: 15rem;
 }
 .sidebar-menu a{
     color: white;
-    margin: 0 0 20px 30px;
+    margin: 0 0 15px 25px;
     padding-left: 20px;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .sidebar-menu a:hover{
@@ -371,3 +368,37 @@ color: #345587;
 .leave_mang_section1_body table td , .leave_mang_section1_body table th{
     font-size: 10px;
 }
+
+/* DOCUMENT PAGE */
+
+.doc_section{
+    margin: 20px;
+    padding: 18px;
+    border: #345587 solid 2px;
+    background-color: #fff;
+}
+.doc_section_btn{
+    background-color:  #345587 ;
+    color: #E6AD0F;
+    font-weight: bold;
+}
+.doc_section_header{
+    margin: 20px;
+    padding: 5px;
+    background-color:  #345587 ;
+}
+.doc_section_header span{
+    color: #E6AD0F;
+    font-weight: bold;
+}
+.doc_section_header input{
+    font-size: 10px;
+    font-weight: bold;
+}
+.doc_section ul li{
+    list-style: none;
+    margin: 10px;
+}
+.doc_section .active{
+   background-color: #E6F7FF;
+} 
