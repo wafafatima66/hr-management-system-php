@@ -44,13 +44,13 @@
           <ul class="navbar-nav ml-auto nav-flex-icons">
               <li class="nav-item">
                 <a class="nav-link ">
-                  <i class="fas fa-cog nav-icon"></i>
+                  <i class="fas fa-cog nav-icon" style="color:#E6AD0F"></i>
                   <p>Settings</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link">
-                  <i class="fas fa-sign-out-alt nav-icon"></i>
+                  <i class="fas fa-sign-out-alt nav-icon" style="color:#E6AD0F"></i>
                   <p>Logout</p>
                 </a>
               </li>

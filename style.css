@@ -81,7 +81,7 @@
     margin: 0;
 }
 
-
+/*INDEX PAGE*/
 .section1-box{
     background-color: #fff;
     border: #345587 solid .5px;
@@ -320,7 +320,10 @@ color: #345587;
     color: #345587;
     font-weight: bold;
 }
-
+.file_section_body{
+    padding: 18px;
+    border: #345587 solid 2px;
+}
 
 /*LEAVE MANAGEMENT*/
 .leave_mang_section{
@@ -465,4 +468,39 @@ color: #345587;
 }
 .addtraining select{
     font-size: 12px;
+}
+/*CALENDAR PAGE*/
+.calendar_section1{
+    padding: 5px;
+    border: #A1A1A1 solid 2px;
+    margin: 20px;
+    background-color: #fff;
+}
+.calendar_section1 h4{
+    color: #FCC62F;
+    font-weight: bold;
+}
+.calendar_section1 h3{
+    color: #345587;
+    
+}
+.calendar_section1 p{
+    font-style: italic;
+    color: #626262;
+}
+.calendar_section2_header{
+    background-color: #345587;
+    padding: 5px;
+}
+.calendar_section2_header h4{
+    color: #EFE20A;
+    padding-left: 10px;
+}
+.calendar_section2{
+    margin: 20px;
+    background-color: #fff;
+}
+.calendar_section2_body{
+    padding: 5px;
+    border: #345587 solid 2px;
 }
