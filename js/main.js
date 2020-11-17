@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
         window.location = $(this).data("href");
     });
 });
-
+ 
  
 /* FOR SWICTHING BETWWEN PANEL IN emp_profile.php*/ 
 function openpanel(index) {

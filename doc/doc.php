@@ -1,5 +1,6 @@
-<?php include 'link.php'; ?>
-<?php include 'header.php'; ?>
+<?php include '../includes/link.php'; ?>
+<?php include '../includes/header.php'; ?>
+
 
     <div class="doc_section">
         <div class="file-upload-wrapper">

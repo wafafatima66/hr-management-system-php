@@ -1,5 +1,5 @@
-<?php include 'link.php'; ?>
-<?php include 'header.php'; ?>
+<?php include '../includes/link.php'; ?>
+<?php include '../includes/header.php'; ?>
 
 <div class="container pt-5  training_section_1">
     <form class="form-inline">

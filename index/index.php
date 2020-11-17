@@ -1,6 +1,6 @@
-<?php include 'link.php'; ?>
-<?php include 'header.php'; ?>
-<?php include 'add_emp_modal.php'; ?>
+<?php include '../includes/link.php'; ?>
+<?php include '../includes/header.php'; ?>
+<?php include '../emp_mang/add_emp_modal.php'; ?>
 
   
 <!---Main body-->
