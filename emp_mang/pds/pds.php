@@ -33,20 +33,20 @@
                 <div class="row ">
 
                     <div class="col-lg-9 ">
-                        <form class="form-inline">   
+                        <form class="form-inline" method ="POST" action="savedata.php">   
 
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">NAME</label>
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="First Name">
+                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="First Name" name="emp_first_name">
                             </div>
                             <div class="form-group mx-sm-2 mb-2">
-                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="Last name">
+                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="Last name" name="emp_last_name">
                             </div>
                             <div class="form-group mx-sm-2 mb-2">
-                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="Middle name">
+                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="Middle name" name="emp_middle_name">
                             </div>
                             <div class="form-group mx-sm-2 mb-2">
-                            <input type="text" class="form-control" style="width:50px;" id="" placeholder="Ext">
+                            <input type="text" class="form-control" style="width:50px;" id="" placeholder="Ext" name="emp_ext_name">
                             </div>
                             <div class="form-group mx-sm-2 mb-2">
                             <label for="">SEX</label>
@@ -253,11 +253,6 @@
         <?php include 'skills.php'; ?>
         <?php include 'others.php'; ?>
         <?php include 'references.php'; ?>
-
-
-
-
-     
 
 
  </div>

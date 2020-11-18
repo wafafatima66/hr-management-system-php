@@ -1,10 +1,39 @@
+
+
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
+
+  
 <?php include 'add_emp_modal.php'; ?>
+
+<?php 
+	if(isset($_GET['error'])){
+		if($_GET['error']=="emptyfields"){
+			echo'<p class="alert alert-danger h6">Fill in all fields</p>';
+		}
+		else if($_GET['error']=="invalidmail&user"){
+			echo'<p class="alert alert-danger h6">Invalid Email</p>';
+		}
+	
+		else if($_GET['error']=="sqlerror"){
+			echo'<p class="alert alert-danger h6">Error in Creating account</p>';
+		}
+		else if($_GET['error']=="emailtaken"){
+			echo'<p class="alert alert-danger h6">Email Taken</p>';
+		}
+	
+	}	else if(isset($_GET['register'])){
+				if(($_GET['register']=="success")){
+			echo'<p class="alert alert-success h6">Registration done successfully</p>';
+		}
+	}
+?>
+
 
 <div class="container pt-5 ">
 <form class="form-inline">
-          <button type="button" class="btn mb-2" data-toggle="modal" data-target="#addemployee" ><i class="fas fa-plus pr-2"></i>Add Employee</button> 
+          <button type="button" class="btn mb-2 " data-toggle="modal" data-target="#addemployee"  data-backdrop="static" data-keyboard="false" ><i class="fas fa-plus pr-2"></i>Add Employee</button> 
+          
             <div class="form-group mx-sm-3 mb-2">
               <input type="text" class="form-control" id="" placeholder="Employee ID">
             </div>
