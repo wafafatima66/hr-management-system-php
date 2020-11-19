@@ -32,6 +32,9 @@ if(isset($_POST['submit'])){
                     
                     mysqli_stmt_bind_param($stmt,"ssssss", $emp_first_name, $emp_last_name, $emp_middle_name,$emp_ext,$emp_status,$emp_date_appointment);
                     mysqli_stmt_execute($stmt);
+                    session_start();
+                    $_SESSION['emp_first_name']= $emp_first_name;
+
                     header("Location:emp_profile.php?register=success");
                             exit();
                 }

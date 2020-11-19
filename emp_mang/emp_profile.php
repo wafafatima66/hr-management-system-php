@@ -7,10 +7,46 @@ if(isset($_GET['register'])){
     if(($_GET['register']=="success")){
 echo'<p class="alert alert-success h6">Registration done successfully</p>';
 }
+
 }
 
 ?>
 
+<?php 
+	if(isset($_GET['error'])){
+		if($_GET['error']=="emptyfields"){
+			echo'<p class="alert alert-danger h6">Fill in all fields</p>';
+		}
+		else if($_GET['error']=="invalidmail&user"){
+			echo'<p class="alert alert-danger h6">Invalid Email</p>';
+		}
+	
+		else if($_GET['error']=="sqlerror"){
+			echo'<p class="alert alert-danger h6">Error in Creating account</p>';
+		}
+		else if($_GET['error']=="emailtaken"){
+			echo'<p class="alert alert-danger h6">Email Taken</p>';
+		}
+	
+	}	else if(isset($_GET['submit'])){
+				if(($_GET['submit']=="success")){
+			echo'<p class="alert alert-success h6">pds updated</p>';
+		}
+	}
+?>
+
+<?php
+
+
+
+if(isset($_SESSION['emp_first_name'])){
+    echo '<p class="h2 text-center">You are logged in</p>';
+}else{
+    echo '<p class="h2 text-center">you are logged out</p> ';
+}
+
+
+?>
 
 <!--head section-->
 <div class="container mt-5">

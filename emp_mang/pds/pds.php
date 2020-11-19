@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-9">
                 <div class="emp_profile_section1 ">
-                        <form class="form-inline "> 
+                        <form class="form-inline " > 
                             <button  onclick="openpanel('content-1')" type="button" class="btn emp_profile_section1_btn active" >PERSONAL INFORMATION</button>
                             <button onclick="openpanel('content-2')"  type="button" class="btn emp_profile_section1_btn">FAMILY BACKGROUND</button>
                             <button   onclick="openpanel('content-3')"type="button" class="btn emp_profile_section1_btn">EDUCATIONAL BACKGROUND</button> 
@@ -34,7 +34,7 @@
 
                     <div class="col-lg-9 ">
 
-                        <form class="form-inline" method ="POST" action="pds-config.php">   
+                        <form class="form-inline" method ="POST" action="pds/pds-config.php">   
 
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">NAME</label>
@@ -84,14 +84,17 @@
                                 <label for="">DATE OF BIRTH</label>
                                 <input type="text" class="form-control" style="width:70px;" id="" placeholder="10/25/20" name="emp_dob">
                             </div>
+
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">HEIGHT</label>
                                 <input type="text" class="form-control" style="width:50px;" id="" placeholder="" name="emp_height">
                             </div>
+
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">WEIGHT</label>
                             <input type="text" class="form-control" style="width:50px;" id="" placeholder="" name="emp_weight">
                             </div>
+
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">BLOOD TYPE</label>
                                 <input type="text" class="form-control" style="width:40px;" id="" placeholder="" name="emp_blood">
@@ -219,38 +222,47 @@
                                 <div class="form-group mx-sm-3 mb-2">
                                     <label for="">CONTACTS</label>
                                 </div>
+
                                 <div class="form-group mx-sm-2 mb-2" >
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="Telephone No." name="emp_tel_no">
                                 </div>
+
                                 <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="Mobile No." name="emp_mb_no">
                                 </div>
+
                                 <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:90px;"id="" placeholder="Email Address" name="emp_email">
                                 </div>
-                            </form>
+
+                            
                         </div>
 
                         <div class="col-lg-5 p-0 m-0">
-                            <form class="form-inline">
+                            
                                 <div class="form-group mx-sm-1 mb-2" >
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="GSIS ID No." name="emp_contact_gs">
                                 </div>
+
                                 <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="PAG-IBIG ID No." name="emp_contact_pag">
                                 </div>
+
                                 <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="PHILHEALTH No." name="emp_contact_ph">
                                 </div>
-                            </form>
+
+                      
 
                             
                                 <div class="form-group mx-sm-1 mb-2" >
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="SSS ID No." name="emp_contact_ss">
                                 </div>
+
                                 <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="TIN No." name="emp_contact_tin">
                                 </div>
+
                                 <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="AGENCY EMPLOYEE No." name="emp_contact_agency">
                                 </div>
@@ -260,6 +272,12 @@
                 </div>
 
             </div>
+
+            <div class="text-right">
+                        <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
+                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
+                    </div>
+            </form>
         </div>
 
 
