@@ -1,49 +1,4 @@
 
-<?php 
-
-if(isset($_POST['submit'])){
-
-    
-
-    $emp_first_name=$_POST['emp_first_name'];
-    $emp_last_name=$_POST['emp_last_name'];
-    $emp_middle_name=$_POST['emp_middle_name'];
-    $emp_ext=$_POST['emp_ext'];
-    $emp_status=$_POST['emp_status'];
-    $emp_date_appointment=$_POST['emp_date_appointment'];
-
-    require '../includes/conn.php';
-
-    if(empty($emp_first_name)|| empty($emp_last_name)|| empty($emp_middle_name)|| empty($emp_ext)|| empty($emp_status)|| empty($emp_date_appointment)){
-
-      echo "<script type='text/javascript'>alert('EMPTY FIELDS');</script>";
-     
-     
-  }
- 
-    else{
-
-   
-     
-                       
-    
-  $insertquery = "INSERT INTO add_emp (emp_first_name,emp_last_name,emp_middle_name,emp_ext,emp_status,emp_date_appointment) VALUES ('$emp_first_name','$emp_last_name','$emp_middle_name','$emp_ext','$emp_status','$emp_date_appointment')";
-  
-
-  if($conn -> query($insertquery)){
-    echo "<script type='text/javascript'>alert('EMPLOYEE IS ADDED');</script>";
-                          }
-    
-   
-
-                }
-            }
-else{
-  echo "<script type='text/javascript'>alert('SQL CONNECTION FAILED');</script>";
-}
-  
-  
-  ?>
   <!--button to add employye-->
       <!-- Modal -->
       <div class="modal fade addemployee " id="addemployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
@@ -62,7 +17,7 @@ else{
                     <div class="pt-3">
                      <h6>Employee</h6>
 
-                      <form class="form-inline " method="post" action="">
+                      <form class="form-inline " method="post" action="add_emp_config.php">
 
                         <div class="form-group mx-sm-2 mb-2">
                             <label for="">Name</label>
@@ -119,7 +74,7 @@ else{
                 <div class="modal-footer">
                     <button type="button" class="btn btn-one" disabled >Update Profile</button>
                    
-                    <button type="submit" name="submit" class="btn btn-two" >Submit</button>
+                    <button type="submit" name="submit" class="btn btn-two" href="">Submit</button>
 
                 
                 </div>

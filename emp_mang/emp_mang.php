@@ -1,5 +1,4 @@
 
-
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
 
@@ -22,11 +21,7 @@
 			echo'<p class="alert alert-danger h6">Email Taken</p>';
 		}
 	
-	}	else if(isset($_GET['register'])){
-				if(($_GET['register']=="success")){
-			echo'<p class="alert alert-success h6">Registration done successfully</p>';
-		}
-	}
+	}	
 ?>
 
 

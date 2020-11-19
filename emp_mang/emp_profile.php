@@ -2,6 +2,15 @@
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
 
+<?php
+if(isset($_GET['register'])){
+    if(($_GET['register']=="success")){
+echo'<p class="alert alert-success h6">Registration done successfully</p>';
+}
+}
+
+?>
+
 
 <!--head section-->
 <div class="container mt-5">
