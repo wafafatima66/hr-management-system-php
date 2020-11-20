@@ -1,5 +1,6 @@
 
 <?php 
+    session_start();
 
 if(isset($_POST['submit'])){
 
@@ -29,11 +30,14 @@ if(isset($_POST['submit'])){
                 exit();
             }
                 else{
-                    
+                
                     mysqli_stmt_bind_param($stmt,"ssssss", $emp_first_name, $emp_last_name, $emp_middle_name,$emp_ext,$emp_status,$emp_date_appointment);
                     mysqli_stmt_execute($stmt);
-                    session_start();
+
+                  
                     $_SESSION['emp_first_name']= $emp_first_name;
+                    $_SESSION['emp_last_name']= $emp_last_name;
+                   
 
                     header("Location:emp_profile.php?register=success");
                             exit();

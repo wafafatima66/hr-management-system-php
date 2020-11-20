@@ -29,28 +29,32 @@
         <!--body section of personal information -->
 
 
-            <div class="container emp_profile_section2 pt-4" id="content-1" style="display:block;">       
-                <div class="row ">
+            <div class="emp_profile_section2 pt-4" id="content-1" style="display:block;">   
 
-                    <div class="col-lg-9 ">
+                <form class="form-inline" method ="POST" action="pds/pds-config.php">   
 
-                        <form class="form-inline" method ="POST" action="pds/pds-config.php">   
+                        <div class="container ">
+
+                        <div class="row ">
+                            <div class="col-lg-9 form-inline">
+
+                          
 
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">NAME</label>
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="First Name" name="emp_first_name">
+                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo $emp_first_name?>" value ="<?php $emp_first_name?>">
                             </div>
 
                             <div class="form-group mx-sm-2 mb-2">
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="Last name" name="emp_last_name">
+                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo $mydata["emp_last_name"];?>" name="emp_last_name">
                             </div>
 
                             <div class="form-group mx-sm-2 mb-2">
-                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="Middle name" name="emp_middle_name">
+                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo $mydata["emp_middle_name"];?>" name="emp_middle_name">
                             </div>
 
                             <div class="form-group mx-sm-2 mb-2">
-                            <input type="text" class="form-control" style="width:50px;" id="" placeholder="Ext" name="emp_ext">
+                            <input type="text" class="form-control" style="width:50px;" id="" placeholder="<?php echo $mydata["emp_ext"];?>" name="emp_ext">
                             </div>
 
                          <!--   <div class="form-group mx-sm-2 mb-2">
@@ -63,13 +67,13 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">GENDER</label>
-                            <select class="form-control" style="width:50px;" name="emp_gender">
+                            <select class="form-control" style="width:100px;" name="emp_gender">
                                 <option value = "0 ">SELECT</option>
                                 <option value = "male">MALE</option>
                                 <option value = "female">FEMALE</option>
                             </select>
                             </div>
-                   
+                  
 
                        
                             <div class="form-group mx-sm-1 mb-2">
@@ -99,10 +103,10 @@
                             <label for="">BLOOD TYPE</label>
                                 <input type="text" class="form-control" style="width:40px;" id="" placeholder="" name="emp_blood">
                             </div>
-                       
+                      
                     </div>
 
-                    <div class="col-lg-3 p-0 m-0" style="background-color:#F4FBFF">
+                    <div class="col-lg-3 p-0 m-0 form-inline" style="background-color:#F4FBFF">
                    
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">CITIZENSHIP</label>
@@ -126,6 +130,10 @@
                     
                 </div>
 
+                </div>
+
+            
+                                                
 
                 
                     <div class="row">
@@ -214,12 +222,12 @@
                     
                 </div>
 
-                <div class="container">
+                
                     
-                <div class="row p-0 m-0">
-                        <div class="col-lg-7 p-0 m-0" >
-                           
-                                <div class="form-group mx-sm-3 mb-2">
+               <div class="row">
+                    <div class="col-lg-6 form-inline">
+                    
+                    <div class="form-group mx-sm-3 mb-2">
                                     <label for="">CONTACTS</label>
                                 </div>
 
@@ -234,13 +242,11 @@
                                 <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:90px;"id="" placeholder="Email Address" name="emp_email">
                                 </div>
+                    </div>
 
-                            
-                        </div>
+                    <div class="col-lg-5 form-inline p-2 ">
 
-                        <div class="col-lg-5 p-0 m-0">
-                            
-                                <div class="form-group mx-sm-1 mb-2" >
+                                 <div class="form-group mx-sm-1 mb-2" >
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="GSIS ID No." name="emp_contact_gs">
                                 </div>
 
@@ -251,9 +257,6 @@
                                 <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="PHILHEALTH No." name="emp_contact_ph">
                                 </div>
-
-                      
-
                             
                                 <div class="form-group mx-sm-1 mb-2" >
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="SSS ID No." name="emp_contact_ss">
@@ -267,19 +270,20 @@
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="AGENCY EMPLOYEE No." name="emp_contact_agency">
                                 </div>
                             
-                        </div>
+                        
                     </div>
-                </div>
-
+               </div>
+                        
+         
             </div>
+         
+        </div>
 
             <div class="text-right">
                         <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
                         <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
                     </div>
             </form>
-        </div>
-
 
 
         <?php include 'family_background.php'; ?>
