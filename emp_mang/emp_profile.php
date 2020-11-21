@@ -36,7 +36,15 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
 	}	else if(isset($_GET['submit'])){
 				if(($_GET['submit']=="success")){
 			echo'<p class="alert alert-success h6">pds updated</p>';
-		}
+                }
+                
+                if(($_GET['submit']=="update")){
+                    echo'<p class="alert alert-success h6">updated completed</p>';
+                        }
+
+                        if(($_GET['submit']=="notupdate")){
+                            echo'<p class="alert alert-success h6">update fail</p>';
+                                }
 	}
 ?>
 
@@ -63,13 +71,14 @@ if(isset($_SESSION['emp_first_name'])){
                   $emp_first_name = $mydata["emp_first_name"];
                   $emp_last_name = $mydata["emp_last_name"];
                   $emp_id = $mydata["emp_id"];
-                  
+                 
                   $_SESSION['emp_id']= $emp_id;
 
             
     ?> 
                
-               
+         
+   
                
          
 
@@ -96,13 +105,14 @@ if(isset($_SESSION['emp_first_name'])){
 
 
 
+
         <?php include 'pds/pds.php'; ?>
+
         <?php include 'ledger.php'; ?>
         <?php include 'file.php'; ?>
 
 
                  
-
         <?php
                 
 
@@ -112,12 +122,15 @@ if(isset($_SESSION['emp_first_name'])){
         }
       
         //end of if
+       // session_unset();
+       // session_destroy();
+       // header("Location:emp_mang.php");
     } //end of first if
 
         
                 
     
-    ?>
+    ?>   
 
 </div>  <!-- /#page-content-wrapper -->
   </div> <!-- /#wrapper -->
