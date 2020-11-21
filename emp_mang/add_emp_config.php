@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
 
     require '../includes/conn.php';
 
-    if(empty($emp_first_name)|| empty($emp_last_name)|| empty($emp_middle_name)|| empty($emp_ext)|| empty($emp_status)|| empty($emp_date_appointment))
+    if(empty($emp_first_name)|| empty($emp_last_name))
             {
                 header("Location:emp_mang.php?error=emptyfields");
                 exit();

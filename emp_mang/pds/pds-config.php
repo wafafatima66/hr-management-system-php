@@ -1,12 +1,18 @@
 
-
 <?php 
+session_start();
 
 if(isset($_POST['submit'])){
 
-  // $emp_first_name=$_POST['$emp_first_name'];
-    /*$emp_last_name=$_POST['emp_last_name'];
-    $emp_middle_name=$_POST['emp_middle_name'];
+    $emp_id = $_SESSION['emp_id'];
+    $emp_first_name = $_SESSION['emp_first_name'];
+    $emp_last_name = $_SESSION['emp_last_name'];
+
+    //$emp_id=$_POST['emp_id'];
+    //$emp_first_name=$_POST['emp_first_name'];
+   // $emp_last_name=$_POST['emp_last_name'];
+
+    /*$emp_middle_name=$_POST['emp_middle_name'];
     $emp_ext=$_POST['emp_ext'];*/
 
     

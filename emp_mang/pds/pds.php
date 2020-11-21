@@ -28,21 +28,25 @@
 
         <!--body section of personal information -->
 
-
+        
             <div class="emp_profile_section2 pt-4" id="content-1" style="display:block;">   
+           
 
                 <form class="form-inline" method ="POST" action="pds/pds-config.php">   
 
-                        <div class="container ">
-
+                      
+                <div class="container ">
                         <div class="row ">
                             <div class="col-lg-9 form-inline">
 
-                          
+                            <div class="form-group mx-sm-2 mb-2">
+                                <label for="">NAME</label>
+                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo $emp_id?>"  >
+                            </div>
 
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">NAME</label>
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo $emp_first_name?>" value ="<?php $emp_first_name?>">
+                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo $emp_first_name?>" >
                             </div>
 
                             <div class="form-group mx-sm-2 mb-2">
@@ -276,15 +280,18 @@
                         
          
             </div>
-         
-        </div>
 
             <div class="text-right">
                         <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
                         <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
                     </div>
             </form>
+         
+        </div>
 
+    
+           
+            </div>
 
         <?php include 'family_background.php'; ?>
         <?php include 'education_background.php'; ?>
@@ -297,4 +304,4 @@
         <?php include 'references.php'; ?>
 
 
- </div>
+      

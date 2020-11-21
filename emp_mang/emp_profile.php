@@ -60,6 +60,12 @@ if(isset($_SESSION['emp_first_name'])){
         if($runquery == true){
             while($mydata = $runquery -> fetch_assoc()){
 
+                  $emp_first_name = $mydata["emp_first_name"];
+                  $emp_last_name = $mydata["emp_last_name"];
+                  $emp_id = $mydata["emp_id"];
+                  
+                  $_SESSION['emp_id']= $emp_id;
+
             
     ?> 
                
@@ -86,6 +92,9 @@ if(isset($_SESSION['emp_first_name'])){
        
     </div>
 </div>
+
+
+
 
         <?php include 'pds/pds.php'; ?>
         <?php include 'ledger.php'; ?>
