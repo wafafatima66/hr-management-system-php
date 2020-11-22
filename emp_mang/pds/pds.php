@@ -1,4 +1,4 @@
-
+       
 
 <!--PDS--->
 
@@ -95,7 +95,7 @@
                             
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">DATE OF BIRTH</label>
-                                <input type="text" class="form-control" style="width:70px;" id="" placeholder="10/25/20" name="emp_dob">
+                                <input type="text" class="form-control" style="width:70px;" id="" placeholder="" name="emp_dob">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -119,21 +119,21 @@
                    
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">CITIZENSHIP</label>
-                                <input type="text" class="form-control" style="width:100px;" id="" placeholder="Filipino" name="emp_citizen">
+                                <input type="text" class="form-control" style="width:100px;" id="" placeholder="" name="emp_citizen">
                         </div>
 
                         <div class="form-check mx-sm-1 mb-2">
-                            <input class="form-check-input" type="checkbox" value="by_birth" name="emp_citizen_chk">
+                            <input class="form-check-input" type="checkbox" value="by_birth" name="emp_citizen_chk" placeholder="">
                             <label class="form-check-label" > By Birth</label>
                         </div>
 
                         <div class="form-check mx-sm-1 mb-2">
-                            <input class="form-check-input" type="checkbox" value="by_nature" name="emp_citizen_chk">
+                            <input class="form-check-input" type="checkbox" value="by_nature" name="emp_citizen_chk" placeholder="">
                             <label class="form-check-label" >By Naturalization</label>
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:200px;" id="" placeholder="Indicate Country If dual Citizenship" name="emp_dual_citizen">
+                            <input type="text" class="form-control" style="width:200px;" id="" placeholder="Indicate Country If dual Citizenship" name="emp_dual_citizen" placeholder="">
                         </div>
 
                     
@@ -295,8 +295,9 @@
 </div>
 
 
-         
-
+             
+  
+    
 
         <?php include 'family_background.php'; ?>
         <?php include 'education_background.php'; ?>
