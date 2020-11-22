@@ -102,6 +102,8 @@ if(isset($_SESSION['emp_first_name'])){
     </div>
 </div>
 
+         
+ 
 
 
 
@@ -112,7 +114,7 @@ if(isset($_SESSION['emp_first_name'])){
         <?php include 'file.php'; ?>
 
 
-                 
+        
         <?php
                 
 
@@ -130,7 +132,6 @@ if(isset($_SESSION['emp_first_name'])){
         
                 
     
-    ?>   
-
+    ?>  
 </div>  <!-- /#page-content-wrapper -->
   </div> <!-- /#wrapper -->

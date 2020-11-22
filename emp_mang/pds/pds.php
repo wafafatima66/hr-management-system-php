@@ -30,6 +30,9 @@
 
         <!--body section of personal information -->
 
+       
+        
+
         
             <div class="emp_profile_section2 pt-4 pb-4 mb-4" id="content-1" style="display:block;">   
            
@@ -45,7 +48,7 @@
 
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">NAME</label>
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo $emp_first_name?>" >
+                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo $mydata["emp_first_name"];?>" >
                             </div>
 
                             <div class="form-group mx-sm-2 mb-2">
@@ -60,6 +63,9 @@
                             <input type="text" class="form-control" style="width:50px;" id="" placeholder="<?php echo $mydata["emp_ext"];?>" name="emp_ext">
                             </div>
 
+
+    
+
                          <!--   <div class="form-group mx-sm-2 mb-2">
                             <label for="">SEX</label>
                             <select class="form-control" style="width:50px;" name="emp_sex">
@@ -70,7 +76,7 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">GENDER</label>
-                            <select class="form-control" style="width:100px;" name="emp_gender">
+                            <select class="form-control" style="width:100px;" name="emp_gender" placeholder="">
                                 <option value = "0 ">SELECT</option>
                                 <option value = "male">MALE</option>
                                 <option value = "female">FEMALE</option>
@@ -94,7 +100,7 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">HEIGHT</label>
-                                <input type="text" class="form-control" style="width:50px;" id="" placeholder="<?php echo $emp_height?>" name="emp_height">
+                                <input type="text" class="form-control" style="width:50px;" id="" placeholder="" name="emp_height">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -278,7 +284,7 @@
                </div>
 
                 <div class="text-right">
-                        <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
+                        <button class="btn m-2" style="background: #345587;color:#fff;" type ="submit" name="update">UPDATE</button>
                         <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
                     </div>
                     </form>   
@@ -289,6 +295,7 @@
 </div>
 
 
+         
 
 
         <?php include 'family_background.php'; ?>
