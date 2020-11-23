@@ -29,7 +29,7 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
 		else if($_GET['error']=="sqlerror"){
 			echo'<p class="alert alert-danger h6">Error in Creating account</p>';
 		}
-		else if($_GET['error']=="emailtaken"){
+		else if($_GET['error']=="gotit"){
 			echo'<p class="alert alert-danger h6">Email Taken</p>';
 		}
 	

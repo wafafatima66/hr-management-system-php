@@ -292,7 +292,7 @@
          
             </div>
         </div>         
-</div>
+
 
 
              
@@ -309,5 +309,4 @@
         <?php include 'others.php'; ?>
         <?php include 'references.php'; ?>
 
-
-      
+        </div>

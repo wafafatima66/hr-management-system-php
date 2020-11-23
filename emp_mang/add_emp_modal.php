@@ -50,14 +50,6 @@
 
 
 
-
-                      <div class="form-group mx-sm-2 mb-2">
-                            <label for="">Today's date</label>
-                          <input type="text" class="form-control" id="" placeholder="16/05/20" name="emp_date_appointment">
-                      </div>
-
-
-
                         <div class="form-group mx-sm-2 mb-2">
                             <label for="">Inclusive dates</label>
                           <input type="text" class="form-control" id="" placeholder="16/05/20" name="from_date">
@@ -65,6 +57,16 @@
 
                         <div class="form-group mx-sm-2 mb-2">
                           <input type="text" class="form-control" id="" placeholder="16/05/20" name="to_date">
+                        </div>
+
+                        <div class="form-group mx-sm-3 mb-2">
+                            <label for="">Office Assignment</label>
+                            <select class="form-control" name="office_assign" required>
+                              <option value="0">Select</option>
+                              <option value="permanent"> Permanent</option>
+                              <option value="contractual" >contractual</option>
+                              <option value="job_order" >job_order</option>
+                          </select>
                         </div>
 
 
