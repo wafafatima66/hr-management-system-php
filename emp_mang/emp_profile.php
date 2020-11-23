@@ -45,6 +45,10 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
                         if(($_GET['submit']=="notupdate")){
                             echo'<p class="alert alert-success h6">update fail</p>';
                                 }
+
+                                if(($_GET['submit']=="norows")){
+                                    echo'<p class="alert alert-success h6">no rows</p>';
+                                        }
 	}
 ?>
 
@@ -61,8 +65,15 @@ if(isset($_SESSION['emp_first_name'])){
 
   
   
+  //SELECT * FROM add_emp join pds ON add_emp.emp_id = pds.emp_id
+  //join table3 ON table2.primarykey = table3.foreignkey
 
-        $query = "SELECT * FROM add_emp WHERE emp_first_name = '$emp_first_name' AND emp_last_name ='$emp_last_name'";
+  
+      // $query = " SELECT * FROM add_emp join pds ON add_emp.emp_id = pds.emp_id where add_emp.emp_first_name = '$emp_first_name' AND add_emp.emp_last_name ='$emp_last_name' ";
+
+      $query = "SELECT * FROM add_emp WHERE emp_first_name = '$emp_first_name' AND emp_last_name ='$emp_last_name'";
+
+       
        
         $runquery = $conn -> query($query);
         if($runquery == true){
@@ -103,7 +114,8 @@ if(isset($_SESSION['emp_first_name'])){
 </div>
 
          
- 
+  
+
 
 
 
@@ -113,8 +125,6 @@ if(isset($_SESSION['emp_first_name'])){
         <?php include 'ledger.php'; ?>
         <?php include 'file.php'; ?>
 
-
-        
         <?php
                 
 
@@ -132,6 +142,7 @@ if(isset($_SESSION['emp_first_name'])){
         
                 
     
-    ?>  
+    ?> 
+        
 </div>  <!-- /#page-content-wrapper -->
   </div> <!-- /#wrapper -->
