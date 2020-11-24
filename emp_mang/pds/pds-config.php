@@ -6,6 +6,7 @@ if(isset($_POST['submit'])){
 
 
     $emp_id = $_SESSION['emp_id'];
+
     $emp_first_name = $_SESSION['emp_first_name'];
     $emp_last_name = $_SESSION['emp_last_name'];
 
@@ -88,13 +89,6 @@ if(isset($_POST['submit'])){
              emp_height = '$emp_height',
              emp_weight = '$emp_weight',
              emp_blood = '$emp_blood',
-             emp_citizen = '$emp_citizen',
-             emp_citizen_chk = '$emp_citizen_chk',
-             emp_resi_add = '$emp_resi_add',
-             emp_per_add = '$emp_per_add',
-             emp_contact = '$emp_contact',
-             emp_first_name = '$emp_first_name',
-             emp_last_name = '$emp_last_name',
              emp_email = '$emp_email'
             ";
 
@@ -113,7 +107,7 @@ if(isset($_POST['submit'])){
                  
 
 
-                    header("Location:../emp_profile.php?submit=successpds&empid=$emp_id ");
+                    header("Location:../emp_profile.php?submit=success");
                             exit();
                      
                 }

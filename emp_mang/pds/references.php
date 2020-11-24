@@ -84,10 +84,12 @@
                     </div>
                 </div>
 
-                <div class="text-right">
+              <div class="container">
+              <div class="text-right">
                         <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
                         <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
                     </div>
+              </div>
 
             </form>
         

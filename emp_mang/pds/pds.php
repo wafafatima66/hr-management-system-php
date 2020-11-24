@@ -75,7 +75,7 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">GENDER</label>
-                            <select class="form-control" style="width:100px;" name="emp_gender" placeholder="<?php echo $emp_gender?>">
+                            <select class="form-control" style="width:100px;" name="emp_gender" placeholder="">
                                 <option value = "0 ">SELECT</option>
                                 <option value = "male">MALE</option>
                                 <option value = "female">FEMALE</option>
@@ -86,7 +86,7 @@
                        
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">CIVIL STATUS</label>
-                            <input type="text"  class="form-control" style="width:90px;" name="emp_civil_status" placeholder="<?php echo $emp_civil_status?>">
+                            <input type="text"  class="form-control" style="width:90px;" name="emp_civil_status" placeholder="">
                             </div>
                             
                             <div class="form-group mx-sm-2 mb-2">
@@ -96,7 +96,7 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">HEIGHT</label>
-                                <input type="text" class="form-control" style="width:40px;" id="" placeholder="<?php echo $emp_height?>" name="emp_height">
+                                <input type="text" class="form-control" style="width:40px;" id="" placeholder="" name="emp_height">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">

@@ -37,8 +37,9 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
 				if(($_GET['submit']=="successpds")){
 
                     echo'<p class="alert alert-success h6">PDS </p>';
+                }
 
-                   /* if(isset($_GET['empid'])){
+                  /* if(isset($_GET['empid'])){
     
                         $emp_id=$_GET['empid'];
 
@@ -51,7 +52,7 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
                 
                         $runquery = $conn -> query($query);
                         if($runquery == true){
-                            echo"nice";
+                            
                         while($data = $runquery -> fetch_assoc()){
                      
                         
@@ -59,12 +60,13 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
                        
                         $emp_civil_status = $data["emp_civil_status"];
                         $emp_height = $data["emp_height"];
-                        echo $emp_height;
+                        
+                     
                      
                      }
                         }else echo "nothing";
                     } */
-                }
+                
 
                 
 
@@ -80,11 +82,7 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
                                 if(($_GET['submit']=="norows")){
                                     echo'<p class="alert alert-success h6">no rows</p>';
                                         }
-    } else {
-        $emp_gender = "Select";
-        $emp_civil_status = "Civil status";
-        $emp_height = "56";
-    }
+    } 
 
  
      

@@ -1,6 +1,6 @@
 
         <!--body section of VOLUNTARY WORKS-->
-        <div class=" emp_profile_section2 pt-4 " id="content-6">  
+        <div class=" emp_profile_section2 pt-4 mb-5 pb-3 " id="content-6">  
             <form class="form-inline" method="post" action="pds/voluntary-config.php">
                 
                 <div class="form-group mx-sm-3 mb-2">
@@ -45,9 +45,11 @@
                         <input type="text" class="form-control" id="" placeholder="" style="width:120px;" name="position">    
                     </div>
              
+                    <div class="container">
                     <div class="text-right">
                         <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
                         <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
+                    </div>
                     </div>
             </div>
             </form>
