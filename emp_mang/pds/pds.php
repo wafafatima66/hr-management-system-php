@@ -94,17 +94,17 @@
                             
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">DATE OF BIRTH</label>
-                                <input type="text" class="form-control" style="width:70px;" id="" placeholder="" name="emp_dob">
+                                <input type="date"  class="form-control" style="width:130px;"  name="emp_dob">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">HEIGHT</label>
-                                <input type="text" class="form-control" style="width:50px;" id="" placeholder="<?php echo $mydata["emp_height"];?>" name="emp_height">
+                                <input type="text" class="form-control" style="width:40px;" id="" placeholder="<?php echo $mydata["emp_height"];?>" name="emp_height">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">WEIGHT</label>
-                            <input type="text" class="form-control" style="width:50px;" id="" placeholder="" name="emp_weight">
+                            <input type="text" class="form-control" style="width:30px;" id="" placeholder="" name="emp_weight">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">

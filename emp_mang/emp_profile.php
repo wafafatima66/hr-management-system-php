@@ -69,7 +69,7 @@ if(isset($_SESSION['emp_first_name'])){
   //join table3 ON table2.primarykey = table3.foreignkey
 
   
-      // $query = " SELECT * FROM add_emp join pds ON add_emp.emp_id = pds.emp_id where add_emp.emp_first_name = '$emp_first_name' AND add_emp.emp_last_name ='$emp_last_name' ";
+     
 
       $query = "SELECT * FROM add_emp WHERE emp_first_name = '$emp_first_name' AND emp_last_name ='$emp_last_name'";
 
@@ -77,12 +77,18 @@ if(isset($_SESSION['emp_first_name'])){
        
         $runquery = $conn -> query($query);
         if($runquery == true){
-            while($mydata = $runquery -> fetch_assoc()){
+
+           
+
+              
+         
+                     while($mydata = $runquery -> fetch_assoc()){
 
                   $emp_first_name = $mydata["emp_first_name"];
                   $emp_last_name = $mydata["emp_last_name"];
                   $emp_id = $mydata["emp_id"];
-                 
+
+                
                   $_SESSION['emp_id']= $emp_id;
 
             
@@ -127,7 +133,7 @@ if(isset($_SESSION['emp_first_name'])){
 
         <?php
                 
-
+                     
             }//end of while
         } else {
             echo "DATA NOT FETCHED PROPERLY";

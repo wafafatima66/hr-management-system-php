@@ -12,7 +12,7 @@
                 
                             <div class="form-group mx-sm-1 mb-2">
                                 <label for="">SPOUSE NAME</label>
-                                <input type="text" class="form-control" id="" style="width:100px; "placeholder="Surname " name="emp_spouse_lastname">
+                                <input type="text" class="form-control" id="" style="width:100px; "placeholder="Surname" name="emp_spouse_lastname" value="">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -27,35 +27,47 @@
                             <input type="text" class="form-control" id="" style="width:50px;" placeholder="Ext" name="emp_spouse_extname">
                             </div>
                 
-                            <div class="form-group mx-sm-1 mb-2">
-                                <label for="">OCCUPATION</label>
-                                <input type="text" class="form-control" id="" name="emp_sp_occupation">
-                            </div>
-
-                            <div class="form-group mx-sm-1 mb-2">
-                            <label for="">EMPLOYER</label>
-                                <input type="text" class="form-control" id=""  name="emp_sp_employer">
-                            </div>
+                          
           
+<div class="container">
 
-                        <div class="row">
 
-                            <div class="col-lg-5"></div>
-                            <div class="col-lg-6 form-inline">
-                    
-                
-                        <div class="form-group mx-sm-2 mb-2">
-                            <label for="">ADDRESS</label>
-                            <input type="text" class="form-control" id=""  name="emp_sp_add">
-                        </div>
+<div class="row">
 
-                        <div class="form-group mx-sm-2 mb-2">
-                        <label for="">TELEPHONE NO</label>
-                            <input type="text" class="form-control" id=""  name="emp_sp_tel">
-                        </div>
-            
-                        </div>
-                     </div>
+<div class="col-lg-6 m-0 p-0 ">
+
+
+
+    <div class="form-group mx-sm-1 mb-2">
+        <label for="">OCCUPATION</label>
+        <input type="text" class="form-control" id="" name="emp_sp_occupation">
+    </div>
+
+  </div>
+
+<div class="col-lg-6 m-0 p-0">
+
+<div class="form-group mx-sm-2 mb-2">
+    <label for="" style="width:100px">EMPLOYER</label>
+        <input type="text" class="form-control" id=""  name="emp_sp_employer" placeholder=""> 
+    </div>
+
+
+<div class="form-group mx-sm-2 mb-2">
+    <label for="" style="width:100px">ADDRESS</label>
+    <input type="text" class="form-control" id=""  name="emp_sp_add">
+</div>
+
+<div class="form-group mx-sm-2 mb-2">
+<label for="" style="width:100px">TELEPHONE NO</label>
+    <input type="text" class="form-control" id=""  name="emp_sp_tel">
+</div>
+
+</div>
+
+
+</div>
+</div>
 
 
         
@@ -102,52 +114,84 @@
                 </div>
 
                     <div class="col-lg-5 " style="background:#E6F7FF;">
-                        <div class="container">
+                        <div class="container family_wrapper">
+
                             <div class="row">
-                                <div class="col-7 p-0 m-0 form-inline ">
-                                                  
-                                        <div class="form-group mx-sm-1 mb-2">
-                                            <label for="">NAME OF CHILDREN(Write Fullname)</label>
-                                            </div>
-                                            
-                                            <div class="form-group mx-sm-1 mb-2">
-                                                <input type="text" class="form-control" style="width:200px;" name="emp_child_name">
-                                            </div>
-
-                                            <div class="form-group mx-sm-1 mb-2">
-                                                <input type="text" class="form-control" style="width:200px;" name="emp_child_name">
-                                            </div>
-                                                        
-                                                    
-                                        </div>
-
-                                        <div class="col-5 p-0 m-0 form-inline ">
-                                          
-                                            <div class="form-group mx-sm-1 mb-2">
-                                                <label for="">DATE OF BIRTH</label>
-                                            </div>
-
-                                            <div class="form-group mx-sm-1 mb-2">
-                                                <input type="text" class="form-control" style="width:100px;"  name="emp_child_dob">
-                                            </div>
-
-                                            <div class="form-group mx-sm-1 mb-2">
-                                                <input type="text" class="form-control" style="width:100px;" name="emp_child_dob">
-                                            </div>
-
-                                            </div>
-                                                          
-
+                                <div class="col-7 p-0 m-0 form-inline ">             
+                                    <div class="form-group mx-sm-1 mb-2">
+                                        <label for="">NAME OF CHILDREN(Write Fullname)</label>
+                                    </div>                   
                                 </div>
-                             </div>
-                         </div>
 
+                                <div class="col-5 p-0 m-0 form-inline "> 
+                                    <div class="form-group mx-sm-1 mb-2">
+                                        <label for="">DATE OF BIRTH</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-7 p-0 m-0 form-inline ">             
+                                    <div class="form-group mx-sm-1 mb-2">
+                                        <input type="text" class="form-control" style="width:200px;" name="emp_child_name[]">
+                                    </div>                   
+                                </div>
+
+                                <div class="col-5 p-0 m-0 form-inline "> 
+                                    <div class="form-group mx-sm-1 mb-2">
+                                        <input type="date" class="form-control" style="width:100px;"  name="emp_child_dob[]">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div> 
+
+                         <a href="javascript:void(0);" class="add_fam_button" title="Add field"><i class="fa fa-plus"></i></a>  
+                    </div>
                 </div>
             </div>
-            
-                     <div class="text-right">
+
+                <div class="text-right">
                         <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
                         <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
-                    </div>
-            </form>  
+                </div>
+
+            </form> 
+
         </div>
+           
+            
+            
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+var maxField = 10; //Input fields increment limitation
+var addButton = $('.add_fam_button'); //Add button selector
+var wrapper = $('.family_wrapper'); //Input field wrapper
+var fieldHTML = 
+' <div class="row"><div class="col-7 p-0 m-0 form-inline "> <div class="form-group mx-sm-1 mb-2"><input type="text" class="form-control" name="emp_child_name[]" style="width:200px;" ></div></div> <div class="col-5 p-0 m-0 form-inline "> <div class="form-group mx-sm-1 mb-2"><input type="date" class="form-control" name="emp_child_dob[]" style="width:100px;" ></div></div><a href="javascript:void(0);" class="remove_fam_button"><i class="fa fa-minus"></i></a></div>'; 
+
+//New input field html 
+var x = 1; //Initial field counter is 1
+
+//Once add button is clicked
+$(addButton).click(function(){
+    //Check maximum number of input fields
+    if(x < maxField){ 
+        x++; //Increment field counter
+        $(wrapper).append(fieldHTML); //Add field html
+    }
+});
+
+//Once remove button is clicked
+$(wrapper).on('click', '.remove_fam_button', function(e){
+    e.preventDefault();
+    $(this).parent('div').remove(); //Remove field html
+    x--; //Decrement field counter
+});
+});
+</script>
+                  
+        
