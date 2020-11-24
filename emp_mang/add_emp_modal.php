@@ -36,11 +36,14 @@
                           <input type="text" class="form-control" id="" placeholder="Ext" name="emp_ext" required>
                         </div> 
                         
+                        
                          <h6 class="pt-4">Employment Information</h6>
+
+                         <div class="form-inline">
 
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="">Status</label>
-                            <select class="form-control" name="emp_status" required>
+                            <select class="form-control" name="emp_status" style="font-size:12px">
                               <option value="0">Select</option>
                               <option value="permanent"> Permanent</option>
                               <option value="contractual" >contractual</option>
@@ -48,35 +51,38 @@
                           </select>
                         </div>
 
-
+                        
+                         
+                        
 
                         <div class="form-group mx-sm-2 mb-2">
-                            <label for="">Inclusive dates</label>
-                          <input type="text" class="form-control" id="" placeholder="16/05/20" name="from_date">
+                        <label for="">Inclusive dates</label>
+                          <div class="d-flex flex-column">
+                            <label for="" style="color:#AEAEAE; font-style: italic;">From</label>
+                          <input type="date" class="form-control" id="" placeholder="" name="from_date">
+                          </div>
                         </div>
 
                         <div class="form-group mx-sm-2 mb-2">
-                          <input type="text" class="form-control" id="" placeholder="16/05/20" name="to_date">
+                          <div class="d-flex flex-column">
+                            <label for="" style="color:#AEAEAE; font-style: italic;">To</label>
+                          <input type="date" class="form-control" id="" placeholder="" name="to_date">
+                          </div>
                         </div>
-
-                        <div class="form-group mx-sm-3 mb-2">
+                        <div class="form-group mx-sm-3 mb-2 mt-2">
                             <label for="">Office Assignment</label>
-                            <select class="form-control" name="office_assign" required>
-                              <option value="0">Select</option>
-                              <option value="permanent"> Permanent</option>
-                              <option value="contractual" >contractual</option>
-                              <option value="job_order" >job_order</option>
-                          </select>
+                            <input type="text" class="form-control" id="" name="office_assign">
                         </div>
+                         </div>
 
 
                      </div>
                   </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-one" disabled >Update Profile</button>
+                    
                    
-                    <button type="submit" name="submit" class="btn btn-two" href="">Submit</button>
+                    <button type="submit" name="submit" class="btn btn-two">Submit</button>
 
                 
                 </div>

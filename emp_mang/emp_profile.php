@@ -34,9 +34,40 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
 		}
 	
 	}	else if(isset($_GET['submit'])){
-				if(($_GET['submit']=="success")){
-			echo'<p class="alert alert-success h6">pds updated</p>';
+				if(($_GET['submit']=="successpds")){
+
+                    echo'<p class="alert alert-success h6">PDS </p>';
+
+                   /* if(isset($_GET['empid'])){
+    
+                        $emp_id=$_GET['empid'];
+
+                        echo $emp_id;
+                        
+                        require '../includes/conn.php';
+                       
+                                         
+                        $query = "SELECT * FROM pds WHERE emp_id = $emp_id";
+                
+                        $runquery = $conn -> query($query);
+                        if($runquery == true){
+                            echo"nice";
+                        while($data = $runquery -> fetch_assoc()){
+                     
+                        
+                
+                       
+                        $emp_civil_status = $data["emp_civil_status"];
+                        $emp_height = $data["emp_height"];
+                        echo $emp_height;
+                     
+                     }
+                        }else echo "nothing";
+                    } */
                 }
+
+                
+
                 
                 if(($_GET['submit']=="update")){
                     echo'<p class="alert alert-success h6">updated completed</p>';
@@ -49,7 +80,15 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
                                 if(($_GET['submit']=="norows")){
                                     echo'<p class="alert alert-success h6">no rows</p>';
                                         }
-	}
+    } else {
+        $emp_gender = "Select";
+        $emp_civil_status = "Civil status";
+        $emp_height = "56";
+    }
+
+ 
+     
+     
 ?>
 
 <?php
@@ -57,6 +96,8 @@ echo'<p class="alert alert-success h6">Registration done successfully</p>';
 require '../includes/conn.php';
 
 if(isset($_SESSION['emp_first_name'])){
+
+    
     
   $emp_first_name = $_SESSION['emp_first_name'];
   $emp_last_name = $_SESSION['emp_last_name'];
@@ -86,10 +127,17 @@ if(isset($_SESSION['emp_first_name'])){
 
                   $emp_first_name = $mydata["emp_first_name"];
                   $emp_last_name = $mydata["emp_last_name"];
+                  $emp_middle_name = $mydata["emp_middle_name"];
+                  $office_assign = $mydata["office_assign"];
+                  $emp_status = $mydata["emp_status"];
                   $emp_id = $mydata["emp_id"];
 
                 
                   $_SESSION['emp_id']= $emp_id;
+
+                  
+                
+                
 
             
     ?> 
@@ -108,8 +156,8 @@ if(isset($_SESSION['emp_first_name'])){
                 <button  onclick="opentab('tab-2')" type="button" class="btn emp_profile_section1_tab " >Leave Ledger | </button>
                 <button  onclick="opentab('tab-3')" type="button" class="btn emp_profile_section1_tab " >File 201</button>
             </h6>
-            <h4> <?php echo $emp_first_name?> </h4>
-            <p>Permanent > Senior Programmer</p>
+            <h4> <?php echo $emp_first_name?> <?php echo $emp_middle_name?> <?php echo $emp_last_name?> </h4>
+            <p style="text-transform: uppercase;"><?php echo $emp_status?> > <span style="text-transform: capitalize;"><?php echo $office_assign?></span></p>
         </div>
 
         <div class="col-lg-3 p-0 m-0">
@@ -120,20 +168,20 @@ if(isset($_SESSION['emp_first_name'])){
 </div>
 
          
-  
 
 
+    <?php include 'pds/pds.php';  ?>
 
 
-
-        <?php include 'pds/pds.php'; ?>
 
         <?php include 'ledger.php'; ?>
         <?php include 'file.php'; ?>
 
+      
+        
         <?php
                 
-                     
+                 
             }//end of while
         } else {
             echo "DATA NOT FETCHED PROPERLY";
@@ -145,10 +193,10 @@ if(isset($_SESSION['emp_first_name'])){
        // header("Location:emp_mang.php");
     } //end of first if
 
-        
-                
+
+    ?>      
     
-    ?> 
+  
         
 </div>  <!-- /#page-content-wrapper -->
   </div> <!-- /#wrapper -->

@@ -1,4 +1,4 @@
-  
+
 <!--PDS--->
 
 <div class=" emp_profile_section2_tab " id="tab-1" style="display:block;">
@@ -75,7 +75,7 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">GENDER</label>
-                            <select class="form-control" style="width:100px;" name="emp_gender" placeholder="">
+                            <select class="form-control" style="width:100px;" name="emp_gender" placeholder="<?php echo $emp_gender?>">
                                 <option value = "0 ">SELECT</option>
                                 <option value = "male">MALE</option>
                                 <option value = "female">FEMALE</option>
@@ -86,20 +86,17 @@
                        
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">CIVIL STATUS</label>
-                                <select class="form-control" name="emp_civil_status">
-                                <option selected>Status</option>
-                                <option>...</option>
-                            </select>
+                            <input type="text"  class="form-control" style="width:90px;" name="emp_civil_status" placeholder="<?php echo $emp_civil_status?>">
                             </div>
                             
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">DATE OF BIRTH</label>
-                                <input type="date"  class="form-control" style="width:130px;"  name="emp_dob">
+                                <input type="date"  class="form-control" style="width:120px;"  name="emp_dob">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">HEIGHT</label>
-                                <input type="text" class="form-control" style="width:40px;" id="" placeholder="<?php echo $mydata["emp_height"];?>" name="emp_height">
+                                <input type="text" class="form-control" style="width:40px;" id="" placeholder="<?php echo $emp_height?>" name="emp_height">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -122,12 +119,12 @@
                         </div>
 
                         <div class="form-check mx-sm-1 mb-2">
-                            <input class="form-check-input" type="checkbox" value="by_birth" name="emp_citizen_chk" placeholder="">
+                            <input class="form-check-input" type="checkbox" value="by_birth" name="emp_citizen_chk[]" placeholder="">
                             <label class="form-check-label" > By Birth</label>
                         </div>
 
                         <div class="form-check mx-sm-1 mb-2">
-                            <input class="form-check-input" type="checkbox" value="by_nature" name="emp_citizen_chk" placeholder="">
+                            <input class="form-check-input" type="checkbox" value="by_nature" name="emp_citizen_chk[]" placeholder="">
                             <label class="form-check-label" >By Naturalization</label>
                         </div>
 
@@ -151,7 +148,7 @@
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="House/Block/Lot No" name="emp_resi_add">
                             </div>
 
-                            <div class="form-group mx-sm-2 mb-2">
+                            <div class="form-group mx-sm-1 mb-2">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="Street" name="emp_resi_add_street">
                             </div>
 
@@ -160,24 +157,15 @@
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                                <select class="form-control" style="width:90px;" name="emp_resi_add_barangay">
-                                <option value="barangay">Barangay</option>
-                                <option></option>
-                            </select>
+                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="Barangay" name="emp_resi_add_barangay">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                                <select class="form-control" style="width:90px;" name="emp_resi_add_municipal" >
-                                <option value="" >Municipal/City</option>
-                                <option>...</option>
-                            </select>
+                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="Municipal/City" name="emp_resi_add_municipal">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                                <select class="form-control" style="width:90px;" name="emp_resi_add_province">
-                                <option selected>Province</option>
-                                <option>...</option>
-                            </select>
+                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="Province" name="emp_resi_add_province">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -194,7 +182,7 @@
                             <input type="text" class="form-control" style="width:100px;"id="" placeholder="House/Block/Lot No" name="emp_per_add">
                         </div>
 
-                        <div class="form-group mx-sm-2 mb-2">
+                        <div class="form-group mx-sm-1 mb-2">
                             <input type="text" class="form-control" style="width:100px;"id="" placeholder="Street"  name="emp_per_add_street">
                         </div>
 
@@ -203,24 +191,15 @@
                         </div>
                         
                         <div class="form-group mx-sm-1 mb-2">
-                            <select class="form-control" style="width:90px;" name="emp_per_add_barangay">
-                            <option selected>Barangay</option>
-                            <option>...</option>
-                        </select>
+                        <input type="text" class="form-control" style="width:100px;" id="" placeholder="Barangay" name="emp_per_add_barangay">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <select class="form-control" style="width:90px;" name="emp_per_add_municipal">
-                            <option selected>Municipal/City</option>
-                            <option>...</option>
-                        </select>
+                        <input type="text" class="form-control" style="width:100px;"id="" placeholder="Municipal/City" name="emp_per_add_municipal">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <select class="form-control" style="width:90px;" name="emp_per_add_province">
-                            <option selected>Province</option>
-                            <option>...</option>
-                        </select>
+                        <input type="text" class="form-control" style="width:100px;"id="" placeholder="Province" name="emp_per_add_province">
                         </div> 
 
                         <div class="form-group mx-sm-1 mb-2">
@@ -233,48 +212,62 @@
                 
                     
                <div class="row">
-                    <div class="col-lg-6 form-inline">
+
+                    <div class="col-lg-1 form-inline" >
                     
-                    <div class="form-group mx-sm-3 mb-2">
+                                <div class="form-group mx-sm-3 mb-2">
                                     <label for="">CONTACTS</label>
                                 </div>
+                            </div>
 
-                                <div class="form-group mx-sm-2 mb-2" >
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="Telephone No." name="emp_tel_no">
+
+                             <div class="col-lg-5 m-2 text-center form-inline " style="background-color:#E6F7FF;">
+                             <div class="form-group mx-sm-2 mb-2" >
+                                    <div class="d-flex flex-column">
+                                        <input type="text" class="form-control" style="width:100px;"id="" placeholder="" name="emp_tel_no">
+                                        <label for="">Telephone No.</label>
+                                    </div>
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-2">
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="Mobile No." name="emp_mb_no">
+                                    <div class="d-flex flex-column">
+                                        <input type="text" class="form-control" style="width:100px;"id="" placeholder="" name="emp_mb_no">
+                                        <label for="">Mobile No.</label>
+                                    </div>
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-2">
-                                <input type="text" class="form-control" style="width:90px;"id="" placeholder="Email Address" name="emp_email">
+                                    <div class="d-flex flex-column">
+                                        <input type="text" class="form-control" style="width:90px;"id="" placeholder="" name="emp_email">
+                                        <label for="">Email Address</label>
+                                    </div>
                                 </div>
-                    </div>
+                             </div>
+                   
 
-                    <div class="col-lg-5 form-inline p-2 ">
+                    <div class="col-lg-5 form-inline " style="background-color:#E6F7FF; ">
 
-                                 <div class="form-group mx-sm-1 mb-2" >
+                                 <div class="form-group mx-sm-1 mb-1" >
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="GSIS ID No." name="emp_contact_gs">
                                 </div>
 
-                                <div class="form-group mx-sm-1 mb-2">
+                                <div class="form-group mx-sm-1 mb-1">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="PAG-IBIG ID No." name="emp_contact_pag">
                                 </div>
 
-                                <div class="form-group mx-sm-1 mb-2">
+                                <div class="form-group mx-sm-1 mb-1">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="PHILHEALTH No." name="emp_contact_ph">
                                 </div>
                             
-                                <div class="form-group mx-sm-1 mb-2" >
+                                <div class="form-group mx-sm-1 mb-1" >
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="SSS ID No." name="emp_contact_ss">
                                 </div>
 
-                                <div class="form-group mx-sm-1 mb-2">
+                                <div class="form-group mx-sm-1 mb-1">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="TIN No." name="emp_contact_tin">
                                 </div>
 
-                                <div class="form-group mx-sm-1 mb-2">
+                                <div class="form-group mx-sm-1 mb-1">
                                 <input type="text" class="form-control" style="width:100px;"id="" placeholder="AGENCY EMPLOYEE No." name="emp_contact_agency">
                                 </div>
                             
@@ -283,13 +276,14 @@
                </div>
 
                 <div class="text-right">
-                        <button class="btn m-2" style="background: #345587;color:#fff;" type ="submit" name="update">UPDATE</button>
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
+                        <!--<button class="btn m-2" style="background: #345587;color:#fff;" type ="submit">PREV</button>-->
+                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff;" >SUBMIT</button>
                     </div>
-                    </form>   
+                    
                  
          
             </div>
+            </form>   
         </div>         
 
 
