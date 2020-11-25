@@ -67,6 +67,8 @@ require '../includes/conn.php';
 
 if(isset($_SESSION['emp_first_name'])){
 
+    require 'variables/variables.php';
+
     
     
   $emp_first_name = $_SESSION['emp_first_name'];
@@ -98,9 +100,11 @@ if(isset($_SESSION['emp_first_name'])){
                   $emp_status = $mydata["emp_status"];
 
                   $emp_id = $mydata["emp_id"];
+                  $office_assign= $mydata["office_assign"];
 
                 
                   $_SESSION['emp_id']= $emp_id;
+                  $_SESSION['office_assign']= $office_assign;
 
                   
                 

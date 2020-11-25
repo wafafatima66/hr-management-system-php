@@ -1,7 +1,8 @@
  
+ 
    <!--body section of Civil service eligibility-->
    <div class=" emp_profile_section2 pt-4 " id="content-4">  
-            <form method="post" action="includes/civil-config.php" class="form-inline">
+            <form  class="form-inline">
                 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
@@ -67,10 +68,7 @@
                   
                 </div>
 
-                <div class="text-right">
-                        <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
-                    </div>
+               
 
                 </form>
         </div>

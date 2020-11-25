@@ -2,7 +2,7 @@
         <!--body section of family background-->
         <div class=" emp_profile_section2 pt-4 mb-5 pb-4" id="content-2">  
            
-                <form class="form-inline" method ="POST" action="includes/family-config.php">
+                <form class="form-inline" >
 
                 <div class="container">
                      <div class="row">
@@ -151,10 +151,7 @@
                 </div>
             </div>
 
-                <div class="text-right">
-                        <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
-                </div>
+                
 
             </form> 
 

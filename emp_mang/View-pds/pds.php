@@ -36,7 +36,7 @@
             <div class="emp_profile_section2 pt-4 pb-4 mb-4" id="content-1" style="display:block;">   
            
 
-                <form class="form-inline" method ="POST" action="includes/pds-config.php">   
+                <form class="form-inline" >   
 
                       
                 <div class="container ">
@@ -145,7 +145,7 @@
                        
                             <div class="form-group mx-sm-3 mb-2">
                                 <label for="">RESIDENTIAL ADDRESS</label>
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo  $emp_resi_add ?>" name="emp_resi_add">
+                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo  $emp_resi_add_title ?>" name="emp_resi_add_title">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -179,7 +179,7 @@
                  
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="">PERMANENT ADDRESS</label>
-                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo  $emp_per_add ?>" name="emp_per_add">
+                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo  $emp_per_add_title ?>" name="emp_per_add_title">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
@@ -275,14 +275,7 @@
                     </div>
                </div>
 
-               <div class="container">
-               <div class="text-right">
-                        <!--<button class="btn m-2" style="background: #345587;color:#fff;" type ="submit">PREV</button>-->
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff;" >SUBMIT</button>
-                    </div>
-                    
-               </div>
-                 
+              
          
             </div>
             </form>   

@@ -1,6 +1,6 @@
    <!--body section of learning and development-->
    <div class=" emp_profile_section2 pt-4 mb-5" id="content-7" style="background-color:#E6F7FF">  
-            <form class="form-inline" method="post" action="includes/learning-config.php">
+            <form class="form-inline" >
                 
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
@@ -48,12 +48,7 @@
             </div>
           </div>
 
-           <div class="container">
-           <div class="text-right">
-                        <!--<button class="btn m-2" style="background: #345587;color:#fff;" type ="submit">PREV</button>-->
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff;" >SUBMIT</button>
-                    </div>
-           </div>
+    
 
             </form>
         </div>

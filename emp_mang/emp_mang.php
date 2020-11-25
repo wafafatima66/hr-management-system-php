@@ -75,7 +75,7 @@
 
 if(isset($_POST['submit'])){
 
-  
+  echo "i ";
 
     $search_id=$_POST['search_id'];
     $search_name=$_POST['search_name'];
@@ -88,29 +88,28 @@ if(isset($_POST['submit'])){
     $runquery = $conn -> query($query);
     if($runquery == true){
      
-        
+        echo"ryt";
     while($mydata = $runquery -> fetch_assoc()){
 
 ?>
 
           <!--Table body-->
           <tbody>
-            <tr class="table-strip clickable-row" data-href='emp_profile.php'>
-              <th scope="row"><?php echo $mydata["emp_first_name"]?></th>
+
+            <tr class="table-strip clickable-row" data-href='emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>'>
+             
+              <td><?php echo $mydata["emp_first_name"]?></td>
               <td><?php echo $mydata["emp_id"]?></td>
-              <td><?php echo $mydata["emp_id"]?></td>
-              <td><?php echo $mydata["emp_id"]?></td>
-              <td><?php echo $mydata["emp_id"]?></td>
-              <td class="text-center"><i class="fas fa-edit"></i><i class="fas fa-trash-alt"></i></td> <td>36</td>
+              <td><?php echo $mydata["emp_gender"]?></td>
+              <td><?php echo $mydata["office_assign"]?></td>
+              <td><?php echo $mydata["emp_contact"]?></td>
+              <td><?php echo $mydata["emp_civil_status"]?></td>
+                <td class="text-center">
+                <a href="emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
+               <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
+              </td>
             </tr>
-            <tr class="clickable-row" data-href='emp_profile.php'>
-              <th scope="row">Anna</th>
-              <td>Female</td>
-              <td>office of the president</td>
-              <td>01892929729</td>
-              <td>Permanent</td>
-              <td class="text-center"><i class="fas fa-edit"></i><i class="fas fa-trash-alt"></i></td> <td>36</td>
-            </tr>
+           
             
           </tbody>
           <!--Table body-->

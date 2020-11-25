@@ -1,7 +1,7 @@
 
         <!--body section of VOLUNTARY WORKS-->
         <div class=" emp_profile_section2 pt-4 mb-5 pb-3 " id="content-6">  
-            <form class="form-inline" method="post" action="includes/voluntary-config.php">
+            <form class="form-inline" >
                 
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
@@ -45,12 +45,7 @@
                         <input type="text" class="form-control" id="" placeholder="<?php echo $position_vol?>" style="width:120px;" name="position">    
                     </div>
              
-                    <div class="container">
-                    <div class="text-right">
-                        <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
-                    </div>
-                    </div>
+                  
             </div>
             </form>
         </div>

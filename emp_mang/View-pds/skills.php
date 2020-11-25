@@ -2,7 +2,7 @@
     <div class=" emp_profile_section2 pt-4 mb-5 pb-3"    id="content-8">  
             <div class="container" style="background:#E6F7FF">
 
-            <form class="form-inline" method="post" action = "includes/skills-confiq.php">
+            <form class="form-inline" >
 
             <div class="row" >
 
@@ -54,12 +54,6 @@
                 </div>
             </div>
 
-            <div class="container">
-              <div class="text-right">
-                        <button class="btn m-2" style="background: #345587;color:#fff;";>PREV</button>
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff";>NEXT</button>
-                    </div>
-              </div>
 
               </form>
         </div>

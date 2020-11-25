@@ -6,7 +6,8 @@ if(isset($_POST['submit'])){
 
 
     $emp_id = $_SESSION['emp_id'];
-
+    
+    $office_assign = $_SESSION['office_assign'];
     $emp_first_name = $_SESSION['emp_first_name'];
     $emp_last_name = $_SESSION['emp_last_name'];
 
@@ -32,7 +33,7 @@ if(isset($_POST['submit'])){
           $emp_citizen_chk.= $chk1.",";  
        }*/
 
-    $emp_resi_add_title=$_POST['emp_resi_add'];
+    $emp_resi_add_title=$_POST['emp_resi_add_title'];
     $emp_resi_add_street=$_POST['emp_resi_add_street'];
     $emp_resi_add_subdivision=$_POST['emp_resi_add_subdivision'];
     $emp_resi_add_barangay=$_POST['emp_resi_add_barangay'];
@@ -40,7 +41,7 @@ if(isset($_POST['submit'])){
     $emp_resi_add_province=$_POST['emp_resi_add_province'];
     $emp_resi_add_zipcode=$_POST['emp_resi_add_zipcode'];
 
-    $emp_per_add_title=$_POST['emp_per_add'];
+    $emp_per_add_title=$_POST['emp_per_add_title'];
     $emp_per_add_street=$_POST['emp_per_add_street'];
     $emp_per_add_subdivision=$_POST['emp_per_add_subdivision'];
     $emp_per_add_barangay=$_POST['emp_per_add_barangay'];
@@ -80,7 +81,7 @@ if(isset($_POST['submit'])){
     require '../../includes/conn.php';
 
 
-            $sql="INSERT INTO pds (emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_citizen,emp_resi_add,emp_per_add,emp_contact,emp_id,emp_first_name,emp_last_name,emp_email,emp_citizen_chk) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            $sql="INSERT INTO pds (emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_citizen,emp_resi_add,emp_per_add,emp_contact,emp_id,emp_first_name,emp_last_name,emp_email,emp_citizen_chk,office_assign) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
             
              ON DUPLICATE KEY UPDATE
              emp_gender = '$emp_gender',
@@ -99,7 +100,7 @@ if(isset($_POST['submit'])){
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"ssiiissssiissss",$emp_gender, $emp_civil_status, $emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_citizen,$emp_resi_add,$emp_per_add,$emp_contact,$emp_id,$emp_first_name,$emp_last_name,$emp_email,$emp_citizen_chk);
+                    mysqli_stmt_bind_param($stmt,"ssiiisssssisssss",$emp_gender, $emp_civil_status, $emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_citizen,$emp_resi_add,$emp_per_add,$emp_contact,$emp_id,$emp_first_name,$emp_last_name,$emp_email,$emp_citizen_chk,$office_assign);
                     mysqli_stmt_execute($stmt);
 
                     header("Location:../emp_profile.php?submit=success&emp_id=$emp_id");
