@@ -16,14 +16,14 @@
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">POSITION/TITLE</label>
-                        <input type="text" class="form-control" id="" placeholder="" style="width:200px;" name="position">
+                        <input type="text" class="form-control" id="" placeholder="<?php echo $position?>" style="width:200px;" name="position">
                     </div>
                 </div>
 
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">EMPLOYER </label>
-                        <input type="text" class="form-control" id="" placeholder="" style="width:200px;" name="employer">
+                        <input type="text" class="form-control" id="" placeholder="<?php echo $employer?>" style="width:200px;" name="employer">
                     </div>
                 </div>
 
@@ -51,12 +51,12 @@
 
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">MONTHLY SALARY</label>
-                        <input type="text" class="form-control" id="" placeholder="" style="width:100px;" name="monthly_sal">    
+                        <input type="text" class="form-control" id="" placeholder="<?php echo $monthly_sal?>" style="width:100px;" name="monthly_sal">    
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">INCREMENT</label>
-                        <input type="text" class="form-control" id="" placeholder="" style="width:100px;" name="increment">    
+                        <input type="text" class="form-control" id="" placeholder="<?php echo $increment?>" style="width:100px;" name="increment">    
                     </div>
                     
                     <div class="form-group mx-sm-3 mb-2">

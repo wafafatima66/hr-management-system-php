@@ -59,13 +59,13 @@ if(isset($_POST['submit'])){
    // $emp_contact=$_POST["emp_tel_no,emp_mb_no,emp_email,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency"];
 
   
-    $emp_citizen_arr = array("$emp_citizen_title " , "$emp_dual_citizen"); // Declare an array
+    $emp_citizen_arr = array("$emp_citizen_title" , "$emp_dual_citizen"); // Declare an array
     $emp_citizen = implode(',',$emp_citizen_arr);
 
     $emp_citizen_chk = implode(',',$emp_citizen_chk_arr);
 
 
-    $emp_contact_arr = array("$emp_tel_no " , "$emp_mb_no "); // Declare an array
+    $emp_contact_arr = array("$emp_tel_no" , "$emp_mb_no"); // Declare an array
     $emp_contact = implode(',',$emp_contact_arr);
 
     
@@ -89,8 +89,7 @@ if(isset($_POST['submit'])){
              emp_height = '$emp_height',
              emp_weight = '$emp_weight',
              emp_blood = '$emp_blood',
-             emp_email = '$emp_email'
-            ";
+             emp_email = '$emp_email' ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -100,14 +99,10 @@ if(isset($_POST['submit'])){
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"sssiissssiissss",$emp_gender, $emp_civil_status, $emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_citizen,$emp_resi_add,$emp_per_add,$emp_contact,$emp_id,$emp_first_name,$emp_last_name,$emp_email,$emp_citizen_chk);
+                    mysqli_stmt_bind_param($stmt,"ssiiissssiissss",$emp_gender, $emp_civil_status, $emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_citizen,$emp_resi_add,$emp_per_add,$emp_contact,$emp_id,$emp_first_name,$emp_last_name,$emp_email,$emp_citizen_chk);
                     mysqli_stmt_execute($stmt);
 
-
-                 
-
-
-                    header("Location:../emp_profile.php?submit=success");
+                    header("Location:../emp_profile.php?submit=success&emp_id=$emp_id");
                             exit();
                      
                 }

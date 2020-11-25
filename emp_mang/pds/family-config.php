@@ -69,7 +69,7 @@ if(isset($_POST['submit'])){
 
                     mysqli_stmt_bind_param($stmt,"ssssissssi",$emp_spouse_name, $emp_sp_occupation, $emp_sp_employer,$emp_sp_add,$emp_sp_tel,$emp_father_name,$emp_mother_name,$emp_child_name,$emp_child_dob,$emp_id);
                     mysqli_stmt_execute($stmt);
-                    header("Location:../emp_profile.php?submit=success");
+                    header("Location:../emp_profile.php?submit=success&emp_id=$emp_id");
                             exit();
                 }
 

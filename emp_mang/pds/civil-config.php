@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
 
                     mysqli_stmt_bind_param($stmt,"ssissisi",$type_of, $name_of_exam, $rating,$exam_date,$exam_place,$licence_no,$licence_val,$emp_id);
                     mysqli_stmt_execute($stmt);
-                    header("Location:../emp_profile.php?submit=success");
+                    header("Location:../emp_profile.php?submit=successcivil&emp_id=$emp_id");
                             exit();
                 }
 
