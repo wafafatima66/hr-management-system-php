@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
                    
                    
 
-                    header("Location:emp_profile.php?register=success&empfirstname=$emp_first_name");
+                    header("Location:emp_profile.php?register=success");
                             exit();
                 }
         } 

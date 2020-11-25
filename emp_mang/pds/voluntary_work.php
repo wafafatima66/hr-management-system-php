@@ -6,14 +6,14 @@
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">NAME OF ORGANISATION</label>
-                        <input type="text" class="form-control" id="" placeholder="" style="width:200px;" name="name_org">
+                        <input type="text" class="form-control" id="" placeholder="<?php echo $name_org?>" style="width:200px;" name="name_org">
                     </div>
                 </div>
                 
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">ADDRESS</label>
-                        <input type="text" class="form-control" id="" placeholder="" style="width:200px;" name="org_add">
+                        <input type="text" class="form-control" id="" placeholder="<?php echo $org_add?>" style="width:200px;" name="org_add">
                     </div>
                 </div>
 
@@ -37,12 +37,12 @@
 
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">NO OF HOURS</label>
-                        <input type="text" class="form-control" id="" placeholder="" style="width:100px;" name="no_of_hrs">    
+                        <input type="text" class="form-control" id="" placeholder="<?php echo $no_of_hrs?>" style="width:100px;" name="no_of_hrs">    
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">POSITION/ROLE</label>
-                        <input type="text" class="form-control" id="" placeholder="" style="width:120px;" name="position">    
+                        <input type="text" class="form-control" id="" placeholder="<?php echo $position_vol?>" style="width:120px;" name="position">    
                     </div>
              
                     <div class="container">
