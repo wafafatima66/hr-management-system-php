@@ -30,7 +30,7 @@
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">EXAMINATION DATE</label>
-                            <input type="text" class="form-control" id="" placeholder="<?php echo $exam_date?>"  name="exam_date">
+                            <input type="date" class="form-control" id="" placeholder="<?php echo $exam_date?>"  name="exam_date">
                         </div>
                     </div>
 
@@ -60,7 +60,7 @@
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">VALIDITY</label>
-                            <input type="text" class="form-control" id="" placeholder="<?php echo $licence_val?>" name="licence_val">
+                            <input type="date" class="form-control" id="" placeholder="<?php echo $licence_val?>" name="licence_val">
                         </div>
                     </div>
 

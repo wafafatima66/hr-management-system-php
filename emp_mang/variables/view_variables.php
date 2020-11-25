@@ -9,7 +9,7 @@
   $runquery = $conn -> query($query);
   if($runquery == true){
    
-      echo"ryt";
+      
   while($data = $runquery -> fetch_assoc()){
 
 
@@ -63,7 +63,7 @@ $query = "SELECT * FROM family_background WHERE emp_id = '$emp_id'";
 $runquery = $conn -> query($query);
 if($runquery == true){
  
-    echo"ryt";
+   
 while($data = $runquery -> fetch_assoc()){
 
 
@@ -96,7 +96,7 @@ $query = "SELECT * FROM edu_background WHERE emp_id = '$emp_id'";
 $runquery = $conn -> query($query);
 if($runquery == true){
  
-    echo"ryt";
+   
 while($data = $runquery -> fetch_assoc()){
 
 
@@ -151,7 +151,7 @@ while($data = $runquery -> fetch_assoc()){
   $runquery = $conn -> query($query);
   if($runquery == true){
    
-      echo"ryt";
+     
   while($data = $runquery -> fetch_assoc()){
 
 
@@ -171,7 +171,7 @@ $query = "SELECT * FROM work_experience WHERE emp_id = '$emp_id'";
   $runquery = $conn -> query($query);
   if($runquery == true){
    
-      echo"ryt";
+      
   while($data = $runquery -> fetch_assoc()){
 
     $position = $data["position"];
@@ -188,7 +188,7 @@ $query = "SELECT * FROM voluntary_works WHERE emp_id = '$emp_id'";
   $runquery = $conn -> query($query);
   if($runquery == true){
    
-      echo"ryt";
+      
   while($data = $runquery -> fetch_assoc()){
 
     $name_org = $data["name_org"];
@@ -207,7 +207,7 @@ $query = "SELECT * FROM emp_learning WHERE emp_id = '$emp_id'";
 $runquery = $conn -> query($query);
 if($runquery == true){
  
-    echo"ryt";
+ 
 while($data = $runquery -> fetch_assoc()){
 
 

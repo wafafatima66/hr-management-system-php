@@ -31,15 +31,15 @@
 
           <form class="form-inline" method="post" action="">
           
-            <div class="form-group mx-sm-3 mb-2">
+            <div class="form-group mx-sm-2 mb-2">
               <input type="text" class="form-control" id="" placeholder="Employee ID" name="search_id">
             </div>
 
-            <div class="form-group mx-sm-3 mb-2">
+            <div class="form-group mx-sm-2 mb-2">
               <input type="text" class="form-control" id="" placeholder="Employee name" name="search_name">
             </div>
 
-            <div class="form-group mx-sm-3 mb-2">
+            <div class="form-group mx-sm-2 mb-2">
               <select class="form-control" name="search_status">
                     <option value="0">Select</option>
                     <option value="permanent"> Permanent</option>
@@ -125,8 +125,6 @@ if(isset($_POST['submit'])){
   }}else {
     echo'<p class="alert alert-danger h6">EMPLOYEE ID NOT FOUND</p>';
   }
-}else{
-  echo'<p class="alert alert-danger h6">WRONG QUIRIES</p>';
 }
 
   ?>

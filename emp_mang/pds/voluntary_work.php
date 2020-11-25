@@ -23,9 +23,9 @@
                         <label for="">INCLUSIVE DATES</label>
                             <div class="d-flex justify-content-center">
 
-                            <input type="text" class="form-control" id="" placeholder="" name="from_date">
+                            <input type="date" class="form-control mx-sm-1" id="" placeholder="" name="from_date">
 
-                            <input type="text" class="form-control" id="" placeholder="" name="to_date">
+                            <input type="date" class="form-control mx-sm-1" id="" placeholder="" name="to_date">
                         </div>
                     </div>
                 </div>
