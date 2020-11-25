@@ -13,7 +13,7 @@ if(isset($_REQUEST["emp_id"])){
     $runquery = $conn -> query($query);
     if($runquery == true){
      
-        echo"ryt";
+      
     while($mydata = $runquery -> fetch_assoc()){
 
         require 'variables/view_variables.php';

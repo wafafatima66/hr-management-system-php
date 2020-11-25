@@ -75,7 +75,7 @@
 
 if(isset($_POST['submit'])){
 
-  echo "i ";
+
 
     $search_id=$_POST['search_id'];
     $search_name=$_POST['search_name'];
@@ -88,7 +88,7 @@ if(isset($_POST['submit'])){
     $runquery = $conn -> query($query);
     if($runquery == true){
      
-        echo"ryt";
+       
     while($mydata = $runquery -> fetch_assoc()){
 
 ?>
@@ -102,7 +102,7 @@ if(isset($_POST['submit'])){
               <td><?php echo $mydata["emp_id"]?></td>
               <td><?php echo $mydata["emp_gender"]?></td>
               <td><?php echo $mydata["office_assign"]?></td>
-              <td><?php echo $mydata["emp_contact"]?></td>
+              <td><?php echo $mydata["emp_tel_no"]?></td>
               <td><?php echo $mydata["emp_civil_status"]?></td>
                 <td class="text-center">
                 <a href="emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
@@ -122,7 +122,12 @@ if(isset($_POST['submit'])){
     </div>
 
     <?php
-  }}}
+  }}else {
+    echo'<p class="alert alert-danger h6">EMPLOYEE ID NOT FOUND</p>';
+  }
+}else{
+  echo'<p class="alert alert-danger h6">WRONG QUIRIES</p>';
+}
 
   ?>
     </div>  <!-- /#page-content-wrapper -->

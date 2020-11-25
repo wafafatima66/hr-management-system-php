@@ -1,6 +1,6 @@
    
     <!--body section of WORK EXPERIENCE-->
-    <div class=" emp_profile_section2 pt-4 " id="content-5">  
+    <div class=" emp_profile_section2 pt-4 mb-5 pb-2 " id="content-5">  
             <form class="form-inline" method="post" action="includes/work-config.php">
                 
                 <div class="form-group mx-sm-3 mb-2">

@@ -2,7 +2,7 @@
    <!--body section of Reference-->
 
 
-   <div class=" emp_profile_section2 pt-4 " id="content-10">  
+   <div class=" emp_profile_section2 pt-4 mb-5 pb-2 " id="content-10">  
        
 
             <form class="form-inline" method="post" action="includes/ref-config.php">

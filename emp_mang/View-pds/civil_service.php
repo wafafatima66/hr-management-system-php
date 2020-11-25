@@ -1,7 +1,7 @@
  
  
    <!--body section of Civil service eligibility-->
-   <div class=" emp_profile_section2 pt-4 " id="content-4">  
+   <div class=" emp_profile_section2 pt-4 mb-5 pb-2 " id="content-4">  
             <form  class="form-inline">
                 
                     <div class="form-group mx-sm-3 mb-2">

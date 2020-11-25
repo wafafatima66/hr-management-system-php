@@ -22,10 +22,11 @@ if(isset($_POST['submit'])){
     $emp_tel_no = $_POST['emp_tel_no'];
     $emp_mb_no = $_POST['emp_mb_no'];
 
-    $emp_citizen_title=$_POST['emp_citizen']; 
+    $emp_citizen=$_POST['emp_citizen']; 
     $emp_dual_citizen=$_POST['emp_dual_citizen'];
 
     $emp_citizen_chk_arr=$_POST['emp_citizen_chk'];
+    $emp_citizen_chk = implode(',',$emp_citizen_chk_arr);
 
    /* $emp_citizen_chk="";  
     foreach($emp_citizen_chk_arr as $chk1)  
@@ -33,7 +34,7 @@ if(isset($_POST['submit'])){
           $emp_citizen_chk.= $chk1.",";  
        }*/
 
-    $emp_resi_add_title=$_POST['emp_resi_add_title'];
+    $emp_resi_add=$_POST['emp_resi_add'];
     $emp_resi_add_street=$_POST['emp_resi_add_street'];
     $emp_resi_add_subdivision=$_POST['emp_resi_add_subdivision'];
     $emp_resi_add_barangay=$_POST['emp_resi_add_barangay'];
@@ -41,7 +42,7 @@ if(isset($_POST['submit'])){
     $emp_resi_add_province=$_POST['emp_resi_add_province'];
     $emp_resi_add_zipcode=$_POST['emp_resi_add_zipcode'];
 
-    $emp_per_add_title=$_POST['emp_per_add_title'];
+    $emp_per_add=$_POST['emp_per_add'];
     $emp_per_add_street=$_POST['emp_per_add_street'];
     $emp_per_add_subdivision=$_POST['emp_per_add_subdivision'];
     $emp_per_add_barangay=$_POST['emp_per_add_barangay'];
@@ -49,48 +50,21 @@ if(isset($_POST['submit'])){
     $emp_per_add_province=$_POST['emp_per_add_province'];
     $emp_per_add_zipcode=$_POST['emp_per_add_zipcode'];
     
-    
-   // $emp_resi_add=$_POST['emp_resi_add, emp_resi_add_street, emp_resi_add_subdivision ,emp_resi_add_barangay,emp_resi_add_municipal ,emp_resi_add_province ,emp_resi_add_zipcode'];
-
-   
-
-   // $emp_per_add=$_POST['emp_per_add,emp_per_add_street,emp_per_add_subdivision,emp_per_add_barangay,emp_per_add_municipal,emp_per_add_province,emp_per_add_zipcode'];
-    
-
-   // $emp_contact=$_POST["emp_tel_no,emp_mb_no,emp_email,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency"];
-
-  
-    $emp_citizen_arr = array("$emp_citizen_title" , "$emp_dual_citizen"); // Declare an array
-    $emp_citizen = implode(',',$emp_citizen_arr);
-
-    $emp_citizen_chk = implode(',',$emp_citizen_chk_arr);
-
-
-    $emp_contact_arr = array("$emp_tel_no" , "$emp_mb_no"); // Declare an array
-    $emp_contact = implode(',',$emp_contact_arr);
+       $emp_contact_gs = $_POST['emp_contact_gs'];
+    $emp_contact_pag = $_POST['emp_contact_pag'];
+    $emp_contact_ph = $_POST['emp_contact_ph'];
+    $emp_contact_ss = $_POST['emp_contact_ss'];
+    $emp_contact_tin = $_POST['emp_contact_tin'];
+    $emp_contact_agency = $_POST['emp_contact_agency'];
 
     
-   $emp_resi_add_arr = array("$emp_resi_add_title " , "$emp_resi_add_street ", "$emp_resi_add_subdivision ","$emp_resi_add_barangay ","$emp_resi_add_municipal ","$emp_resi_add_province ","$emp_resi_add_zipcode "); 
-   $emp_resi_add = implode(',',$emp_resi_add_arr);
 
-    
-   $emp_per_add_arr = array("$emp_per_add_title " , "$emp_per_add_street ", "$emp_per_add_subdivision ","$emp_per_add_barangay ","$emp_per_add_municipal ","$emp_per_add_province ","$emp_per_add_zipcode "); 
-   $emp_per_add = implode(',',$emp_per_add_arr);
 
     
     require '../../includes/conn.php';
 
 
-            $sql="INSERT INTO pds (emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_citizen,emp_resi_add,emp_per_add,emp_contact,emp_id,emp_first_name,emp_last_name,emp_email,emp_citizen_chk,office_assign) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-            
-             ON DUPLICATE KEY UPDATE
-             emp_gender = '$emp_gender',
-             emp_civil_status = '$emp_civil_status',
-             emp_dob = '$emp_dob',
-             emp_height = '$emp_height',
-             emp_weight = '$emp_weight',
-             emp_blood = '$emp_blood',
-             emp_email = '$emp_email' ";
+            $sql="INSERT INTO pds (emp_id,office_assign,emp_first_name,emp_last_name,emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_email,emp_tel_no,emp_mb_no,emp_citizen,emp_dual_citizen,emp_citizen_chk,emp_resi_add,emp_resi_add_street,emp_resi_add_subdivision,emp_resi_add_barangay,emp_resi_add_municipal,emp_resi_add_province,emp_resi_add_zipcode,emp_per_add,emp_per_add_street,emp_per_add_subdivision,emp_per_add_barangay,emp_per_add_municipal,emp_per_add_province,emp_per_add_zipcode,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -100,7 +74,7 @@ if(isset($_POST['submit'])){
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"ssiiisssssisssss",$emp_gender, $emp_civil_status, $emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_citizen,$emp_resi_add,$emp_per_add,$emp_contact,$emp_id,$emp_first_name,$emp_last_name,$emp_email,$emp_citizen_chk,$office_assign);
+                    mysqli_stmt_bind_param($stmt,"issssssiissiisssssssssssssssssiiiiii",$emp_id, $office_assign, $emp_first_name,$emp_last_name,$emp_gender,$emp_civil_status,$emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_email,$emp_tel_no,$emp_mb_no,$emp_citizen,$emp_dual_citizen,$emp_citizen_chk,$emp_resi_add,$emp_resi_add_street,$emp_resi_add_subdivision,$emp_resi_add_barangay,$emp_resi_add_municipal,$emp_resi_add_province,$emp_resi_add_zipcode,$emp_per_add,$emp_per_add_street,$emp_per_add_subdivision,$emp_per_add_barangay,$emp_per_add_municipal,$emp_per_add_province,$emp_per_add_zipcode,$emp_contact_gs,$emp_contact_pag,$emp_contact_ph,$emp_contact_ss,$emp_contact_tin,$emp_contact_agency);
                     mysqli_stmt_execute($stmt);
 
                     header("Location:../emp_profile.php?submit=success&emp_id=$emp_id");

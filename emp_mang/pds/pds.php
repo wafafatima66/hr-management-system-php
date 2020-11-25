@@ -86,7 +86,7 @@
                        
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">CIVIL STATUS</label>
-                            <input type="text"  class="form-control" style="width:90px;" name="emp_civil_status" placeholder="<?php echo  $emp_civil_status ?>" name="<?php echo  $emp_civil_status ?>">
+                            <input type="text"  class="form-control" style="width:80px;" name="emp_civil_status" placeholder="<?php echo  $emp_civil_status ?>" name="<?php echo  $emp_civil_status ?>">
                             </div>
                             
                             <div class="form-group mx-sm-2 mb-2">
@@ -101,7 +101,7 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">WEIGHT</label>
-                            <input type="text" class="form-control" style="width:30px;" id="" placeholder="<?php echo  $emp_weight ?>" name="emp_weight">
+                            <input type="text" class="form-control" style="width:40px;" id="" placeholder="<?php echo  $emp_weight ?>" name="emp_weight">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">

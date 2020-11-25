@@ -1,3 +1,44 @@
+
+                ON DUPLICATE KEY UPDATE
+                from_date = '$from_date',
+                to_date = '$to_date',
+                position = '$position',
+                employer = '$employer',
+                govt_service = '$govt_service',
+                monthly_sal = '$monthly_sal',
+                increment = '$increment' ,
+                status = '$status' ,
+                office_assign = '$office_assign' 
+
+
+                
+                ON DUPLICATE KEY UPDATE
+                type_of = '$type_of',
+                name_of_exam = '$name_of_exam',
+                rating = '$rating',
+                exam_date = '$exam_date',
+                exam_place = '$exam_place',
+                licence_no = '$licence_no',
+                licence_val = '$licence_val'
+
+                
+                ON DUPLICATE KEY UPDATE
+                name_org = '$name_org',
+                org_add = '$org_add',
+                from_date = '$from_date',
+                to_date = '$to_date',
+                no_of_hrs = '$no_of_hrs',
+                position = '$position' 
+
+                
+                ON DUPLICATE KEY UPDATE
+                emp_gov_id = '$emp_gov_id',
+                emp_passport_no = '$emp_passport_no',
+                emp_place_of_insurance = '$emp_place_of_insurance',
+                ref_full_name = '$ref_full_name',
+                ref_add = '$ref_add',
+                ref_tel = '$ref_tel'
+                
 if(isset($_GET['emp_id'])){
     
     $emp_id=$_GET['emp_id'];

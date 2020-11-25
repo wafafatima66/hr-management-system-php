@@ -44,17 +44,7 @@ if(isset($_POST['submit'])){
                         
                
 
-            $sql="INSERT INTO work_experience (from_date,to_date,position,employer,govt_service,monthly_sal,increment,status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
-                ON DUPLICATE KEY UPDATE
-                from_date = '$from_date',
-                to_date = '$to_date',
-                position = '$position',
-                employer = '$employer',
-                govt_service = '$govt_service',
-                monthly_sal = '$monthly_sal',
-                increment = '$increment' ,
-                status = '$status' ,
-                office_assign = '$office_assign' ";
+            $sql="INSERT INTO work_experience (from_date,to_date,position,employer,govt_service,monthly_sal,increment,status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){

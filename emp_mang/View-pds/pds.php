@@ -86,7 +86,7 @@
                        
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">CIVIL STATUS</label>
-                            <input type="text"  class="form-control" style="width:90px;" name="emp_civil_status" placeholder="<?php echo  $emp_civil_status ?>" name="<?php echo  $emp_civil_status ?>">
+                            <input type="text"  class="form-control" style="width:80px;" name="emp_civil_status" placeholder="<?php echo  $emp_civil_status ?>" name="<?php echo  $emp_civil_status ?>">
                             </div>
                             
                             <div class="form-group mx-sm-2 mb-2">
@@ -101,7 +101,7 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">WEIGHT</label>
-                            <input type="text" class="form-control" style="width:30px;" id="" placeholder="<?php echo  $emp_weight ?>" name="emp_weight">
+                            <input type="text" class="form-control" style="width:40px;" id="" placeholder="<?php echo  $emp_weight ?>" name="emp_weight">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -145,7 +145,7 @@
                        
                             <div class="form-group mx-sm-3 mb-2">
                                 <label for="">RESIDENTIAL ADDRESS</label>
-                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo  $emp_resi_add_title ?>" name="emp_resi_add_title">
+                                <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo  $emp_resi_add ?>" name="emp_resi_add">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -179,7 +179,7 @@
                  
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="">PERMANENT ADDRESS</label>
-                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo  $emp_per_add_title ?>" name="emp_per_add_title">
+                            <input type="text" class="form-control" style="width:100px;"id="" placeholder="<?php echo  $emp_per_add ?>" name="emp_per_add">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
@@ -275,7 +275,14 @@
                     </div>
                </div>
 
-              
+               <div class="container">
+               <div class="text-right">
+                        <!--<button class="btn m-2" style="background: #345587;color:#fff;" type ="submit">PREV</button>-->
+                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff;" >SUBMIT</button>
+                    </div>
+                    
+               </div>
+                 
          
             </div>
             </form>   

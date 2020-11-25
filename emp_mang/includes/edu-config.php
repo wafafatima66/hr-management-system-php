@@ -52,17 +52,9 @@ if(isset($_POST['submit'])){
     
     require '../../includes/conn.php';
 
-     if(isset($sec_school_name)||isset($sec_degree)|| isset($sec_from_date)||isset($sec_to_date)||isset($sec_units)||isset($sec_award)||isset($sec_graduation)){
+     
                     
-            $sql="INSERT INTO secondary (name_of_school ,basic_education,from_date,to_date,highest_units,scholarships,year_graduated,emp_id) VALUE (?,?,?,?,?,?,?,?)
-            ON DUPLICATE KEY UPDATE
-            name_of_school = '$sec_school_name',
-            basic_education = '$sec_degree',
-            from_date = '$sec_from_date',
-            to_date = '$sec_to_date',
-            highest_units = '$sec_units',
-            scholarships = '$sec_award',
-            year_graduated = '$sec_graduation' ";
+            $sql="INSERT INTO edu_background (ele_school_name ,ele_degree,ele_from_date,ele_to_date,ele_units,ele_award,ele_graduation,sec_school_name ,sec_degree,sec_from_date,sec_to_date,sec_units,sec_award,sec_graduation,voc_school_name ,voc_degree,voc_from_date,voc_to_date,voc_units,voc_award,voc_graduation,coll_school_name ,coll_degree,coll_from_date,coll_to_date,coll_units,coll_award,coll_graduation,gra_school_name ,gra_degree,gra_from_date,gra_to_date,gra_units,gra_award,gra_graduation,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
 
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -72,43 +64,19 @@ if(isset($_POST['submit'])){
             else{
 
 
-                mysqli_stmt_bind_param($stmt,"sssssssi",$sec_school_name, $sec_degree, $sec_from_date,$sec_to_date,$sec_units,$sec_award,$sec_graduation,$emp_id);
+                mysqli_stmt_bind_param($stmt,"ssssissssssissssssissssssissssssissi",$ele_school_name, $ele_degree, $ele_from_date,$ele_to_date,$ele_units,$ele_award,$ele_graduation,$sec_school_name,$sec_degree,$sec_from_date,$sec_to_date,$sec_units,$sec_award,$sec_graduation,$voc_school_name,$voc_degree,$voc_from_date,$voc_to_date,$voc_units,$voc_award,$voc_graduation,$coll_school_name,$coll_degree,$coll_from_date,$coll_to_date,$coll_units,$coll_award,$coll_graduation,$gra_school_name,$gra_degree,$gra_from_date,$gra_to_date,$gra_units,$gra_award,$gra_graduation,$emp_id);
                 mysqli_stmt_execute($stmt);
                 header("Location:../emp_profile.php?submit=success");
                         exit();
             }
 
-             }
+             
 
     
-          if(isset($ele_school_name)||isset($ele_degree)|| isset($ele_from_date)||isset($ele_to_date)||isset($ele_units)||isset($ele_award)||isset($ele_graduation) ){
-
-            $sql="INSERT INTO elementary (name_of_school ,basic_education,from_date,to_date,highest_units,scholarships,year_graduated,emp_id) VALUE (?,?,?,?,?,?,?,?)
-            ON DUPLICATE KEY UPDATE
-            name_of_school = '$ele_school_name',
-            basic_education = '$ele_degree',
-            from_date = '$ele_from_date',
-            to_date = '$ele_to_date',
-            highest_units = '$ele_units',
-            scholarships = '$ele_award',
-            year_graduated = '$ele_graduation' ";
-
-        $stmt = mysqli_stmt_init($conn);
-        if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location:../emp_profile.php?error=sqlerror");
-            exit();
-        }
-            else{
-
-
-                mysqli_stmt_bind_param($stmt,"sssssssi",$ele_school_name, $ele_degree, $ele_from_date,$ele_to_date,$ele_units,$ele_award,$ele_graduation,$emp_id);
-                mysqli_stmt_execute($stmt);
-                header("Location:../emp_profile.php?submit=success");
-                        exit();
-            }
+    
 
          
-          }
+          
               
           mysqli_stmt_close($stmt);
           mysqli_close($conn);

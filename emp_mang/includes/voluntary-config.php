@@ -22,14 +22,7 @@ if(isset($_POST['submit'])){
     require '../../includes/conn.php';
 
 
-            $sql="INSERT INTO voluntary_works (name_org,org_add,from_date,to_date,no_of_hrs,position,emp_id) VALUE (?,?,?,?,?,?,?)
-                ON DUPLICATE KEY UPDATE
-                name_org = '$name_org',
-                org_add = '$org_add',
-                from_date = '$from_date',
-                to_date = '$to_date',
-                no_of_hrs = '$no_of_hrs',
-                position = '$position' ";
+            $sql="INSERT INTO voluntary_works (name_org,org_add,from_date,to_date,no_of_hrs,position,emp_id) VALUE (?,?,?,?,?,?,?)";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){

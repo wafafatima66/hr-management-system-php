@@ -25,14 +25,7 @@ if(isset($_POST['submit'])){
     require '../../includes/conn.php';
 
 
-            $sql="INSERT INTO emp_references (ref_full_name,ref_add,ref_tel,emp_gov_id,emp_passport_no,emp_place_of_insurance,emp_id) VALUE (?,?,?,?,?,?,?)
-                ON DUPLICATE KEY UPDATE
-                emp_gov_id = '$emp_gov_id',
-                emp_passport_no = '$emp_passport_no',
-                emp_place_of_insurance = '$emp_place_of_insurance',
-                ref_full_name = '$ref_full_name',
-                ref_add = '$ref_add',
-                ref_tel = '$ref_tel'";
+            $sql="INSERT INTO emp_references (ref_full_name,ref_add,ref_tel,emp_gov_id,emp_passport_no,emp_place_of_insurance,emp_id) VALUE (?,?,?,?,?,?,?)";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){

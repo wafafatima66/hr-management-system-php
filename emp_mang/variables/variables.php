@@ -1,6 +1,7 @@
 
 <?php
 
+//pds 
 $emp_gender = "";
     $emp_civil_status ="";
     $emp_height = "";
@@ -51,6 +52,48 @@ $emp_gender = "";
     $emp_mother_middlename = "Middle";
     $emp_mother_extname = "Ext";
 
+//edubackground
+
+$ele_school_name = "";
+$ele_degree = "";
+$ele_from_date = "";
+$ele_to_date = "";
+$ele_units = "";
+$ele_award = "";
+$ele_graduation = "";
+
+$sec_school_name = "";
+$sec_degree = "";
+$sec_from_date = "";
+$sec_to_date = "";
+$sec_units = "" ;
+$sec_award = "";
+$sec_graduation = "";
+
+$voc_school_name = "";
+$voc_degree = "";
+$voc_from_date = "";
+$voc_to_date = "";
+$voc_units = "";
+$voc_award = "";
+$voc_graduation = "";
+
+
+$coll_school_name = "";
+$coll_degree = "";
+$coll_from_date = "";
+$coll_to_date = "";
+$coll_units = "";
+$coll_award = "";
+$coll_graduation = "";
+
+$gra_school_name = "";
+$gra_degree = "";
+$gra_from_date = "";
+$gra_to_date = "";
+$gra_units = "";
+$gra_award = "";
+$gra_graduation = "";
 
     //civil-service 
     $type_of = "";
@@ -72,5 +115,13 @@ $emp_gender = "";
     $org_add ="";
     $no_of_hrs = "";
     $position_vol = "";
+
+    //learning
+    $title_of_training = "";
+    $type_of_position = "";
+    $no_of_hrs = "";
+    $from_date = "";
+    $to_date = "";
+    $conducted_by = "";
 
     ?>

@@ -22,15 +22,7 @@ if(isset($_POST['submit'])){
     require '../../includes/conn.php';
 
 
-            $sql="INSERT INTO civil_service (type_of,name_of_exam,rating,exam_date,exam_place,licence_no,licence_val,emp_id) VALUE (?,?,?,?,?,?,?,?)
-                ON DUPLICATE KEY UPDATE
-                type_of = '$type_of',
-                name_of_exam = '$name_of_exam',
-                rating = '$rating',
-                exam_date = '$exam_date',
-                exam_place = '$exam_place',
-                licence_no = '$licence_no',
-                licence_val = '$licence_val' ";
+            $sql="INSERT INTO civil_service (type_of,name_of_exam,rating,exam_date,exam_place,licence_no,licence_val,emp_id) VALUE (?,?,?,?,?,?,?,?) ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
