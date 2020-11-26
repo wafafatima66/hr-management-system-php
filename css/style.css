@@ -565,3 +565,6 @@ color: #345587;
  .in{
     display: block;
 }
+.fa-plus .fa-minus{
+    color:#E6AD0F;
+}

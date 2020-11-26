@@ -113,6 +113,9 @@ if(isset($_SESSION['emp_first_name'])){
                   $office_assign = $mydata["office_assign"];
                   $emp_status = $mydata["emp_status"];
 
+                  $emp_image = '../emp_mang/image/'.$mydata["emp_image"];
+
+
                   $emp_id = $mydata["emp_id"];
                   $office_assign= $mydata["office_assign"];
 
@@ -146,7 +149,9 @@ if(isset($_SESSION['emp_first_name'])){
         </div>
 
         <div class="col-lg-3 p-0 m-0">
-            <div class="emp_profile_image"> </div>
+            <div class="emp_profile_image"> 
+                <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
+            </div>
         </div>
        
     </div>
