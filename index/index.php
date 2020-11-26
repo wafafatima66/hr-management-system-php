@@ -4,13 +4,15 @@
 
   
 <!---Main body-->
-
+<div class="container-fluid">
       <!---section 1-->
-      <div class="container-fluid">
+      
      
-       <div class="row p-3">
+      <div class="container">
 
-         <div class="col-lg-5 section1-box"> 
+      <div class="row p-3">
+
+          <div class="col-lg-5 section1-box"> 
             <div class="row">
               <div class="col-lg-6">
                 Male
@@ -23,9 +25,9 @@
             </div>
               <h1 class="text-center">240</h1>
               <p class="text-center">REQULAR EMPLOYEES</p>
-         </div>
-         
-         <div class="col-lg-5 section1-box ml-auto"> 
+          </div>
+
+          <div class="col-lg-5 section1-box ml-auto"> 
             <div class="row">
               <div class="col-lg-6">
                 Male
@@ -38,27 +40,42 @@
             </div>
               <h1 class="text-center">240</h1>
               <p class="text-center">CONTRACTUAL EMPLOYEES</p>
-         </div>
-       </div> <!----end of section 1-->
+          </div>
+
+      </div> 
+
+      </div> <!----end of section 1-->
 
         <!--section 2-->
-        <form class="form-inline">
+
+        <div class="container-table form-inline">
+
+        
         <button type="button" class="btn mb-2" data-toggle="modal" data-target="#addemployee" ><i class="fas fa-plus pr-2"></i>Add Employee</button> 
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="text" class="form-control" id="" placeholder="Employee ID">
+
+        <form class="form-inline" method="post" action="">
+          
+            <div class="form-group mx-sm-2 mb-2">
+              <input type="text" class="form-control" id="" placeholder="Employee ID" name="search_id">
             </div>
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="text" class="form-control" id="" placeholder="Employee name">
+
+            <div class="form-group mx-sm-2 mb-2">
+              <input type="text" class="form-control" id="" placeholder="Employee name" name="search_name">
             </div>
-            <div class="form-group mx-sm-3 mb-2">
-              <select class="form-control">
-                <option selected>Status</option>
-                <option>...</option>
+
+            <div class="form-group mx-sm-2 mb-2">
+              <select class="form-control" name="search_status">
+                    <option value="0">Select</option>
+                    <option value="permanent"> Permanent</option>
+                    <option value="contractual" >contractual</option>
+                    <option value="job_order" >job_order</option>
             </select>
             </div>
-            <button type="submit" class="btn btn-search mb-2 pr-5 pl-5">SEARCH</button> 
+
+            <button type="submit" name="submit" class="btn btn-search mb-2 pr-5 pl-5">SEARCH</button> 
         </form>
-  
+
+       
 
       <!---section 3 -->
 
@@ -79,35 +96,122 @@
           </thead>
           <!--Table head-->
 
+          
+
+          <?php
+
+if(isset($_POST['submit'])){
+
+
+
+    $search_id=$_POST['search_id'];
+    $search_name=$_POST['search_name'];
+    $search_status=$_POST['search_status'];
+
+    require '../includes/conn.php';
+
+    $query = "SELECT * FROM pds WHERE emp_id = '$search_id' AND emp_first_name = '$search_name' ";
+
+    $runquery = $conn -> query($query);
+    if($runquery == true){
+     
+       
+    while($mydata = $runquery -> fetch_assoc()){
+
+?>
+
           <!--Table body-->
           <tbody>
-            <tr class="table-strip">
-              <th scope="row">Kate</th>
-              <td>14-123</td>
-              <td>female</td>
-              <td>USA</td>
-              <td>Web Designer</td>
-              <td class="text-center"><i class="fas fa-edit"></i><i class="fas fa-trash-alt"></i></td> <td>36</td>
+
+            <tr class="table-strip clickable-row" data-href='emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>'>
+             
+              <td><?php echo $mydata["emp_first_name"]?></td>
+              <td><?php echo $mydata["emp_id"]?></td>
+              <td><?php echo $mydata["emp_gender"]?></td>
+              <td><?php echo $mydata["office_assign"]?></td>
+              <td><?php echo $mydata["emp_tel_no"]?></td>
+              <td><?php echo $mydata["emp_civil_status"]?></td>
+                <td class="text-center">
+                <a href="emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
+               <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
+              </td>
             </tr>
-            <tr>
-              <th scope="row">Anna</th>
-              <td>Female</td>
-              <td>office of the president</td>
-              <td>01892929729</td>
-              <td>Permanent</td>
-              <td class="text-center"><i class="fas fa-edit"></i><i class="fas fa-trash-alt"></i></td> <td>36</td>
-            </tr>
+           
             
           </tbody>
           <!--Table body-->
 
 
-        </table>
-        <!--Table-->
+          
+
+      
+   
+
+    <?php
+  }}else {
+    echo'<p class="alert alert-danger h6">EMPLOYEE ID NOT FOUND</p>';
+  }
+}
+
+else {
+
+  require '../includes/conn.php';
+
+  $query = "SELECT * FROM pds LIMIT 5 ";
+
+  $runquery = $conn -> query($query);
+  if($runquery == true){
+   
+     
+  while($mydata = $runquery -> fetch_assoc()){
+
+?>
+
+
+          <!--Table body-->
+          <tbody>
+        
+          <tr class="table-strip clickable-row" data-href='../emp_mang/emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>'>
+           
+            <td><?php echo $mydata["emp_first_name"]?></td>
+            <td><?php echo $mydata["emp_id"]?></td>
+            <td><?php echo $mydata["emp_gender"]?></td>
+            <td><?php echo $mydata["office_assign"]?></td>
+            <td><?php echo $mydata["emp_tel_no"]?></td>
+            <td><?php echo $mydata["emp_civil_status"]?></td>
+              <td class="text-center">
+              <a href="emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
+             <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
+            </td>
+          </tr>
+         
+          </tbody>
+          <!--Table body-->
+      
+
+
+    
+
+    
+ 
+
+  <?php
+  }
+  }
+  }
+
+  ?>
+
+</table>
+      <!--Table-->
+</div>
 
         <!---section 4 -->
         <!---first coluum--->
-          <div class="row mt-5">
+        <div class="container">
+
+        <div class="row mt-5">
+
             <div class="col-lg-4 p-3">
               <div class="card section4-card">
                 <div class="cart-title section4-card-title"><h2>Personal Profile</h2></div>
@@ -147,24 +251,31 @@
             <div class="col-lg-4 p-3">
               <div class="card section4-card">
                 <div class="cart-title section4-card-title"><h2>On leave</h2></div>
+
                 <table class="section4-table">
+
                   <tr class="section4-table-strip">
                     <td>Female</td>
                     <td>office of the president</td>
                   </tr>
+
                   <tr>
                     <td>Female</td>
                     <td>office of the president</td>
                   </tr>
+
                   <tr class="section4-table-strip">
                     <td>Female</td>
                     <td>office of the president</td>
                   </tr>
+
                   <tr>
                     <td>Female</td>
                     <td>office of the president</td>
                   </tr>
+                  
                 </table>
+
               </div>
             </div>
 
@@ -191,7 +302,9 @@
             </div>
 
           </div>
+        </div>
 
       </div><!---end of Main body-->
       
-     
+      </div>  <!-- /#page-content-wrapper -->
+  </div> <!-- /#wrapper -->

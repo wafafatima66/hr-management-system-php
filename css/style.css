@@ -327,6 +327,11 @@ color: #345587;
     padding: 18px;
     border: #345587 solid 2px;
 }
+.other_info  p{
+    font-size:12px;
+    color: #345587;
+    font-weight: 600;
+ }
 
 /*LEAVE MANAGEMENT*/
 .leave_mang_section{
