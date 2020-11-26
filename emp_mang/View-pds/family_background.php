@@ -1,8 +1,56 @@
 
         <!--body section of family background-->
         <div class=" emp_profile_section2 pt-4 mb-5 pb-4" id="content-2">  
+
+
+<?php
+        if(isset($_POST['update'])){
+
+        $emp_id = $_REQUEST["emp_id"];
+
+
+        if(isset($_POST["emp_spouse_lastname"]) || isset($_POST["emp_sp_occupation"]) || isset($_POST["emp_father_lastname"])  || isset($_POST["emp_mother_lastname"])){
+
+    $emp_spouse_lastname=$_POST['emp_spouse_lastname'];
+    $emp_spouse_firstname=$_POST['emp_spouse_firstname'];
+    $emp_spouse_middlename=$_POST['emp_spouse_middlename'];
+    $emp_spouse_extname=$_POST['emp_spouse_extname'];
+
+    $emp_sp_occupation=$_POST['emp_sp_occupation'];
+    $emp_sp_employer=$_POST['emp_sp_employer'];
+    $emp_sp_add=$_POST['emp_sp_add'];
+    $emp_sp_tel=$_POST['emp_sp_tel'];
+
+    $emp_child_name_arr=$_POST['emp_child_name'];
+    $emp_child_dob_arr=$_POST['emp_child_dob'];
+
+    $emp_child_name= implode(',',$emp_child_name_arr);
+    $emp_child_dob= implode(',',$emp_child_dob_arr);
+
+    $emp_father_lastname=$_POST['emp_father_lastname'];
+    $emp_father_firstname=$_POST['emp_father_firstname'];
+    $emp_father_middlename=$_POST['emp_father_middlename'];
+    $emp_father_extname=$_POST['emp_father_extname'];
+
+
+    $emp_mother_lastname=$_POST['emp_mother_lastname'];
+    $emp_mother_firstname=$_POST['emp_mother_firstname'];
+    $emp_mother_middlename=$_POST['emp_mother_middlename'];
+    $emp_mother_extname=$_POST['emp_mother_extname'];
+
+    $upquery = "UPDATE family_background SET emp_spouse_lastname= '$emp_spouse_lastname', emp_spouse_firstname ='$emp_spouse_firstname' , emp_spouse_middlename ='$emp_spouse_middlename' , emp_spouse_extname ='$emp_spouse_extname' , emp_sp_occupation ='$emp_sp_occupation' , emp_sp_employer ='$emp_sp_employer' , emp_sp_add ='$emp_sp_add', emp_sp_tel= '$emp_sp_tel', emp_child_name ='$emp_child_name' , emp_child_dob ='$emp_child_dob' , emp_father_lastname ='$emp_father_lastname' , emp_father_firstname ='$emp_father_firstname' , emp_father_middlename ='$emp_father_middlename' , emp_father_extname ='$emp_father_extname', emp_mother_lastname= '$emp_mother_lastname', emp_mother_firstname ='$emp_mother_firstname' , emp_mother_middlename ='$emp_mother_middlename' , emp_mother_extname ='$emp_mother_extname' WHERE emp_id = $emp_id";
+    
+    $runupquery = $conn -> query($upquery);
+    if($runupquery==true){
+        echo'<p class="alert alert-success h6">UPDATED </p>';
+    } else echo'<p class="alert alert-danger h6"> NOT UPDATED </p>';
+
+}
+}
+
+    ?>
            
-                <form class="form-inline" >
+                <form class="form-inline" method = "post" action=""  >
 
                 <div class="container">
                      <div class="row">
@@ -151,12 +199,21 @@
                 </div>
             </div>
 
-                
+            <div class="container">
+                    <div class="text-right">
+                    
+                    <button  type ="submit" name="update" class="btn m-2" style="background: #345587; color:#fff";>UPDATE</button>
 
-            </form> 
+                    </div>
+
+           
 
         </div>
-           
+        </form> 
+        
+            
+
+</div>
             
             
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

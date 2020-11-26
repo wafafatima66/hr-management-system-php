@@ -56,7 +56,7 @@ if(isset($_POST['submit'])){
 
                     mysqli_stmt_bind_param($stmt,"sssssiissi",$from_date, $to_date, $position,$employer,$govt_service,$monthly_sal,$increment,$status,$office_assign,$emp_id);
                     mysqli_stmt_execute($stmt);
-                    header("Location:../emp_profile.php?submit=success");
+                    header("Location:../emp_profile.php?submit=work");
                             exit();
                 }
 

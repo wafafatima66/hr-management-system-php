@@ -1,6 +1,6 @@
 
         <!--body section of family background-->
-        <div class=" emp_profile_section2 pt-4 mb-5 pb-4" id="content-2">  
+        <div class=" emp_profile_section2 pt-4 mb-5 pb-4 " id="content-2">  
            
                 <form class="form-inline" method ="POST" action="includes/family-config.php">
 

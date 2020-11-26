@@ -37,7 +37,7 @@ if(isset($_POST['submit'])){
 
                     mysqli_stmt_bind_param($stmt,"sssiisi",$ref_full_name, $ref_add, $ref_tel,$emp_gov_id,$emp_passport_no,$emp_place_of_insurance,$emp_id);
                     mysqli_stmt_execute($stmt);
-                    header("Location:../emp_profile.php?submit=success");
+                    header("Location:../emp_profile.php?submit=ref");
                             exit();
                 }
 

@@ -77,7 +77,7 @@ if(isset($_POST['submit'])){
                     mysqli_stmt_bind_param($stmt,"issssssiissiisssssssssssssssssiiiiii",$emp_id, $office_assign, $emp_first_name,$emp_last_name,$emp_gender,$emp_civil_status,$emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_email,$emp_tel_no,$emp_mb_no,$emp_citizen,$emp_dual_citizen,$emp_citizen_chk,$emp_resi_add,$emp_resi_add_street,$emp_resi_add_subdivision,$emp_resi_add_barangay,$emp_resi_add_municipal,$emp_resi_add_province,$emp_resi_add_zipcode,$emp_per_add,$emp_per_add_street,$emp_per_add_subdivision,$emp_per_add_barangay,$emp_per_add_municipal,$emp_per_add_province,$emp_per_add_zipcode,$emp_contact_gs,$emp_contact_pag,$emp_contact_ph,$emp_contact_ss,$emp_contact_tin,$emp_contact_agency);
                     mysqli_stmt_execute($stmt);
 
-                    header("Location:../emp_profile.php?submit=success&emp_id=$emp_id");
+                    header("Location:../emp_profile.php?submit=pds");
                             exit();
                      
                 }

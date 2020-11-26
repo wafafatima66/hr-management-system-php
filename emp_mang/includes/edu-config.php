@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
 
                 mysqli_stmt_bind_param($stmt,"ssssissssssissssssissssssissssssissi",$ele_school_name, $ele_degree, $ele_from_date,$ele_to_date,$ele_units,$ele_award,$ele_graduation,$sec_school_name,$sec_degree,$sec_from_date,$sec_to_date,$sec_units,$sec_award,$sec_graduation,$voc_school_name,$voc_degree,$voc_from_date,$voc_to_date,$voc_units,$voc_award,$voc_graduation,$coll_school_name,$coll_degree,$coll_from_date,$coll_to_date,$coll_units,$coll_award,$coll_graduation,$gra_school_name,$gra_degree,$gra_from_date,$gra_to_date,$gra_units,$gra_award,$gra_graduation,$emp_id);
                 mysqli_stmt_execute($stmt);
-                header("Location:../emp_profile.php?submit=success");
+                header("Location:../emp_profile.php?submit=edu");
                         exit();
             }
 

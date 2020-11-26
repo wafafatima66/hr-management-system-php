@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
 
                     mysqli_stmt_bind_param($stmt,"sssi",$emp_special_skills, $non_academic, $membership,$emp_id);
                     mysqli_stmt_execute($stmt);
-                    header("Location:../emp_profile.php?submit=success");
+                    header("Location:../emp_profile.php?submit=skill");
                             exit();
                 }
 

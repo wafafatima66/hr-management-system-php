@@ -34,7 +34,7 @@ if(isset($_POST['submit'])){
 
                     mysqli_stmt_bind_param($stmt,"ssisssi",$title_of_training, $type_of_position, $no_of_hrs,$from_date,$to_date,$conducted_by,$emp_id);
                     mysqli_stmt_execute($stmt);
-                    header("Location:../emp_profile.php?submit=success");
+                    header("Location:../emp_profile.php?submit=learn");
                             exit();
                 }
 

@@ -10,7 +10,7 @@
                 <div class="emp_profile_section1 ">
                         <form class="form-inline " > 
                             <button  onclick="openpanel('content-1')" type="button" class="btn emp_profile_section1_btn active" >PERSONAL INFORMATION</button>
-                            <button onclick="openpanel('content-2')"  type="button" class="btn emp_profile_section1_btn">FAMILY BACKGROUND</button>
+                            <button onclick="openpanel('content-2')"  type="button" class="btn emp_profile_section1_btn ">FAMILY BACKGROUND</button>
                             <button   onclick="openpanel('content-3')"type="button" class="btn emp_profile_section1_btn">EDUCATIONAL BACKGROUND</button> 
                             <button  onclick="openpanel('content-4') "type="button" class="btn emp_profile_section1_btn" >CIVIL SERVICE ELIGIBILITY</button> 
                             <button   onclick="openpanel('content-5')"type="button"class="btn emp_profile_section1_btn" >WORK EXPERIENCE</button> 
@@ -278,7 +278,7 @@
                <div class="container">
                <div class="text-right">
                         <!--<button class="btn m-2" style="background: #345587;color:#fff;" type ="submit">PREV</button>-->
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff;" >SUBMIT</button>
+                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff;"  >SUBMIT</button>
                     </div>
                     
                </div>
@@ -305,3 +305,5 @@
         <?php include 'references.php'; ?>
 
         </div>
+
+      

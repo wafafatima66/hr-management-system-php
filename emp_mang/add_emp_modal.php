@@ -1,4 +1,5 @@
 
+
   <!--button to add employye-->
       <!-- Modal -->
       <div class="modal fade addemployee " id="addemployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
@@ -17,7 +18,7 @@
                     <div class="pt-3">
                      <h6>Employee</h6>
 
-                      <form class="form-inline " method="post" action="add_emp_config.php">
+                      <form class="form-inline " method="post" action="../emp_mang/add_emp_config.php">
 
                         <div class="form-group mx-sm-2 mb-2">
                             <label for="">Name</label>
