@@ -76,7 +76,7 @@
                <div class="container">
                     <div class="text-right">
                         <button class="btn m-2" style="background: #345587;color:#fff;" onclick="openpanel('content-4','ser')" >PREV</button>
-                        <button  type ="submit" name="submit" class="btn m-2" style="background: #345587; color:#fff" onclick="openpanel('content-5','wor')" >NEXT</button>
+                        <button  type ="button"  class="btn m-2" style="background: #345587; color:#fff" onclick="openpanel('content-5','wor')" >NEXT</button>
                     </div>
                </div>
 

@@ -22,7 +22,7 @@
 
                       <div class="form-group mx-sm-3 mb-2 mt-2">
                           <label for="">Employer ID</label>
-                            <input type="text" name="emp_id" value="1234" >
+                            <input type="text" name="emp_id" value="1234" class="form-control" >
                             </div>  
 
                         <div class="form-group mx-sm-2 mb-2">
@@ -35,11 +35,11 @@
                         </div>
 
                         <div class="form-group mx-sm-2 mb-2">
-                          <input type="text" class="form-control" id="" placeholder="Middle name" name="emp_middle_name" required>
+                          <input type="text" class="form-control" id="" placeholder="Middle name" name="emp_middle_name" >
                         </div>
 
                         <div class="form-group mx-sm-2 mb-2">
-                          <input type="text" class="form-control" id="" placeholder="Ext" name="emp_ext" required>
+                          <input type="text" class="form-control" id="" placeholder="Ext" name="emp_ext">
                         </div> 
                         
                         </div>
@@ -52,8 +52,8 @@
 
                         <div class="form-group mx-sm-3 mb-2">
                             <label for="">Status</label>
-                            <select class="form-control" name="emp_status" style="font-size:12px">
-                              <option value="0">Select</option>
+                            <select class="form-control" name="emp_status" style="font-size:12px" required>
+                            
                               <option value="permanent"> Permanent</option>
                               <option value="contractual" >contractual</option>
                               <option value="job_order" >job_order</option>
@@ -77,12 +77,12 @@
                         </div>
                         <div class="form-group mx-sm-3 mb-2 mt-2">
                             <label for="">Office Assignment</label>
-                            <input type="text" class="form-control" id="" name="office_assign">
+                            <input type="text" class="form-control" id="" name="office_assign" required>
                         </div>
 
                           <div class="form-group mx-sm-3 mb-2 mt-2">
                           <label for="">Employer Image</label>
-                            <input type="file" name="emp_image"  >
+                            <input type="file" name="emp_image"   >
                             </div>                        
                             
                       </div>

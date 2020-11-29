@@ -8,8 +8,8 @@
                     <div class="d-flex flex-column">
                         <label for="">INCLUSIVE DATES</label>
                         <div class="d-flex justify-content-center">
-                        <input type="date" class="form-control mx-sm-1" id="" value="" style="width:140px;" name="from_date">
-                        <input type="date" class="form-control mx-sm-1" id="" value="" style="width:140px;" name="to_date">
+                        <input type="date" class="form-control mx-sm-1" id="" value="" style="width:140px;" name="work_from_date">
+                        <input type="date" class="form-control mx-sm-1" id="" value="" style="width:140px;" name="work_to_date">
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@
                     
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">STATUS</label>
-                        <select class="form-control" style="width:100px;" name="status">
+                        <select class="form-control" style="width:100px;" name="work_status">
                             <option value = "">Status</option>
                             <option value="">...</option>
                         </select>  

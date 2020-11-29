@@ -6,7 +6,7 @@
         <!--menu section-->
         
             <div class="row">
-                <div class="col-lg-9">
+                <div class="col-lg-9 d-flex align-items-end pr-0">
                 <div class="emp_profile_section1 ">
                         <form class="form-inline " > 
                             <button  onclick="openpanel('content-1','pds')" type="button" class="btn emp_profile_section1_btn active" id="pds" >PERSONAL INFORMATION</button>
@@ -22,6 +22,13 @@
                         </form>
                     </div>
                 </div>
+              
+                <div class="col-lg-3 pl-0">
+                    <div class="emp_profile_image"> 
+                        <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
+                    </div>
+                </div>
+
             </div>
         </div>
 

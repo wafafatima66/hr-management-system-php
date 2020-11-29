@@ -4,26 +4,37 @@
         <!--menu section--->
          <div class="container">
             <div class="row">
-                    <div class="col-lg-9">
-                            <div class="emp_profile_section2_header">
+                    <div class="col-lg-9 d-flex align-items-end pr-0">
+                            <div class="emp_profile_section2_header " style="width:100%">
                                 <h3 class="p-2 m-2" > LEAVE LEDGER </h3>
                             </div>
                     </div>
+
+                    <div class="col-lg-3 pl-0">
+                    <div class="emp_profile_image"> 
+                        <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
+                    </div>
+                </div>
+                
                 </div>
             </div>
 
         <!--Body section--->
-        <div style="background:#E6F7FF">
-                    <div class="container">
+
+        <div class="container">
+
+        <div class="ledger-body" style="border: #345587 solid 2px;">
+        <div class="container mt-3 pt-2">
+                 
                     <form class="form-inline "> 
                         <button  onclick="openpanel2('panel-1')" type="button" class="btn emp_profile_section2_tab_btn active" >SUMMARY OF LEAVES</button>
                         <button onclick="openpanel2('panel-2')"  type="button" class="btn emp_profile_section2_tab_btn ">LEAVE CREDIT</button>
                     </form>
                     </div>
-        </div>
+       
 
-
-                <div class="emp_profile_tab2 container pb-5 pt-5" id="panel-1" style="display:block;">
+        <div class="container">
+                <div class="emp_profile_tab2 container pb-5 pt-5" id="panel-1" style="display:block;background:#E6F7FF;">
                         <div class="container">
                             <div class="row">
 
@@ -45,7 +56,7 @@
                                                     </div>
                                             </div>
 
-                                    <div class="col-lg-10">  
+                                    <div class="col-lg-10 m-0 p-0">  
                                                                 <div class="d-flex align-items-center justify-content-around">
                                                                     <p style="color:#54A04B">VACATION LEAVE</p>
                                                                     <p style="color:#54A04B">SICK LEAVE</p>
@@ -579,4 +590,10 @@
                         </div>
 
                 </div>
+
+                </div>
+        
+    </div>
+
+    </div>
     </div>

@@ -294,10 +294,12 @@ color: #345587;
     background-color:#345587 ;
     color:#FC904F;
     font-weight: 100;
+    
 }
 .emp_profile_tab2{
     background-color:#E6F7FF;
     display: none;
+   
  }
  .emp_profile_tab2 .form-inline input {
     font-size: 10px;
@@ -379,6 +381,20 @@ color: #345587;
 }
 .leave_mang_section1_body table td , .leave_mang_section1_body table th{
     font-size: 10px;
+}
+/*file section */
+.file_section_body{
+    background-color: #fff;
+}
+.file_section_body_container{
+    background-color: #E6F7FF;
+}
+.file_section_body h6{
+    color:#63A85C;
+}
+.fa-folder-open{
+    color:#6AFF52;
+    font-size: 70px;
 }
 
 /* DOCUMENT PAGE */

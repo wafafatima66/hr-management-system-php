@@ -64,7 +64,44 @@ if(isset($_POST['submit'])){
     
 
 
-            $sql="INSERT INTO pds (emp_id,office_assign,emp_first_name,emp_last_name,emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_email,emp_tel_no,emp_mb_no,emp_citizen,emp_dual_citizen,emp_citizen_chk,emp_resi_add,emp_resi_add_street,emp_resi_add_subdivision,emp_resi_add_barangay,emp_resi_add_municipal,emp_resi_add_province,emp_resi_add_zipcode,emp_per_add,emp_per_add_street,emp_per_add_subdivision,emp_per_add_barangay,emp_per_add_municipal,emp_per_add_province,emp_per_add_zipcode,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+            $sql="INSERT INTO pds (emp_id,office_assign,emp_first_name,emp_last_name,emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_email,emp_tel_no,emp_mb_no,emp_citizen,emp_dual_citizen,emp_citizen_chk,emp_resi_add,emp_resi_add_street,emp_resi_add_subdivision,emp_resi_add_barangay,emp_resi_add_municipal,emp_resi_add_province,emp_resi_add_zipcode,emp_per_add,emp_per_add_street,emp_per_add_subdivision,emp_per_add_barangay,emp_per_add_municipal,emp_per_add_province,emp_per_add_zipcode,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
+            ON DUPLICATE KEY UPDATE
+            office_assign = '$office_assign',
+            emp_first_name = '$emp_first_name',
+            emp_last_name = '$emp_last_name',
+            emp_gender = '$emp_gender',
+            emp_civil_status = '$emp_civil_status',
+            emp_dob = '$emp_dob',
+            emp_height = '$emp_height',
+            emp_weight = '$emp_weight',
+            emp_blood = '$emp_blood',
+            emp_email = '$emp_email',
+            emp_tel_no = '$emp_tel_no',
+            emp_mb_no = '$emp_mb_no',
+            emp_citizen = '$emp_citizen',
+            emp_dual_citizen = '$emp_dual_citizen',
+            emp_citizen_chk = '$emp_citizen_chk',
+            emp_resi_add = '$emp_resi_add',
+            emp_resi_add_street = '$emp_resi_add_street',
+            emp_resi_add_subdivision = '$emp_resi_add_subdivision',
+            emp_resi_add_barangay = '$emp_resi_add_barangay',
+            emp_resi_add_municipal = '$emp_resi_add_municipal',
+            emp_resi_add_province = '$emp_resi_add_province',
+            emp_resi_add_zipcode = '$emp_resi_add_zipcode',
+            emp_per_add = '$emp_per_add',
+            emp_per_add_street = '$emp_per_add_street',
+            emp_per_add_subdivision = '$emp_per_add_subdivision',
+            emp_per_add_barangay = '$emp_per_add_barangay',
+            emp_per_add_municipal = '$emp_per_add_municipal',
+            emp_per_add_province = '$emp_per_add_province',
+            emp_per_add_zipcode = '$emp_per_add_zipcode',
+            emp_contact_gs = '$emp_contact_gs',
+            emp_contact_pag = '$emp_contact_pag',
+            emp_contact_ph = '$emp_contact_ph',
+            emp_contact_ss = '$emp_contact_ss',
+            emp_contact_tin = '$emp_contact_tin',
+            emp_contact_agency = '$emp_contact_agency'
+            ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -116,7 +153,27 @@ if(isset($_POST['submit'])){
     
     
 
-            $sql="INSERT INTO family_background (emp_spouse_lastname,emp_spouse_firstname,emp_spouse_middlename,emp_spouse_extname,emp_sp_occupation,emp_sp_employer,emp_sp_add,emp_sp_tel,emp_child_name,emp_child_dob,emp_father_lastname,emp_father_firstname,emp_father_middlename,emp_father_extname,emp_mother_lastname,emp_mother_firstname,emp_mother_middlename,emp_mother_extname,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $sql="INSERT INTO family_background (emp_spouse_lastname,emp_spouse_firstname,emp_spouse_middlename,emp_spouse_extname,emp_sp_occupation,emp_sp_employer,emp_sp_add,emp_sp_tel,emp_child_name,emp_child_dob,emp_father_lastname,emp_father_firstname,emp_father_middlename,emp_father_extname,emp_mother_lastname,emp_mother_firstname,emp_mother_middlename,emp_mother_extname,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+            ON DUPLICATE KEY UPDATE
+            emp_spouse_lastname = '$emp_spouse_lastname',
+            emp_spouse_firstname = '$emp_spouse_firstname',
+            emp_spouse_middlename = '$emp_spouse_middlename',
+            emp_spouse_extname = '$emp_spouse_extname',
+            emp_sp_occupation = '$emp_sp_occupation',
+            emp_sp_employer = '$emp_sp_employer',
+            emp_sp_add = '$emp_sp_add',
+            emp_sp_tel = '$emp_sp_tel',
+            emp_child_name = '$emp_child_name',
+            emp_child_dob = '$emp_child_dob',
+            emp_father_lastname = '$emp_father_lastname',
+            emp_father_firstname = '$emp_father_firstname',
+            emp_father_middlename = '$emp_father_middlename',
+            emp_father_extname = '$emp_father_extname',
+            emp_mother_lastname = '$emp_mother_lastname',
+            emp_mother_firstname = '$emp_mother_firstname',
+            emp_mother_middlename = '$emp_mother_middlename',
+            emp_mother_extname = '$emp_mother_extname'
+            ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -175,7 +232,44 @@ $ele_school_name=$_POST['ele_school_name'];
     $gra_award=$_POST['gra_award'];
     $gra_graduation=$_POST['gra_graduation'];
 
-    $sql="INSERT INTO edu_background (ele_school_name ,ele_degree,ele_from_date,ele_to_date,ele_units,ele_award,ele_graduation,sec_school_name ,sec_degree,sec_from_date,sec_to_date,sec_units,sec_award,sec_graduation,voc_school_name ,voc_degree,voc_from_date,voc_to_date,voc_units,voc_award,voc_graduation,coll_school_name ,coll_degree,coll_from_date,coll_to_date,coll_units,coll_award,coll_graduation,gra_school_name ,gra_degree,gra_from_date,gra_to_date,gra_units,gra_award,gra_graduation,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+    $sql="INSERT INTO edu_background (ele_school_name ,ele_degree,ele_from_date,ele_to_date,ele_units,ele_award,ele_graduation,sec_school_name ,sec_degree,sec_from_date,sec_to_date,sec_units,sec_award,sec_graduation,voc_school_name ,voc_degree,voc_from_date,voc_to_date,voc_units,voc_award,voc_graduation,coll_school_name ,coll_degree,coll_from_date,coll_to_date,coll_units,coll_award,coll_graduation,gra_school_name ,gra_degree,gra_from_date,gra_to_date,gra_units,gra_award,gra_graduation,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
+      ON DUPLICATE KEY UPDATE
+      ele_school_name = '$ele_school_name',
+      ele_degree = '$ele_degree',
+      ele_from_date = '$ele_from_date',
+      ele_to_date = '$ele_to_date',
+      ele_units = '$ele_units',
+      ele_award = '$ele_award',
+      ele_graduation = '$ele_graduation',
+      sec_school_name = '$sec_school_name',
+      sec_degree = '$sec_degree',
+      sec_from_date = '$sec_from_date',
+      sec_to_date = '$sec_to_date',
+      sec_units = '$sec_units',
+      sec_award = '$sec_award',
+      sec_graduation = '$sec_graduation',
+      voc_school_name = '$voc_school_name',
+      voc_degree = '$voc_degree',
+      voc_from_date = '$voc_from_date',
+      voc_to_date = '$voc_to_date',
+      voc_units = '$voc_units',
+      voc_award = '$voc_award',
+      voc_graduation = '$voc_graduation',
+      coll_school_name = '$coll_school_name',
+      coll_degree = '$coll_degree',
+      coll_from_date = '$coll_from_date',
+      coll_to_date = '$coll_to_date',
+      coll_units = '$coll_units',
+      coll_award = '$coll_award',
+      coll_graduation = '$coll_graduation',
+      gra_school_name = '$gra_school_name',
+      gra_degree = '$gra_degree',
+      gra_from_date = '$gra_from_date',
+      gra_to_date = '$gra_to_date',
+      gra_units = '$gra_units',
+      gra_award = '$gra_award',
+      gra_graduation = '$gra_graduation'
+    ";
 
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -234,26 +328,27 @@ $ele_school_name=$_POST['ele_school_name'];
         //work experience
 
 
-        $from_date=$_POST['from_date'];
-    $to_date=$_POST['to_date'];
+        $work_from_date=$_POST['work_from_date'];
+    $work_to_date=$_POST['work_to_date'];
     $position=$_POST['position'];
     $employer=$_POST['employer'];
     $govt_service=$_POST['govt_service'];
     $monthly_sal=$_POST['monthly_sal'];
     $increment=$_POST['increment'];
-    $status=$_POST['status'];
+    $work_status=$_POST['work_status'];
     
   
 
-            $sql="INSERT INTO work_experience (from_date,to_date,position,employer,govt_service,monthly_sal,increment,status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
+            $sql="INSERT INTO work_experience (work_from_date,work_to_date,position,employer,govt_service,monthly_sal,increment,work_status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
               ON DUPLICATE KEY UPDATE
-                from_date = '$from_date',
-                to_date = '$to_date',
+              work_from_date = '$work_from_date',
+              work_to_date = '$work_to_date',
                 position = '$position',
                 employer = '$employer',
                 govt_service = '$govt_service',
                 monthly_sal = '$monthly_sal',
-                increment = '$increment' 
+                increment = '$increment' ,
+                work_status = '$work_status'
             ";
 
             $stmt = mysqli_stmt_init($conn);
@@ -264,7 +359,7 @@ $ele_school_name=$_POST['ele_school_name'];
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"sssssiissi",$from_date, $to_date, $position,$employer,$govt_service,$monthly_sal,$increment,$status,$office_assign,$emp_id);
+                    mysqli_stmt_bind_param($stmt,"sssssiissi",$work_from_date, $work_to_date, $position,$employer,$govt_service,$monthly_sal,$increment,$work_status,$office_assign,$emp_id);
                     mysqli_stmt_execute($stmt);
 
                 }
@@ -274,15 +369,24 @@ $ele_school_name=$_POST['ele_school_name'];
 
     $name_org=$_POST['name_org'];
     $org_add=$_POST['org_add'];
-    $from_date=$_POST['from_date'];
-    $to_date=$_POST['to_date'];
+    $vol_from_date=$_POST['vol_from_date'];
+    $vol_to_date=$_POST['vol_to_date'];
     $no_of_hrs=$_POST['no_of_hrs'];
     $position=$_POST['position'];
    
     
 
 
-            $sql="INSERT INTO voluntary_works (name_org,org_add,from_date,to_date,no_of_hrs,position,emp_id) VALUE (?,?,?,?,?,?,?)";
+            $sql="INSERT INTO voluntary_works (name_org,org_add,vol_from_date,vol_to_date,no_of_hrs,position,emp_id) VALUE (?,?,?,?,?,?,?)
+              ON DUPLICATE KEY UPDATE
+                name_org = '$name_org',
+                org_add = '$org_add',
+                vol_from_date = '$vol_from_date',
+                vol_to_date = '$vol_to_date',
+                no_of_hrs = '$no_of_hrs',
+                position = '$position' 
+
+            ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -292,26 +396,35 @@ $ele_school_name=$_POST['ele_school_name'];
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"ssssisi",$name_org, $org_add, $from_date,$to_date,$no_of_hrs,$position,$emp_id);
+                    mysqli_stmt_bind_param($stmt,"ssssisi",$name_org, $org_add, $vol_from_date,$vol_to_date,$no_of_hrs,$position,$emp_id);
                     mysqli_stmt_execute($stmt);
                 }
 
 
         //learning 
 
-        $emp_id = $_SESSION['emp_id'];
+       
 
    
         $title_of_training=$_POST['title_of_training'];
         $type_of_position=$_POST['type_of_position'];
         $no_of_hrs=$_POST['no_of_hrs'];
-        $from_date=$_POST['from_date'];
-        $to_date=$_POST['to_date'];
+        $learn_from_date=$_POST['learn_from_date'];
+        $learn_to_date=$_POST['learn_to_date'];
         $conducted_by=$_POST['conducted_by'];
         
         
     
-                $sql="INSERT INTO emp_learning (title_of_training,type_of_position,no_of_hrs,from_date,to_date,conducted_by,emp_id) VALUE (?,?,?,?,?,?,?) ";
+                $sql="INSERT INTO emp_learning (title_of_training,type_of_position,no_of_hrs,learn_from_date,learn_to_date,conducted_by,emp_id) VALUE (?,?,?,?,?,?,?) 
+                  ON DUPLICATE KEY UPDATE
+                  title_of_training = '$title_of_training',
+                  type_of_position = '$type_of_position',
+                  no_of_hrs = '$no_of_hrs',
+                  learn_from_date = '$learn_from_date',
+                  learn_to_date = '$learn_to_date',
+                  conducted_by = '$conducted_by'
+                
+                ";
     
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -321,7 +434,7 @@ $ele_school_name=$_POST['ele_school_name'];
                     else{
     
     
-                        mysqli_stmt_bind_param($stmt,"ssisssi",$title_of_training, $type_of_position, $no_of_hrs,$from_date,$to_date,$conducted_by,$emp_id);
+                        mysqli_stmt_bind_param($stmt,"ssisssi",$title_of_training, $type_of_position, $no_of_hrs,$learn_from_date,$learn_to_date,$conducted_by,$emp_id);
                         mysqli_stmt_execute($stmt);
                     }
 
@@ -338,12 +451,14 @@ $ele_school_name=$_POST['ele_school_name'];
     
 
 
-   
-    
-    require '../../includes/conn.php';
 
-
-            $sql="INSERT INTO skills (emp_special_skills,non_academic,membership,emp_id) VALUE (?,?,?,?) ";
+            $sql="INSERT INTO skills (emp_special_skills,non_academic,membership,emp_id) VALUE (?,?,?,?) 
+            
+            ON DUPLICATE KEY UPDATE
+            emp_special_skills = '$emp_special_skills',
+            non_academic = '$non_academic',
+            membership = '$membership'
+            ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -372,12 +487,17 @@ $ele_school_name=$_POST['ele_school_name'];
     $ref_tel = implode(',',$ref_tel_arr);
     
 
-   
-    
-    require '../../includes/conn.php';
 
 
-            $sql="INSERT INTO emp_references (ref_full_name,ref_add,ref_tel,emp_gov_id,emp_passport_no,emp_place_of_insurance,emp_id) VALUE (?,?,?,?,?,?,?)";
+            $sql="INSERT INTO emp_references (ref_full_name,ref_add,ref_tel,emp_gov_id,emp_passport_no,emp_place_of_insurance,emp_id) VALUE (?,?,?,?,?,?,?)
+             ON DUPLICATE KEY UPDATE
+                emp_gov_id = '$emp_gov_id',
+                emp_passport_no = '$emp_passport_no',
+                emp_place_of_insurance = '$emp_place_of_insurance',
+                ref_full_name = '$ref_full_name',
+                ref_add = '$ref_add',
+                ref_tel = '$ref_tel'
+            ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -391,7 +511,7 @@ $ele_school_name=$_POST['ele_school_name'];
                     mysqli_stmt_execute($stmt);
                 }
 
-            header("Location:../emp_profile.php?submit=pds");
+            header("Location:../emp_mang.php?submit=pds");
             exit();
 
             mysqli_stmt_close($stmt);
@@ -399,7 +519,7 @@ $ele_school_name=$_POST['ele_school_name'];
            
         }else
     {
-        header("Location:../emp_profile.php");
+        header("Location:../emp_mang.php");
         exit();
     }
     

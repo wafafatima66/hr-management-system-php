@@ -214,8 +214,8 @@ while($data = $runquery -> fetch_assoc()){
   $title_of_training = $data["title_of_training"];
   $type_of_position = $data["type_of_position"];
   $no_of_hrs = $data["no_of_hrs"];
-  $from_date = $data["from_date"];
-  $to_date = $data["to_date"];
+  $learn_from_date = $data["learn_from_date"];
+  $learn_to_date = $data["learn_to_date"];
   $conducted_by = $data["conducted_by"];
 }
 }

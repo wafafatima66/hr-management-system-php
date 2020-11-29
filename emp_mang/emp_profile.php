@@ -25,46 +25,8 @@
 			echo'<p class="alert alert-danger h6">Email Taken</p>';
 		}
 	
-	}	else if(isset($_GET['submit'])){
-				if(($_GET['submit']=="pds")){
-
-                    echo'<p class="alert alert-success h6"> PDS FORM SAVED SUCESSFULLY </p>';
-                } 
-                if(($_GET['submit']=="fam")){
-
-                    echo'<p class="alert alert-success h6"> FAMILY BACKGROUND FORM SAVED SUCESSFULLY </p>';
-                } 
-                if(($_GET['submit']=="edu")){
-
-                    echo'<p class="alert alert-success h6"> EDUCATIONAL BACKGROUND FORM SAVED SUCESSFULLY </p>';
-                } 
-                if(($_GET['submit']=="civil")){
-
-                    echo'<p class="alert alert-success h6"> CIVIL SERVICE  FORM SAVED SUCESSFULLY </p>';
-                } 
-                if(($_GET['submit']=="work")){
-
-                    echo'<p class="alert alert-success h6"> WORK EXPERIENCE FORM SAVED SUCESSFULLY </p>';
-                } 
-                if(($_GET['submit']=="vol")){
-
-                    echo'<p class="alert alert-success h6"> VOLUNTARY WORKS FORM SAVED SUCESSFULLY </p>';
-                } 
-                if(($_GET['submit']=="ref")){
-
-                    echo'<p class="alert alert-success h6"> REFERENCES FORM SAVED SUCESSFULLY </p>';
-                } 
-                if(($_GET['submit']=="learn")){
-
-                    echo'<p class="alert alert-success h6"> LEARNING FORM SAVED SUCESSFULLY </p>';
-                } 
-                if(($_GET['submit']=="skill")){
-
-                    echo'<p class="alert alert-success h6"> SKILLS FORM SAVED SUCESSFULLY </p>';
-                }          
-    } 
-   
- 
+	}	
+  
      
      
 ?>
@@ -141,16 +103,18 @@ if(isset($_GET['register'])){
             </h6>
             <h4 style="text-transform: uppercase;"> <?php echo $emp_first_name?> <?php echo $emp_middle_name?> <?php echo $emp_last_name?> </h4>
             <p style="text-transform: uppercase;"><?php echo $emp_status?> > <span style="text-transform: capitalize;"><?php echo $office_assign?></span></p>
+
+           
+            
         </div>
 
-        <div class="col-lg-3">
-            <div class="emp_profile_image"> 
-                <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
-            </div>
-        </div>
+       
        
     </div>
+       
+       
 </div>
+
 
          
 
