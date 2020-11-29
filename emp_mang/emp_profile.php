@@ -6,12 +6,6 @@
 
 <?php
 
-if(isset($_GET['register'])){
-    if(($_GET['register']=="success")){
-        echo'<p class="alert alert-success h6">Registration done successfully</p>';
-    }
-
-}
 
 ?>
 
@@ -77,35 +71,25 @@ if(isset($_GET['register'])){
 
 <?php
 
-require '../includes/conn.php';
+if(isset( $_REQUEST["emp_id"])){
 
-if(isset($_SESSION['emp_first_name'])){
-
-    require 'variables/variables.php';
-
+    $emp_id = $_REQUEST["emp_id"];
     
-    
-  $emp_first_name = $_SESSION['emp_first_name'];
-  $emp_last_name = $_SESSION['emp_last_name'];
-  //$emp_id = $_SESSION['emp_id'];
-  
-
-  
-  
-  //SELECT * FROM add_emp join pds ON add_emp.emp_id = pds.emp_id
-  //join table3 ON table2.primarykey = table3.foreignkey
-
-  
-     
-
-      $query = "SELECT * FROM add_emp WHERE emp_first_name = '$emp_first_name' AND emp_last_name ='$emp_last_name'";
-
        
-       
-        $runquery = $conn -> query($query);
-        if($runquery == true){
 
-                     while($mydata = $runquery -> fetch_assoc()){
+if(isset($_GET['register'])){
+    if(($_GET['register']=="success")){
+        echo'<p class="alert alert-success h6">Registration done successfully</p>';
+    }
+}
+
+    require '../includes/conn.php';
+
+    $query = "SELECT * FROM add_emp WHERE emp_id = '$emp_id'";
+
+    $runquery = $conn -> query($query);
+    if($runquery == true){
+        while($mydata = $runquery -> fetch_assoc()){
 
                   $emp_first_name = $mydata["emp_first_name"];
                   $emp_last_name = $mydata["emp_last_name"];
@@ -113,18 +97,29 @@ if(isset($_SESSION['emp_first_name'])){
                   $office_assign = $mydata["office_assign"];
                   $emp_status = $mydata["emp_status"];
 
+                  $emp_id = $mydata["emp_id"];
+
                   $emp_image = '../emp_mang/image/'.$mydata["emp_image"];
 
 
-                  $emp_id = $mydata["emp_id"];
+                  //$emp_id = $mydata["emp_id"];
                   $office_assign= $mydata["office_assign"];
 
                 
                   $_SESSION['emp_id']= $emp_id;
+                  $_SESSION['emp_first_name']= $emp_first_name;
+                  $_SESSION['emp_last_name']= $emp_last_name;
                   $_SESSION['office_assign']= $office_assign;
 
-                  
+                  $query = "SELECT * FROM pds WHERE emp_id = '$emp_id'";
+                  $runquery = $conn -> query($query);
+                  $rowcount=mysqli_num_rows($runquery);
+                  if($rowcount == 0 ){
+                    require '../emp_mang/variables/variables.php';
                 
+                  }else require '../emp_mang/variables/view_variables.php';
+
+                 
                 
 
             
@@ -144,11 +139,11 @@ if(isset($_SESSION['emp_first_name'])){
                 <button  onclick="opentab('tab-2')" type="button" class="btn emp_profile_section1_tab " >Leave Ledger | </button>
                 <button  onclick="opentab('tab-3')" type="button" class="btn emp_profile_section1_tab " >File 201</button>
             </h6>
-            <h4> <?php echo $emp_first_name?> <?php echo $emp_middle_name?> <?php echo $emp_last_name?> </h4>
+            <h4 style="text-transform: uppercase;"> <?php echo $emp_first_name?> <?php echo $emp_middle_name?> <?php echo $emp_last_name?> </h4>
             <p style="text-transform: uppercase;"><?php echo $emp_status?> > <span style="text-transform: capitalize;"><?php echo $office_assign?></span></p>
         </div>
 
-        <div class="col-lg-3 p-0 m-0">
+        <div class="col-lg-3">
             <div class="emp_profile_image"> 
                 <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
             </div>
@@ -160,10 +155,7 @@ if(isset($_SESSION['emp_first_name'])){
          
 
 
-    <?php include 'pds/pds.php';  ?>
-
-
-
+        <?php include 'pds/pds.php'; ?>
         <?php include 'ledger.php'; ?>
         <?php include 'file.php'; ?>
 
@@ -177,11 +169,9 @@ if(isset($_SESSION['emp_first_name'])){
             echo "DATA NOT FETCHED PROPERLY";
         }
       
-        //end of if
-       // session_unset();
-       // session_destroy();
-       // header("Location:emp_mang.php");
-    } //end of first if
+        
+    } 
+
 
 
     ?>      

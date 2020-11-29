@@ -20,6 +20,11 @@
 
                       <form class="form-inline " method="post" action="../emp_mang/add_emp_config.php" enctype="multipart/form-data">
 
+                      <div class="form-group mx-sm-3 mb-2 mt-2">
+                          <label for="">Employer ID</label>
+                            <input type="text" name="emp_id" value="1234" >
+                            </div>  
+
                         <div class="form-group mx-sm-2 mb-2">
                             <label for="">Name</label>
                           <input type="text" class="form-control" id="" placeholder="First Name" name="emp_first_name" required>
@@ -37,8 +42,11 @@
                           <input type="text" class="form-control" id="" placeholder="Ext" name="emp_ext" required>
                         </div> 
                         
-                        
-                         <h6 class="pt-4">Employment Information</h6>
+                        </div>
+
+                         <div class="pt-3">
+                         
+                         <h6 >Employment Information</h6>
 
                          <div class="form-inline">
 
@@ -52,9 +60,6 @@
                           </select>
                         </div>
 
-                        
-                         
-                        
 
                         <div class="form-group mx-sm-2 mb-2">
                         <label for="">Inclusive dates</label>
@@ -81,9 +86,10 @@
                             </div>                        
                             
                       </div>
+                         </div>
 
 
-                     </div>
+                    
                   </div>
 
                 <div class="modal-footer">

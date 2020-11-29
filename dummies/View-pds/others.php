@@ -1,9 +1,6 @@
 
         <!--body section of OTHER INFORMATION-->
-
-        <div class="container">
         <div class=" emp_profile_section2 other_info pt-4 " id="content-9">  
-
             <div class="container " style="width:800px;margin:auto" >
 
                 <div class="row mt-2 mb-2" style="width:60%">
@@ -378,11 +375,4 @@
 
 
             </div>
-            <div class="container">
-              <div class="text-right">
-                        <button class="btn m-2" type="button" style="background: #345587;color:#fff;" onclick="openpanel('content-8','spe')" >PREV</button>
-                        <button  type ="button"  class="btn m-2" style="background: #345587; color:#fff;" onclick="openpanel('content-10','ref')" >NEXT</button>
-                    </div>
-              </div>
-        </div>
         </div>

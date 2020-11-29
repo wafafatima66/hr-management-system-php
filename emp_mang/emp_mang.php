@@ -52,7 +52,7 @@
         </form>
   
 
-      
+      <div class="container">
 
         <!--Table-->
         <table class="table table-striped w-auto table-bordered mt-3">
@@ -96,7 +96,7 @@ if(isset($_POST['submit'])){
           <!--Table body-->
           <tbody>
 
-            <tr class="table-strip clickable-row" data-href='emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>'>
+            <tr class="table-strip clickable-row" data-href='../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>'>
              
               <td><?php echo $mydata["emp_first_name"]?></td>
               <td><?php echo $mydata["emp_id"]?></td>
@@ -105,7 +105,7 @@ if(isset($_POST['submit'])){
               <td><?php echo $mydata["emp_tel_no"]?></td>
               <td><?php echo $mydata["emp_civil_status"]?></td>
                 <td class="text-center">
-                <a href="emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
+                <a href="../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
                <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
               </td>
             </tr>
@@ -114,15 +114,18 @@ if(isset($_POST['submit'])){
           </tbody>
           <!--Table body-->
 
+          <?php } ?>
 
         </table>
         <!--Table-->
-
+      
       
     </div>
 
+    
+
     <?php
-  }}else {
+  }else {
     echo'<p class="alert alert-danger h6">EMPLOYEE ID NOT FOUND</p>';
   }
 }
@@ -140,11 +143,11 @@ else {
   while($mydata = $runquery -> fetch_assoc()){
 
 ?>
-
+  <div class="container">
         <!--Table body-->
         <tbody>
 
-          <tr class="table-strip clickable-row" data-href='emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>'>
+          <tr class="table-strip clickable-row" data-href='../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>'>
            
             <td><?php echo $mydata["emp_first_name"]?></td>
             <td><?php echo $mydata["emp_id"]?></td>
@@ -153,7 +156,7 @@ else {
             <td><?php echo $mydata["emp_tel_no"]?></td>
             <td><?php echo $mydata["emp_civil_status"]?></td>
               <td class="text-center">
-              <a href="emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
+              <a href="../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
              <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
@@ -162,18 +165,21 @@ else {
         </tbody>
         <!--Table body-->
 
-
+<?php } ?>
       </table>
       <!--Table-->
 
     
   </div>
+  
 
   <?php
-  }
+  
   }
   }
 
   ?>
+
+</div>
     </div>  <!-- /#page-content-wrapper -->
   </div> <!-- /#wrapper -->

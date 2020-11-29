@@ -79,6 +79,8 @@
 
       <!---section 3 -->
 
+      <div class="container">
+
         <!--Table-->
         <table class="table table-striped w-auto table-bordered">
 
@@ -123,7 +125,7 @@ if(isset($_POST['submit'])){
           <!--Table body-->
           <tbody>
 
-            <tr class="table-strip clickable-row" data-href='emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>'>
+            <tr class="table-strip clickable-row" data-href='../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>'>
              
               <td><?php echo $mydata["emp_first_name"]?></td>
               <td><?php echo $mydata["emp_id"]?></td>
@@ -171,7 +173,7 @@ else {
           <!--Table body-->
           <tbody>
         
-          <tr class="table-strip clickable-row" data-href='../emp_mang/emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>'>
+          <tr class="table-strip clickable-row" data-href='../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>'>
            
             <td><?php echo $mydata["emp_first_name"]?></td>
             <td><?php echo $mydata["emp_id"]?></td>
@@ -203,6 +205,8 @@ else {
   ?>
 
 </table>
+
+</div>
       <!--Table-->
 </div>
 

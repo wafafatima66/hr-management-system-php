@@ -2,7 +2,7 @@
 <?php 
 session_start();
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submitpds'])){
 
 
     $emp_id = $_SESSION['emp_id'];
