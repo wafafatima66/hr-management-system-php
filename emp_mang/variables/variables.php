@@ -4,8 +4,8 @@
 //pds 
 $emp_gender = "";
     $emp_civil_status ="";
-    $emp_height = "";
-    $emp_weight = "";
+    $emp_height = "(m)";
+    $emp_weight = "(kg)";
     $emp_blood = "";
     $emp_citizen = "";
     $emp_citizen_chk = "";
@@ -33,6 +33,8 @@ $emp_gender = "";
     $emp_contact_ss = "SSS ID No.";
     $emp_contact_tin = "TIN No.";
     $emp_contact_agency = "AGENCY EMPLOYEE No.";
+
+    $emp_sex = "";
 
     //family-background
     $emp_spouse_lastname = "Surname";
@@ -124,4 +126,33 @@ $gra_graduation = "";
     $to_date = "";
     $conducted_by = "";
 
+    
+
+    //others
+    $condition_1 = "";
+    $condition_2 = "";
+    $condition_3 = "";
+    $condition_4 = "";
+    $condition_5 = "";
+    $condition_6 = "";
+    $condition_7 = "";
+    $condition_8 = "";
+    $condition_9 = "";
+    $condition_10 = "";
+    $condition_11 = "";
+    $condition_12 = "";
+
+    $condition_1_des = "If YES , please give details";
+    $condition_2_des = "If YES , please give details";
+    $condition_3_des = "If YES , please give details";
+    $condition_4_des = "If YES , please give details";
+    $condition_5_des = "If YES , please give details";
+    $condition_6_des = "If YES , please give details";
+    $condition_7_des = "If YES , please give details";
+    $condition_8_des = "If YES , please give details";
+    $condition_9_des = "If YES , please give details";
+    $condition_10_des = "If YES , please give details";
+    $condition_11_des = "If YES , please give details";
+    $condition_12_des = "If YES , please give details";
+    
     ?>

@@ -49,6 +49,11 @@
     $emp_contact_ss = $data["emp_contact_ss"];
     $emp_contact_tin = $data["emp_contact_tin"];
     $emp_contact_agency = $data["emp_contact_agency"];
+
+    
+    $emp_sex = $data["emp_sex"];
+
+  
   
   }
 }
@@ -217,6 +222,103 @@ while($data = $runquery -> fetch_assoc()){
   $learn_from_date = $data["learn_from_date"];
   $learn_to_date = $data["learn_to_date"];
   $conducted_by = $data["conducted_by"];
+}
+}
+
+
+
+
+//fetch data from others
+
+
+$query = "SELECT * FROM other_inf WHERE emp_id = '$emp_id'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+ 
+ 
+while($data = $runquery -> fetch_assoc()){
+
+  
+
+  $condition_1= $data["condition_1"];
+  $condition_2= $data["condition_2"];
+  $condition_3= $data["condition_3"];
+  $condition_4= $data["condition_4"];
+  $condition_5= $data["condition_5"];
+  $condition_6= $data["condition_6"];
+  $condition_7= $data["condition_7"];
+  $condition_8= $data["condition_8"];
+  $condition_9= $data["condition_9"];
+  $condition_10= $data["condition_10"];
+  $condition_11= $data["condition_11"];
+  $condition_12= $data["condition_12"];
+
+
+   if ($condition_1 == 'yes') 
+    { 
+     $condition_1 =  "checked='checked'"; 
+    } 
+
+    if ($condition_2 == 'yes'){
+      $condition_2 =  "checked='checked'"; 
+    }
+
+    if ($condition_3 == 'yes'){
+      $condition_3 =  "checked='checked'"; 
+    }
+    
+
+    if ($condition_4 == 'yes'){
+      $condition_4 =  "checked='checked'"; 
+    }
+    
+    if ($condition_5 == 'yes'){
+      $condition_5 =  "checked='checked'"; 
+    }
+    
+    if ($condition_6 == 'yes'){
+      $condition_6 =  "checked='checked'"; 
+    }
+    
+    if ($condition_7 == 'yes'){
+      $condition_7 =  "checked='checked'"; 
+    }
+    
+    if ($condition_8 == 'yes'){
+      $condition_8 =  "checked='checked'"; 
+    }
+    
+    if ($condition_9 == 'yes'){
+      $condition_9 =  "checked='checked'"; 
+    }
+    
+    if ($condition_10 == 'yes'){
+      $condition_10 =  "checked='checked'"; 
+    }
+    
+    if ($condition_11 == 'yes'){
+      $condition_11 =  "checked='checked'"; 
+    }
+    
+    if ($condition_12 == 'yes'){
+      $condition_12 =  "checked='checked'"; 
+    }
+    
+
+  $condition_1_des = $data["condition_1_des"];
+  $condition_2_des = $data["condition_2_des"];
+  $condition_3_des = $data["condition_3_des"];
+  $condition_4_des = $data["condition_4_des"];
+  $condition_5_des = $data["condition_5_des"];
+  $condition_6_des = $data["condition_6_des"];
+  $condition_7_des = $data["condition_7_des"];
+  $condition_8_des = $data["condition_8_des"];
+  $condition_9_des = $data["condition_9_des"];
+  $condition_10_des = $data["condition_10_des"];
+  $condition_11_des = $data["condition_11_des"];
+  $condition_12_des = $data["condition_12_des"];
+  
 }
 }
 

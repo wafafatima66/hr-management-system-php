@@ -61,7 +61,7 @@ if(isset($_GET['register'])){
 
                   $emp_id = $mydata["emp_id"];
 
-                  $emp_image = '../emp_mang/image/'.$mydata["emp_image"];
+                  $emp_image = '../emp_mang/uploads/image/'.$mydata["emp_image"];
 
 
                   //$emp_id = $mydata["emp_id"];
@@ -72,6 +72,9 @@ if(isset($_GET['register'])){
                   $_SESSION['emp_first_name']= $emp_first_name;
                   $_SESSION['emp_last_name']= $emp_last_name;
                   $_SESSION['office_assign']= $office_assign;
+                  $_SESSION['emp_status']= $emp_status;
+
+                
 
                   $query = "SELECT * FROM pds WHERE emp_id = '$emp_id'";
                   $runquery = $conn -> query($query);

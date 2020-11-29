@@ -22,17 +22,17 @@
                             <div class="col-lg-6 form-inline">
 
                                 <div class="form-check mx-sm-1 mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
-                                    <label class="form-check-label" > Yes</label>
+                                    <input class="form-check-input" type="checkbox" value="yes" name="condition_1"  <?php echo $condition_1 ;?> > 
+                                    <label class="form-check-label">Yes</label>
                                 </div>
 
                                 <div class="form-check mx-sm-1 mb-2">
-                                    <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+                                    <input class="form-check-input" type="checkbox" value="no" name="condition_1"  >
                                     <label class="form-check-label" >No</label>
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-2">
-                                    <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+                                    <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_1_des?>" name="condition_1_des">
                                 </div>
 
                             </div>
@@ -50,17 +50,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_2" <?php echo $condition_2 ;?> >
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_2"  >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;" value="<?php echo $condition_2_des?>" name="condition_2_des" >
     </div>
 
 </div>
@@ -79,17 +79,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_3" <?php echo $condition_3 ;?>>
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_3"  >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;" value="<?php echo $condition_3_des?>" name="condition_3_des" >
     </div>
 
 </div>
@@ -108,17 +108,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_4" <?php echo $condition_4 ;?> >
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_4"  >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;" id="" value="<?php echo $condition_4_des?>" name="condition_4_des" >
     </div>
 
 </div>
@@ -137,17 +137,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_5" <?php echo $condition_5 ;?>>
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_5"  >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_5_des?>" name="condition_5_des" >
     </div>
 
 </div>
@@ -166,17 +166,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_6" <?php echo $condition_6 ;?>>
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_6"  >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;" id="" value="<?php echo $condition_6_des?>" name="condition_6_des">
     </div>
 
 </div>
@@ -195,17 +195,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_7" <?php echo $condition_7 ;?>>
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_7" >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_7_des?>" name="condition_7_des" >
     </div>
 
 </div>
@@ -224,17 +224,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_8" <?php echo $condition_8 ;?>>
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_8" >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_8_des?>" name="condition_8_des" >
     </div>
 
 </div>
@@ -269,17 +269,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_9" <?php echo $condition_9 ;?>>
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_9"  >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;" id="" value="<?php echo $condition_9_des?>" name="condition_9_des" >
     </div>
 
 </div>
@@ -297,17 +297,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_10" <?php echo $condition_10 ;?> >
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_10"  >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_10_des?>" name="condition_10_des" >
     </div>
 
 </div>
@@ -325,17 +325,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_11" <?php echo $condition_11 ;?> >
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_11" >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="" placeholder="">
+        <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_11_des?>" name="condition_11_des" >
     </div>
 
 </div>
@@ -354,17 +354,17 @@
 <div class="col-lg-6 form-inline">
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="yes" name="condition_12" <?php echo $condition_12 ;?>>
         <label class="form-check-label" > Yes</label>
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="" name="" placeholder="">
+        <input class="form-check-input" type="checkbox" value="no" name="condition_12" >
         <label class="form-check-label" >No</label>
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" placeholder="If YES , please give details" name="emp_dual_citizen" placeholder="">
+        <input type="text" class="form-control" style="width:200px;"value="<?php echo $condition_12_des?>" name="condition_12_des" >
     </div>
 
 </div>

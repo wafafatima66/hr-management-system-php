@@ -22,7 +22,7 @@
 
                       <div class="form-group mx-sm-3 mb-2 mt-2">
                           <label for="">Employer ID</label>
-                            <input type="text" name="emp_id" value="1234" class="form-control" >
+                            <input type="text" name="emp_id" value="" class="form-control" required >
                             </div>  
 
                         <div class="form-group mx-sm-2 mb-2">

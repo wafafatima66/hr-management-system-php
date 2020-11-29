@@ -36,7 +36,7 @@
 
         <!--body section of personal information -->
 
-       <form action="includes/pds-ful-config.php" method="post" class="form-inline">
+       <form action="includes/pds_config.php" method="post" class="form-inline">
         
         <div class="container ">
         
@@ -78,12 +78,24 @@
                             </select>
                             </div>  -->
 
+
+                            <div class="form-group mx-sm-1 mb-2">
+                            <label for="">SEX</label>
+                            <select class="form-control" style="width:50px;" name="emp_sex" value="<?php echo  $emp_sex ?>">
+                            <option value = "0 "></option>
+                                <option value = "male">M</option>
+                                <option value = "female">F</option>
+                            </select>
+                            </div>
+
+
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">GENDER</label>
-                            <select class="form-control" style="width:100px;" name="emp_gender" value="<?php echo  $emp_gender ?>">
+                            <select class="form-control" style="width:80px;" name="emp_gender" value="<?php echo  $emp_gender ?>">
                                 <option value = "0 ">SELECT</option>
                                 <option value = "male">MALE</option>
                                 <option value = "female">FEMALE</option>
+                                <option value = "lgbqt">LGBQT</option>
                             </select>
                             </div>
                   
@@ -91,12 +103,19 @@
                        
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">CIVIL STATUS</label>
-                            <input type="text"  class="form-control" style="width:80px;" name="emp_civil_status" value="<?php echo  $emp_civil_status ?>" name="<?php echo  $emp_civil_status ?>">
+                            
+                            <select class="form-control" style="width:80px;" name="emp_civil_status" value="<?php echo  $emp_civil_status ?>">
+                                <option value = "0 ">SELECT</option>
+                                <option value = "single">SINGLE</option>
+                                <option value = "married">MARRIED</option>
+                                <option value = "widow">WIDOW</option>
+                                <option value = "seperated">SEPERATED</option>
+                            </select>
                             </div>
                             
-                            <div class="form-group mx-sm-2 mb-2">
+                            <div class="form-group mx-sm-1 mb-2">
                                 <label for="">DATE OF BIRTH</label>
-                                <input type="date"  class="form-control" style="width:120px;"  name="emp_dob">
+                                <input type="date"  class="form-control" style="width:110px;"  name="emp_dob">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
@@ -111,7 +130,7 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">BLOOD TYPE</label>
-                                <input type="text" class="form-control" style="width:40px;"  value="<?php echo  $emp_blood ?>" name="emp_blood">
+                                <input type="text" class="form-control" style="width:30px;"  value="<?php echo  $emp_blood ?>" name="emp_blood">
                             </div>
                       
                     </div>
@@ -120,7 +139,7 @@
                    
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">CITIZENSHIP</label>
-                                <input type="text" class="form-control" style="width:100px;"  value="<?php echo  $emp_citizen ?>" name="emp_citizen">
+                                <input type="text" class="form-control" style="width:140px;"  value="<?php echo  $emp_citizen ?>" name="emp_citizen">
                         </div>
 
                         <div class="form-check mx-sm-1 mb-2">

@@ -35,6 +35,19 @@
            
             }
 
+            
+if(isset( $_REQUEST["emp_id"])){
+
+  $emp_id = $_REQUEST["emp_id"];
+
+  require '../includes/conn.php';
+
+$dltquery = "DELETE FROM pds WHERE emp_id = $emp_id"; 
+
+if($conn -> query($dltquery)){
+  echo'<p class="alert alert-danger h6">Employee deleted</p>';
+}else   echo'<p class="alert alert-danger h6">Employee not  deleted</p>';
+}
 ?>
 
 
@@ -116,10 +129,10 @@ if(isset($_POST['submit'])){
               <td><?php echo $mydata["emp_gender"]?></td>
               <td><?php echo $mydata["office_assign"]?></td>
               <td><?php echo $mydata["emp_tel_no"]?></td>
-              <td><?php echo $mydata["emp_civil_status"]?></td>
+              <td><?php echo $mydata["emp_status"]?></td>
                 <td class="text-center">
                 <a href="../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
-               <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
+                <a href="../emp_mang/emp_mang.php?emp_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
               </td>
             </tr>
            
@@ -147,7 +160,7 @@ else {
 
   require '../includes/conn.php';
 
-  $query = "SELECT * FROM pds LIMIT 5 ";
+  $query = "SELECT * FROM pds ";
 
   $runquery = $conn -> query($query);
   if($runquery == true){
@@ -167,10 +180,10 @@ else {
             <td><?php echo $mydata["emp_gender"]?></td>
             <td><?php echo $mydata["office_assign"]?></td>
             <td><?php echo $mydata["emp_tel_no"]?></td>
-            <td><?php echo $mydata["emp_civil_status"]?></td>
+            <td><?php echo $mydata["emp_status"]?></td>
               <td class="text-center">
               <a href="../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
-             <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
+              <a href="../emp_mang/emp_mang.php?emp_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
          

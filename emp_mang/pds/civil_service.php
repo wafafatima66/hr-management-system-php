@@ -10,8 +10,9 @@
                         <div class="d-flex flex-column">
                             <label for="">TYPE</label>
                             <select class="form-control" style="width:200px;" name="type_of" value="<?php echo $type_of?>" >
-                                <option value = "">Select type</option>
-                                <option value = "">...</option>
+                                <option value = "0">Select</option>
+                                <option value = "Board Examination">Board Examination</option>
+                                <option value = "Civil Service Examination">Civil Service Examination</option>
                             </select>
                         </div>
                     </div>

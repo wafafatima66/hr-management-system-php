@@ -14,7 +14,9 @@ if(isset($_POST['submit'])){
     $office_assign = $_SESSION['office_assign'];
     $emp_first_name = $_SESSION['emp_first_name'];
     $emp_last_name = $_SESSION['emp_last_name'];
+    $emp_status = $_SESSION['emp_status'];
 
+    $emp_sex=$_POST['emp_sex'];
     $emp_gender=$_POST['emp_gender'];
     $emp_civil_status=$_POST['emp_civil_status'];
     $emp_dob=$_POST['emp_dob'];
@@ -64,7 +66,7 @@ if(isset($_POST['submit'])){
     
 
 
-            $sql="INSERT INTO pds (emp_id,office_assign,emp_first_name,emp_last_name,emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_email,emp_tel_no,emp_mb_no,emp_citizen,emp_dual_citizen,emp_citizen_chk,emp_resi_add,emp_resi_add_street,emp_resi_add_subdivision,emp_resi_add_barangay,emp_resi_add_municipal,emp_resi_add_province,emp_resi_add_zipcode,emp_per_add,emp_per_add_street,emp_per_add_subdivision,emp_per_add_barangay,emp_per_add_municipal,emp_per_add_province,emp_per_add_zipcode,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
+            $sql="INSERT INTO pds (emp_id,office_assign,emp_first_name,emp_last_name,emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_email,emp_tel_no,emp_mb_no,emp_citizen,emp_dual_citizen,emp_citizen_chk,emp_resi_add,emp_resi_add_street,emp_resi_add_subdivision,emp_resi_add_barangay,emp_resi_add_municipal,emp_resi_add_province,emp_resi_add_zipcode,emp_per_add,emp_per_add_street,emp_per_add_subdivision,emp_per_add_barangay,emp_per_add_municipal,emp_per_add_province,emp_per_add_zipcode,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency,emp_status,emp_sex) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
             ON DUPLICATE KEY UPDATE
             office_assign = '$office_assign',
             emp_first_name = '$emp_first_name',
@@ -100,7 +102,9 @@ if(isset($_POST['submit'])){
             emp_contact_ph = '$emp_contact_ph',
             emp_contact_ss = '$emp_contact_ss',
             emp_contact_tin = '$emp_contact_tin',
-            emp_contact_agency = '$emp_contact_agency'
+            emp_contact_agency = '$emp_contact_agency',
+            
+            emp_sex = '$emp_sex'
             ";
 
             $stmt = mysqli_stmt_init($conn);
@@ -111,7 +115,7 @@ if(isset($_POST['submit'])){
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"issssssiissiisssssssssssssssssiiiiii",$emp_id, $office_assign, $emp_first_name,$emp_last_name,$emp_gender,$emp_civil_status,$emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_email,$emp_tel_no,$emp_mb_no,$emp_citizen,$emp_dual_citizen,$emp_citizen_chk,$emp_resi_add,$emp_resi_add_street,$emp_resi_add_subdivision,$emp_resi_add_barangay,$emp_resi_add_municipal,$emp_resi_add_province,$emp_resi_add_zipcode,$emp_per_add,$emp_per_add_street,$emp_per_add_subdivision,$emp_per_add_barangay,$emp_per_add_municipal,$emp_per_add_province,$emp_per_add_zipcode,$emp_contact_gs,$emp_contact_pag,$emp_contact_ph,$emp_contact_ss,$emp_contact_tin,$emp_contact_agency);
+                    mysqli_stmt_bind_param($stmt,"issssssiissiisssssssssssssssssiiiiiiss",$emp_id, $office_assign, $emp_first_name,$emp_last_name,$emp_gender,$emp_civil_status,$emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_email,$emp_tel_no,$emp_mb_no,$emp_citizen,$emp_dual_citizen,$emp_citizen_chk,$emp_resi_add,$emp_resi_add_street,$emp_resi_add_subdivision,$emp_resi_add_barangay,$emp_resi_add_municipal,$emp_resi_add_province,$emp_resi_add_zipcode,$emp_per_add,$emp_per_add_street,$emp_per_add_subdivision,$emp_per_add_barangay,$emp_per_add_municipal,$emp_per_add_province,$emp_per_add_zipcode,$emp_contact_gs,$emp_contact_pag,$emp_contact_ph,$emp_contact_ss,$emp_contact_tin,$emp_contact_agency,$emp_status,$emp_sex);
                     mysqli_stmt_execute($stmt);
 
                   
@@ -471,6 +475,79 @@ $ele_school_name=$_POST['ele_school_name'];
                     mysqli_stmt_bind_param($stmt,"sssi",$emp_special_skills, $non_academic, $membership,$emp_id);
                     mysqli_stmt_execute($stmt);
                 }
+
+    //others
+
+    
+    
+
+    $condition_1=$_POST['condition_1'];
+    $condition_1_des=$_POST['condition_1_des'];
+    $condition_2=$_POST['condition_2'];
+    $condition_2_des=$_POST['condition_2_des'];
+    $condition_3=$_POST['condition_3'];
+    $condition_3_des=$_POST['condition_3_des'];
+    $condition_4=$_POST['condition_4'];
+    $condition_4_des=$_POST['condition_4_des'];
+    $condition_5=$_POST['condition_5'];
+    $condition_5_des=$_POST['condition_5_des'];
+    $condition_6=$_POST['condition_6'];
+    $condition_6_des=$_POST['condition_6_des'];
+    $condition_7=$_POST['condition_7'];
+    $condition_7_des=$_POST['condition_7_des'];
+    $condition_8=$_POST['condition_8'];
+    $condition_8_des=$_POST['condition_8_des'];
+    $condition_9=$_POST['condition_9'];
+    $condition_9_des=$_POST['condition_9_des'];
+    $condition_10=$_POST['condition_10'];
+    $condition_10_des=$_POST['condition_10_des'];
+    $condition_11=$_POST['condition_11'];
+    $condition_11_des=$_POST['condition_11_des'];
+    $condition_12=$_POST['condition_12'];
+    $condition_12_des=$_POST['condition_12_des'];
+  
+   
+
+            $sql="INSERT INTO other_inf (condition_1,condition_1_des,condition_2,condition_2_des,condition_3,condition_3_des,condition_4,condition_4_des,condition_5,condition_5_des,condition_6,condition_6_des,condition_7,condition_7_des,condition_8,condition_8_des,condition_9,condition_9_des,condition_10,condition_10_des,condition_11,condition_11_des,condition_12,condition_12_des,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
+             ON DUPLICATE KEY UPDATE
+             condition_1 = '$condition_1',
+             condition_1_des = '$condition_1_des',
+             condition_2 = '$condition_2',
+             condition_2_des = '$condition_2_des',
+             condition_3 = '$condition_3',
+             condition_3_des = '$condition_3_des',
+             condition_4 = '$condition_4',
+             condition_4_des = '$condition_4_des',
+             condition_5 = '$condition_5',
+             condition_5_des = '$condition_5_des',
+             condition_6 = '$condition_6',
+             condition_6_des = '$condition_6_des',
+             condition_7 = '$condition_7',
+             condition_7_des = '$condition_7_des',
+             condition_8 = '$condition_8',
+             condition_8_des = '$condition_8_des',
+             condition_9 = '$condition_9',
+             condition_9_des = '$condition_9_des',
+             condition_10 = '$condition_10',
+             condition_10_des = '$condition_10_des',
+             condition_11 = '$condition_11',
+             condition_11_des = '$condition_11_des',
+             condition_12 = '$condition_12',
+             condition_12_des = '$condition_12_des'
+            ";
+
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+                header("Location:../emp_profile.php?error=sqlerror");
+                exit();
+            }
+                else{
+
+
+                    mysqli_stmt_bind_param($stmt,"ssssssssssssssssssssssssi",$condition_1, $condition_1_des, $condition_2,$condition_2_des,$condition_3,$condition_3_des,$condition_4,$condition_4_des,$condition_5,$condition_5_des,$condition_6,$condition_6_des,$condition_7,$condition_7_des,$condition_8,$condition_8_des,$condition_9,$condition_9_des,$condition_10,$condition_10_des,$condition_11,$condition_11_des,$condition_12,$condition_12_des,$emp_id);
+                    mysqli_stmt_execute($stmt);
+                }
+
 
     //references
 

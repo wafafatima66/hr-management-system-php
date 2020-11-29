@@ -132,10 +132,10 @@ if(isset($_POST['submit'])){
               <td><?php echo $mydata["emp_gender"]?></td>
               <td><?php echo $mydata["office_assign"]?></td>
               <td><?php echo $mydata["emp_tel_no"]?></td>
-              <td><?php echo $mydata["emp_civil_status"]?></td>
+              <td><?php echo $mydata["emp_status"]?></td>
                 <td class="text-center">
-                <a href="emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
-               <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
+                <a href="../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
+                <a href="../emp_mang/emp_mang.php?emp_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
               </td>
             </tr>
            
@@ -180,10 +180,10 @@ else {
             <td><?php echo $mydata["emp_gender"]?></td>
             <td><?php echo $mydata["office_assign"]?></td>
             <td><?php echo $mydata["emp_tel_no"]?></td>
-            <td><?php echo $mydata["emp_civil_status"]?></td>
+            <td><?php echo $mydata["emp_status"]?></td>
               <td class="text-center">
-              <a href="emp_view.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
-             <a href="edit.php?edit_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
+              <a href="../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
+              <a href="../emp_mang/emp_mang.php?emp_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
             </td>
           </tr>
          
