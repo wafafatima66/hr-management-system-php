@@ -53,7 +53,7 @@
 
             <div class="container">
                     <div class="text-right">
-                        <button class="btn m-2" style="background: #345587;color:#fff;" type="button" onclick="openpanel('content-6','vol')" >PREV</button>
+                        <button class="btn m-2" style="background: #345587;color:#fff;" type="button" onclick="openpanel('content-5','wor')" >PREV</button>
                         <button  type ="button"  class="btn m-2" style="background: #345587; color:#fff" onclick="openpanel('content-7','ler')" >NEXT</button>
                     </div>
                     </div>

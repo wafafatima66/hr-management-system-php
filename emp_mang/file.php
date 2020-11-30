@@ -1,78 +1,73 @@
 
 <?php
-
+   
 
 
 if(isset($_POST['upload'])){
 
-    $emp_id = $_SESSION['emp_id']; 
+    $emp_id = $_SESSION['emp_id'];  
 
-    if($_FILES["upload_file"]["name"] != " "){
+    $file_date = date("l jS \of F Y ");
+    $file_folder = $_POST["folder"];
 
-        $date = date("l jS \of F Y ");
-        $folder = $_POST["folder"];
-        $file_name = $_FILES["upload_file"]["name"]; 
-    $tempname = $_FILES["upload_file"]["tmp_name"];  
-    $path = "../emp_mang/uploads/".$folder."/".$date.$file_name; 
+    $file_name =  $emp_id."-".$_FILES['upload_file']['name'];
+    $file_loc = $_FILES['upload_file']['tmp_name'];
+ $file_size = $_FILES['upload_file']['size'];
+ $file_type = $_FILES['upload_file']['type'];
+ $path="../emp_mang/uploads/";
 
-    if (move_uploaded_file($tempname, $path))  { 
-        $msg = " File uploaded successfully"; 
-    }else{ 
-        $msg = " File uploaded failed";
-        }
+ 
+$query = "SELECT * FROM emp_file WHERE file_name = '$file_name' ";
 
-        $pds = ""; $ipcr = ""; $saln = ""; $others = ""; 
-
-        if($folder=="pds"){
-            $pds = $file_name;
-        }else  if($folder=="ipcr"){
-            $ipcr = $file_name;
-        }else  if($folder=="saln"){
-            $saln = $file_name;
-        } else {
-            $others = $file_name;
-        }
+$runquery = $conn -> query($query);
+$rowcount=mysqli_num_rows($runquery);
+if($rowcount == 0 ){
 
 
-        $sql="INSERT INTO emp_file (pds, ipcr, saln,others,emp_id) VALUE (?,?,?,?,?)";
+ 
+ move_uploaded_file($file_loc,$path.$file_name);
+  
+
+    
+
+        $sql="INSERT INTO emp_file (file_name, file_type, file_size,file_folder,file_date,emp_id) VALUE (?,?,?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location:emp_mang.php?error=sqlerror");
+            header("Location:emp_mang.php?emp_id=2&error=sqlerror");
             exit();
         }
             else{
             
-                mysqli_stmt_bind_param($stmt,"ssssi", $pds, $ipcr, $saln,$others,$emp_id);
+                mysqli_stmt_bind_param($stmt,"ssissi", $file_name, $file_type, $file_size,$file_folder,$file_date,$emp_id);
                 mysqli_stmt_execute($stmt);
 
             
 
-               $msg = " File uploaded successfully";
+                echo '<div class="alert alert-primary" role="alert">
+                File Uploaded!
+              </div>';
+                
             }
 
             mysqli_stmt_close($stmt);
             mysqli_close($conn);
-
-        /*$data = explode(".",$_FILES["upload_file"]["name"]);
-        $extension = $data[1];
-        $new_file_name = rand().'.'.$extension;
-        $path = $_POST["folder"]."/".$new_file_name;
-        if(move_uploaded_file($_FILES["upload_file"]["tmp_name"],$path)){
-            echo "image uploaded";
-        }else echo "image not uploaded";
-    }else {echo "no file ";}*/
+        }
+       
 }
 
-} else {
-    $msg = 'File uploaded Failed';
+ else {
+    $msg= "File not uploaded";
+                        
 }
 
 
 
 ?>
 
+      
+
                         <!--File uploaad-->
-                        <div class=" emp_profile_section2_tab container " id="tab-3">  
+                        <div class=" emp_profile_section2_tab container mb-5" id="tab-3">  
 
 
                    <div class="container">
@@ -85,10 +80,11 @@ if(isset($_POST['upload'])){
                                     </div>
 
                                     <div class="col-lg-3 pl-0">
-                                        <div class="emp_profile_image"> 
-                                            <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
-                                        </div>
-                                    </div>
+                    <div class="emp_profile_image" style="height:250px"> 
+                        <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
+                    </div>
+                </div>
+                                    
                         
                         </div>
                    </div>
@@ -100,25 +96,40 @@ if(isset($_POST['upload'])){
 
                                         <div class="row">
 
-                                            <div class="col-lg-2">
+                                        
+
+
+                                         
+
+
+                                          <div class="col-lg-2">
                                                 <h6>PDS</h6>
-                                                <i class="fas fa-folder-open" style=""></i>
+                                                
+                                                <a href="" type="submit" data-toggle="modal" data-target="#pdsfile"><i class="fas fa-folder-open" style="" name="pds" ></i></a>
                                             </div>
+
+                                           
+
+                                           
 
                                             <div class="col-lg-2">
                                                 <h6>IPCR</h6>
-                                                <i class="fas fa-folder-open" style=""></i>
+                                              
+                                                <a href="" type="submit" data-toggle="modal" data-target="#ipcrfile"><i class="fas fa-folder-open" style="" name="ipcr" ></i></a>
                                             </div>
 
+                                         
                                             <div class="col-lg-2">
                                                 <h6>SALN</h6>
-                                                <i class="fas fa-folder-open" style=""></i>
+                                                <a href="" type="button" data-toggle="modal" data-target="#salnfile"><i class="fas fa-folder-open" style=""></i></a>
                                             </div>
 
                                             <div class="col-lg-2">
                                                 <h6>OTHERS</h6>
-                                                <i class="fas fa-folder-open" style=""></i>
+                                                <a href="" type="button" data-toggle="modal" data-target="#othersfile"><i class="fas fa-folder-open" style=""></i></a>
                                             </div>
+                                           
+                                         
 
                                         </div>
 
@@ -142,10 +153,10 @@ if(isset($_POST['upload'])){
                     </div>
 
 
-                    <!--modal-->
+                   
 
                      <!-- Modal -->
-      <div class="modal fade addemployee " id="uploadfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+      <div class="modal fade addemployee" id="uploadfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
           <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
               <div class="modal-content">
 
@@ -198,7 +209,7 @@ if(isset($_POST['upload'])){
                     
                    
                    <div class="text-center">
-                    <button type="submit" name="upload" class="btn btn-two">Upload</button>
+                    <button type="submit" name="upload" class="btn btn-two" >Upload</button>
                    </div>
 
                 
@@ -210,4 +221,322 @@ if(isset($_POST['upload'])){
             </div>
         </div>
       </div>
-                  
+
+
+       
+ <!--modal for pds-->
+
+ <div class="modal fade  addemployee" id="pdsfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+
+<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title">PDS FILES</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+
+       <div class="modal-body">
+
+
+              
+<table width="80%" class="table table-sm table-bordered file-section-table">
+<tr>
+<th>File Name</th>
+<th>File Date</th>
+<th>File Type</th>
+<th>File Size(KB)</th>
+<th>View</th>
+</tr>
+
+
+<?php
+
+
+$emp_id = $_SESSION['emp_id'];  
+
+    
+require '../includes/conn.php';
+
+$file_folder = "pds";
+$query = "SELECT * FROM emp_file WHERE emp_id = '$emp_id' AND file_folder='$file_folder'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+
+
+while($data = $runquery -> fetch_assoc()){
+?>
+        <tr>
+        <td><?php echo $data['file_name'] ?></td>
+        <td><?php echo $data['file_date'] ?></td>
+        <td><?php echo $data['file_type'] ?></td>
+        <td><?php echo $data['file_size'] ?></td>
+        <td><a href="../emp_mang/uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
+        </tr>
+
+    <?php
+    }
+
+}
+
+
+?>
+</table>
+     
+
+          </div>
+             
+
+
+     
+     
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+       
+ <!--modal for //ipcr-->
+
+ <div class="modal fade  addemployee" id="ipcrfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+
+<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title">IPCR FILES</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+
+       <div class="modal-body">
+
+
+              
+<table width="80%" class="table table-sm table-bordered file-section-table">
+<tr>
+<th>File Name</th>
+<th>File Date</th>
+<th>File Type</th>
+<th>File Size(KB)</th>
+<th>View</th>
+</tr>
+
+
+<?php
+
+
+$emp_id = $_SESSION['emp_id'];  
+
+    
+require '../includes/conn.php';
+
+$file_folder = "ipcr";
+$query = "SELECT * FROM emp_file WHERE emp_id = '$emp_id' AND file_folder='$file_folder'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+
+
+while($data = $runquery -> fetch_assoc()){
+?>
+        <tr>
+        <td><?php echo $data['file_name'] ?></td>
+        <td><?php echo $data['file_date'] ?></td>
+        <td><?php echo $data['file_type'] ?></td>
+        <td><?php echo $data['file_size'] ?></td>
+        <td><a href="../emp_mang/uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
+        </tr>
+
+    <?php
+    }
+
+}
+
+
+?>
+</table>
+     
+
+          </div>
+             
+
+
+     
+     
+
+
+  </div>
+</div>
+</div>
+              
+
+
+       
+ <!--modal for//sapn-->
+
+ <div class="modal fade  addemployee" id="salnfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+
+<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title">SALN FILES</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+
+       <div class="modal-body">
+
+
+              
+<table width="80%" class="table table-sm table-bordered file-section-table">
+<tr>
+<th>File Name</th>
+<th>File Date</th>
+<th>File Type</th>
+<th>File Size(KB)</th>
+<th>View</th>
+</tr>
+
+
+<?php
+
+
+$emp_id = $_SESSION['emp_id'];  
+
+    
+require '../includes/conn.php';
+
+$file_folder = "saln";
+$query = "SELECT * FROM emp_file WHERE emp_id = '$emp_id' AND file_folder='$file_folder'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+
+
+while($data = $runquery -> fetch_assoc()){
+?>
+        <tr>
+        <td><?php echo $data['file_name'] ?></td>
+        <td><?php echo $data['file_date'] ?></td>
+        <td><?php echo $data['file_type'] ?></td>
+        <td><?php echo $data['file_size'] ?></td>
+        <td><a href="../emp_mang/uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
+        </tr>
+
+    <?php
+    }
+
+}
+
+
+?>
+</table>
+     
+
+          </div>
+             
+
+
+     
+     
+
+
+  </div>
+</div>
+</div>
+              
+
+
+       
+ <!--modal for //others-->
+
+ <div class="modal fade  addemployee" id="othersfile" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
+
+<div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h3 class="modal-title">OTHERS FILES</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+
+       <div class="modal-body">
+
+
+              
+<table width="80%" class="table table-sm table-bordered file-section-table">
+<tr>
+<th>File Name</th>
+<th>File Date</th>
+<th>File Type</th>
+<th>File Size(KB)</th>
+<th>View</th>
+</tr>
+
+
+<?php
+
+
+$emp_id = $_SESSION['emp_id'];  
+
+    
+require '../includes/conn.php';
+
+$file_folder = "others";
+$query = "SELECT * FROM emp_file WHERE emp_id = '$emp_id' AND file_folder='$file_folder'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+
+
+while($data = $runquery -> fetch_assoc()){
+?>
+        <tr>
+        <td><?php echo $data['file_name'] ?></td>
+        <td><?php echo $data['file_date'] ?></td>
+        <td><?php echo $data['file_type'] ?></td>
+        <td><?php echo $data['file_size'] ?></td>
+        <td><a href="../emp_mang/uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
+        </tr>
+
+    <?php
+    }
+
+}
+
+
+?>
+</table>
+     
+
+          </div>
+             
+
+
+     
+     
+
+
+  </div>
+</div>
+</div>
+              
+              
+

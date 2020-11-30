@@ -1,4 +1,6 @@
-
+body{
+    height: 100%;
+}
 #wrapper {
     overflow-x: hidden; 
  }
@@ -29,7 +31,7 @@
 .sidebar-menu{
     background-color:#345587 ;
     padding: 30px 5px;
-   height: 340px;
+   height: 100vh;
 }
 .sidebar-menu .list-group {
   width: 15rem;
@@ -395,6 +397,19 @@ color: #345587;
 .fa-folder-open{
     color:#6AFF52;
     font-size: 70px;
+}
+.file-section-table td {
+    font-size: 12px;
+}
+.file-section-table tr {
+    font-size: 12px;
+}
+.file-section-table tr td{
+    font-size: 12px;
+}
+.file-section-table th {
+    font-size: 12px;
+    font-weight: bold;
 }
 
 /* DOCUMENT PAGE */

@@ -123,12 +123,20 @@ if(isset($_GET['register'])){
 
 
         <?php include 'pds/pds.php'; ?>
+           
+    
         <?php include 'ledger.php'; ?>
         <?php include 'file.php'; ?>
 
       
         
-        <?php
+      
+  
+        
+</div>  <!-- /#page-content-wrapper -->
+  </div> <!-- /#wrapper -->
+
+  <?php
                 
                  
             }//end of while
@@ -141,9 +149,4 @@ if(isset($_GET['register'])){
 
 
 
-    ?>      
-    
-  
-        
-</div>  <!-- /#page-content-wrapper -->
-  </div> <!-- /#wrapper -->
+    ?>   

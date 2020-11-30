@@ -47,6 +47,7 @@
       </div> <!----end of section 1-->
 
         <!--section 2-->
+        <div class="container">
 
         <div class="container-table form-inline">
 
@@ -79,7 +80,7 @@
 
       <!---section 3 -->
 
-      <div class="container">
+    
 
         <!--Table-->
         <table class="table table-striped w-auto table-bordered">
@@ -206,8 +207,10 @@ else {
 
 </table>
 
-</div>
+
       <!--Table-->
+</div>
+
 </div>
 
         <!---section 4 -->

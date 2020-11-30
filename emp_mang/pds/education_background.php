@@ -36,8 +36,8 @@
                            <div class="d-flex flex-column">
                            <label for="">PERIOD OF ATTENDANCE</label>
                         <div>
-                            <input type="date" class="form-control" id="" style="width:140px" value="<?php echo $ele_school_name?>" name="ele_from_date">
-                            <input type="date" class="form-control" id="" style="width:140px"   value="<?php echo $ele_school_name?>" name="ele_to_date">
+                            <input type="date" class="form-control" id="" style="width:140px" value="<?php echo $ele_from_date?>" name="ele_from_date">
+                            <input type="date" class="form-control" id="" style="width:140px"   value="<?php echo $ele_to_date?>" name="ele_to_date">
                         </div>
                            </div>
                         </div>
@@ -313,7 +313,7 @@
 
                     <div class="text-right">
                       
-                    <button class="btn m-2" style="background: #345587;color:#fff;" onclick="openpanel('content-3' ,'edu')" >PREV</button>
+                    <button class="btn m-2" style="background: #345587;color:#fff;" onclick="openpanel('content-2','fam')" type ="button" >PREV</button>
                         <button  type ="button" class="btn m-2" style="background: #345587; color:#fff" onclick="openpanel('content-4','ser')" >NEXT</button>
                     </div>
 

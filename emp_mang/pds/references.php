@@ -34,6 +34,17 @@
                 </div>
 
                 <div class="container field_wrapper" style="background:#E6F7FF;">
+
+                <?php 
+                             
+                             $query = "SELECT * FROM emp_references WHERE emp_id = '$emp_id'";
+                           
+                             $runquery = $conn -> query($query);
+                             $rowcount=mysqli_num_rows($runquery);
+                             if($rowcount == 0 ){
+                             
+                           
+                           ?>
                 
                 <div class="row " >
 
@@ -57,6 +68,58 @@
 
                 </div>
 
+                <?php }else 
+
+$query = "SELECT * FROM emp_references WHERE emp_id = '$emp_id'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+ 
+   
+while($data = $runquery -> fetch_assoc()){
+
+    $ref_full_name = $data["ref_full_name"];
+    $ref_add = $data["ref_add"];
+    $ref_tel = $data["ref_tel"];
+
+    $ref_full_name_arr= explode(",",$ref_full_name);
+    $ref_add_arr= explode(",",$ref_add);
+    $ref_tel_arr= explode(",",$ref_tel);
+
+    
+
+    for($i = 0 ; $i < sizeof($ref_full_name_arr) ; $i++){ ?>
+
+<div class="row " >
+
+<div class="col-lg-4">
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control "   style="width:200px;" name="ref_full_name[]" value="<?php echo $ref_full_name_arr[$i] ?>">
+    </div>
+</div>
+
+<div class="col-lg-4">
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control "   style="width:200px;" name="ref_add[]" value="<?php echo $ref_add[$i] ?>">
+    </div>
+</div>
+
+<div class="col-lg-4 ">
+    <div class="form-group mx-sm-3 mb-2">
+        <input type="text" class="form-control "  style="width:200px;" name="ref_tel[]" value="<?php echo $ref_tel[$i] ?>">
+    </div>
+</div>
+
+</div>
+
+
+<?php  }
+
+
+}}
+
+                         ?>
+
                 <a href="javascript:void(0);" class="add_button" title="Add field"><i class="fa fa-plus"></i></a>
 
                 </div>
@@ -72,11 +135,11 @@
 
                         <div class="col-lg-6">
                             <label for="">GOVERNMENT ISSUED ID <span>(i.e.Passport,GSIS,SSS,PRC,Driver's Licence ,etc)</span></label>
-                                <input type="text" class="form-control mb-2 mt-2" id="" placeholder="Government Issued ID" style="width:200px;" name= "emp_gov_id" >
+                                <input type="text" class="form-control mb-2 mt-2" placeholder="Government Issued ID" style="width:200px;" name= "emp_gov_id" value="<?php echo $emp_gov_id?>" >
 
-                                <input type="text" class="form-control mb-2" id="" placeholder="id/License/Passport No." style="width:200px;" name="emp_passport_no" >
+                                <input type="text" class="form-control mb-2"  placeholder="id/License/Passport No." style="width:200px;" name="emp_passport_no" value="<?php echo $emp_passport_no?>">
 
-                                <input type="text" class="form-control mb-2" id="" placeholder="Date/Place of Issurance" style="width:200px;" name="emp_place_of_insurance"  >
+                                <input type="text" class="form-control mb-2"  placeholder="Date/Place of Issurance" style="width:200px;" name="emp_place_of_insurance" value="<?php echo $emp_place_of_insurance?>" >
                         </div>
 
                         

@@ -11,7 +11,7 @@
                     </div>
 
                     <div class="col-lg-3 pl-0">
-                    <div class="emp_profile_image"> 
+                    <div class="emp_profile_image" style="height:250px"> 
                         <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
                     </div>
                 </div>

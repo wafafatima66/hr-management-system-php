@@ -17,8 +17,8 @@
 		else if($_GET['error']=="sqlerror"){
 			echo'<p class="alert alert-danger h6">Error in Creating account</p>';
 		}
-		else if($_GET['error']=="emailtaken"){
-			echo'<p class="alert alert-danger h6">Email Taken</p>';
+		else if($_GET['error']=="duplicateid"){
+			echo'<p class="alert alert-danger h6">Employee Id taken</p>';
 		}
 	
 	}	else if(isset($_GET['submit'])){
@@ -43,6 +43,7 @@ if(isset( $_REQUEST["emp_id"])){
   require '../includes/conn.php';
 
 $dltquery = "DELETE FROM pds WHERE emp_id = $emp_id"; 
+
 
 if($conn -> query($dltquery)){
   echo'<p class="alert alert-danger h6">Employee deleted</p>';

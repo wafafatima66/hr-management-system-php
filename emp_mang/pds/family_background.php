@@ -132,6 +132,17 @@
                                 </div>
                             </div>
 
+                            <?php 
+                             
+  $query = "SELECT * FROM family_background WHERE emp_id = '$emp_id'";
+
+  $runquery = $conn -> query($query);
+  $rowcount=mysqli_num_rows($runquery);
+  if($rowcount == 0 ){
+  
+
+?>
+
                             <div class="row">
                                 <div class="col-7 p-0 m-0 form-inline ">             
                                     <div class="form-group mx-sm-1 mb-2">
@@ -146,16 +157,66 @@
                                 </div>
                             </div>
 
-                        </div> 
+                      
 
-                         <a href="javascript:void(0);" class="add_fam_button" title="Add field"><i class="fa fa-plus"></i></a>  
+                         <?php }else 
+                         
+                            
+$query = "SELECT * FROM family_background WHERE emp_id = '$emp_id'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+ 
+   
+while($data = $runquery -> fetch_assoc()){
+
+    $emp_child_name = $data["emp_child_name"];
+
+    $emp_child_name_arr= explode(",",$emp_child_name);
+
+    $emp_child_dob = $data["emp_child_dob"];
+
+    $emp_child_dob_arr= explode(",",$emp_child_dob);
+
+    for($i = 0 ; $i < sizeof($emp_child_name_arr) ; $i++){ ?>
+    
+
+        
+        <div class="row">
+                                <div class="col-7 p-0 m-0 form-inline ">             
+                                    <div class="form-group mx-sm-1 mb-2">
+                                        <input type="text" class="form-control" style="width:200px;" value="<?php echo $emp_child_name_arr[$i] ?>" name="emp_child_name[]">
+                                    </div>                   
+                                </div>
+
+                                <div class="col-5 p-0 m-0 form-inline "> 
+                                    <div class="form-group mx-sm-1 mb-2">
+                                        <input type="date" class="form-control" style="width:140px;"  value="<?php echo $emp_child_dob_arr[$i] ?>" name="emp_child_dob[]">
+                                    </div>
+                                </div>
+                            </div>
+
+                       
+
+                                <?php  }
+
+
+}}
+
+                         ?>
+
+</div> 
+
+<a href="javascript:void(0);" class="add_fam_button" title="Add field"><i class="fa fa-plus"></i></a>  
+
+                         
                     </div>
                 </div>
             </div>
 
              <div class="container">
              <div class="text-right">
-                        <button class="btn m-2" type="button" style="background: #345587;color:#fff;"  onclick="openpanel('content-2','fam')">PREV</button>
+                        <button class="btn m-2" type="button" style="background: #345587;color:#fff;"  onclick="openpanel('content-1','pds')">PREV</button>
                         <button  type ="button" class="btn m-2" style="background: #345587; color:#fff" onclick="openpanel('content-3','edu')" >NEXT</button>
                 </div>
              </div>

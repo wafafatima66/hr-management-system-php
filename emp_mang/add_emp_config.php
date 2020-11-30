@@ -5,6 +5,8 @@
 if(isset($_POST['submit'])){
 
 
+    
+
     $emp_first_name=$_POST['emp_first_name'];
     $emp_last_name=$_POST['emp_last_name'];
     $emp_middle_name=$_POST['emp_middle_name'];
@@ -24,6 +26,12 @@ if(isset($_POST['submit'])){
 
 
     require '../includes/conn.php';
+
+    $query = "SELECT * FROM add_emp WHERE emp_id = '$emp_id'";
+                           
+    $runquery = $conn -> query($query);
+    $rowcount=mysqli_num_rows($runquery);
+    if($rowcount == 0 ){
 
     if(empty($emp_first_name)|| empty($emp_last_name))
             {
@@ -63,12 +71,15 @@ if(isset($_POST['submit'])){
                 }
         } 
     
-        
+    
 
         mysqli_stmt_close($stmt);
         mysqli_close($conn);
 
-   
+    }else {
+        header("Location:emp_mang.php?error=duplicateid");
+                exit();
+    }
    
 }
     

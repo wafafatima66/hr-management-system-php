@@ -126,6 +126,10 @@ $gra_graduation = "";
     $to_date = "";
     $conducted_by = "";
 
+    //references
+    $emp_gov_id = "";
+    $emp_passport_no = "";
+    $emp_place_of_insurance = "";
     
 
     //others

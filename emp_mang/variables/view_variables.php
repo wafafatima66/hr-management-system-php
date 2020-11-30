@@ -226,6 +226,23 @@ while($data = $runquery -> fetch_assoc()){
 }
 
 
+//fetch data from references
+
+$query = "SELECT * FROM emp_references WHERE emp_id = '$emp_id'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+ 
+ 
+while($data = $runquery -> fetch_assoc()){
+
+
+  $emp_gov_id = $data["emp_gov_id"];
+  $emp_passport_no = $data["emp_passport_no"];
+  $emp_place_of_insurance = $data["emp_place_of_insurance"];
+  
+}
+}
 
 
 //fetch data from others

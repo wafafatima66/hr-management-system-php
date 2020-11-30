@@ -24,11 +24,11 @@
                 <a href="../calendar/calendar.php"  >Calendar and Events</a>
                 <a href="../reports/reports.php" >Reports</a>
               </div>
+
+             
         </div>
 
-        <div class="sidebar-footer p-1">
-          <h6 class="text-center">AMEX</h6>
-        </div>
+      
     
     </div>
     <!-- /#sidebar-wrapper -->

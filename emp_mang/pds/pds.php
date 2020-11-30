@@ -24,7 +24,7 @@
                 </div>
               
                 <div class="col-lg-3 pl-0">
-                    <div class="emp_profile_image"> 
+                    <div class="emp_profile_image" style="height:250px"> 
                         <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
                     </div>
                 </div>
@@ -46,7 +46,7 @@
 
                 <div class="container ">
                         <div class="row ">
-                            <div class="col-lg-9 form-inline">
+                            <div class="col-lg-9  form-inline">
 
                            
 
@@ -81,18 +81,18 @@
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">SEX</label>
-                            <select class="form-control" style="width:50px;" name="emp_sex" value="<?php echo  $emp_sex ?>">
-                            <option value = "0 "></option>
-                                <option value = "male">M</option>
-                                <option value = "female">F</option>
+                            <select class="form-control" style="width:70px;" name="emp_sex" value="">
+                            <option value = "<?php echo  $emp_sex ?>"><?php echo  $emp_sex ?></option>
+                                <option value = "M">M</option>
+                                <option value = "F">F</option>
                             </select>
                             </div>
 
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">GENDER</label>
-                            <select class="form-control" style="width:80px;" name="emp_gender" value="<?php echo  $emp_gender ?>">
-                                <option value = "0 ">SELECT</option>
+                            <select class="form-control" style="width:80px;" name="emp_gender" value="">
+                                <option value = "<?php echo  $emp_gender ?> "><?php echo  $emp_gender ?></option>
                                 <option value = "male">MALE</option>
                                 <option value = "female">FEMALE</option>
                                 <option value = "lgbqt">LGBQT</option>
@@ -104,8 +104,8 @@
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">CIVIL STATUS</label>
                             
-                            <select class="form-control" style="width:80px;" name="emp_civil_status" value="<?php echo  $emp_civil_status ?>">
-                                <option value = "0 ">SELECT</option>
+                            <select class="form-control" style="width:120px;" name="emp_civil_status" >
+                                <option value = "<?php echo  $emp_civil_status ?> "><?php echo  $emp_civil_status ?></option>
                                 <option value = "single">SINGLE</option>
                                 <option value = "married">MARRIED</option>
                                 <option value = "widow">WIDOW</option>
@@ -115,22 +115,22 @@
                             
                             <div class="form-group mx-sm-1 mb-2">
                                 <label for="">DATE OF BIRTH</label>
-                                <input type="date"  class="form-control" style="width:110px;"  name="emp_dob">
+                                <input type="date"  class="form-control" style="width:140px;"  name="emp_dob" value="<?php echo  $emp_dob ?>">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">HEIGHT</label>
-                                <input type="text" class="form-control" style="width:40px;"  value="<?php echo  $emp_height ?>" name="emp_height">
+                                <input type="text" class="form-control" style="width:50px;"  value="<?php echo  $emp_height ?>" name="emp_height">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">WEIGHT</label>
-                            <input type="text" class="form-control" style="width:40px;" value="<?php echo  $emp_weight ?>" name="emp_weight">
+                            <input type="text" class="form-control" style="width:50px;" value="<?php echo  $emp_weight ?>" name="emp_weight">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
                             <label for="">BLOOD TYPE</label>
-                                <input type="text" class="form-control" style="width:30px;"  value="<?php echo  $emp_blood ?>" name="emp_blood">
+                                <input type="text" class="form-control" style="width:40px;"  value="<?php echo  $emp_blood ?>" name="emp_blood">
                             </div>
                       
                     </div>
