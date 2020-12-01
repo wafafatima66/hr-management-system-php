@@ -9,8 +9,8 @@
                   <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">TYPE</label>
-                            <select class="form-control" style="width:200px;" name="type_of" value="" >
-                                <option value = ""><?php echo $type_of?></option>
+                            <select class="form-control" style="width:200px;" name="type_of" value="<?php echo $type_of?>" >
+                                <option value = "<?php echo $type_of?>"><?php echo $type_of?></option>
                                 <option value = "Board Examination">Board Examination</option>
                                 <option value = "Civil Service Examination">Civil Service Examination</option>
                             </select>

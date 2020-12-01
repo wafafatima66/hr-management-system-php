@@ -20,25 +20,51 @@
     $emp_blood = $data["emp_blood"];
     $emp_citizen = $data["emp_citizen"];
     $emp_dual_citizen = $data["emp_dual_citizen"];
+    $emp_dob = $data["emp_dob"];
 
     
     $emp_citizen_chk = $data["emp_citizen_chk"];
+    $emp_citizen_chk_arr = explode(",",$emp_citizen_chk);
+
+    $by_birth =  "";
+        $by_nature =  "";
+
+    for($i=0 ; $i<sizeof($emp_citizen_chk_arr); $i++){
+
+      if($emp_citizen_chk_arr[$i] =="by_birth" && $emp_citizen_chk_arr[$i] =="by_nature"){
+        $by_birth =  "checked='checked'";
+        $by_nature =  "checked='checked'";
+      } else if($emp_citizen_chk_arr[$i] =="by_birth")
+      {
+        $by_birth =  "checked='checked'";
+      }else if($emp_citizen_chk_arr[$i] =="by_nature")
+      {
+        $by_nature =  "checked='checked'";
+      }else 
+      {
+        $by_birth =  "";
+        $by_nature =  "";
+      }
+
+    }
+    
+
     $emp_resi_add = $data["emp_resi_add"];
     $emp_resi_add_street = $data["emp_resi_add_street"];
     $emp_resi_add_subdivision = $data["emp_resi_add_subdivision"];
     $emp_resi_add_barangay = $data["emp_resi_add_barangay"];
     $emp_resi_add_municipal = $data["emp_resi_add_municipal"];
     $emp_resi_add_province = $data["emp_resi_add_province"];
-
     $emp_resi_add_zipcode = $data["emp_resi_add_zipcode"];
+
     $emp_per_add = $data["emp_per_add"];
     $emp_per_add_street = $data["emp_per_add_street"];
     $emp_per_add_subdivision = $data["emp_per_add_subdivision"];
     $emp_per_add_barangay = $data["emp_per_add_barangay"];
     $emp_per_add_municipal = $data["emp_per_add_municipal"];
     $emp_per_add_province = $data["emp_per_add_province"];
-
     $emp_per_add_zipcode = $data["emp_per_add_zipcode"];
+
     $emp_tel_no = $data["emp_tel_no"];
     $emp_mb_no = $data["emp_mb_no"];
     $emp_email = $data["emp_email"];
@@ -179,10 +205,22 @@ $query = "SELECT * FROM work_experience WHERE emp_id = '$emp_id'";
       
   while($data = $runquery -> fetch_assoc()){
 
-    $position = $data["position"];
+    $work_from_date = $data["work_from_date"];
+    $work_to_date = $data["work_to_date"];
+    $work_position = $data["work_position"];
     $employer = $data["employer"];
     $monthly_sal = $data["monthly_sal"];
     $increment = $data["increment"];
+    $govt_service = $data["govt_service"];
+
+    $govt_service_yes="";
+    $govt_service_no="";
+    
+    if( $govt_service=="yes"){
+      $govt_service_yes ="checked='checked'";
+    } else {
+      $govt_service_no ="checked='checked'";
+    }
   }
 }
 
@@ -200,6 +238,8 @@ $query = "SELECT * FROM voluntary_works WHERE emp_id = '$emp_id'";
     $org_add = $data["org_add"];
     $no_of_hrs = $data["no_of_hrs"];
     $position_vol = $data["position"];
+    $vol_from_date = $data["vol_from_date"];
+    $vol_to_date = $data["vol_to_date"];
   }
 }
 
@@ -256,8 +296,7 @@ if($runquery == true){
  
 while($data = $runquery -> fetch_assoc()){
 
-  
-
+ 
   $condition_1= $data["condition_1"];
   $condition_2= $data["condition_2"];
   $condition_3= $data["condition_3"];
@@ -275,52 +314,64 @@ while($data = $runquery -> fetch_assoc()){
    if ($condition_1 == 'yes') 
     { 
      $condition_1 =  "checked='checked'"; 
-    } 
+     $condition_1_no =  "";
+    } else $condition_1_no =  "checked='checked'";
 
     if ($condition_2 == 'yes'){
       $condition_2 =  "checked='checked'"; 
-    }
+      $condition_2_no =  "";
+    }else $condition_2_no =  "checked='checked'";
 
     if ($condition_3 == 'yes'){
       $condition_3 =  "checked='checked'"; 
-    }
+      $condition_3_no =  "";
+    }else $condition_3_no =  "checked='checked'";
     
 
     if ($condition_4 == 'yes'){
       $condition_4 =  "checked='checked'"; 
-    }
+      $condition_4_no =  "";
+    }else $condition_4_no =  "checked='checked'";
     
     if ($condition_5 == 'yes'){
       $condition_5 =  "checked='checked'"; 
-    }
+      $condition_5_no =  "";
+    }else $condition_5_no =  "checked='checked'";
     
     if ($condition_6 == 'yes'){
       $condition_6 =  "checked='checked'"; 
-    }
+      $condition_6_no =  "";
+    }else $condition_6_no =  "checked='checked'";
     
     if ($condition_7 == 'yes'){
       $condition_7 =  "checked='checked'"; 
-    }
+      $condition_7_no =  "";
+    }else $condition_7_no =  "checked='checked'";
     
     if ($condition_8 == 'yes'){
       $condition_8 =  "checked='checked'"; 
-    }
+      $condition_8_no =  "";
+    }else $condition_8_no =  "checked='checked'";
     
     if ($condition_9 == 'yes'){
       $condition_9 =  "checked='checked'"; 
-    }
+      $condition_9_no =  "";
+    }else $condition_9_no =  "checked='checked'";
     
     if ($condition_10 == 'yes'){
       $condition_10 =  "checked='checked'"; 
-    }
+      $condition_10_no =  "";
+    }else $condition_10_no =  "checked='checked'";
     
     if ($condition_11 == 'yes'){
       $condition_11 =  "checked='checked'"; 
-    }
+      $condition_11_no =  "";
+    }else $condition_11_no =  "checked='checked'";
     
     if ($condition_12 == 'yes'){
       $condition_12 =  "checked='checked'"; 
-    }
+      $condition_12_no =  "";
+    }else $condition_12_no =  "checked='checked'";
     
 
   $condition_1_des = $data["condition_1_des"];
@@ -339,6 +390,48 @@ while($data = $runquery -> fetch_assoc()){
 }
 }
 
+//fetch data from skills 
+
+$query = "SELECT * FROM skills WHERE emp_id = '$emp_id'";
+
+$runquery = $conn -> query($query);
+if($runquery == true){
+ 
+ 
+while($data = $runquery -> fetch_assoc()){
+
+  
+  $emp_special_skills= $data["emp_special_skills"];
+  $non_academic= $data["non_academic"];
+  $membership= $data["membership"];
+
+
+  $emp_special_skills_arr= explode(',',  $emp_special_skills);
+    $non_academic_arr= explode(',',  $non_academic);
+    $membership_arr= explode(',',  $membership);
+
+    for ($i = 0 ; $i < 3 ; $i++){
+
+
+      if($emp_special_skills_arr[$i]==""){
+        $emp_special_skills_arr[$i]= "";
+      } 
+      if($non_academic_arr[$i]==""){
+        $non_academic_arr[$i]= "";
+      }
+      if($membership_arr[$i]==""){
+        $membership_arr[$i]= "";
+      }
+      
+        
+     
+    
+    
+        }
+
+  
+}
+}
 
 ?>
 

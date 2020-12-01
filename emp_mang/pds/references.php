@@ -7,26 +7,29 @@
 
           
 
-            <div class="container form-inline" style="background:#E6F7FF;">
+            <div class="container " style="background:#E6F7FF;">
 
-                <div class="row" style="width:100%">
+                <div class="row form-inline" style="width:100%">
 
-                    <div class="col-lg-4 mb-2 pt-2">
+                    <div class="col-lg-4 mb-2 pt-2 ">
                         
-                            <label for="">FULL NAME</label>
+                    <div class="form-group mx-sm-3 mb-2">
+                           <label for="" >FULL NAME</label>
+                           </div>
                         
                     </div>
 
                     <div class="col-lg-4 mb-2 pt-2">
                       
+                    <div class="form-group mx-sm-3 mb-2">
                             <label for="">ADDRESS</label>
-                        
+                            </div>
                     </div>
 
                     <div class="col-lg-4 mb-2 pt-2">
-                     
+                    <div class="form-group mx-sm-3 mb-2">
                             <label for="">TELEPHONE NO./MOBILE PHONE NO.</label>
-                      
+                            </div>
                     </div>
 
                 </div>
@@ -46,7 +49,7 @@
                            
                            ?>
                 
-                <div class="row " >
+                <div class="row form-inline " >
 
                     <div class="col-lg-4">
                         <div class="form-group mx-sm-3 mb-2">
@@ -100,13 +103,13 @@ while($data = $runquery -> fetch_assoc()){
 
 <div class="col-lg-4">
     <div class="form-group mx-sm-3 mb-2">
-        <input type="text" class="form-control "   style="width:200px;" name="ref_add[]" value="<?php echo $ref_add[$i] ?>">
+        <input type="text" class="form-control "   style="width:200px;" name="ref_add[]" value="<?php echo $ref_add_arr[$i] ?>">
     </div>
 </div>
 
 <div class="col-lg-4 ">
     <div class="form-group mx-sm-3 mb-2">
-        <input type="text" class="form-control "  style="width:200px;" name="ref_tel[]" value="<?php echo $ref_tel[$i] ?>">
+        <input type="text" class="form-control "  style="width:200px;" name="ref_tel[]" value="<?php echo $ref_tel_arr[$i] ?>">
     </div>
 </div>
 
@@ -135,11 +138,11 @@ while($data = $runquery -> fetch_assoc()){
 
                         <div class="col-lg-6">
                             <label for="">GOVERNMENT ISSUED ID <span>(i.e.Passport,GSIS,SSS,PRC,Driver's Licence ,etc)</span></label>
-                                <input type="text" class="form-control mb-2 mt-2" placeholder="Government Issued ID" style="width:200px;" name= "emp_gov_id" value="<?php echo $emp_gov_id?>" >
+                                <input type="text" class="form-control mb-2 mt-2" style="width:200px;" name= "emp_gov_id" value="<?php echo $emp_gov_id?>" >
 
-                                <input type="text" class="form-control mb-2"  placeholder="id/License/Passport No." style="width:200px;" name="emp_passport_no" value="<?php echo $emp_passport_no?>">
+                                <input type="text" class="form-control mb-2"   style="width:200px;" name="emp_passport_no" value="<?php echo $emp_passport_no?>">
 
-                                <input type="text" class="form-control mb-2"  placeholder="Date/Place of Issurance" style="width:200px;" name="emp_place_of_insurance" value="<?php echo $emp_place_of_insurance?>" >
+                                <input type="text" class="form-control mb-2"   style="width:200px;" name="emp_place_of_insurance" value="<?php echo $emp_place_of_insurance?>" >
                         </div>
 
                         
@@ -169,7 +172,7 @@ $(document).ready(function(){
     var addButton = $('.add_button'); //Add button selector
     var wrapper = $('.field_wrapper'); //Input field wrapper
     var fieldHTML = 
-    ' <div class="row"> <div class="col-lg-4"> <div class="form-group mx-sm-3 mb-2"> <input type="text" class="form-control mb-2" id="" value="" style="width:200px;" name="ref_full_name[]"></div></div>   <div class="col-lg-4"> <div class="form-group mx-sm-3 mb-2"><input type="text" class="form-control mb-2" id="" value="" name="ref_add[]" style="width:200px;"> </div> </div>  <div class="col-lg-4 "><div class="form-group mx-sm-3 mb-2"> <input type="text" class="form-control mb-2" id="" value="" name="ref_tel[]" style="width:200px;"></div></div> </div><a href="javascript:void(0);" class="remove_button"><i class="fa fa-minus"></i></a>'; 
+    '<div> <div class="row form-inline"> <div class="col-lg-4"> <div class="form-group mx-sm-3 mb-2"> <input type="text" class="form-control mb-2" id="" value="" style="width:200px;" name="ref_full_name[]"></div></div>   <div class="col-lg-4"> <div class="form-group mx-sm-3 mb-2"><input type="text" class="form-control mb-2" id="" value="" name="ref_add[]" style="width:200px;"> </div> </div>  <div class="col-lg-4 "><div class="form-group mx-sm-3 mb-2"> <input type="text" class="form-control mb-2" id="" value="" name="ref_tel[]" style="width:200px;"></div></div> </div><a href="javascript:void(0);" class="remove_button"><i class="fa fa-minus"></i></a></div>'; 
     
     //New input field html 
     var x = 1; //Initial field counter is 1

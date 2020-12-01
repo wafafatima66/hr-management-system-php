@@ -63,6 +63,7 @@ body{
   width: calc(100% - 250px);
   background: #f3f3f3;
   margin-left: 250px; /* Same as the width of the sidebar */
+  height: 100vh;
 }
 
 .main-header{
@@ -271,6 +272,7 @@ body{
  .emp_profile_section2 .form-inline input {
     font-size: 10px;
 color: #345587;
+text-transform: capitalize;
    
 }
  .emp_profile_section2 .form-inline label{
@@ -306,6 +308,7 @@ color: #345587;
  .emp_profile_tab2 .form-inline input {
     font-size: 10px;
 color: #345587;
+text-transform: capitalize;
    
 }
  .emp_profile_tab2 .form-inline label{
@@ -354,6 +357,7 @@ color: #345587;
 .leave_mang_section .form-inline input {
     font-size: 10px;
 color: #345587;
+text-transform: capitalize;
    
 }
  .leave_mang_section .form-inline label{
@@ -437,6 +441,7 @@ color: #345587;
 .doc_section_header input{
     font-size: 10px;
     font-weight: bold;
+    text-transform: capitalize;
 }
 .doc_section ul li{
     list-style: none;
@@ -449,6 +454,7 @@ color: #345587;
 /*training page*/
 .training_section_1 input{
     font-size: 10px;
+    text-transform: capitalize;
 }
 
 .training_section_2{
@@ -576,6 +582,7 @@ color: #345587;
 }
 .addevent input{
     font-size: 12px;
+    text-transform: capitalize;
 }
 .addevent select{
     font-size: 12px;

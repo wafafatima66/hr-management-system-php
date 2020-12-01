@@ -21,19 +21,9 @@
 			echo'<p class="alert alert-danger h6">Employee Id taken</p>';
 		}
 	
-	}	else if(isset($_GET['submit'])){
-    if(($_GET['submit']=="pds")){
+	}	
 
-                echo'<p class="alert alert-success h6"> EMPLOYEE INFORMATION UPDATED SUCCESSFULLY</p>';
-            } 
-          }
-
-          if(isset($_GET['upload'])){
-            if($_GET['upload']=="success"){
-              echo'<p class="alert alert-danger h6">success</p>';
-            }else echo'<p class="alert alert-danger h6">failed</p>';
-           
-            }
+         
 
             
 if(isset( $_REQUEST["emp_id"])){

@@ -8,8 +8,8 @@
                     <div class="d-flex flex-column">
                         <label for="">INCLUSIVE DATES</label>
                         <div class="d-flex justify-content-center">
-                        <input type="date" class="form-control mx-sm-1" id="" value="" style="width:140px;" name="work_from_date">
-                        <input type="date" class="form-control mx-sm-1" id="" value="" style="width:140px;" name="work_to_date">
+                        <input type="date" class="form-control mx-sm-1" id="" value="<?php echo $work_from_date?>" style="width:140px;" name="work_from_date">
+                        <input type="date" class="form-control mx-sm-1" id="" value="<?php echo $work_to_date?>" style="width:140px;" name="work_to_date">
                         </div>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">POSITION/TITLE</label>
-                        <input type="text" class="form-control" id="" value="<?php echo $position?>" style="width:200px;" name="position">
+                        <input type="text" class="form-control" id="" value="<?php echo $work_position?>" style="width:200px;" name="work_position">
                     </div>
                 </div>
 
@@ -36,10 +36,10 @@
                         <div class="d-flex justify-content-center">
                         <div class="form-check">
                             <label class="form-check-label" > Yes</label> 
-                            <input class="form-check-input" type="checkbox" value="yes" name="govt_service">
+                            <input class="form-check-input" type="checkbox" value="yes" name="govt_service" <?php echo $govt_service_yes?>>
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label"> No</label> <input class="form-check-input" type="checkbox" value="no" name="govt_service">
+                            <label class="form-check-label"> No</label> <input class="form-check-input" type="checkbox" value="no" name="govt_service" <?php echo $govt_service_no?>>
                         </div>
                         </div>
                     </div>

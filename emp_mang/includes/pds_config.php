@@ -334,7 +334,7 @@ $ele_school_name=$_POST['ele_school_name'];
 
         $work_from_date=$_POST['work_from_date'];
     $work_to_date=$_POST['work_to_date'];
-    $position=$_POST['position'];
+    $work_position=$_POST['work_position'];
     $employer=$_POST['employer'];
     $govt_service=$_POST['govt_service'];
     $monthly_sal=$_POST['monthly_sal'];
@@ -343,11 +343,11 @@ $ele_school_name=$_POST['ele_school_name'];
     
   
 
-            $sql="INSERT INTO work_experience (work_from_date,work_to_date,position,employer,govt_service,monthly_sal,increment,work_status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
+            $sql="INSERT INTO work_experience (work_from_date,work_to_date,work_position,employer,govt_service,monthly_sal,increment,work_status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
               ON DUPLICATE KEY UPDATE
               work_from_date = '$work_from_date',
               work_to_date = '$work_to_date',
-                position = '$position',
+              work_position = '$work_position',
                 employer = '$employer',
                 govt_service = '$govt_service',
                 monthly_sal = '$monthly_sal',
@@ -363,7 +363,7 @@ $ele_school_name=$_POST['ele_school_name'];
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"sssssiissi",$work_from_date, $work_to_date, $position,$employer,$govt_service,$monthly_sal,$increment,$work_status,$office_assign,$emp_id);
+                    mysqli_stmt_bind_param($stmt,"sssssiissi",$work_from_date, $work_to_date, $work_position,$employer,$govt_service,$monthly_sal,$increment,$work_status,$office_assign,$emp_id);
                     mysqli_stmt_execute($stmt);
 
                 }
@@ -588,7 +588,7 @@ $ele_school_name=$_POST['ele_school_name'];
                     mysqli_stmt_execute($stmt);
                 }
 
-            header("Location:../emp_mang.php?submit=pds");
+            header("Location:../emp_profile.php?submit=success&emp_id=$emp_id");
             exit();
 
             mysqli_stmt_close($stmt);

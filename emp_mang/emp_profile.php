@@ -25,9 +25,22 @@
 			echo'<p class="alert alert-danger h6">Email Taken</p>';
 		}
 	
-	}	
+	}	else if(isset($_GET['submit'])){
+        if(($_GET['submit']=="pds")){
+    
+                    echo'<p class="alert alert-success h6"> EMPLOYEE INFORMATION UPDATED SUCCESSFULLY</p>';
+                } 
+              }
   
-     
+              if(isset($_GET['upload'])){
+                if($_GET['upload']=="success"){
+                  echo'<p class="alert alert-danger h6">FILE UPLOADED SUCCESSFULLY</p>';
+                }
+                if($_GET['upload']=="exist"){
+                    echo'<p class="alert alert-danger h6">FILE EXIST IN THE FOLDER</p>';
+                  }
+               
+                }
      
 ?>
 
@@ -44,6 +57,14 @@ if(isset($_GET['register'])){
         echo'<p class="alert alert-success h6">Registration done successfully</p>';
     }
 }
+if(isset($_GET['submit'])){
+    if(($_GET['submit']=="success")){
+
+                echo'<p class="alert alert-success h6"> EMPLOYEE INFORMATION UPDATED SUCCESSFULLY</p>';
+            } 
+          }
+
+         
 
     require '../includes/conn.php';
 
@@ -105,7 +126,7 @@ if(isset($_GET['register'])){
                 <button  onclick="opentab('tab-3')" type="button" class="btn emp_profile_section1_tab " >File 201</button>
             </h6>
             <h4 style="text-transform: uppercase;"> <?php echo $emp_first_name?> <?php echo $emp_middle_name?> <?php echo $emp_last_name?> </h4>
-            <p style="text-transform: uppercase;"><?php echo $emp_status?> > <span style="text-transform: capitalize;"><?php echo $office_assign?></span></p>
+            <p style="text-transform: uppercase; font-weight:bold;"><?php echo $emp_status?> > <span style="text-transform: capitalize;font-weight:bold;"><?php echo $office_assign?></span></p>
 
            
             

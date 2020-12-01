@@ -1,70 +1,5 @@
 
-<?php
-   
 
-
-if(isset($_POST['upload'])){
-
-    $emp_id = $_SESSION['emp_id'];  
-
-    $file_date = date("l jS \of F Y ");
-    $file_folder = $_POST["folder"];
-
-    $file_name =  $emp_id."-".$_FILES['upload_file']['name'];
-    $file_loc = $_FILES['upload_file']['tmp_name'];
- $file_size = $_FILES['upload_file']['size'];
- $file_type = $_FILES['upload_file']['type'];
- $path="../emp_mang/uploads/";
-
- 
-$query = "SELECT * FROM emp_file WHERE file_name = '$file_name' ";
-
-$runquery = $conn -> query($query);
-$rowcount=mysqli_num_rows($runquery);
-if($rowcount == 0 ){
-
-
- 
- move_uploaded_file($file_loc,$path.$file_name);
-  
-
-    
-
-        $sql="INSERT INTO emp_file (file_name, file_type, file_size,file_folder,file_date,emp_id) VALUE (?,?,?,?,?,?)";
-        $stmt = mysqli_stmt_init($conn);
-        if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location:emp_mang.php?emp_id=2&error=sqlerror");
-            exit();
-        }
-            else{
-            
-                mysqli_stmt_bind_param($stmt,"ssissi", $file_name, $file_type, $file_size,$file_folder,$file_date,$emp_id);
-                mysqli_stmt_execute($stmt);
-
-            
-
-                echo '<div class="alert alert-primary" role="alert">
-                File Uploaded!
-              </div>';
-                
-            }
-
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
-        }
-       
-}
-
- else {
-    $msg= "File not uploaded";
-                        
-}
-
-
-
-?>
-
-      
 
                         <!--File uploaad-->
                         <div class=" emp_profile_section2_tab container mb-5" id="tab-3">  
@@ -172,7 +107,7 @@ if($rowcount == 0 ){
                     <div class="container">
                      
 
-                      <form class="form-inline " method="post" action="" enctype="multipart/form-data">
+                      <form class="form-inline " method="post" action="includes/file_config.php" enctype="multipart/form-data">
 
                       
 

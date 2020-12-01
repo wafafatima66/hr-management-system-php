@@ -143,17 +143,17 @@
                         </div>
 
                         <div class="form-check mx-sm-1 mb-2">
-                            <input class="form-check-input" type="checkbox" value="by_birth" name="emp_citizen_chk[]" value="<?php echo  $emp_citizen_chk ?>">
+                            <input class="form-check-input" type="checkbox" value="by_birth" name="emp_citizen_chk[]"  <?php echo $by_birth ;?>>
                             <label class="form-check-label" > By Birth</label>
                         </div>
 
                         <div class="form-check mx-sm-1 mb-2">
-                            <input class="form-check-input" type="checkbox" value="by_nature" name="emp_citizen_chk[]" value="<?php echo  $emp_citizen_chk ?>">
+                            <input class="form-check-input" type="checkbox" value="by_nature" name="emp_citizen_chk[]" <?php echo $by_nature ;?>>
                             <label class="form-check-label" >By Naturalization</label>
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:200px;" placeholder="Indicate Country If dual Citizenship" name="emp_dual_citizen" value="<?php echo  $emp_dual_citizen ?>">
+                            <input type="text" class="form-control" style="width:200px;" name="emp_dual_citizen" value="<?php echo  $emp_dual_citizen ?>">
                         </div>
 
                     
@@ -169,31 +169,31 @@
                        
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">RESIDENTIAL ADDRESS</label>
-                                <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_resi_add ?>" name="emp_resi_add">
+                                <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_resi_add ?>" name="emp_resi_add">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                                <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_resi_add_street ?>" name="emp_resi_add_street">
+                                <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_resi_add_street ?>" name="emp_resi_add_street">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                                <input type="text" class="form-control" style="width:120px;" placeholder="<?php echo  $emp_resi_add_subdivision ?>" name="emp_resi_add_subdivision">
+                                <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_resi_add_subdivision ?>" name="emp_resi_add_subdivision">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:100px;"  placeholder="<?php echo  $emp_resi_add_barangay ?>" name="emp_resi_add_barangay">
+                            <input type="text" class="form-control" style="width:100px;"  value="<?php echo  $emp_resi_add_barangay ?>" name="emp_resi_add_barangay">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_resi_add_municipal ?>" name="emp_resi_add_municipal">
+                            <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_resi_add_municipal ?>" name="emp_resi_add_municipal">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:100px;"  placeholder="<?php echo  $emp_resi_add_province ?>" name="emp_resi_add_province">
+                            <input type="text" class="form-control" style="width:100px;"  value="<?php echo  $emp_resi_add_province ?>" name="emp_resi_add_province">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                                <input type="text" class="form-control" style="width:90px;"  placeholder="<?php echo  $emp_resi_add_zipcode ?>" name="emp_resi_add_zipcode">
+                                <input type="text" class="form-control" style="width:90px;"  value="<?php echo  $emp_resi_add_zipcode ?>" name="emp_resi_add_zipcode">
                             </div>
                            
                     </div>
@@ -203,31 +203,31 @@
                  
                         <div class="form-group mx-sm-2 mb-2">
                             <label for="">PERMANENT ADDRESS</label>
-                            <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_per_add ?>" name="emp_per_add">
+                            <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_per_add ?>" name="emp_per_add">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:100px;"  placeholder="<?php echo  $emp_per_add_street ?>"  name="emp_per_add_street">
+                            <input type="text" class="form-control" style="width:100px;"  value="<?php echo  $emp_per_add_street ?>"  name="emp_per_add_street">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:120px;"  placeholder="<?php echo  $emp_per_add_subdivision ?>" name="emp_per_add_subdivision">
+                            <input type="text" class="form-control" style="width:120px;"  value="<?php echo  $emp_per_add_subdivision ?>" name="emp_per_add_subdivision">
                         </div>
                         
                         <div class="form-group mx-sm-1 mb-2">
-                        <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_per_add_barangay ?>" name="emp_per_add_barangay">
+                        <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_per_add_barangay ?>" name="emp_per_add_barangay">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                        <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_per_add_municipal ?>" name="emp_per_add_municipal">
+                        <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_per_add_municipal ?>" name="emp_per_add_municipal">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                        <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_per_add_province ?>" name="emp_per_add_province">
+                        <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_per_add_province ?>" name="emp_per_add_province">
                         </div> 
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:90px;" placeholder="<?php echo  $emp_per_add_zipcode ?>" name="emp_per_add_zipcode">
+                            <input type="text" class="form-control" style="width:90px;" value="<?php echo  $emp_per_add_zipcode ?>" name="emp_per_add_zipcode">
                         </div>
 
                     
@@ -248,21 +248,21 @@
                              <div class="col-lg-5 m-2 text-center form-inline " style="background-color:#E6F7FF;">
                              <div class="form-group mx-sm-1 mb-2" >
                                     <div class="d-flex flex-column">
-                                        <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_tel_no ?>" name="emp_tel_no">
+                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_tel_no ?>" name="emp_tel_no">
                                         <label for="">Telephone No.</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-2">
                                     <div class="d-flex flex-column">
-                                        <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_mb_no ?>" name="emp_mb_no">
+                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_mb_no ?>" name="emp_mb_no">
                                         <label for="">Mobile No.</label>
                                     </div>
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-2">
                                     <div class="d-flex flex-column">
-                                        <input type="text" class="form-control" style="width:90px;" value="<?php echo  $emp_email ?>" name="emp_email">
+                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_email ?>" name="emp_email">
                                         <label for="">Email Address</label>
                                     </div>
                                 </div>
@@ -272,27 +272,27 @@
                     <div class="col-lg-5 form-inline " style="background-color:#E6F7FF; ">
 
                                  <div class="form-group mx-sm-1 mb-1" >
-                                <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_contact_gs ?>" name="emp_contact_gs">
+                                <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_contact_gs ?>" name="emp_contact_gs">
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-1">
-                                <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_contact_pag ?>" name="emp_contact_pag">
+                                <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_contact_pag ?>" name="emp_contact_pag">
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-1">
-                                <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_contact_ph ?>" name="emp_contact_ph">
+                                <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_contact_ph ?>" name="emp_contact_ph">
                                 </div>
                             
                                 <div class="form-group mx-sm-1 mb-1" >
-                                <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_contact_ss ?>" name="emp_contact_ss">
+                                <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_contact_ss ?>" name="emp_contact_ss">
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-1">
-                                <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_contact_tin ?>" name="emp_contact_tin">
+                                <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_contact_tin ?>" name="emp_contact_tin">
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-1">
-                                <input type="text" class="form-control" style="width:100px;" placeholder="<?php echo  $emp_contact_tin ?>" name="emp_contact_agency">
+                                <input type="text" class="form-control" style="width:100px;" value="<?php echo  $emp_contact_tin ?>" name="emp_contact_agency">
                                 </div>
                             
                         

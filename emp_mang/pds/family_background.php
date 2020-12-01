@@ -14,19 +14,19 @@
                 
                             <div class="form-group mx-sm-1 mb-2">
                                 <label for="">SPOUSE NAME</label>
-                                <input type="text" class="form-control" id="" style="width:100px; "placeholder="<?php echo $emp_spouse_lastname?>" name="emp_spouse_lastname" value="">
+                                <input type="text" class="form-control" id="" style="width:100px; "value="<?php echo $emp_spouse_lastname?>" name="emp_spouse_lastname" >
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id="" style="width:100px;" placeholder="<?php echo $emp_spouse_firstname?>" name="emp_spouse_firstname">
+                            <input type="text" class="form-control" id="" style="width:100px;" value="<?php echo $emp_spouse_firstname?>" name="emp_spouse_firstname">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id="" style="width:100px;" placeholder="<?php echo $emp_spouse_middlename?>" name="emp_spouse_middlename">
+                            <input type="text" class="form-control" id="" style="width:100px;" value="<?php echo $emp_spouse_middlename?>" name="emp_spouse_middlename">
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id="" style="width:50px;" placeholder="<?php echo $emp_spouse_extname?>" name="emp_spouse_extname">
+                            <input type="text" class="form-control" id="" style="width:50px;" value="<?php echo $emp_spouse_extname?>" name="emp_spouse_extname">
                             </div>
                 
                           
@@ -76,38 +76,38 @@
                 
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">FATHER'S NAME</label>
-                            <input type="text" class="form-control" id=""  style="width:100px;"  placeholder="<?php echo $emp_father_lastname?>" name="emp_father_lastname">
+                            <input type="text" class="form-control" id=""  style="width:100px;"  value="<?php echo $emp_father_lastname?>" name="emp_father_lastname">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id="" style="width:100px;"  placeholder="<?php echo $emp_father_firstname?>" name="emp_father_firstname">
+                            <input type="text" class="form-control" id="" style="width:100px;"  value="<?php echo $emp_father_firstname?>" name="emp_father_firstname">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id="" style="width:100px;"  placeholder="<?php echo $emp_father_middlename?>" name="emp_father_middlename">
+                            <input type="text" class="form-control" id="" style="width:100px;"  value="<?php echo $emp_father_middlename?>" name="emp_father_middlename">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id="" style="width:50px;" placeholder="<?php echo $emp_father_extname?>" name="emp_father_extname">
+                            <input type="text" class="form-control" id="" style="width:50px;" value="<?php echo $emp_father_extname?>" name="emp_father_extname">
                         </div>
                 
     
                 
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">MOTHER'S NAME</label>
-                            <input type="text" class="form-control" id=""style="width:100px;"  placeholder="<?php echo $emp_mother_lastname?> " name="emp_mother_lastname">
+                            <input type="text" class="form-control" id=""style="width:100px;"  value="<?php echo $emp_mother_lastname?> " name="emp_mother_lastname">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id=""style="width:100px;"  placeholder="<?php echo $emp_mother_firstname?> " name="emp_mother_firstname">
+                            <input type="text" class="form-control" id=""style="width:100px;"  value="<?php echo $emp_mother_firstname?> " name="emp_mother_firstname">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id="" style="width:100px;"  placeholder="<?php echo $emp_mother_middlename?>" name="emp_mother_middlename">
+                            <input type="text" class="form-control" id="" style="width:100px;"  value="<?php echo $emp_mother_middlename?>" name="emp_mother_middlename">
                         </div>
 
                         <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" id="" style="width:50px;" placeholder="<?php echo $emp_mother_extname?>" name="emp_mother_extname">
+                            <input type="text" class="form-control" id="" style="width:50px;" value="<?php echo $emp_mother_extname?>" name="emp_mother_extname">
                         </div>
                         
                 

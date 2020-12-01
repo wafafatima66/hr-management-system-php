@@ -27,7 +27,7 @@
                                 </div>
 
                                 <div class="form-check mx-sm-1 mb-2">
-                                    <input class="form-check-input" type="checkbox" value="no" name="condition_1"  >
+                                    <input class="form-check-input" type="checkbox" value="no" name="condition_1" <?php echo $condition_1_no?> >
                                     <label class="form-check-label" >No</label>
                                 </div>
 
@@ -55,7 +55,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_2"  >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_2" <?php echo $condition_2_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -84,7 +84,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_3"  >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_3" <?php echo $condition_3_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -113,7 +113,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_4"  >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_4" <?php echo $condition_4_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -142,7 +142,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_5"  >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_5" <?php echo $condition_5_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -171,7 +171,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_6"  >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_6" <?php echo $condition_6_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -200,7 +200,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_7" >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_7" <?php echo $condition_7_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -229,7 +229,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_8" >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_8" <?php echo $condition_8_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -274,7 +274,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_9"  >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_9"  <?php echo $condition_9_no?>>
         <label class="form-check-label" >No</label>
     </div>
 
@@ -302,7 +302,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_10"  >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_10" <?php echo $condition_10_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -330,7 +330,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_11" >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_11" <?php echo $condition_11_no?> >
         <label class="form-check-label" >No</label>
     </div>
 
@@ -359,7 +359,7 @@
     </div>
 
     <div class="form-check mx-sm-1 mb-2">
-        <input class="form-check-input" type="checkbox" value="no" name="condition_12" >
+        <input class="form-check-input" type="checkbox" value="no" name="condition_12" <?php echo $condition_12_no?>>
         <label class="form-check-label" >No</label>
     </div>
 

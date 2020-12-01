@@ -32,9 +32,9 @@
                         <label for="">INCLUSIVE DATES</label>
                             <div class="d-flex justify-content-center">
 
-                            <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;" value="<?php echo $from_date?>" name="learn_from_date" >
+                            <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;" value="<?php echo $learn_from_date?>" name="learn_from_date" >
                             
-                            <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;" value="<?php echo $to_date?>" name="learn_to_date" >
+                            <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;" value="<?php echo $learn_to_date?>" name="learn_to_date" >
                             
                         </div>
                     </div>
