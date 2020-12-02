@@ -36,7 +36,7 @@
 
                 </div>
 
-                <div class="container field_wrapper" style="background:#E6F7FF;">
+                <div class="container reference_wrapper" style="background:#E6F7FF;">
 
                 <?php 
                              
@@ -93,7 +93,7 @@ while($data = $runquery -> fetch_assoc()){
 
     for($i = 0 ; $i < sizeof($ref_full_name_arr) ; $i++){ ?>
 
-<div class="row " >
+<div class="row form-inline" >
 
 <div class="col-lg-4">
     <div class="form-group mx-sm-3 mb-2">
@@ -123,7 +123,7 @@ while($data = $runquery -> fetch_assoc()){
 
                          ?>
 
-                <a href="javascript:void(0);" class="add_button" title="Add field"><i class="fa fa-plus"></i></a>
+                <a href="javascript:void(0);" class="add_ref_button" title="Add field"><i class="fa fa-plus"></i></a>
 
                 </div>
 
@@ -169,10 +169,10 @@ while($data = $runquery -> fetch_assoc()){
     <script type="text/javascript">
 $(document).ready(function(){
     var maxField = 10; //Input fields increment limitation
-    var addButton = $('.add_button'); //Add button selector
-    var wrapper = $('.field_wrapper'); //Input field wrapper
+    var addButton = $('.add_ref_button'); //Add button selector
+    var wrapper = $('.reference_wrapper'); //Input field wrapper
     var fieldHTML = 
-    '<div> <div class="row form-inline"> <div class="col-lg-4"> <div class="form-group mx-sm-3 mb-2"> <input type="text" class="form-control mb-2" id="" value="" style="width:200px;" name="ref_full_name[]"></div></div>   <div class="col-lg-4"> <div class="form-group mx-sm-3 mb-2"><input type="text" class="form-control mb-2" id="" value="" name="ref_add[]" style="width:200px;"> </div> </div>  <div class="col-lg-4 "><div class="form-group mx-sm-3 mb-2"> <input type="text" class="form-control mb-2" id="" value="" name="ref_tel[]" style="width:200px;"></div></div> </div><a href="javascript:void(0);" class="remove_button"><i class="fa fa-minus"></i></a></div>'; 
+    '<div> <div class="row form-inline"> <div class="col-lg-4"> <div class="form-group mx-sm-3 mb-2"> <input type="text" class="form-control mb-2" id="" value="" style="width:200px;" name="ref_full_name[]"></div></div>   <div class="col-lg-4"> <div class="form-group mx-sm-3 mb-2"><input type="text" class="form-control mb-2" id="" value="" name="ref_add[]" style="width:200px;"> </div> </div>  <div class="col-lg-4 "><div class="form-group mx-sm-3 mb-2"> <input type="text" class="form-control mb-2" id="" value="" name="ref_tel[]" style="width:200px;"></div></div> </div><a href="javascript:void(0);" class="remove_ref_button"><i class="fa fa-minus"></i></a></div>'; 
     
     //New input field html 
     var x = 1; //Initial field counter is 1
@@ -187,7 +187,7 @@ $(document).ready(function(){
     });
     
     //Once remove button is clicked
-    $(wrapper).on('click', '.remove_button', function(e){
+    $(wrapper).on('click', '.remove_ref_button', function(e){
         e.preventDefault();
         $(this).parent('div').remove(); //Remove field html
         x--; //Decrement field counter

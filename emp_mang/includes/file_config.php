@@ -15,7 +15,7 @@ if(isset($_POST['upload'])){
     $file_loc = $_FILES['upload_file']['tmp_name'];
     $file_size = $_FILES['upload_file']['size'];
     $file_type = $_FILES['upload_file']['type'];
-    $path="../emp_mang/uploads/";
+    $path="../../emp_mang/uploads/";
 
  
 $query = "SELECT * FROM emp_file WHERE file_name = '$file_name' ";
@@ -26,7 +26,7 @@ $query = "SELECT * FROM emp_file WHERE file_name = '$file_name' ";
 
 
  
-          move_uploaded_file($file_loc,$path.$file_name);
+         if(move_uploaded_file($file_loc,$path.$file_name)) {
   
 
     
@@ -34,7 +34,7 @@ $query = "SELECT * FROM emp_file WHERE file_name = '$file_name' ";
         $sql="INSERT INTO emp_file (file_name, file_type, file_size,file_folder,file_date,emp_id) VALUE (?,?,?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
-            header("Location:emp_mang.php?emp_id=2&error=sqlerror");
+            header("Location:../emp_profile.php?upload=error&emp_id=$emp_id");
             exit();
         }
             else{
@@ -49,15 +49,16 @@ $query = "SELECT * FROM emp_file WHERE file_name = '$file_name' ";
                 
                           
                   
-               
+            }
 
                 
-            }
+            
 
             mysqli_stmt_close($stmt);
             mysqli_close($conn);
 
-            
+        } header("Location:../emp_profile.php?upload=failed&emp_id=$emp_id");
+        exit();
            
         } 
         header("Location:../emp_profile.php?upload=exist&emp_id=$emp_id");

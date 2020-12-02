@@ -128,7 +128,7 @@
 
                       <div class="doc_section" style="width:100%">
                     <div class="file-upload-wrapper">
-                    <input type="file" id="input-file-max-fs" class="file-upload" data-max-file-size="2M" name="upload_file" />
+                    <input type="file" id="input-file-max-fs" class="file-upload"  name="upload_file" />
                     </div>
                 </div>
                      

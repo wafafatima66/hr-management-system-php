@@ -380,26 +380,33 @@ if(isset($_POST['work_position'])){
 
     //voluntary works
 
-    $name_org=$_POST['name_org'];
-    $org_add=$_POST['org_add'];
-    $vol_from_date=$_POST['vol_from_date'];
-    $vol_to_date=$_POST['vol_to_date'];
-    $no_of_hrs=$_POST['no_of_hrs'];
-    $position=$_POST['position'];
+    
+if(isset($_POST['name_org'])){
+
+    $query = "SELECT * FROM voluntary_works WHERE emp_id = '$emp_id'";
+                           
+    $runquery = $conn -> query($query);
+    $rowcount=mysqli_num_rows($runquery);
+
+    if($rowcount != 0 ){
+        $count = count(($_POST['name_org']))-1;
+    } else {
+        $count = count(($_POST['name_org']));
+    }
+
+            for ($i = 0 ; $i < $count  ; $i++){
+
+    $name_org=$_POST['name_org'][$i];
+    $org_add=$_POST['org_add'][$i];
+    $vol_from_date=$_POST['vol_from_date'][$i];
+    $vol_to_date=$_POST['vol_to_date'][$i];
+    $vol_no_of_hrs=$_POST['vol_no_of_hrs'][$i];
+    $position=$_POST['position'][$i];
    
     
 
 
-            $sql="INSERT INTO voluntary_works (name_org,org_add,vol_from_date,vol_to_date,no_of_hrs,position,emp_id) VALUE (?,?,?,?,?,?,?)
-              ON DUPLICATE KEY UPDATE
-                name_org = '$name_org',
-                org_add = '$org_add',
-                vol_from_date = '$vol_from_date',
-                vol_to_date = '$vol_to_date',
-                no_of_hrs = '$no_of_hrs',
-                position = '$position' 
-
-            ";
+            $sql="INSERT INTO voluntary_works (name_org,org_add,vol_from_date,vol_to_date,vol_no_of_hrs,position,emp_id) VALUE (?,?,?,?,?,?,?) ";
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -409,35 +416,47 @@ if(isset($_POST['work_position'])){
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"ssssisi",$name_org, $org_add, $vol_from_date,$vol_to_date,$no_of_hrs,$position,$emp_id);
+                    mysqli_stmt_bind_param($stmt,"ssssisi",$name_org, $org_add, $vol_from_date,$vol_to_date,$vol_no_of_hrs,$position,$emp_id);
                     mysqli_stmt_execute($stmt);
                 }
-
+            }
+        }
 
         //learning 
 
        
+if(isset($_POST['title_of_training'])){
+
+    $query = "SELECT * FROM emp_learning WHERE emp_id = '$emp_id'";
+                           
+    $runquery = $conn -> query($query);
+    $rowcount=mysqli_num_rows($runquery);
+
+    if($rowcount != 0 ){
+        $count = count(($_POST['title_of_training']))-1;
+    } else {
+        $count = count(($_POST['title_of_training']));
+    }
+
+            for ($i = 0 ; $i < $count  ; $i++){
 
    
-        $title_of_training=$_POST['title_of_training'];
-        $type_of_position=$_POST['type_of_position'];
-        $no_of_hrs=$_POST['no_of_hrs'];
-        $learn_from_date=$_POST['learn_from_date'];
-        $learn_to_date=$_POST['learn_to_date'];
-        $conducted_by=$_POST['conducted_by'];
+        $title_of_training=$_POST['title_of_training'][$i];
+        $type_of_position=$_POST['type_of_position'][$i];
+        $no_of_hrs=$_POST['no_of_hrs'][$i];
+        $learn_from_date=$_POST['learn_from_date'][$i];
+        $learn_to_date=$_POST['learn_to_date'][$i];
+        $conducted_by=$_POST['conducted_by'][$i];
         
         
     
-                $sql="INSERT INTO emp_learning (title_of_training,type_of_position,no_of_hrs,learn_from_date,learn_to_date,conducted_by,emp_id) VALUE (?,?,?,?,?,?,?) 
-                  ON DUPLICATE KEY UPDATE
-                  title_of_training = '$title_of_training',
-                  type_of_position = '$type_of_position',
-                  no_of_hrs = '$no_of_hrs',
-                  learn_from_date = '$learn_from_date',
-                  learn_to_date = '$learn_to_date',
-                  conducted_by = '$conducted_by'
-                
-                ";
+                $sql="INSERT INTO emp_learning (title_of_training,type_of_position,no_of_hrs,learn_from_date,learn_to_date,conducted_by,emp_id) VALUE (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE
+                title_of_training = '$title_of_training',
+                type_of_position = '$type_of_position',
+                no_of_hrs = '$no_of_hrs',
+                learn_from_date = '$learn_from_date',
+                learn_to_date = '$learn_to_date',
+                conducted_by = '$conducted_by' ";
     
                 $stmt = mysqli_stmt_init($conn);
                 if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -450,6 +469,8 @@ if(isset($_POST['work_position'])){
                         mysqli_stmt_bind_param($stmt,"ssisssi",$title_of_training, $type_of_position, $no_of_hrs,$learn_from_date,$learn_to_date,$conducted_by,$emp_id);
                         mysqli_stmt_execute($stmt);
                     }
+                }
+            }
 
     //special skills
 

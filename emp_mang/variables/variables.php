@@ -124,8 +124,8 @@ $gra_graduation = "";
     //voluntary works
     $name_org = "";
     $org_add ="";
-    $no_of_hrs = "";
-    $position_vol = "";
+    $vol_no_of_hrs = "";
+    $position = "";
     $vol_from_date = "";
     $vol_to_date = "";
 
@@ -186,7 +186,7 @@ $gra_graduation = "";
     $condition_12_des = "If YES , please give details";
 
     //special skills
-
+/*
     for ($i = 0 ; $i < 3 ; $i++){
         
   $emp_special_skills_arr[$i]= "";
@@ -194,5 +194,5 @@ $gra_graduation = "";
   $membership_arr[$i]= "" ;
 
     }
-    
+    */
     ?>

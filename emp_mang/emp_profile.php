@@ -34,10 +34,14 @@
   
               if(isset($_GET['upload'])){
                 if($_GET['upload']=="success"){
-                  echo'<p class="alert alert-danger h6">FILE UPLOADED SUCCESSFULLY</p>';
+                  echo'<p class="alert alert-success h6">FILE UPLOADED SUCCESSFULLY</p>';
                 }
                 if($_GET['upload']=="exist"){
                     echo'<p class="alert alert-danger h6">FILE EXIST IN THE FOLDER</p>';
+                  } if($_GET['upload']=="failed"){
+                    echo'<p class="alert alert-danger h6">FILE FAILED TO UPLOAD</p>';
+                  }if($_GET['upload']=="error"){
+                    echo'<p class="alert alert-danger h6">ERROR TO UPLOAD FILE</p>';
                   }
                
                 }

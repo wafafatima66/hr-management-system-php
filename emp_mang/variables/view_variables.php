@@ -252,7 +252,7 @@ $query = "SELECT * FROM voluntary_works WHERE emp_id = '$emp_id'";
 
 //fetch data from learning
 
-
+/*
 $query = "SELECT * FROM emp_learning WHERE emp_id = '$emp_id'";
 
 $runquery = $conn -> query($query);
@@ -271,7 +271,7 @@ while($data = $runquery -> fetch_assoc()){
 }
 }
 
-
+*/
 //fetch data from references
 
 $query = "SELECT * FROM emp_references WHERE emp_id = '$emp_id'";
@@ -397,6 +397,7 @@ while($data = $runquery -> fetch_assoc()){
 }
 
 //fetch data from skills 
+/*
 
 $query = "SELECT * FROM skills WHERE emp_id = '$emp_id'";
 
@@ -438,6 +439,6 @@ while($data = $runquery -> fetch_assoc()){
   
 }
 }
-
+*/
 ?>
 
