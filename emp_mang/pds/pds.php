@@ -307,7 +307,7 @@
             <div class="container">
                <div class="text-right">
                         <!--<button class="btn m-2" style="background: #345587;color:#fff;" type ="submit">PREV</button>-->
-                        <button type="button" class="btn m-2" style="background: #345587; color:#fff;" onclick="openpanel('content-10','ref')" >PREV</button>
+                       
 
                        <button type="button" class="btn m-2" style="background: #345587; color:#fff;" onclick="openpanel('content-2','fam')">NEXT</button>
                     </div>

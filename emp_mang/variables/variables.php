@@ -119,6 +119,7 @@ $gra_graduation = "";
     $increment = "";
     $govt_service_yes="";
     $govt_service_no="";
+    $work_status="";
     
     //voluntary works
     $name_org = "";

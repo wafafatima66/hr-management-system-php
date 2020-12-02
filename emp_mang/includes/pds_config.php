@@ -331,28 +331,33 @@ $ele_school_name=$_POST['ele_school_name'];
 
         //work experience
 
+if(isset($_POST['work_position'])){
 
-        $work_from_date=$_POST['work_from_date'];
-    $work_to_date=$_POST['work_to_date'];
-    $work_position=$_POST['work_position'];
-    $employer=$_POST['employer'];
-    $govt_service=$_POST['govt_service'];
-    $monthly_sal=$_POST['monthly_sal'];
-    $increment=$_POST['increment'];
-    $work_status=$_POST['work_status'];
+    $query = "SELECT * FROM emp_work WHERE emp_id = '$emp_id'";
+                           
+    $runquery = $conn -> query($query);
+    $rowcount=mysqli_num_rows($runquery);
+
+    if($rowcount != 0 ){
+        $count = count(($_POST['work_position']))-1;
+    } else {
+        $count = count(($_POST['work_position']));
+    }
+
+            for ($i = 0 ; $i < $count  ; $i++){
+        
+    $work_from_date=$_POST['work_from_date'][$i];
+    $work_to_date=$_POST['work_to_date'][$i];
+    $work_position=$_POST['work_position'][$i];
+    $employer=$_POST['employer'][$i];
+    $govt_service=$_POST['govt_service'][$i];
+    $monthly_sal=$_POST['monthly_sal'][$i];
+    $increment=$_POST['increment'][$i];
+    $work_status=$_POST['work_status'][$i];
     
-  
 
-            $sql="INSERT INTO work_experience (work_from_date,work_to_date,work_position,employer,govt_service,monthly_sal,increment,work_status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
-              ON DUPLICATE KEY UPDATE
-              work_from_date = '$work_from_date',
-              work_to_date = '$work_to_date',
-              work_position = '$work_position',
-                employer = '$employer',
-                govt_service = '$govt_service',
-                monthly_sal = '$monthly_sal',
-                increment = '$increment' ,
-                work_status = '$work_status'
+            $sql="INSERT INTO emp_work (work_from_date,work_to_date,work_position,employer,govt_service,monthly_sal,increment,work_status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
+            
             ";
 
             $stmt = mysqli_stmt_init($conn);
@@ -367,7 +372,11 @@ $ele_school_name=$_POST['ele_school_name'];
                     mysqli_stmt_execute($stmt);
 
                 }
+            
+            } 
+    }
 
+            
 
     //voluntary works
 

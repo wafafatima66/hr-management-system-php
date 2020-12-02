@@ -195,27 +195,32 @@ while($data = $runquery -> fetch_assoc()){
     $licence_val = $data["licence_val"];
   }
 }
-
+/*
 //fetch data from work experience
-$query = "SELECT * FROM work_experience WHERE emp_id = '$emp_id'";
+$query = "SELECT * FROM emp_work WHERE emp_id = '$emp_id'";
 
   $runquery = $conn -> query($query);
   if($runquery == true){
    
       
   while($data = $runquery -> fetch_assoc()){
-
-    $work_from_date = $data["work_from_date"];
-    $work_to_date = $data["work_to_date"];
-    $work_position = $data["work_position"];
-    $employer = $data["employer"];
+/*
+    //$work_from_date = $data["work_from_date"];
+    //$work_to_date = $data["work_to_date"];
+    //$work_position = $data["work_position"];
+    //$employer = $data["employer"];
     $monthly_sal = $data["monthly_sal"];
     $increment = $data["increment"];
-    $govt_service = $data["govt_service"];
-
-    $govt_service_yes="";
-    $govt_service_no="";
     
+    $work_status = $data["work_status"];
+*/
+
+//$govt_service = $data["govt_service"];
+   /*   $govt_service_yes="";
+    $govt_service_no="";
+
+
+  
     if( $govt_service=="yes"){
       $govt_service_yes ="checked='checked'";
     } else {
@@ -223,8 +228,9 @@ $query = "SELECT * FROM work_experience WHERE emp_id = '$emp_id'";
     }
   }
 }
+*/
 
-
+/*
 //fetch data from voluntary works 
 $query = "SELECT * FROM voluntary_works WHERE emp_id = '$emp_id'";
 
@@ -242,7 +248,7 @@ $query = "SELECT * FROM voluntary_works WHERE emp_id = '$emp_id'";
     $vol_to_date = $data["vol_to_date"];
   }
 }
-
+*/
 
 //fetch data from learning
 
