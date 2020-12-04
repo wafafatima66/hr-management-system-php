@@ -63,7 +63,7 @@ body{
   width: calc(100% - 250px);
   background: #f3f3f3;
   margin-left: 250px; /* Same as the width of the sidebar */
-  height: 100vh;
+ 
 }
 
 .main-header{
@@ -258,8 +258,8 @@ body{
 }
  .emp_profile_section1 .form-inline button{
     background-color: #345587;
-    font-size: 10px;
-    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 25px;
 }
 
 

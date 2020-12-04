@@ -113,7 +113,7 @@ if(isset($_POST['submit'])){
 
     require '../includes/conn.php';
 
-    $query = "SELECT * FROM pds WHERE emp_id = '$search_id' AND emp_first_name = '$search_name' ";
+    $query = "SELECT * FROM pds WHERE  emp_id = '$search_id' OR emp_first_name = '$search_name' OR emp_status = '$search_status'";
 
     $runquery = $conn -> query($query);
     if($runquery == true){

@@ -1,8 +1,5 @@
-
-
-
-                        <!--File uploaad-->
-                        <div class=" emp_profile_section2_tab container mb-5" id="tab-3">  
+    <!--File uploaad-->
+                        <div class=" emp_profile_section2_tab mb-5" id="tab-3">  
 
 
                    <div class="container">

@@ -49,11 +49,11 @@ if($conn -> query($dltquery)){
           <form class="form-inline" method="post" action="">
           
             <div class="form-group mx-sm-2 mb-2">
-              <input type="text" class="form-control" id="" placeholder="Employee ID" name="search_id">
+              <input type="text" class="form-control"  placeholder="Employee ID" name="search_id">
             </div>
 
             <div class="form-group mx-sm-2 mb-2">
-              <input type="text" class="form-control" id="" placeholder="Employee name" name="search_name">
+              <input type="text" class="form-control"  placeholder="Employee name" name="search_name">
             </div>
 
             <div class="form-group mx-sm-2 mb-2">
@@ -93,14 +93,23 @@ if($conn -> query($dltquery)){
 if(isset($_POST['submit'])){
 
 
-
-    $search_id=$_POST['search_id'];
-    $search_name=$_POST['search_name'];
-    $search_status=$_POST['search_status'];
-
     require '../includes/conn.php';
 
-    $query = "SELECT * FROM pds WHERE emp_id = '$search_id' AND emp_first_name = '$search_name' ";
+   
+      $search_id=$_POST['search_id'];
+
+    
+    $search_name=$_POST['search_name'];
+
+      
+    $search_status=$_POST['search_status'];
+
+        
+
+        $query = "SELECT * FROM pds WHERE  emp_id = '$search_id' OR emp_first_name = '$search_name' OR emp_status = '$search_status'";
+      
+
+   
 
     $runquery = $conn -> query($query);
     if($runquery == true){

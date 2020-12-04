@@ -176,7 +176,7 @@ while($data = $runquery -> fetch_assoc()){
 
 //fetch data from civil service
 
-
+/*
   $query = "SELECT * FROM civil_service WHERE emp_id = '$emp_id'";
 
   $runquery = $conn -> query($query);
@@ -194,7 +194,7 @@ while($data = $runquery -> fetch_assoc()){
     $licence_no = $data["licence_no"];
     $licence_val = $data["licence_val"];
   }
-}
+}*/
 /*
 //fetch data from work experience
 $query = "SELECT * FROM emp_work WHERE emp_id = '$emp_id'";

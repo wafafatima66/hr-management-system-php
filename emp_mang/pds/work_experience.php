@@ -140,8 +140,8 @@
                     <div class="d-flex flex-column">
                         <label for="">INCLUSIVE DATES</label>
                         <div class="d-flex justify-content-center">
-                        <input type="date" class="form-control mx-sm-1"  value="<?php echo $work_from_date?>" style="width:140px;" name="work_from_date[]">
-                        <input type="date" class="form-control mx-sm-1"  value="<?php echo $work_to_date?>" style="width:140px;" name="work_to_date[]">
+                        <input type="date" class="form-control mx-sm-1"  style="width:140px;" name="work_from_date[]">
+                        <input type="date" class="form-control mx-sm-1"  style="width:140px;" name="work_to_date[]">
                         </div>
                     </div>
                 </div>
@@ -149,14 +149,14 @@
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">POSITION/TITLE</label>
-                        <input type="text" class="form-control"  value="<?php echo $work_position?>" style="width:200px;" name="work_position[]">
+                        <input type="text" class="form-control"   style="width:200px;" name="work_position[]">
                     </div>
                 </div>
 
                 <div class="form-group mx-sm-3 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">EMPLOYER </label>
-                        <input type="text" class="form-control"  value="<?php echo $employer?>" style="width:200px;" name="employer[]">
+                        <input type="text" class="form-control"   style="width:200px;" name="employer[]">
                     </div>
                 </div>
 
@@ -168,10 +168,10 @@
                         <div class="d-flex justify-content-center">
                         <div class="form-check">
                             <label class="form-check-label" > Yes</label> 
-                            <input class="form-check-input" type="checkbox" value="yes" name="govt_service[]" <?php echo $govt_service_yes ?>>
+                            <input class="form-check-input" type="checkbox" value="yes" name="govt_service[]" >
                         </div>
                         <div class="form-check">
-                            <label class="form-check-label"> No</label> <input class="form-check-input" type="checkbox" value="no" name="govt_service[]" <?php echo $govt_service_no ?>>
+                            <label class="form-check-label"> No</label> <input class="form-check-input" type="checkbox" value="no" name="govt_service[]" >
                         </div>
                         </div>
                     </div>
@@ -184,18 +184,18 @@
 
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">MONTHLY SALARY</label>
-                        <input type="text" class="form-control"  value="<?php echo $monthly_sal?>" style="width:100px;" name="monthly_sal[]">    
+                        <input type="text" class="form-control"   style="width:100px;" name="monthly_sal[]">    
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">INCREMENT</label>
-                        <input type="text" class="form-control"  value="<?php echo $increment?>" style="width:100px;" name="increment[]">    
+                        <input type="text" class="form-control"  style="width:100px;" name="increment[]">    
                     </div>
                     
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">STATUS</label>
                         <select class="form-control" style="width:100px;" name="work_status[]">
-                            <option value = "<?php echo $work_status?>"><?php echo $work_status?></option>
+                            <option value =0>Select</option>
                             <option value="permanent">Permanent</option>
                             <option value="contractual">Contractual</option>
                             <option value="job_order">Job order</option>
@@ -227,7 +227,7 @@
 
             
         </div>
-
+    
             
         </div>
 
@@ -240,7 +240,7 @@ var maxField = 10; //Input fields increment limitation
 var addButton = $('.add_work_button'); //Add button selector
 var wrapper = $('.work_wrapper'); //Input field wrapper
 var fieldHTML = 
-' <div><div class="form-inline"><div class="form-group mx-sm-3 mb-2"><div class="d-flex flex-column"><label for="">INCLUSIVE DATES</label><div class="d-flex justify-content-center"><input type="date" class="form-control mx-sm-1"  value="" style="width:140px;" name="work_from_date[]"><input type="date" class="form-control mx-sm-1"  value="" style="width:140px;" name="work_to_date[]"></div></div></div><div class="form-group mx-sm-3 mb-2"><div class="d-flex flex-column"><label for="">POSITION/TITLE</label><input type="text" class="form-control"  value="" style="width:200px;" name="work_position[]"></div></div><div class="form-group mx-sm-3 mb-2"><div class="d-flex flex-column"><label for="">EMPLOYER </label><input type="text" class="form-control"  value="" style="width:200px;" name="employer[]"></div></div><div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">GOVERNMENT SERVICE</label> <div class="d-flex justify-content-center"> <div class="form-check"> <label class="form-check-label" > Yes</label> <input class="form-check-input" type="checkbox" value="yes" name="govt_service[]" > </div> <div class="form-check"> <label class="form-check-label"> No</label> <input class="form-check-input" type="checkbox" value="no" name="govt_service[]" > </div> </div> </div> </div><div class="d-flex justify-content-center"> <div class="form-group mx-sm-3 mb-2"> <label for="">MONTHLY SALARY</label> <input type="text" class="form-control"  value="" style="width:100px;" name="monthly_sal[]"> </div> <div class="form-group mx-sm-3 mb-2"> <label for="">INCREMENT</label> <input type="text" class="form-control"  value="" style="width:100px;" name="increment[]"> </div> <div class="form-group mx-sm-3 mb-2"> <label for="">STATUS</label> <select class="form-control" style="width:100px;" name="work_status[]"> <option value = ""></option> <option value="permanent">Permanent</option> <option value="contractual">Contractual</option> <option value="job_order">Job order</option> </select> </div> </div>  </div><a href="javascript:void(0);" class="remove_work_button"><i class="fa fa-minus"></i></a></div>'; 
+' <div><div class="form-inline"><div class="form-group mx-sm-3 mb-2"><div class="d-flex flex-column"><label for="">INCLUSIVE DATES</label><div class="d-flex justify-content-center"><input type="date" class="form-control mx-sm-1"  style="width:140px;" name="work_from_date[]"><input type="date" class="form-control mx-sm-1"  style="width:140px;" name="work_to_date[]"></div></div></div><div class="form-group mx-sm-3 mb-2"><div class="d-flex flex-column"><label for="">POSITION/TITLE</label><input type="text" class="form-control"   style="width:200px;" name="work_position[]"></div></div><div class="form-group mx-sm-3 mb-2"><div class="d-flex flex-column"><label for="">EMPLOYER </label><input type="text" class="form-control"   style="width:200px;" name="employer[]"></div></div><div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">GOVERNMENT SERVICE</label> <div class="d-flex justify-content-center"> <div class="form-check"> <label class="form-check-label" > Yes</label> <input class="form-check-input" type="checkbox" value="yes" name="govt_service[]" > </div> <div class="form-check"> <label class="form-check-label"> No</label> <input class="form-check-input" type="checkbox" value="no" name="govt_service[]" > </div> </div> </div> </div><div class="d-flex justify-content-center"> <div class="form-group mx-sm-3 mb-2"> <label for="">MONTHLY SALARY</label> <input type="text" class="form-control"   style="width:100px;" name="monthly_sal[]"> </div> <div class="form-group mx-sm-3 mb-2"> <label for="">INCREMENT</label> <input type="text" class="form-control"  style="width:100px;" name="increment[]"> </div> <div class="form-group mx-sm-3 mb-2"> <label for="">STATUS</label> <select class="form-control" style="width:100px;" name="work_status[]"> <option value = "0">Select</option> <option value="permanent">Permanent</option> <option value="contractual">Contractual</option> <option value="job_order">Job order</option> </select> </div> </div>  </div><a href="javascript:void(0);" class="remove_work_button"><i class="fa fa-minus"></i></a></div>'; 
 
 //New input field html 
 var x = 1; //Initial field counter is 1

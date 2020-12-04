@@ -116,7 +116,7 @@
 
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">YEAR GRADUATED</label>
-                            <input type="date" class="form-control" style="width:140px"  value="<?php echo $sec_graduation?>" name="sec_graduation">
+                            <input type="text" class="form-control" style="width:140px"  value="<?php echo $sec_graduation?>" name="sec_graduation">
                         </div>
                 
                  
@@ -176,7 +176,7 @@
 
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">YEAR GRADUATED</label>
-                            <input type="date" class="form-control"  style="width:140px"  value="<?php echo $voc_graduation?>" name="voc_graduation">
+                            <input type="text" class="form-control"  style="width:140px"  value="<?php echo $voc_graduation?>" name="voc_graduation">
                         </div>
                 
                  
@@ -236,7 +236,7 @@
 
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">YEAR GRADUATED</label>
-                            <input type="date" class="form-control"  style="width:140px"  value="<?php echo $coll_graduation?>" name="coll_graduation">
+                            <input type="text" class="form-control"  style="width:140px"  value="<?php echo $coll_graduation?>" name="coll_graduation">
                         </div>
                 
                  
@@ -296,7 +296,7 @@
 
                         <div class="form-group mx-sm-1 mb-2">
                             <label for="">YEAR GRADUATED</label>
-                            <input type="date" class="form-control" style="width:140px"  value="<?php echo $gra_graduation?>" name="gra_graduation">
+                            <input type="text" class="form-control" style="width:140px"  value="<?php echo $gra_graduation?>" name="gra_graduation">
                         </div>
                 
                  
@@ -322,6 +322,10 @@
                     </div>
                     </div>
 
+                    
+                    <!--
+                    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js"></script>
+
                     <script type="text/javascript">
 
                     
@@ -330,3 +334,4 @@
                                 format: 'yyyy'
                             });
   </script>
+  -->
