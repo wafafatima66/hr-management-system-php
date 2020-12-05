@@ -2,6 +2,7 @@
 <?php include '../includes/header.php'; ?>
 <?php include '../emp_mang/add_emp_modal.php'; ?>
 
+<?php ?>
   
 <!---Main body-->
 <div class="container-fluid">
