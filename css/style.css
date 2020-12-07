@@ -452,6 +452,9 @@ text-transform: capitalize;
 } 
 
 /*training page*/
+.training_section_1{
+    margin: 20px;
+}
 .training_section_1 input{
     font-size: 10px;
     text-transform: capitalize;

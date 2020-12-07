@@ -207,7 +207,7 @@ while($data = $runquery -> fetch_assoc()){
         <td><?php echo $data['file_date'] ?></td>
         <td><?php echo $data['file_type'] ?></td>
         <td><?php echo $data['file_size'] ?></td>
-        <td><a href="../emp_mang/uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
+        <td><a href="../uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
         </tr>
 
     <?php
@@ -287,7 +287,7 @@ while($data = $runquery -> fetch_assoc()){
         <td><?php echo $data['file_date'] ?></td>
         <td><?php echo $data['file_type'] ?></td>
         <td><?php echo $data['file_size'] ?></td>
-        <td><a href="../emp_mang/uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
+        <td><a href="../uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
         </tr>
 
     <?php
@@ -366,7 +366,7 @@ while($data = $runquery -> fetch_assoc()){
         <td><?php echo $data['file_date'] ?></td>
         <td><?php echo $data['file_type'] ?></td>
         <td><?php echo $data['file_size'] ?></td>
-        <td><a href="../emp_mang/uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
+        <td><a href="../uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
         </tr>
 
     <?php
@@ -445,7 +445,7 @@ while($data = $runquery -> fetch_assoc()){
         <td><?php echo $data['file_date'] ?></td>
         <td><?php echo $data['file_type'] ?></td>
         <td><?php echo $data['file_size'] ?></td>
-        <td><a href="../emp_mang/uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
+        <td><a href="../uploads/<?php echo $data['file_name'] ?>" target="_blank">view file</a></td>
         </tr>
 
     <?php

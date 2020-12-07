@@ -81,7 +81,7 @@ if(isset($_GET['leave'])){
         </div>
    
       
-<div id="space"></div>
+
 
     <div class="leave_mang_section1_body leave_mang_section_body">
          <form class="form-inline" method="post" action="leave_mang-config.php">
@@ -138,6 +138,9 @@ if(isset($_GET['leave'])){
                             <input type="date" class="form-control" name="leave_to_date" style="width:140px">
                         </div>   
                 </div>
+                <input type="hidden" name="vac_date_diff[]">
+                <input type="hidden" name="sick_date_diff[]">
+                <input type="hidden" name="spl_date_diff[]">
 
                 <div class="form-group mx-sm-3 mb-2">
                     <label for="">COMMUNICATION</label>
@@ -238,22 +241,19 @@ if(isset($_GET['leave'])){
                 <button class="btn" name="date" >DATE</button>
             </div>
 
-           
-
             </form>
 
         </div>
                         
-                      
-                  
-    
-
     
         <div class="leave_mang_section_body">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10">
                     <table class="table table-bordered table-sm" >
+
+                   
+                   
                         <thead class="table-head">
                             <tr>
                             <th scope="col">Name</th>
@@ -263,88 +263,70 @@ if(isset($_GET['leave'])){
                             <th scope="col">Total Balance</th>
                             </tr>
                         </thead>
-                        <tbody >
+
+         
+           
+      
+                     <tbody >
                             <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
+                                <th scope="row"></th>
+                                <td></td>
                             </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                            </tr>
-                        </tbody>
+                    </tbody>
+                     
+
+                    
                     </table>
-                    </div>
+                   
+       
+                </div>
 
                     <div class="col-lg-2">
                         <div class="d-flex flex-column">
                             <div class="text-center">
-<?php
-                            if(isset($_POST['date'])){
+
+        <?php
+
+            if(isset($_POST['date'])){
+
+                if(isset($_POST['from_date']) && isset($_POST['to_date'])){
+                $from_date = $_POST['from_date'];
+                $to_date = $_POST['to_date'];
+                } 
+                    }
+                    else 
+                    {
+
+                    $from_date= date ("y-m-d");
+                    $to_date=date('y-m-d', strtotime($from_date. ' + 20 days'));;
+                    
+                    }
+
+                 require '../includes/conn.php';
+
+                $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'vacation leave' AND leave_from_date BETWEEN  '$from_date' AND '$to_date' " ;
+
+                $runquery = $conn -> query($query);
+                $vac_rowcount=mysqli_num_rows($runquery);
 
 
+                $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'sick leave'  AND leave_from_date BETWEEN  '$from_date' AND '$to_date'" ;
 
-if(isset($_POST['from_date']) && isset($_POST['to_date'])){
-$from_date = $_POST['from_date'];
-$to_date = $_POST['to_date'];
-} 
+                $runquery = $conn -> query($query);
+                $sick_rowcount=mysqli_num_rows($runquery);
 
-    }
-    
-    else 
-    {
+                $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'special priviledge leave' AND leave_from_date BETWEEN  '$from_date' AND '$to_date'" ;
 
-   
-    $from_date= date ("y-m-d");
-    $to_date=date('y-m-d', strtotime($from_date. ' + 20 days'));;
-    
-}
-/*
-$query = "SELECT * FROM emp_leaves WHERE  leave_from_date = '$from_date' AND leave_to_date = '$to_date'" ;
+                $runquery = $conn -> query($query);
+                $spl_rowcount=mysqli_num_rows($runquery);
 
-$runquery = $conn -> query($query);
-if($runquery == true){
-*/
-        require '../includes/conn.php';
-
-    $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'vacation leave' AND leave_from_date BETWEEN  '$from_date' AND '$to_date' " ;
-
-$runquery = $conn -> query($query);
-$vac_rowcount=mysqli_num_rows($runquery);
-
-
-$query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'sick leave'  AND leave_from_date BETWEEN  '$from_date' AND '$to_date'" ;
-
-$runquery = $conn -> query($query);
-$sick_rowcount=mysqli_num_rows($runquery);
-
-$query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'special priviledge leave' AND leave_from_date BETWEEN  '$from_date' AND '$to_date'" ;
-
-$runquery = $conn -> query($query);
-$spl_rowcount=mysqli_num_rows($runquery);
-
-  
-
-   // echo json_encode( array('vac_rowcount'=>$hi,'sick_rowcount'=>$sick_rowcount,'spl_rowcount'=>$spl_rowcount));
-
-?>
+        ?>
                                 <span>Vacation Leave</span>
                                 <h2 ><?php echo $vac_rowcount?></h2>
                                 <span>Sick Leave</span>
                                 <h2 ><?php echo $sick_rowcount?></h2>
                                 <span>Special Priviledge Leave</span>
-                                <h2 ><?php echo $spl_row_count?></h2>
+                                <h2 ><?php echo $spl_rowcount?></h2>
                             </div>
                         </div>
                     </div>

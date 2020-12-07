@@ -44,31 +44,80 @@ if(isset($_POST['submit'])){
     $communication=$_POST['communication'];
     $description=$_POST['description'];
     $certificate_of_leave=$_POST['certificate_of_leave'];
-   
+
+    $from_date = strtotime($leave_from_date); // or your date as well
+    $to_date = strtotime($leave_to_date);
+
+   $date_diff = array();
+
+    $date_diff = round(($to_date - $from_date )/ (60 * 60 * 24));
+
+    $vac_date_diff_arr=$_POST['vac_date_diff'];
+
+    //$emp_child_dob_arr=$_POST['emp_child_dob'];
+
+  
+   // $emp_child_dob= implode(',',$emp_child_dob_arr);
+
+    if($type_of_leave == 'vacation leave'){
+        //$vac_date_diff = $date_diff;
+     //$vac_date_diff= implode(',',$date_diff);
+
+     $vac_date_diff_arr = $date_diff;
+     $vac_date_diff= implode(',',$vac_date_diff_arr);
+    }
+    else  if($type_of_leave == 'sick leave'){
+      $sick_date_diff = $date_diff;
+       //$sick_date_diff= implode(',',$date_diff);
+    }
+    else  if($type_of_leave == 'special priviledge leave'){
+        $spl_date_diff= $date_diff;
+     // $spl_date_diff= implode(',',$date_diff);
+    }
+    else echo "no type of leave";
     
     require '../includes/conn.php';
 
    
         
-            $sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,description,certificate_of_leave) VALUE (?,?,?,?,?,?,?,?)";
+            $sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,description,certificate_of_leave) VALUE (?,?,?,?,?,?,?,?)
+            ";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 header("Location:leave_mang.php?leave=error");
                 exit();
             }
-                else{
+                else{ 
                 
                     mysqli_stmt_bind_param($stmt,"iissssss", $emp_id, $emp_salary, $type_of_leave,$leave_from_date,$leave_to_date,$communication,$description,$certificate_of_leave);
                     mysqli_stmt_execute($stmt);
-
-                  
-
-                   
-
-                    header("Location:leave_mang.php?leave=success");
-                            exit();
                 }
 
+
+                $sql="INSERT INTO date_diff_leaves (emp_id, vac_date_diff, sick_date_diff,spl_date_diff) VALUE (?,?,?,?)    
+                ";
+                /* ON DUPLICATE KEY UPDATE
+                 vac_date_diff = '$vac_date_diff',
+                 sick_date_diff = '$sick_date_diff',
+                 spl_date_diff = '$spl_date_diff'*/
+               
+                $stmt = mysqli_stmt_init($conn);
+                if(!mysqli_stmt_prepare($stmt,$sql)){
+                    header("Location:leave_mang.php?leave=error");
+                    exit();
+                }
+                    else{ 
+                    
+                        mysqli_stmt_bind_param($stmt,"iiii", $emp_id, $vac_date_diff, $sick_date_diff,$spl_date_diff);
+                        mysqli_stmt_execute($stmt);
+    
+                       
+                    }
+
+
+
+                header("Location:leave_mang.php?leave=success");
+                exit();
                 mysqli_stmt_close($stmt);
         mysqli_close($conn);
         } 

@@ -15,7 +15,7 @@ if(isset($_POST['upload'])){
     $file_loc = $_FILES['upload_file']['tmp_name'];
     $file_size = $_FILES['upload_file']['size'];
     $file_type = $_FILES['upload_file']['type'];
-    $path="../../emp_mang/uploads/";
+    $path="../../uploads/";
 
  
 $query = "SELECT * FROM emp_file WHERE file_name = '$file_name' ";

@@ -20,7 +20,7 @@ if(isset($_POST['submit'])){
     // File upload path
     $emp_image = $_FILES["emp_image"]["name"]; 
     $tempname = $_FILES["emp_image"]["tmp_name"];     
-        $folder = "../emp_mang/uploads/image/".$emp_image; 
+        $folder = "../uploads/image/".$emp_image; 
 
 
 
