@@ -86,7 +86,7 @@ if(isset($_GET['submit'])){
 
                   $emp_id = $mydata["emp_id"];
 
-                  $emp_image = '../emp_mang/uploads/image/'.$mydata["emp_image"];
+                  $emp_image = '../uploads/image/'.$mydata["emp_image"];
 
 
                   //$emp_id = $mydata["emp_id"];

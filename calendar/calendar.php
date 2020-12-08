@@ -1,7 +1,7 @@
 
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
-
+<?php include 'script.php'; ?>
 
         <div class="container pt-5">
         <form class="form-inline">
@@ -57,12 +57,20 @@
             </div>
 
             <div class="calendar_section2_body">
-                 <div id="calendar"></div>
+                
+  <div class="container">
+   <div id="calendar"></div>
+  </div>
             </div>
         </div>
 
+
+
+        
  <!--button to add event-->
             <!-- Modal -->
+
+           
         <div class="modal fade addevent" id="addevent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
                     <div class="modal-content">
@@ -149,3 +157,5 @@
                 </div>
             </div>
         </div>
+    
+     

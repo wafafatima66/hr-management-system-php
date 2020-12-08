@@ -476,11 +476,28 @@ text-transform: capitalize;
     border: #345587 solid 2px;
 
 }
-.training_section_1 th{
+/*
+.training_section_1 tr th td {
     font-size: 12px;
+    text-transform: capitalize;
 }
-.training_section_2 th{
+.training_section_2 td{
     font-size: 12px;
+    text-transform: capitalize;
+}
+*/
+.training_section_2 input{
+    font-size: 10px;
+    text-transform: capitalize;
+}
+.training_section_2 label{
+    font-size: 10px;
+    text-transform: capitalize;
+}
+
+.training_section_2 button{
+    font-size: 10px;
+    text-transform: capitalize;
 }
 
 /*training modal*/

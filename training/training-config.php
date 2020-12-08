@@ -27,20 +27,40 @@ if(isset($_POST['submit'])){
     require '../includes/conn.php';
 
     
-    $query = "SELECT office_assign , emp_gender , emp_first_name FROM pds WHERE  emp_id = '$emp_id' ";
+    $query = "SELECT office_assign , emp_gender  FROM pds WHERE  emp_id = '$emp_id' ";
       
     if($runquery = $conn -> query($query)){
+
+       
     
     while($mydata = $runquery -> fetch_assoc()){
 
-      $emp_first_name =   $mydata["emp_first_name"];
+      //$emp_first_name =   $mydata["emp_first_name"];
       $office_assign =   $mydata["office_assign"];
       $emp_gender =   $mydata["emp_gender"];
         }
     } 
 
 
-            $sql="INSERT INTO training (emp_id, title_of_training, type,from_date,to_date,no_of_hrs,venue,province,city,barangay,speaker_last_name,speaker_first_name,speaker_middle_name,speaker_ext,agency,title,sponsor,emp_first_name,office_assign,emp_gender) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $query = "SELECT emp_first_name , emp_last_name , emp_middle_name  FROM add_emp WHERE  emp_id = '$emp_id' ";
+      
+    if($runquery = $conn -> query($query)){
+
+       
+    
+    while($mydata = $runquery -> fetch_assoc()){
+
+      $emp_first_name =   $mydata["emp_first_name"];
+      $emp_last_name =   $mydata["emp_last_name"];
+      $emp_middle_name =   $mydata["emp_middle_name"];
+      $emp_image = $mydata["emp_image"];
+        }
+
+        $emp_name =  $emp_first_name . ' ' . $emp_last_name . ' '. $emp_middle_name;
+    } 
+
+    
+            $sql="INSERT INTO training (emp_id, title_of_training, type,from_date,to_date,no_of_hrs,venue,province,city,barangay,speaker_last_name,speaker_first_name,speaker_middle_name,speaker_ext,agency,title,sponsor,emp_name,office_assign,emp_gender,emp_image) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 header("Location:training.php?submit=error");
@@ -48,7 +68,7 @@ if(isset($_POST['submit'])){
             }
                 else{
                 
-                    mysqli_stmt_bind_param($stmt,"issssissssssssssssss", $emp_id, $title_of_training, $type,$from_date,$to_date,$no_of_hrs,$venue,$province,$city,$barangay,$speaker_last_name,$speaker_first_name,$speaker_middle_name,$speaker_ext,$agency,$title,$sponsor,$emp_first_name,$office_assign,$emp_gender);
+                    mysqli_stmt_bind_param($stmt,"issssisssssssssssssss", $emp_id, $title_of_training, $type,$from_date,$to_date,$no_of_hrs,$venue,$province,$city,$barangay,$speaker_last_name,$speaker_first_name,$speaker_middle_name,$speaker_ext,$agency,$title,$sponsor,$emp_name,$office_assign,$emp_gender,$emp_image);
                     mysqli_stmt_execute($stmt);
 
                   

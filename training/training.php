@@ -1,13 +1,18 @@
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
 
+
+
+
 <?php
 if(isset($_GET['submit'])){
     if($_GET['submit']=="error"){
         echo'<p class="alert alert-danger h6">TRAINING NOT ADDEDD SUCCESSFULLY ! TRY AGAIN</p>';
     }else  if($_GET['submit']=="success"){
         echo'<p class="alert alert-success h6"> TRAINING ADDEDD SUCCESSFULLY </p>';
-    }
+    }else  if($_GET['submit']=="noid"){
+      echo'<p class="alert alert-danger h6"> EMPLOYEE NOT FOUND ! </p>';
+  }
 }
 ?>
 
@@ -61,7 +66,7 @@ if(isset($_GET['submit'])){
               
               while($mydata = $runquery -> fetch_assoc()){
 
-                $emp_first_name =   $mydata["emp_first_name"];
+                $emp_name =   $mydata["emp_name"];
                 $office_assign =   $mydata["office_assign"];
                 $emp_gender =   $mydata["emp_gender"];
                 $title_of_training =   $mydata["title_of_training"];
@@ -69,12 +74,13 @@ if(isset($_GET['submit'])){
                 $to_date =   $mydata["to_date"];
                 $venue =   $mydata["venue"];
                 $sponsor =   $mydata["sponsor"];
+                $emp_image = '../uploads/image/'.$mydata["emp_image"];
 ?>
 
                 <tbody >
                 <tr>
-                <th scope="row"><?php echo $office_assign ?></th>
-                  <td><?php echo $emp_first_name ?></td>
+                <td scope="row"><?php echo $office_assign ?></td>
+                <td style="text-transform: capitalize;"><div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div></td>
                   <td><?php echo $emp_gender ?></td>
                   <td><?php echo $title_of_training ?></td>
                   <td><?php echo $from_date ?>-<?php echo $to_date ?></td>
@@ -98,7 +104,7 @@ if(isset($_GET['submit'])){
               
               while($mydata = $runquery -> fetch_assoc()){
 
-                $emp_first_name =   $mydata["emp_first_name"];
+                $emp_name =   $mydata["emp_name"];
                 $office_assign =   $mydata["office_assign"];
                 $emp_gender =   $mydata["emp_gender"];
                 $title_of_training =   $mydata["title_of_training"];
@@ -106,6 +112,7 @@ if(isset($_GET['submit'])){
                 $to_date =   $mydata["to_date"];
                 $venue =   $mydata["venue"];
                 $sponsor =   $mydata["sponsor"];
+                $emp_image = '../uploads/image/'.$mydata["emp_image"];
 
                // $date = date_format( $from_date , "d/M/y");
                 $from_date = date("d M y", strtotime($from_date));
@@ -113,9 +120,9 @@ if(isset($_GET['submit'])){
 ?>
                 <tbody >
                 <tr>
-                <th scope="row"><?php echo $office_assign ?></th>
-                  <td><?php echo $emp_first_name ?></td>
-                  <td><?php echo $emp_gender ?></td>
+                <td scope="row">Office of the president</td>
+                  <td style="text-transform: capitalize;"><div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div></td>
+                  <td><?php echo $emp_gender ?></div></td>
                   <td><?php echo $title_of_training ?></td>
                   <td><?php echo $from_date ?> - <?php echo $to_date ?></td>
                   <td><?php echo $venue ?></td>
@@ -137,34 +144,49 @@ if(isset($_GET['submit'])){
 </div>
 
 
-<div class=" container training_section_2 pt-5">
+<div class=" training_section_2 pt-5">
         
-               <div class="container">
-                   <div class="row">
-                         <div class="col-lg-9 training_section_2_header ">
+               <div class="form-inline">
+               
+                         <div class="col-lg-8 training_section_2_header ">
                             <h4>SUMMARY OF TRAINING</h4>
                         </div>
 
-                        <div class="col-lg-2 d-flex align-items-center">
-                            <form  class="form-inline">
-                                <div class="form-group mx-sm-1">
-                                    <div class="d-flex justify-content-center">
-                                        <input type="text" class="form-control" id="" placeholder="" style="width:80px">
-                                        <button class="btn mx-sm-1" style="background:#345587;"></button>
-                                        <input type="text" class="form-control" id="" placeholder="" style="width:80px">
-                                        <button class="btn mx-sm-1" style="background:#345587;"></button>
-                                    </div>
-                                </div>
+                        <div class="col-lg-4" >
+
+                        <form action="" method="post" class="form-inline ">
+
+                            <div class="form-group mx-sm-1 mb-2">
+                              <div class="d-flex flex-column">
+                                  <label style="color:#C3CFD5;" >From </label>
+                                  <input type="date" class="form-control" name="training_from_date" style="width:140px;">
+                              </div>   
+                            </div>
+
+                              <div class="form-group mx-sm-1 mb-2 ">
+                                  <div class="d-flex flex-column">
+                                      <label style="color:#C3CFD5;" >To</label>
+                                      <input type="date" class="form-control" name="training_to_date" style="width:140px;" >
+                                  </div>   
+                              </div>
+
+
+                            <button class="btn">Filter</button>
+
+                            </div>
+
                             </form>
-                        </div>
 
                         
-                   </div>
-               </div>
+                        
+                      </div>
+                        
+                  
 
                <div class="training_section_2_body">
                     <div class="container">
                     <table class="table table-bordered table-sm" >
+
                         <thead class="table-head">
                             <tr>
                             <th scope="col">Name of Training</th>
@@ -174,38 +196,72 @@ if(isset($_GET['submit'])){
                             <th scope="col">Sponsors/Office In-Charge</th>
                             </tr>
                         </thead>
+
+<?php
+
+require '../includes/conn.php';
+
+$query = "select count(title_of_training) , title_of_training , no_of_hrs , venue , sponsor from training GROUP by title_of_training "; 
+
+if($runquery = $conn -> query($query)){
+
+  while($mydata = $runquery -> fetch_assoc()){
+
+    $title_of_training =   $mydata["title_of_training"];
+    $no_of_hrs =   $mydata["no_of_hrs"];
+    $venue =   $mydata["venue"];
+    $sponsor =   $mydata["sponsor"];
+    $no_of_participants =   $mydata["count(title_of_training)"];
+  ?>
+
+
                         <tbody >
                             <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
+                              <th scope="row"><?php echo $title_of_training ?></th>
+                              <td><?php echo $no_of_participants ?></td>
+                              <td><?php echo $no_of_hrs ?></td>
+                              <td><?php echo $venue ?></td>
+                              <td><?php echo $sponsor ?></td>
                             </tr>
                         </tbody>
+<?php
+                      }    }
+
+
+?>
+
                     </table>
+
                     </div>
                </div>
-        
-
-        
+            
 </div>
 
 
 <!--button to add training-->
             <!-- Modal -->
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#emp_id").keyup(function(){
+        $.ajax({
+            url:'training-message.php',
+            type : 'post',
+            data: {emp_id : $(this).val()},
+            success : function(result){
+                
+                $('#space').html(result);
+                
+
+            }
+        });
+    });
+
+});
+
+</script>
 
     <div class="modal fade addtraining" id="addtraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
@@ -231,8 +287,10 @@ if(isset($_GET['submit'])){
                      <div class="form-inline">
                      <div class="form-group mx-sm-3 mb-2">
                           <label for="">Employee ID</label>
-                      <input type="text" class="form-control"  placeholder="Employee Id" style="width:250px" name="emp_id">
+                      <input type="text" class="form-control"  placeholder="Employee Id" style="width:250px" name="emp_id" id="emp_id">
                       </div>
+
+                      <div id="space"></div>
                      
                      </div>
                   
@@ -336,3 +394,8 @@ if(isset($_GET['submit'])){
                 </div>
             </div>
             </div>
+
+
+             
+      </div>  <!-- /#page-content-wrapper -->
+  </div> <!-- /#wrapper -->
