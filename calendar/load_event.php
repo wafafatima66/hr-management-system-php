@@ -9,6 +9,14 @@
     while ($row = mysqli_fetch_assoc($result)) 
     {
         array_push($alldata, $row);
+      /* 
+       $alldata[] = array(
+            'sno'   => $row["sno"],
+            'title'   => $row["title"],
+            'start'   => $row["start"]
+            
+           );
+           */
     }
     mysqli_free_result($result);
 

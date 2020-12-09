@@ -4,9 +4,17 @@
 
 if(isset($_POST['submit'])){
 
+  
+
+  require '../includes/conn.php';
+
+
+  
     $emp_id=$_POST['emp_id'];
+
+
     $title_of_training=$_POST['title_of_training'];
-    $type=$_POST['type'];
+    $type_of_training=$_POST['type_of_training'];
     $from_date=$_POST['from_date'];
     $to_date=$_POST['to_date'];
     $no_of_hrs=$_POST['no_of_hrs'];
@@ -24,8 +32,6 @@ if(isset($_POST['submit'])){
 
 
 
-    require '../includes/conn.php';
-
     
     $query = "SELECT office_assign , emp_gender  FROM pds WHERE  emp_id = '$emp_id' ";
       
@@ -42,7 +48,7 @@ if(isset($_POST['submit'])){
     } 
 
 
-    $query = "SELECT emp_first_name , emp_last_name , emp_middle_name  FROM add_emp WHERE  emp_id = '$emp_id' ";
+    $query = "SELECT emp_first_name , emp_last_name , emp_middle_name , emp_image FROM add_emp WHERE  emp_id = '$emp_id' ";
       
     if($runquery = $conn -> query($query)){
 
@@ -60,7 +66,7 @@ if(isset($_POST['submit'])){
     } 
 
     
-            $sql="INSERT INTO training (emp_id, title_of_training, type,from_date,to_date,no_of_hrs,venue,province,city,barangay,speaker_last_name,speaker_first_name,speaker_middle_name,speaker_ext,agency,title,sponsor,emp_name,office_assign,emp_gender,emp_image) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $sql="INSERT INTO training (emp_id, title_of_training, type_of_training,from_date,to_date,no_of_hrs,venue,province,city,barangay,speaker_last_name,speaker_first_name,speaker_middle_name,speaker_ext,agency,title,sponsor,emp_name,office_assign,emp_gender,emp_image) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 header("Location:training.php?submit=error");
@@ -68,17 +74,20 @@ if(isset($_POST['submit'])){
             }
                 else{
                 
-                    mysqli_stmt_bind_param($stmt,"issssisssssssssssssss", $emp_id, $title_of_training, $type,$from_date,$to_date,$no_of_hrs,$venue,$province,$city,$barangay,$speaker_last_name,$speaker_first_name,$speaker_middle_name,$speaker_ext,$agency,$title,$sponsor,$emp_name,$office_assign,$emp_gender,$emp_image);
+                    mysqli_stmt_bind_param($stmt,"issssisssssssssssssss", $emp_id, $title_of_training , $type_of_training, $from_date,$to_date, $no_of_hrs, $venue, $province, $city, $barangay, $speaker_last_name, $speaker_first_name,$speaker_middle_name, $speaker_ext, $agency, $title, $sponsor,$emp_name,$office_assign,$emp_gender,$emp_image);
+
                     mysqli_stmt_execute($stmt);
 
                   
                     header("Location:training.php?submit=success");
                             exit();
-                }
 
+                         
+                }
+   mysqli_stmt_close($stmt);
+  mysqli_close($conn);
                 
-        mysqli_stmt_close($stmt);
-        mysqli_close($conn);
+       
         } 
     
 
