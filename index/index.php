@@ -76,15 +76,17 @@
 
             <button type="submit" name="submit" class="btn btn-search mb-2 pr-5 pl-5">SEARCH</button> 
         </form>
+        </div>
 
+</div>
        
 
       <!---section 3 -->
 
     
-
+<div class="container" >
         <!--Table-->
-        <table class="table table-striped w-auto table-bordered">
+        <table class="table table-striped table-bordered" style="width:100%;">
 
           <!--Table head-->
           <thead class="table-head">
@@ -208,11 +210,9 @@ else {
 
 </table>
 
-
+</div>
       <!--Table-->
-</div>
 
-</div>
 
         <!---section 4 -->
         <!---first coluum--->

@@ -138,9 +138,7 @@ if(isset($_GET['leave'])){
                             <input type="date" class="form-control" name="leave_to_date" style="width:140px">
                         </div>   
                 </div>
-                <input type="hidden" name="vac_date_diff[]">
-                <input type="hidden" name="sick_date_diff[]">
-                <input type="hidden" name="spl_date_diff[]">
+             
 
                 <div class="form-group mx-sm-3 mb-2">
                     <label for="">COMMUNICATION</label>
@@ -217,7 +215,7 @@ if(isset($_GET['leave'])){
 </div>
 
 
-    <div class="leave_mang_section">
+<div class="leave_mang_section">
 
         <div class="form-inline">
 
@@ -246,14 +244,13 @@ if(isset($_GET['leave'])){
         </div>
                         
     
-        <div class="leave_mang_section_body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-10">
+    <div class="leave_mang_section_body">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10">
+
                     <table class="table table-bordered table-sm" >
 
-                   
-                   
                         <thead class="table-head">
                             <tr>
                             <th scope="col">Name</th>
@@ -264,72 +261,157 @@ if(isset($_GET['leave'])){
                             </tr>
                         </thead>
 
-         
-           
-      
-                     <tbody >
-                            <tr>
-                                <th scope="row"></th>
-                                <td></td>
-                            </tr>
-                    </tbody>
-                     
+                        <?php
+                        
+                                require '../includes/conn.php';
+                                                
+                                $query = "select emp_id from date_diff_leaves"; // finding emp_id form date diff leave table to avoid repeat
 
-                    
+                                if($runquery = $conn -> query($query))
+
+                                {
+                                    while($mydata = $runquery -> fetch_assoc())
+                                        {
+                                            $emp_id =   $mydata["emp_id"];
+                                            $resultarray [] =  $emp_id; // creating array to store all the employees applied for leave
+
+                                        }
+                                }
+                                        
+                        // this block was for storing employees id   
+                        ?>     
+
+                        <?php   
+                        
+                                for ($i = 0 ; $i < count($resultarray) ; $i++) // running the loop as many id stored in array
+                                {
+
+                                    $emp_id = $resultarray[$i]; // getting the emp id from the array 
+                                
+                                    $query = "select MAX(date_diff) AS date_max , MIN(date_diff) AS date_min from emp_leaves where emp_id = '$emp_id' and type_of_leave = 'vacation leave'"; 
+
+                                    if($runquery = $conn -> query($query)){
+
+                                        while($mydata = $runquery -> fetch_assoc()){
+
+                                                $date_max =   $mydata["date_max"];
+                                                $date_min =   $mydata["date_min"];
+
+                            //this block for getting vacation information                     
+                        ?>
+
+                                    <tbody >
+                                        <tr>
+                                            <th scope="row"><?php echo $emp_id?></th>
+                                            <td><?php echo $date_max?>-<?php echo $date_min?></td>
+                        <?php 
+                        
+                                } } // end of if and while loop of vacation leave
+                        
+                        ?>
+
+
+                        <?php
+                        
+                            $query = "select MAX(date_diff) AS date_max , MIN(date_diff) AS date_min from emp_leaves where emp_id = '$emp_id' and type_of_leave = 'sick leave'"; 
+
+                            if($runquery = $conn -> query($query)){
+
+                                while($mydata = $runquery -> fetch_assoc()){
+
+                                    $date_max =   $mydata["date_max"];
+
+                                    $date_min =   $mydata["date_min"];
+                                
+                                    //this block for getting sick leave vacation
+                        ?>
+
+                                <td><?php echo $date_max?>-<?php echo $date_min?></td> 
+
+                        <?php 
+                            } } // end of block of sick leave vacation 
+                        ?>
+
+                        <?php
+                            
+                            $query = "select MAX(date_diff) AS date_max , MIN(date_diff) AS date_min from emp_leaves where emp_id = '$emp_id' and type_of_leave = 'special priviledge leave'"; 
+
+                            if($runquery = $conn -> query($query)){
+
+                            while($mydata = $runquery -> fetch_assoc()){
+
+                                    $date_max =   $mydata["date_max"];
+                                
+                                    $date_min =   $mydata["date_min"];
+                                
+                                    // block for spl 
+                        ?>
+
+                        <td><?php echo $date_max?>-<?php echo $date_min?></td>
+
+                        <?php 
+                            } } //end of spl
+                        ?>
+
+
+                        </tr>
+                            </tbody>
+
+                                                    
+                        <?php    } // end of for loop ?>
+
                     </table>
-                   
-       
                 </div>
 
-                    <div class="col-lg-2">
-                        <div class="d-flex flex-column">
-                            <div class="text-center">
+                <div class="col-lg-2">
+                    <div class="d-flex flex-column">
+                        <div class="text-center">
 
-        <?php
+                            <?php
 
-            if(isset($_POST['date'])){
+                                if(isset($_POST['date'])){
 
-                if(isset($_POST['from_date']) && isset($_POST['to_date'])){
-                $from_date = $_POST['from_date'];
-                $to_date = $_POST['to_date'];
-                } 
-                    }
-                    else 
-                    {
+                                    if(isset($_POST['from_date']) && isset($_POST['to_date'])){
+                                    $from_date = $_POST['from_date'];
+                                    $to_date = $_POST['to_date'];
+                                    } 
+                                        }
+                                        else 
+                                        {
 
-                    $from_date= date ("y-m-d");
-                    $to_date=date('y-m-d', strtotime($from_date. ' + 20 days'));;
-                    
-                    }
+                                        $from_date= date ("y-m-d");
+                                        $to_date=date('y-m-d', strtotime($from_date. ' + 20 days'));;
+                                        
+                                        }
 
-                 require '../includes/conn.php';
+                                    require '../includes/conn.php';
 
-                $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'vacation leave' AND leave_from_date BETWEEN  '$from_date' AND '$to_date' " ;
+                                    $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'vacation leave' AND leave_from_date BETWEEN  '$from_date' AND '$to_date' " ;
 
-                $runquery = $conn -> query($query);
-                $vac_rowcount=mysqli_num_rows($runquery);
+                                    $runquery = $conn -> query($query);
+                                    $vac_rowcount=mysqli_num_rows($runquery);
 
 
-                $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'sick leave'  AND leave_from_date BETWEEN  '$from_date' AND '$to_date'" ;
+                                    $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'sick leave'  AND leave_from_date BETWEEN  '$from_date' AND '$to_date'" ;
 
-                $runquery = $conn -> query($query);
-                $sick_rowcount=mysqli_num_rows($runquery);
+                                    $runquery = $conn -> query($query);
+                                    $sick_rowcount=mysqli_num_rows($runquery);
 
-                $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'special priviledge leave' AND leave_from_date BETWEEN  '$from_date' AND '$to_date'" ;
+                                    $query = "SELECT type_of_leave FROM emp_leaves WHERE type_of_leave = 'special priviledge leave' AND leave_from_date BETWEEN  '$from_date' AND '$to_date'" ;
 
-                $runquery = $conn -> query($query);
-                $spl_rowcount=mysqli_num_rows($runquery);
+                                    $runquery = $conn -> query($query);
+                                    $spl_rowcount=mysqli_num_rows($runquery);
 
-        ?>
-                                <span>Vacation Leave</span>
-                                <h2 ><?php echo $vac_rowcount?></h2>
-                                <span>Sick Leave</span>
-                                <h2 ><?php echo $sick_rowcount?></h2>
-                                <span>Special Priviledge Leave</span>
-                                <h2 ><?php echo $spl_rowcount?></h2>
-                            </div>
+                            ?>
+                                                    <span>Vacation Leave</span>
+                                                    <h2 ><?php echo $vac_rowcount?></h2>
+                                                    <span>Sick Leave</span>
+                                                    <h2 ><?php echo $sick_rowcount?></h2>
+                                                    <span>Special Priviledge Leave</span>
+                                                    <h2 ><?php echo $spl_rowcount?></h2>
                         </div>
                     </div>
+                </div>
 
 
 

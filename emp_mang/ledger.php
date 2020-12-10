@@ -24,7 +24,8 @@
         <div class="container">
 
         <div class="ledger-body" style="border: #345587 solid 2px;">
-        <div class="container mt-3 pt-2">
+
+                <div class="container mt-3 pt-2">
                  
                     <form class="form-inline "> 
                         <button  onclick="openpanel2('panel-1')" type="button" class="btn emp_profile_section2_tab_btn active" >SUMMARY OF LEAVES</button>
@@ -34,55 +35,57 @@
        
 
         <div class="container">
-                <div class="emp_profile_tab2 container pb-5 pt-5" id="panel-1" style="display:block;background:#E6F7FF;">
-                        <div class="container">
-                            <div class="row">
+            <div class="emp_profile_tab2 container pb-5 pt-5" id="panel-1" style="display:block;background:#E6F7FF;">
+                    <div class="container">
+                        <div class="row">
 
-                                            <div class="col-lg-2">
-                                                    <div class="d-flex flex-column">
-                                                        <p style="color:#54A04B">Month</p>
-                                                        <p >January</p>
-                                                        <p>Febuary</p>
-                                                        <p>March</p>
-                                                        <p>April</p>
-                                                        <p>May</p>
-                                                        <p>June</p>
-                                                        <p>July</p>
-                                                        <p>August</p>
-                                                        <p>September</p>
-                                                        <p>October</p>
-                                                        <p>November</p>
-                                                        <p>December</p>
-                                                    </div>
-                                            </div>
+                        <div class="col-lg-2">
+                                <div class="d-flex flex-column">
+                                    <p style="color:#54A04B">Month</p>
+                                    <p >January</p>
+                                    <p>Febuary</p>
+                                    <p>March</p>
+                                    <p>April</p>
+                                    <p>May</p>
+                                    <p>June</p>
+                                    <p>July</p>
+                                    <p>August</p>
+                                    <p>September</p>
+                                    <p>October</p>
+                                    <p>November</p>
+                                    <p>December</p>
+                                </div>
+                        </div>
 
-                                    <div class="col-lg-10 m-0 p-0">  
-                                                                <div class="d-flex align-items-center justify-content-around">
-                                                                    <p style="color:#54A04B">VACATION LEAVE</p>
-                                                                    <p style="color:#54A04B">SICK LEAVE</p>
-                                                                    <p style="color:#54A04B">SPECIAL PRIVILEDGE LEAVE</p>
-                                                                    <p style="color:#54A04B">LEAVE WITHOUT PAY</p>
-                                                                </div>
-                                                                    <form class="form-inline">
-                                                
-                                                                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                                                <input type="text" class="form-control" id="" placeholder="" >
-                                                                                <input type="text" class="form-control" id="" placeholder=" " style="width:20%">
-                                                                            </div>
+                        <div class="col-lg-10 m-0 p-0">  
+                            <div class="d-flex align-items-center justify-content-around">
+                                <p style="color:#54A04B">VACATION LEAVE</p>
+                                <p style="color:#54A04B">SICK LEAVE</p>
+                                <p style="color:#54A04B">SPECIAL PRIVILEDGE LEAVE</p>
+                                <p style="color:#54A04B">LEAVE WITHOUT PAY</p>
+                            </div>
 
-                                                                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                                                <input type="text" class="form-control" id="" placeholder=" " >
-                                                                                <input type="text" class="form-control" id="" placeholder=" " style="width:20%">
-                                                                            </div>
-                                                                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                                                <input type="text" class="form-control" id="" placeholder=" ">
-                                                                                <input type="text" class="form-control" id="" placeholder=" " style="width:20%">
-                                                                            </div>
-                                                                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                                                <input type="text" class="form-control" id="" placeholder=" ">
-                                                                                <input type="text" class="form-control" id="" placeholder=" " style="width:20%">
-                                                                            </div>
-                                                                    </form>
+
+                        <form class="form-inline">
+    
+                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
+                                    <input type="text" class="form-control" id="" placeholder="" >
+                                    <input type="text" class="form-control" id="" placeholder=" " style="width:20%">
+                                </div>
+
+                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
+                                    <input type="text" class="form-control" id="" placeholder=" " >
+                                    <input type="text" class="form-control" id="" placeholder=" " style="width:20%">
+                                </div>
+                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
+                                    <input type="text" class="form-control" id="" placeholder=" ">
+                                    <input type="text" class="form-control" id="" placeholder=" " style="width:20%">
+                                </div>
+                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
+                                    <input type="text" class="form-control" id="" placeholder=" ">
+                                    <input type="text" class="form-control" id="" placeholder=" " style="width:20%">
+                                </div>
+                        </form>
 
                                             <form class="form-inline">
                                                 

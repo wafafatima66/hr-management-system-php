@@ -48,7 +48,7 @@ if(isset($_POST['submit'])){
     $from_date = strtotime($leave_from_date); // or your date as well
     $to_date = strtotime($leave_to_date);
 
-   $date_diff = array();
+   
 
     $date_diff = round(($to_date - $from_date )/ (60 * 60 * 24));
 
@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
 
    
         
-            $sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,description,certificate_of_leave) VALUE (?,?,?,?,?,?,?,?)
+            $sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,description,certificate_of_leave,date_diff) VALUE (?,?,?,?,?,?,?,?,?)
             ";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
@@ -89,8 +89,10 @@ if(isset($_POST['submit'])){
             }
                 else{ 
                 
-                    mysqli_stmt_bind_param($stmt,"iissssss", $emp_id, $emp_salary, $type_of_leave,$leave_from_date,$leave_to_date,$communication,$description,$certificate_of_leave);
+                    mysqli_stmt_bind_param($stmt,"iissssssi", $emp_id, $emp_salary, $type_of_leave,$leave_from_date,$leave_to_date,$communication,$description,$certificate_of_leave, $date_diff);
                     mysqli_stmt_execute($stmt);
+
+                    
                 }
 
 
@@ -110,14 +112,14 @@ if(isset($_POST['submit'])){
                     
                         mysqli_stmt_bind_param($stmt,"iiii", $emp_id, $vac_date_diff, $sick_date_diff,$spl_date_diff);
                         mysqli_stmt_execute($stmt);
-    
-                       
+     
                     }
 
 
 
-                header("Location:leave_mang.php?leave=success");
-                exit();
+                    header("Location:leave_mang.php?leave=success");
+                    exit();
+
                 mysqli_stmt_close($stmt);
         mysqli_close($conn);
         } 

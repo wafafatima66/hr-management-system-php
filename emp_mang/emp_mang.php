@@ -69,10 +69,11 @@ if($conn -> query($dltquery)){
         </form>
   
 
+        </div>
       <div class="container">
 
         <!--Table-->
-        <table class="table table-striped w-auto table-bordered mt-3">
+        <table class="table table-striped  table-bordered mt-3">
 
           <!--Table head-->
           <thead class="table-head">
@@ -206,6 +207,5 @@ else {
 
   ?>
 
-</div>
     </div>  <!-- /#page-content-wrapper -->
   </div> <!-- /#wrapper -->

@@ -287,12 +287,13 @@ text-transform: capitalize;
 }
 
 .emp_profile_section2_tab .emp_profile_section2_tab_btn {
-    background-color: #E6F7FF;
-    color: #345587;
-}
-.emp_profile_section2_tab .emp_profile_section2_tab_btn.active {
+  
     background-color: #345587;
     color: #fff;
+}
+.emp_profile_section2_tab .emp_profile_section2_tab_btn.active {
+    background-color: #E6F7FF;
+    color: #345587;
 }
 .emp_profile_section2_header{
     background-color:#345587 ;
