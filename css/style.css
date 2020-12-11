@@ -633,3 +633,7 @@ text-transform: capitalize;
 .fa-plus .fa-minus{
     color:#E6AD0F;
 }
+table td{
+    vertical-align: middle; 
+    text-align:center;
+}

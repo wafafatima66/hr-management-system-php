@@ -120,7 +120,8 @@ if(isset($_GET['leave'])){
                 <option value="vacation leave">Vacation Leave</option>
                 <option value="sick leave">Sick Leave</option>
                 <option value="special priviledge leave">Special priviledge Leave</option>
-                <option value="others">Others</option>
+                <option value="Force leave">Force Leave</option>
+                <option value="Leave without pay">Leave without pay</option>
             </select>
             </div>
 
@@ -265,7 +266,7 @@ if(isset($_GET['leave'])){
                         
                                 require '../includes/conn.php';
                                                 
-                                $query = "select emp_id from date_diff_leaves"; // finding emp_id form date diff leave table to avoid repeat
+                                $query = "select emp_id from per_emp_leaves"; // finding emp_id form date diff leave table to avoid repeat
 
                                 if($runquery = $conn -> query($query))
 
@@ -274,7 +275,7 @@ if(isset($_GET['leave'])){
                                         {
                                             $emp_id =   $mydata["emp_id"];
                                             $resultarray [] =  $emp_id; // creating array to store all the employees applied for leave
-
+                                           
                                         }
                                 }
                                         
@@ -287,7 +288,34 @@ if(isset($_GET['leave'])){
                                 {
 
                                     $emp_id = $resultarray[$i]; // getting the emp id from the array 
+
+
+                                    $query = "select emp_first_name , emp_last_name , emp_middle_name, emp_image , office_assign from add_emp where emp_id ='$emp_id'"; // finding emp_id form date diff leave table to avoid repeat
+
+                                    if($runquery = $conn -> query($query))
+    
+                                    {
+                                        while($mydata = $runquery -> fetch_assoc())
+                                            {
+                                                $emp_first_name =   $mydata["emp_first_name"];
+                                                $emp_last_name =   $mydata["emp_last_name"];
+                                                $emp_middle_name =   $mydata["emp_middle_name"];
+                                                $emp_image = '../uploads/image/'.$mydata["emp_image"];
+                                                $office_assign =   $mydata["office_assign"];
+
+                                                $emp_name =  $emp_first_name . ' ' . $emp_last_name . ' '. $emp_middle_name;
+
+                                                ?>
+
+                                                <tbody >
+                                                <tr>
+                                                    <td style="text-transform: capitalize;"><div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div style="font-weight:bold;"><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div></td>
+
                                 
+                                <?php
+
+                                            }
+                                        }
                                     $query = "select MAX(date_diff) AS date_max , MIN(date_diff) AS date_min from emp_leaves where emp_id = '$emp_id' and type_of_leave = 'vacation leave'"; 
 
                                     if($runquery = $conn -> query($query)){
@@ -300,10 +328,8 @@ if(isset($_GET['leave'])){
                             //this block for getting vacation information                     
                         ?>
 
-                                    <tbody >
-                                        <tr>
-                                            <th scope="row"><?php echo $emp_id?></th>
-                                            <td><?php echo $date_max?>-<?php echo $date_min?></td>
+                                
+                                            <td ><?php echo $date_max?>-<?php echo $date_min?></td>
                         <?php 
                         
                                 } } // end of if and while loop of vacation leave
