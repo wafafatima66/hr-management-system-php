@@ -87,7 +87,22 @@ if(isset($_POST['submit'])){
      
                     }
 
-                    $mon = date(m);
+                    $mon = date("m", strtotime($leave_from_date));
+
+                   // $vacation_leave = "";
+                    //$sick_leave = "";
+                    // $spl = "";
+                    // $force_leave = "";
+                    // $lwp = "";
+
+                      /*
+                    ON DUPLICATE KEY UPDATE
+                    vacation_leave = '$vacation_leave',
+                    sick_leave = '$sick_leave',
+                    spl = '$spl',
+                    force_leave = '$force_leave',
+                    lwp = '$lwp'
+                    */
 
                     if($type_of_leave == "vacation leave"){
                         $vacation_leave = $date_diff;
@@ -101,7 +116,9 @@ if(isset($_POST['submit'])){
                         $lwp = $date_diff;
                     }
 
-                    $sql_3="INSERT INTO leave_credits (emp_id,vacation_leave,sick_leave,spl,force_leave,lwp,mon) VALUE (?,?,?,?,?,?,?)";
+                    $sql_3="INSERT INTO leave_credits (emp_id,vacation_leave,sick_leave,spl,force_leave,lwp,mon) VALUE (?,?,?,?,?,?,?)
+                  
+                        ";
             
                
                     $stmt = mysqli_stmt_init($conn);

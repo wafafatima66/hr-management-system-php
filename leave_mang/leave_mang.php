@@ -120,8 +120,8 @@ if(isset($_GET['leave'])){
                 <option value="vacation leave">Vacation Leave</option>
                 <option value="sick leave">Sick Leave</option>
                 <option value="special priviledge leave">Special priviledge Leave</option>
-                <option value="Force leave">Force Leave</option>
-                <option value="Leave without pay">Leave without pay</option>
+                <option value="force leave">Force Leave</option>
+                <option value="leave without pay">Leave without pay</option>
             </select>
             </div>
 

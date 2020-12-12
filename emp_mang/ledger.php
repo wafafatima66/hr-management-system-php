@@ -88,8 +88,11 @@
 
                 $array = array("January", "February", "March" , "April" ,"May" ,"June" ,"July" ,"August","September","October","November","December");
 
-                $year = date("Y");
+                require '../includes/conn.php';
 
+               
+
+                
               
                     for($i=0 ; $i < 12 ; $i++){ 
                         
@@ -120,228 +123,7 @@
                                 
                                
                                 
-                                }?>
-
-<!--
-                        <div class="form-inline d-flex align-items-center justify-content-around">
-                            
-                                        <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                            <input type="text" class="form-control" readonly >
-                                            <input type="text" class="form-control" readonly style="width:20%">
-                                        </div>
-
-                                        <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                            <input type="text" class="form-control" readonly >
-                                            <input type="text" class="form-control" readonly style="width:20%">
-                                        </div>
-                                        <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                            <input type="text" class="form-control" readonly>
-                                            <input type="text" class="form-control" readonly style="width:20%">
-                                        </div>
-                                        <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                            <input type="text" class="form-control" readonly>
-                                            <input type="text" class="form-control" readonly style="width:20%">
-                                        </div>
-                    </div>
-
-                    <div class="form-inline d-flex align-items-center justify-content-around">
-                            
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                    </div>
-
-                    <div class="form-inline d-flex align-items-center justify-content-around">
-                            
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                    </div>
-
-
-                    <div class="form-inline d-flex align-items-center justify-content-around">
-                            
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                    </div>
-
-
-                    <div class="form-inline d-flex align-items-center justify-content-around">
-                            
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                    </div>
-
-
-                    <div class="form-inline d-flex align-items-center justify-content-around">
-                            
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly >
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                <input type="text" class="form-control" readonly>
-                                <input type="text" class="form-control" readonly style="width:20%">
-                            </div>
-                    </div>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
--->
-                                                          
+                                }?>                       
                                                                             
                                 </div>
                             </div>
@@ -356,22 +138,43 @@
 
                 <div class="d-flex flex-column pb-4">
 
-                    <p class="text-center">BALANCE FORWARDED AS OF </p>
+                    <?php
+
+                    $last_year = date("Y")-1; //finding last year
+
+                    $query = "select vl_pts,sl_pts,year from leave_credits_year where emp_id = '$emp_id' and year = $last_year ";                         
+                    if($runquery = $conn -> query($query)){
+
+                        while($mydata = $runquery -> fetch_assoc())
+                            {
+                            
+                                $vl_pts = $mydata["vl_pts"] ;
+                                $sl_pts = $mydata["sl_pts"] ;
+                                $year = $mydata["year"] ; //getting last year to display
+                            }
+                                
+                            
+                        }
+
+                        $total_pts = $vl_pts + $sl_pts ; 
+                        ?>
+
+                    <p class="text-center">BALANCE FORWARDED AS OF <span style="font-style:italic;">12/31/<?php echo $year?></span></p>
 
                         <div class="d-flex align-items-center justify-content-center">
 
                            <div class="d-flex flex-column">
-                                <h4 style=" border-right: 1px solid #000; padding:0 20px">8.0 </h4> 
+                                <h4 style=" border-right: 1px solid #000; padding:0 20px"><?php echo $vl_pts?></h4> 
                                 <span class="text-center">VL</span>
                            </div>
 
                            <div class="d-flex flex-column">
-                                <h4 style="border-right: 1px solid #000; padding: 0 20px">8.0 </h4> 
+                                <h4 style="border-right: 1px solid #000; padding: 0 20px"><?php echo $sl_pts?></h4> 
                                 <span class="text-center">SL</span>
                            </div>
 
                            <div class="d-flex flex-column">
-                                <h4 style="padding: 0 20px">8.0 </h4> 
+                                <h4 style="padding: 0 20px"><?php echo $total_pts?></h4> 
                                 <span class="text-center">Total</span>
                            </div>
                           
@@ -384,22 +187,22 @@
                 <div class="col-lg-1"></div>
 
                         <div class="col-lg-11">
-                            <div class="form-inline d-flex  justify-content-around">
+                            <div class="form-inline ">
                             
                                 <div class="form-group mx-sm-3 mb-2" >
-                                    <label for="" style="color:#54A04B; width:120px ">VACATION LEAVE</label>
+                                    <label for="" style="color:#54A04B; width:150px ">VACATION LEAVE</label>
                                 </div>
                                 <div class="form-group mx-sm-3 mb-2" >
-                                    <label for="" style="color:#54A04B; width:120px ">SICK LEAVE</label>
+                                    <label for="" style="color:#54A04B; width:200px ">SICK LEAVE</label>
+                                </div>
+                                <div class="form-group mx-sm-3 mb-2" >
+                                    <label for="" style="color:#54A04B; width:120px ">SPL</label>
                                 </div>
                                 <div class="form-group mx-sm-1 mb-2" >
-                                    <label for="" style="color:#54A04B; width:80px ">SPL</label>
+                                    <label for="" style="color:#54A04B; width:120px ">FORCE LEAVE</label>
                                 </div>
                                 <div class="form-group mx-sm-1 mb-2" >
-                                    <label for="" style="color:#54A04B; width:80px ">FORCE LEAVE</label>
-                                </div>
-                                <div class="form-group mx-sm-1 mb-2" >
-                                    <label for="" style="color:#54A04B; width:100px ">LEAVE WITHOUT PAY</label>
+                                    <label for="" style="color:#54A04B; width:150px ">LEAVE WITHOUT PAY</label>
                                 </div>
                             </div>
                         </div>
@@ -412,12 +215,51 @@
 
                     $array = array("January", "February", "March" , "April" ,"May" ,"June" ,"July" ,"August","September","October","November","December");
 
-                    $year = date("Y");
-
+                   
 
                     for($i=0 ; $i < 12 ; $i++){ 
 
-                    require "leave_credits.php";
+                        $j = $i+1;
+
+                        $query = "select sum(vacation_leave) as vl_days , sum(sick_leave) as sl_days, sum(spl) as spl_days , sum(force_leave) as fl_days , sum(lwp) as lwp_days from leave_credits where emp_id = '$emp_id' and mon = $j "; 
+
+                                               
+                            if($runquery = $conn -> query($query)){
+
+                                while($mydata = $runquery -> fetch_assoc())
+                                    {
+                                    
+                                        $spl_days = $mydata["spl_days"] ;
+                                        $fl_days = $mydata["fl_days"] ;
+                                        $lwp_days = $mydata["lwp_days"] ;
+                                        
+                                    if($mydata["vl_days"] || $mydata["sl_days"] ){
+                                
+                                        $vl_days = $mydata["vl_days"] ; //getting vacation days
+                                            
+                                        $vl_pts =  $vl_pts - $vl_days;
+
+                                        $sl_days = $mydata["sl_days"] ;
+                                            
+                                        $sl_pts =  $sl_pts - $sl_days;
+                                        
+                                    }
+                                    
+                                    else {
+                                        $vl_days = 1.25 ; //when no leave has taken 
+                                        
+                                        
+                                        $vl_pts =  $vl_pts + $vl_days;
+
+                                        $sl_days = 1.25 ; //when no leave has taken 
+                                        
+                                        
+                                        $sl_pts =  $sl_pts + $sl_days;
+                                        
+                                    }
+                                
+                                    
+                                    
                             
                     ?>
 
@@ -425,19 +267,19 @@
 
                         <label for="" class="mr-2" style="width:100px;"><?php echo $array[$i]?></label>
 
-                        <input type="text" class="form-control " style="width:110px; "readonly value="<?php echo $ini_vl_pts[$i]?>">
-                        <input type="text" class="form-control mr-2" readonly style="width:110px;" value="<?php echo $vl_pts?>days">
+                        <input type="text" class="form-control " style="width:110px; "readonly value="<?php echo $vl_days?>">
+                        <input type="text" class="form-control mr-2" readonly style="width:110px;" value="<?php echo $vl_pts?>">
 
-                        <input type="text" class="form-control"  readonly style="width:110px;" value="<?php echo $ini_sl_pts[$i]?>" >
-                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $sl_pts?>days">
-
-                        
-                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $spl_date_diff?>days">
+                        <input type="text" class="form-control"  readonly style="width:110px;" value="<?php echo $sl_days?>" >
+                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $sl_pts?>">
 
                         
-                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $lwp_date_diff?>days">
+                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $spl_days?>">
 
-                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $lwp_date_diff?>days">
+                        
+                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $fl_days?>">
+
+                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $lwp_days?>">
                 </div>
 
 
@@ -445,226 +287,53 @@
         
        
         
-        }?>
+     }}   
+    } // end of for loop
 
-<!--
-                                            <form class="form-inline">
-                                                
-                                                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                                <input type="text" class="form-control" readonly >
-                                                                <input type="text" class="form-control" readonly style="width:20%">
-                                                            </div>
+    
 
-                                                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                                <input type="text" class="form-control" readonly >
-                                                                <input type="text" class="form-control" readonly style="width:20%">
-                                                            </div>
-                                                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                                <input type="text" class="form-control" readonly>
-                                                                <input type="text" class="form-control" readonly style="width:20%">
-                                                            </div>
-                                                            <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                                <input type="text" class="form-control" readonly>
-                                                                <input type="text" class="form-control" readonly style="width:20%">
-                                                            </div>
-                                        </form>
+if(!empty($vl_pts) || $vl_pts == 0 ){
 
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
+    $vl_pts = abs($vl_pts);
+    $year = date("Y");
 
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
+    $query = "SELECT * FROM leave_credits_year WHERE emp_id = '$emp_id' and year= $year";
+    $runquery = $conn -> query($query);
+    $rowcount=mysqli_num_rows($runquery);
+    if($rowcount != 0 ){
+       
 
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
+        $query = "UPDATE leave_credits_year SET vl_pts= $vl_pts , sl_pts = $sl_pts where year = $year";
+            $runquery = $conn -> query($query);
+                if($runquery == true){
+                    echo "sent update";
+               
+            } 
+        }
+        else {
 
 
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
+    //$next_year = date("Y")+1;
+   
+     
+     $sql="INSERT INTO leave_credits_year (emp_id,vl_pts,year,sl_pts) VALUE (?,?,?,?)
+     ";
 
 
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
+            $stmt = mysqli_stmt_init($conn);
+            if(!mysqli_stmt_prepare($stmt,$sql)){
+               echo "not sent";
+            }
+                else{ 
+                
+                    mysqli_stmt_bind_param($stmt,"iiii", $emp_id,$vl_pts,$year,$sl_pts);
+                    mysqli_stmt_execute($stmt);
+                    echo "sent";
+                }
+            }
+        }
+     ?>
 
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
-
-
-                                        <form class="form-inline">
-                                                
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly >
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                                <div class="form-group mx-sm-1 mb-2" style="width:170px;">
-                                                    <input type="text" class="form-control" readonly>
-                                                    <input type="text" class="form-control" readonly style="width:20%">
-                                                </div>
-                                        </form>
--->
 
                                                           
                                                                             
