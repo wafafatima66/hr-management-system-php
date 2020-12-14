@@ -1,18 +1,15 @@
 <?php
-
+session_start();
 require '../includes/conn.php';
 
 if(isset($_POST['emp_id'])){
 
     
     $emp_id = $_POST['emp_id'];
-
+    $_SESSION['emp_id']= $emp_id;
     
     $query = "SELECT * FROM add_emp WHERE  emp_id = '$emp_id'" ;
       
-
-   
-
     $runquery = $conn -> query($query);
     if($runquery == true){
      
@@ -30,6 +27,8 @@ if(isset($_POST['emp_id'])){
 }
     }
 
+
+ 
 
  
 

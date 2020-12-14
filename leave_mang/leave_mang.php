@@ -29,37 +29,42 @@ $(document).ready(function(){
 
 });
 
-/*
+
+</script>
+
+<script>
 $(document).ready(function(){
-    $("#filter").click(function(){
+    //$("#leave_from_date").on("keyup change", function ({
+    $("#leave_to_date").change(function(){
         $.ajax({
-            url:'leave_mang-date.php',
+            url:'get_leave_credits.php',
             type : 'post',
-            data: {from_date : $(this).val()},
-            dataType: 'json',
+            data: {leave_to_date : $(this).val() , leave_from_date : $("#leave_from_date").val(), type_of_leave: $("#type_of_leave").val()},
+           dataType: 'json',
             success : function(result){
-
-                $('#space ').html(result);
-
-                $('#vac_rowcount').html(result.vac_rowcount);
-                $('#sick_rowcount').html(result.sick_rowcount);
-                $('#spl_rowcount').html(result.spl_rowcount);
+                
+                $('#vl_pts').html(result.vl_pts); // getting vacation  leaves points from database
+                $('#sl_pts').html(result.sl_pts); // getting sick  leaves points from database
                
+                $('#vl_now_pts').html(result.vl_now_pts); // getting vacation  leaves points date given 
+                $('#sl_now_pts').html(result.sl_now_pts); // getting sick leaves points from date given
+                $('#pts_total').html(result.pts_total); // getting total points from calculing vl_pts and sl_pts
+                $('#total_pts_now').html(result.total_pts_now); // getting pints calculating from vi_now-pts and sl_now_pts
+                $('#vl_bal').html(result.vl_bal); // vl_pts - vl_now_pts
+                $('#sl_bal').html(result.sl_bal); // sl_pts - sl_now_pts
+                $('#total_bal').html(result.total_bal); //vl_bal - sl_bal
+              // $('#space').html(result);
+              
 
             }
         });
     });
-});
-*/
-/*
-$(document).ready(function(){
-   $(function(){
-        $("#from_date").datepicker();
-    });
 
-*/
+});
+
 
 </script>
+
 
 
 
@@ -80,7 +85,7 @@ if(isset($_GET['leave'])){
             <h4>LEAVE FORM</h4>
         </div>
    
-      
+      <div id="space"></div>
 
 
     <div class="leave_mang_section1_body leave_mang_section_body">
@@ -115,7 +120,7 @@ if(isset($_GET['leave'])){
 
             <div class="form-group mx-sm-3 mb-2">
                 <label for="">TYPE OF LEAVE</label>
-              <select class="form-control" style="width:190px;" name="type_of_leave">
+              <select class="form-control" style="width:190px;" name="type_of_leave" id="type_of_leave">
                 <option value="0">Select</option>
                 <option value="vacation leave">Vacation Leave</option>
                 <option value="sick leave">Sick Leave</option>
@@ -129,14 +134,15 @@ if(isset($_GET['leave'])){
                         <label >INCLUSIVE DATES</label>
                         <div class="d-flex flex-column">
                             <label style="color:#C3CFD5;" >From </label>
-                            <input type="date" class="form-control" name="leave_from_date" style="width:140px">
+                            <input type="date" class="form-control" name="leave_from_date" style="width:140px" id="leave_from_date" >
+                            
                         </div>   
                 </div>
 
                 <div class="form-group mx-sm-2 mb-2">
                         <div class="d-flex flex-column">
                             <label style="color:#C3CFD5;" >To</label>
-                            <input type="date" class="form-control" name="leave_to_date" style="width:140px">
+                            <input type="date" class="form-control" name="leave_to_date" style="width:140px" id="leave_to_date">
                         </div>   
                 </div>
              
@@ -150,7 +156,7 @@ if(isset($_GET['leave'])){
                  </div>
 
                  <div class="form-group mx-sm-3 mb-2">
-                        <textarea class="form-control" rows="3" placeholder="Please Specify" name="description"></textarea>
+                        <textarea class="form-control" rows="3" placeholder="Please Specify" name="description" ></textarea>
                 </div>
 
                 <div class="form-group mx-sm-3 mb-2">
@@ -168,7 +174,6 @@ if(isset($_GET['leave'])){
                             <th scope="col"></th>
                             <th scope="col">Vacation</th>
                             <th scope="col">Sick</th>
-                            <th scope="col">SPL</th>
                             <th scope="col">Total</th>
                             </tr>
                         </thead>
@@ -176,27 +181,27 @@ if(isset($_GET['leave'])){
                         <tbody >
                             <tr>
                             
-                            <td>Last Balance</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                                <th>Last Balance</th>
+                                <td id="vl_pts"></td>
+                                <td id = "sl_pts"></td>
+                                <td id="pts_total"></td>
+                            
                             </tr>
 
                             <tr>
-                            <td>Less this Leave</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
-                            <td>@fat</td>
+                                <th>Less this Leave</th>
+                                <td id="vl_now_pts"></td>
+                                <td id = "sl_now_pts"></td>
+                                <td id="total_pts_now"></td>
+                           
                             </tr>
 
                             <tr>
-                            <th >Balance</th>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
-                            <td>@twitter</td>
+                                <th >Balance</th>
+                                <td id="vl_bal"></td>
+                                <td id="sl_bal"></td>
+                                <td id="total_bal"></td>
+                           
                             </tr>
 
                         </tbody>

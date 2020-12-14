@@ -257,8 +257,27 @@
                                         $sl_pts =  $sl_pts + $sl_days;
                                         
                                     }
+
+//for fetching the information into leave form 
+            $mon = $i+1 ; //getting month number
                                 
-                                    
+            $sql_3="INSERT INTO leave_credits_result (emp_id,mon,year,vl_pts,sl_pts) VALUE (?,?,?,?,?)
+                    ON DUPLICATE KEY UPDATE
+                    vl_pts = '$vl_pts',
+                    sl_pts = '$sl_pts'
+            ";
+        $stmt = mysqli_stmt_init($conn);
+        if(!mysqli_stmt_prepare($stmt,$sql_3)){
+            header("Location:leave_mang.php?leave=error");
+            exit();
+        }
+            else{ 
+            
+                mysqli_stmt_bind_param($stmt,"iiidd", $emp_id,$mon,$year,$vl_pts,$sl_pts);
+                mysqli_stmt_execute($stmt);
+
+            }
+                            
                                     
                             
                     ?>
