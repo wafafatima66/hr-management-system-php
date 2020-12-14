@@ -431,7 +431,7 @@ $emp_id = $_SESSION['emp_id'];
     
 require '../includes/conn.php';
 
-$file_folder = "others";
+$file_folder = "other";
 $query = "SELECT * FROM emp_file WHERE emp_id = '$emp_id' AND file_folder='$file_folder'";
 
 $runquery = $conn -> query($query);

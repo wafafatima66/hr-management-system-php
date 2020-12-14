@@ -19,6 +19,8 @@ if(isset($_POST['leave_to_date'])){
      $vl_now_pts = 0;
      $sl_now_pts = 0;
 
+     
+
      if($type_of_leave == "vacation leave"){
         $vl_now_pts = $date_diff * 1.25 ; 
     } else if($type_of_leave == "sick leave"){
@@ -28,10 +30,11 @@ if(isset($_POST['leave_to_date'])){
        $sl_now_pts = 0;
    }
 
+   
    $total_pts_now =  $vl_now_pts + $sl_now_pts ; 
      
 
-     $query = "SELECT vl_pts , sl_pts FROM leave_credits_result WHERE  emp_id = $emp_id and mon =  MONTH('$leave_to_date')" ;
+     $query = "SELECT vl_pts , sl_pts FROM leave_credits_result WHERE  emp_id = $emp_id and mon =  MONTH('$leave_to_date') and year = year('$leave_to_date')" ;
        
      $runquery = $conn -> query($query);
      if($runquery == true){
@@ -49,16 +52,13 @@ if(isset($_POST['leave_to_date'])){
          $total_bal = $vl_bal - $sl_bal ; 
        
  
-         echo json_encode( array('vl_pts'=>$vl_pts,'sl_pts'=>$sl_pts,'vl_now_pts'=>$vl_now_pts,'sl_now_pts'=>$sl_now_pts,'pts_total'=>$pts_total, 'total_pts_now'=>$total_pts_now,'vl_bal'=>$vl_bal,'sl_bal'=>$sl_bal,'total_bal'=>$total_bal));
-         //echo          $vl_pts;   
+         echo json_encode( array('vl_now_pts'=>$vl_now_pts,'sl_now_pts'=>$sl_now_pts,'vl_pts'=>$vl_pts,'sl_pts'=>$sl_pts,'pts_total'=>$pts_total, 'total_pts_now'=>$total_pts_now,'vl_bal'=>$vl_bal,'sl_bal'=>$sl_bal,'total_bal'=>$total_bal));
+         //echo          $vl_pts;  'vl_pts'=>$vl_pts,'sl_pts'=>$sl_pts,   ,'pts_total'=>$pts_total, 'total_pts_now'=>$total_pts_now,'vl_bal'=>$vl_bal,'sl_bal'=>$sl_bal,'total_bal'=>$total_bal
+ 
+ 
  
  }
-     } else
-     
- 
-     echo $emp_id;
- 
- }
- 
+}
+}
 
 ?>

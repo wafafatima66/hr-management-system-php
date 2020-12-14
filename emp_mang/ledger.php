@@ -144,18 +144,26 @@
 
                     $query = "select vl_pts,sl_pts,year from leave_credits_year where emp_id = '$emp_id' and year = $last_year ";                         
                     if($runquery = $conn -> query($query)){
-
+                        $rowcount=mysqli_num_rows($runquery);
+                            if($rowcount != 0 ){
                         while($mydata = $runquery -> fetch_assoc())
                             {
                             
                                 $vl_pts = $mydata["vl_pts"] ;
                                 $sl_pts = $mydata["sl_pts"] ;
                                 $year = $mydata["year"] ; //getting last year to display
-                            }
-                                
-                            
-                        }
 
+                                   
+                            }
+                        } else {
+                            $vl_pts = 15.0;
+                                $sl_pts = 15.0;
+                                $year = date("Y")-1;
+                        }
+                        
+                        
+                            
+                        } 
                         $total_pts = $vl_pts + $sl_pts ; 
                         ?>
 
@@ -311,9 +319,10 @@
 
     
 
-if(!empty($vl_pts) || $vl_pts == 0 ){
+if(!empty($vl_pts) || $vl_pts == 0 || !empty($sl_pts) || $sl_pts == 0  ){
 
     $vl_pts = abs($vl_pts);
+    $sl_pts = abs($sl_pts);
     $year = date("Y");
 
     $query = "SELECT * FROM leave_credits_year WHERE emp_id = '$emp_id' and year= $year";
@@ -325,7 +334,7 @@ if(!empty($vl_pts) || $vl_pts == 0 ){
         $query = "UPDATE leave_credits_year SET vl_pts= $vl_pts , sl_pts = $sl_pts where year = $year";
             $runquery = $conn -> query($query);
                 if($runquery == true){
-                    echo "sent update";
+                  
                
             } 
         }
@@ -341,13 +350,13 @@ if(!empty($vl_pts) || $vl_pts == 0 ){
 
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
-               echo "not sent";
+         
             }
                 else{ 
                 
                     mysqli_stmt_bind_param($stmt,"iiii", $emp_id,$vl_pts,$year,$sl_pts);
                     mysqli_stmt_execute($stmt);
-                    echo "sent";
+                
                 }
             }
         }

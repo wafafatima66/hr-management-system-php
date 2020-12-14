@@ -42,20 +42,21 @@ $(document).ready(function(){
             data: {leave_to_date : $(this).val() , leave_from_date : $("#leave_from_date").val(), type_of_leave: $("#type_of_leave").val()},
            dataType: 'json',
             success : function(result){
-                
+               
                 $('#vl_pts').html(result.vl_pts); // getting vacation  leaves points from database
                 $('#sl_pts').html(result.sl_pts); // getting sick  leaves points from database
                
-                $('#vl_now_pts').html(result.vl_now_pts); // getting vacation  leaves points date given 
-                $('#sl_now_pts').html(result.sl_now_pts); // getting sick leaves points from date given
+               
                 $('#pts_total').html(result.pts_total); // getting total points from calculing vl_pts and sl_pts
                 $('#total_pts_now').html(result.total_pts_now); // getting pints calculating from vi_now-pts and sl_now_pts
                 $('#vl_bal').html(result.vl_bal); // vl_pts - vl_now_pts
                 $('#sl_bal').html(result.sl_bal); // sl_pts - sl_now_pts
                 $('#total_bal').html(result.total_bal); //vl_bal - sl_bal
-              // $('#space').html(result);
+                
+               //$('#space').html(result);
               
-
+               $('#vl_now_pts').html(result.vl_now_pts); // getting vacation  leaves points date given 
+                $('#sl_now_pts').html(result.sl_now_pts); // getting sick leaves points from date given
             }
         });
     });

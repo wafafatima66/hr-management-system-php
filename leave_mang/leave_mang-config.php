@@ -86,6 +86,8 @@ if(isset($_POST['submit'])){
      
                     }
 
+                 
+
                     $mon = date("m", strtotime($leave_from_date));
 
                    // $vacation_leave = "";

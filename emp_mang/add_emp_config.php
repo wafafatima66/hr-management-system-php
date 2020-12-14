@@ -69,6 +69,9 @@ if(isset($_POST['submit'])){
                     header("Location:emp_profile.php?register=success&emp_id=$emp_id");
                             exit();
                 }
+
+               
+
         } 
     
     
