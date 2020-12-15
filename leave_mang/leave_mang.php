@@ -221,7 +221,7 @@ if(isset($_GET['leave'])){
                     </form>
 </div>
 
-
+<!-- leave summary section -->
 <div class="leave_mang_section">
 
         <div class="form-inline">
@@ -243,7 +243,7 @@ if(isset($_GET['leave'])){
                 <input type="date" class="form-control" id="to_date"  style="width:140px" name="to_date">
                 </div> 
 
-                <button class="btn" name="date" >DATE</button>
+                <button class="btn" name="date" >SEARCH</button>
             </div>
 
             </form>
@@ -284,22 +284,22 @@ if(isset($_GET['leave'])){
                                            
                                         }
                                 }
+
+                               
                                         
                         // this block was for storing employees id   
-                        ?>     
-
-                        <?php   
+                      
                         
                                 for ($i = 0 ; $i < count($resultarray) ; $i++) // running the loop as many id stored in array
                                 {
 
+
                                     $emp_id = $resultarray[$i]; // getting the emp id from the array 
 
-
-                                    $query = "select emp_first_name , emp_last_name , emp_middle_name, emp_image , office_assign from add_emp where emp_id ='$emp_id'"; // finding emp_id form date diff leave table to avoid repeat
-
+                                    $query = "select emp_first_name , emp_last_name , emp_middle_name, emp_image , office_assign from add_emp where emp_id ='$emp_id'"; 
+        
                                     if($runquery = $conn -> query($query))
-    
+        
                                     {
                                         while($mydata = $runquery -> fetch_assoc())
                                             {
@@ -308,93 +308,121 @@ if(isset($_GET['leave'])){
                                                 $emp_middle_name =   $mydata["emp_middle_name"];
                                                 $emp_image = '../uploads/image/'.$mydata["emp_image"];
                                                 $office_assign =   $mydata["office_assign"];
-
+        
                                                 $emp_name =  $emp_first_name . ' ' . $emp_last_name . ' '. $emp_middle_name;
 
+                                                echo "hi";
                                                 ?>
 
                                                 <tbody >
-                                                <tr>
+
+                                                <tr class="clickable-row" data-href='../emp_mang/emp_profile.php?emp_id=<?php echo $emp_id;?>' >
+                                               
+
                                                     <td style="text-transform: capitalize;"><div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div style="font-weight:bold;"><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div></td>
 
-                                
-                                <?php
-
-                                            }
-                                        }
-                                    $query = "select MAX(date_diff) AS date_max , MIN(date_diff) AS date_min from emp_leaves where emp_id = '$emp_id' and type_of_leave = 'vacation leave'"; 
-
-                                    if($runquery = $conn -> query($query)){
-
-                                        while($mydata = $runquery -> fetch_assoc()){
-
-                                                $date_max =   $mydata["date_max"];
-                                                $date_min =   $mydata["date_min"];
-
-                            //this block for getting vacation information                     
-                        ?>
-
-                                
-                                            <td ><?php echo $date_max?>-<?php echo $date_min?></td>
                         <?php 
-                        
-                                } } // end of if and while loop of vacation leave
-                        
-                        ?>
 
 
-                        <?php
-                        
-                            $query = "select MAX(date_diff) AS date_max , MIN(date_diff) AS date_min from emp_leaves where emp_id = '$emp_id' and type_of_leave = 'sick leave'"; 
+                                    $year = date("Y");
+                                    $mon = date("m");
 
-                            if($runquery = $conn -> query($query)){
-
-                                while($mydata = $runquery -> fetch_assoc()){
-
-                                    $date_max =   $mydata["date_max"];
-
-                                    $date_min =   $mydata["date_min"];
                                 
-                                    //this block for getting sick leave vacation
-                        ?>
 
-                                <td><?php echo $date_max?>-<?php echo $date_min?></td> 
+                                  $vac_leave_dates = "" ; 
+                                  
+                                  $sick_leave_dates = "" ; 
+                                  
+                                  $spl_leave_dates = "" ; 
 
-                        <?php 
-                            } } // end of block of sick leave vacation 
-                        ?>
+                                   
+$query = "select * from emp_leaves where emp_id = '$emp_id' and MONTH(leave_from_date) = $mon and year(leave_from_date)= $year and type_of_leave = 'vacation leave'"; 
 
-                        <?php
-                            
-                            $query = "select MAX(date_diff) AS date_max , MIN(date_diff) AS date_min from emp_leaves where emp_id = '$emp_id' and type_of_leave = 'special priviledge leave'"; 
 
-                            if($runquery = $conn -> query($query)){
 
-                            while($mydata = $runquery -> fetch_assoc()){
+if($runquery = $conn -> query($query))
 
-                                    $date_max =   $mydata["date_max"];
-                                
-                                    $date_min =   $mydata["date_min"];
-                                
-                                    // block for spl 
-                        ?>
+{
+while($mydata = $runquery -> fetch_assoc())
+    {
+        $leave_from_date =   date("m/d/y", strtotime($mydata["leave_from_date"]));
+        $leave_to_date =   date("m/d/y", strtotime($mydata["leave_to_date"]));
+       
+        
 
-                        <td><?php echo $date_max?>-<?php echo $date_min?></td>
+        $vac_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
+    }
 
-                        <?php 
-                            } } //end of spl
-                        ?>
+    
+}
 
+
+//else if($type_of_leave = "sick leave"){
+
+$query = "select * from emp_leaves where emp_id = '$emp_id' and MONTH(leave_from_date) = $mon and year(leave_from_date)= $year and type_of_leave = 'sick leave'"; 
+
+
+
+if($runquery = $conn -> query($query))
+
+{
+while($mydata = $runquery -> fetch_assoc())
+    {
+        $leave_from_date =   date("m/d/y", strtotime($mydata["leave_from_date"]));
+        $leave_to_date =   date("m/d/y", strtotime($mydata["leave_to_date"]));
+        
+
+
+        $sick_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
+    }
+
+    
+}
+
+
+//else  if($type_of_leave = "special priviledge leave"){
+
+$query = "select * from emp_leaves where emp_id = '$emp_id' and MONTH(leave_from_date) = $mon and year(leave_from_date)= $year and type_of_leave = 'special priviledge leave'"; 
+
+
+
+if($runquery = $conn -> query($query))
+
+{
+while($mydata = $runquery -> fetch_assoc())
+    {
+        $leave_from_date =   date("m/d/y", strtotime($mydata["leave_from_date"]));
+        $leave_to_date =   date("m/d/y", strtotime($mydata["leave_to_date"]));
+      
+
+
+        $spl_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
+    }
+
+}                     ?>
+
+
+<?php  }}?>
+                              
+                              
+<td><?php echo $vac_leave_dates?></td>
+<td><?php echo $sick_leave_dates?></td>
+<td><?php echo $spl_leave_dates?></td>
+                             
 
                         </tr>
+                        
                             </tbody>
-
-                                                    
-                        <?php    } // end of for loop ?>
+                             
+                            <?php }?>
 
                     </table>
+                  
+                   
+                   
                 </div>
 
+<!--date block of the leave -->
                 <div class="col-lg-2">
                     <div class="d-flex flex-column">
                         <div class="text-center">
@@ -452,6 +480,12 @@ if(isset($_GET['leave'])){
         </div>
 
     </div>
+
+                     <div class="container mt-2 mb-5">
+                            <div class="text-right">
+                                <button class="btn" style="background: #345587;color:#EFE20A;" >PRINT</button>
+                            </div>
+                    </div>
 
 
 </div>  <!-- /#page-content-wrapper -->

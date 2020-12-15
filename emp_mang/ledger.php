@@ -132,9 +132,42 @@
                 </div>
 
 
+<!--leave credits section-->
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+    
+    $("#vl_pts , #sl_pts").keyup(function()
+    {
+        $.ajax({
+            url:'../emp_mang/ledger_config.php',
+            type : 'post',
+            data: {vl_pts : $("#vl_pts").val(), sl_pts: $("#sl_pts").val(),emp_id: $("#emp_id").val()},
+            //dataType: 'json',
+            success : function(result){
+                
+                $('#space').html(result);
+              
+
+            }
+        });
+    });
+
+    });
+
+
+</script>
+
+
     <div class="emp_profile_tab2 container pb-5 pt-5" id="panel-2">
 
             <div class="container">
+
+            <div id="space"></div>
 
                 <div class="d-flex flex-column pb-4">
 
@@ -167,28 +200,33 @@
                         $total_pts = $vl_pts + $sl_pts ; 
                         ?>
 
-                    <p class="text-center">BALANCE FORWARDED AS OF <span style="font-style:italic;">12/31/<?php echo $year?></span></p>
+            <p class="text-center">BALANCE FORWARDED AS OF <span style="font-style:italic;">12/31/<?php echo $year?></span></p>
 
-                        <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center">
 
-                           <div class="d-flex flex-column">
-                                <h4 style=" border-right: 1px solid #000; padding:0 20px"><?php echo $vl_pts?></h4> 
-                                <span class="text-center">VL</span>
-                           </div>
+                <input type="hidden" id="emp_id" value="<?php echo $emp_id ?>">
 
-                           <div class="d-flex flex-column">
-                                <h4 style="border-right: 1px solid #000; padding: 0 20px"><?php echo $sl_pts?></h4> 
-                                <span class="text-center">SL</span>
-                           </div>
+                    <div class="d-flex flex-column" style=" border-right: 1px solid #000; padding:0 20px ">
+                        <input type="text" size="1" class="text-center h4 pts" style="background: none;
+                                border: none; background-color:#E6F7FF; color:#345587 ;" value="<?php echo $vl_pts?>" id="vl_pts" > 
+                            <span class="text-center">VL</span>
+                    </div>
 
-                           <div class="d-flex flex-column">
-                                <h4 style="padding: 0 20px"><?php echo $total_pts?></h4> 
-                                <span class="text-center">Total</span>
-                           </div>
-                          
-                        </div>
+                    <div class="d-flex flex-column" style=" border-right: 1px solid #000; padding:0 20px ">
+                    <input type="text" size="1" class="text-center h4 pts" style="background: none;
+                                border: none; background-color:#E6F7FF; color:#345587 ;" value="<?php echo $sl_pts?>" id="sl_pts" > 
+                            <span class="text-center">SL</span>
+                    </div>
 
+                    <div class="d-flex flex-column" style=" border-right: 1px solid #000; padding:0 20px ">
+                    <input type="text" size="1" class="text-center h4" style="background: none;
+                                border: none; background-color:#E6F7FF; color:#345587 ;" value="<?php echo $total_pts?>" > 
+                            <span class="text-center">Total</span>
+                    </div>
+                    
                 </div>
+
+        </div>
 
                 <div class="row">
 
@@ -228,8 +266,50 @@
                     for($i=0 ; $i < 12 ; $i++){ 
 
                         $j = $i+1;
+                        $year = date("Y");
 
-                        $query = "select sum(vacation_leave) as vl_days , sum(sick_leave) as sl_days, sum(spl) as spl_days , sum(force_leave) as fl_days , sum(lwp) as lwp_days from leave_credits where emp_id = '$emp_id' and mon = $j "; 
+                        $query = "select emp_id from per_emp_leaves where emp_id = '$emp_id' "; //to understand whether emp submitted for leave form
+
+                                               
+                        $runquery = $conn -> query($query);
+                            $rowcount=mysqli_num_rows($runquery);
+                            if($rowcount == 0 ){
+
+                                $spl_days = "";
+                                $fl_days = "";
+                                $lwp_days = "";
+                                $vl_days = "";           
+                                $vl_pts =  "";
+                                $sl_days = "" ; 
+                                $sl_pts =  "";
+
+                                ?>
+
+                                        <div class="form-group mx-sm-1 mb-1" >
+
+                                        <label for="" class="mr-2" style="width:100px;"><?php echo $array[$i]?></label>
+
+                                        <input type="text" class="form-control " style="width:110px; "readonly value="<?php echo $vl_days?>">
+                                        <input type="text" class="form-control mr-2" readonly style="width:110px;" value="<?php echo $vl_pts?>">
+
+                                        <input type="text" class="form-control"  readonly style="width:110px;" value="<?php echo $sl_days?>" >
+                                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $sl_pts?>">
+
+
+                                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $spl_days?>">
+
+
+                                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $fl_days?>">
+
+                                        <input type="text" class="form-control mr-3" readonly style="width:110px;" value="<?php echo $lwp_days?>">
+                                        </div>
+
+                     <?php       }
+                        
+                    else {
+
+
+                        $query = "select sum(vacation_leave) as vl_days , sum(sick_leave) as sl_days, sum(spl) as spl_days , sum(force_leave) as fl_days , sum(lwp) as lwp_days from leave_credits where emp_id = '$emp_id' and mon = $j and year = $year"; 
 
                                                
                             if($runquery = $conn -> query($query)){
@@ -265,6 +345,7 @@
                                         $sl_pts =  $sl_pts + $sl_days;
                                         
                                     }
+                                
 
 //for fetching the information into leave form 
             $mon = $i+1 ; //getting month number
@@ -314,12 +395,12 @@
         
        
         
-     }}   
+     }}   }
     } // end of for loop
 
     
 
-if(!empty($vl_pts) || $vl_pts == 0 || !empty($sl_pts) || $sl_pts == 0  ){
+if(!empty($vl_pts)  || !empty($sl_pts)  ){
 
     $vl_pts = abs($vl_pts);
     $sl_pts = abs($sl_pts);

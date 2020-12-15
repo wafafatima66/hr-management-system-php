@@ -317,12 +317,149 @@ while($data = $runquery -> fetch_assoc()){
   $condition_12= $data["condition_12"];
 
 
-   if ($condition_1 == 'yes') 
-    { 
+   if ($condition_1 == 'yes') { 
      $condition_1 =  "checked='checked'"; 
      $condition_1_no =  "";
-    } else $condition_1_no =  "checked='checked'";
+    } else if($condition_1 == 'no'){
+      $condition_1_no =  "checked='checked'";
+      $condition_1 =  ""; 
+    } else {
+      $condition_1_no =  "";
+      $condition_1 =  ""; 
+    }
 
+    if ($condition_2 == 'yes') { 
+      $condition_2 =  "checked='checked'"; 
+      $condition_2_no =  "";
+     } else if($condition_2 == 'no'){
+       $condition_2_no =  "checked='checked'";
+       $condition_2 =  ""; 
+     } else {
+       $condition_2_no =  "";
+       $condition_2 =  ""; 
+     }
+
+     if ($condition_3 == 'yes') { 
+      $condition_3 =  "checked='checked'"; 
+      $condition_3_no =  "";
+     } else if($condition_3 == 'no'){
+       $condition_3_no =  "checked='checked'";
+       $condition_3 =  ""; 
+     } else {
+       $condition_3_no =  "";
+       $condition_3 =  ""; 
+     }
+
+     if ($condition_4 == 'yes') { 
+      $condition_4 =  "checked='checked'"; 
+      $condition_4_no =  "";
+     } else if($condition_4 == 'no'){
+       $condition_4_no =  "checked='checked'";
+       $condition_4 =  ""; 
+     } else {
+       $condition_4_no =  "";
+       $condition_4 =  ""; 
+     }
+
+
+     if ($condition_5 == 'yes') { 
+      $condition_5 =  "checked='checked'"; 
+      $condition_5_no =  "";
+     } else if($condition_5 == 'no'){
+       $condition_5_no =  "checked='checked'";
+       $condition_5 =  ""; 
+     } else {
+       $condition_5_no =  "";
+       $condition_5 =  ""; 
+     }
+
+     if ($condition_6 == 'yes') { 
+      $condition_6 =  "checked='checked'"; 
+      $condition_6_no =  "";
+     } else if($condition_6 == 'no'){
+       $condition_6_no =  "checked='checked'";
+       $condition_6 =  ""; 
+     } else {
+       $condition_6_no =  "";
+       $condition_6 =  ""; 
+     }
+
+     if ($condition_7 == 'yes') { 
+      $condition_7 =  "checked='checked'"; 
+      $condition_7_no =  "";
+     } else if($condition_7 == 'no'){
+       $condition_7_no =  "checked='checked'";
+       $condition_7 =  ""; 
+     } else {
+       $condition_7_no =  "";
+       $condition_7 =  ""; 
+     }
+
+
+     if ($condition_8 == 'yes') { 
+      $condition_8 =  "checked='checked'"; 
+      $condition_8_no =  "";
+     } else if($condition_8 == 'no'){
+       $condition_8_no =  "checked='checked'";
+       $condition_8 =  ""; 
+     } else {
+       $condition_8_no =  "";
+       $condition_8 =  ""; 
+     }
+
+
+     if ($condition_9 == 'yes') { 
+      $condition_9 =  "checked='checked'"; 
+      $condition_9_no =  "";
+     } else if($condition_9 == 'no'){
+       $condition_9_no =  "checked='checked'";
+       $condition_9 =  ""; 
+     } else {
+       $condition_9_no =  "";
+       $condition_9 =  ""; 
+     }
+
+
+     if ($condition_10 == 'yes') { 
+      $condition_10 =  "checked='checked'"; 
+      $condition_10_no =  "";
+     } else if($condition_10 == 'no'){
+       $condition_10_no =  "checked='checked'";
+       $condition_10 =  ""; 
+     } else {
+       $condition_10_no =  "";
+       $condition_10 =  ""; 
+     }
+
+
+     if ($condition_11 == 'yes') { 
+      $condition_11 =  "checked='checked'"; 
+      $condition_11_no =  "";
+     } else if($condition_11 == 'no'){
+       $condition_11_no =  "checked='checked'";
+       $condition_11 =  ""; 
+     } else {
+       $condition_11_no =  "";
+       $condition_11 =  ""; 
+     }
+
+
+     if ($condition_12 == 'yes') { 
+      $condition_12 =  "checked='checked'"; 
+      $condition_12_no =  "";
+     } else if($condition_12 == 'no'){
+       $condition_12_no =  "checked='checked'";
+       $condition_12 =  ""; 
+     } else {
+       $condition_12_no =  "";
+       $condition_12 =  ""; 
+     }
+
+
+  
+
+
+/*
     if ($condition_2 == 'yes'){
       $condition_2 =  "checked='checked'"; 
       $condition_2_no =  "";
@@ -378,7 +515,7 @@ while($data = $runquery -> fetch_assoc()){
       $condition_12 =  "checked='checked'"; 
       $condition_12_no =  "";
     }else $condition_12_no =  "checked='checked'";
-    
+    */
 
   $condition_1_des = $data["condition_1_des"];
   $condition_2_des = $data["condition_2_des"];

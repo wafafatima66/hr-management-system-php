@@ -1,5 +1,31 @@
 
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $("#emp_id").keyup(function(){
+        $.ajax({
+            url:'../emp_mang/add_emp_message.php',
+            type : 'post',
+            data: {emp_id : $(this).val()},
+            //dataType: 'json',
+            success : function(result){
+                
+                $('#space').html(result);
+              
+
+            }
+        });
+    });
+
+});
+
+
+</script>
+
+
   <!--button to add employye-->
       <!-- Modal -->
       <div class="modal fade addemployee " id="addemployee" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" >
@@ -18,12 +44,19 @@
                     <div class="pt-3">
                      <h6>Employee</h6>
 
+                     
+                   
+
                       <form class="form-inline " method="post" action="../emp_mang/add_emp_config.php" enctype="multipart/form-data">
+
+                     
 
                       <div class="form-group mx-sm-3 mb-2 mt-2">
                           <label for="">Employer ID</label>
-                            <input type="text" name="emp_id" value="" class="form-control" required >
+                            <input type="text" name="emp_id"  class="form-control"  id="emp_id">
                             </div>  
+
+
 
                         <div class="form-group mx-sm-2 mb-2">
                             <label for="">Name</label>
@@ -83,7 +116,9 @@
                           <div class="form-group mx-sm-3 mb-2 mt-2">
                           <label for="">Employer Image</label>
                             <input type="file" name="emp_image"   >
-                            </div>                        
+                            </div>    
+
+                             <div id="space"></div>                    
                             
                       </div>
                          </div>

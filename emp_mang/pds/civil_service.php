@@ -39,7 +39,7 @@
                   <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">TYPE</label>
-                            <select class="form-control" style="width:200px;" name="type_of" value="" >
+                            <select class="form-control" style="width:200px;" name="type_of"  >
                                 <option value = "<?php echo $type_of[$i]?>"><?php echo $type_of[$i]?></option>
                                 <option value = "Board Examination">Board Examination</option>
                                 <option value = "Civil Service Examination">Civil Service Examination</option>
@@ -50,28 +50,28 @@
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">NAME OF EXAMINATION</label>
-                            <input type="text" class="form-control" id="" value="<?php echo $name_of_exam[$i]?>" name ="name_of_exam[$i]">
+                            <input type="text" class="form-control"  value="<?php echo $name_of_exam[$i]?>" name ="name_of_exam[$i]">
                         </div>
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">RATING <span class="text-muted"> (if applicable) </span></label>
-                            <input type="text" class="form-control" id="" value="<?php echo $rating[$i]?>" name="rating[$i]">
+                            <input type="text" class="form-control"  value="<?php echo $rating[$i]?>" name="rating[$i]">
                         </div>
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">EXAMINATION DATE</label>
-                            <input type="date" class="form-control" id="" value="<?php echo $exam_date[$i]?>"  name="exam_date[$i]">
+                            <input type="date" class="form-control"  value="<?php echo $exam_date[$i]?>"  name="exam_date[$i]">
                         </div>
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">PLACE OF EXAMINATION</label>
-                            <input type="text" class="form-control" id="" value="<?php echo $exam_place[$i]?>"  name="exam_place[$i]"style="width:200px;">
+                            <input type="text" class="form-control"  value="<?php echo $exam_place[$i]?>"  name="exam_place[$i]"style="width:200px;">
                         </div>
                     </div>
 
@@ -87,14 +87,14 @@
                         <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">NUMBER</label>
-                            <input type="text" class="form-control" id="" value="<?php echo $licence_no[$i]?>"  name="licence_no[$i]" style="width:160px;">
+                            <input type="text" class="form-control"  value="<?php echo $licence_no[$i]?>"  name="licence_no[$i]" style="width:160px;">
                         </div>
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">VALIDITY</label>
-                            <input type="date" class="form-control" id="" value="<?php echo $licence_val[$i]?>" name="licence_val[$i]">
+                            <input type="date" class="form-control"  value="<?php echo $licence_val[$i]?>" name="licence_val[$i]">
                         </div>
                     </div>
 
@@ -114,7 +114,7 @@
                         <div class="d-flex flex-column">
                             <label for="">TYPE</label>
                             <select class="form-control" style="width:200px;" name="type_of[]"  >
-                                <option value = "<?php echo $type_of?>"><?php echo $type_of?></option>
+                                <option value = "">SELECT</option>
                                 <option value = "Board Examination">Board Examination</option>
                                 <option value = "Civil Service Examination">Civil Service Examination</option>
                             </select>
@@ -124,28 +124,28 @@
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">NAME OF EXAMINATION</label>
-                            <input type="text" class="form-control" id="" value="<?php echo $name_of_exam?>" name ="name_of_exam[]">
+                            <input type="text" class="form-control"  name ="name_of_exam[]">
                         </div>
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">RATING <span class="text-muted"> (if applicable) </span></label>
-                            <input type="text" class="form-control" id="" value="<?php echo $rating?>" name="rating[]">
+                            <input type="text" class="form-control"   name="rating[]">
                         </div>
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">EXAMINATION DATE</label>
-                            <input type="date" class="form-control" id="" value="<?php echo $exam_date?>"  name="exam_date[]">
+                            <input type="date" class="form-control"  name="exam_date[]">
                         </div>
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">PLACE OF EXAMINATION</label>
-                            <input type="text" class="form-control" id="" value="<?php echo $exam_place?>"  name="exam_place[]"style="width:200px;">
+                            <input type="text" class="form-control"    name="exam_place[]"style="width:200px;">
                         </div>
                     </div>
 
@@ -161,14 +161,14 @@
                         <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">NUMBER</label>
-                            <input type="text" class="form-control" id="" value="<?php echo $licence_no?>"  name="licence_no[]" style="width:160px;">
+                            <input type="text" class="form-control"    name="licence_no[]" style="width:160px;">
                         </div>
                     </div>
 
                     <div class="form-group mx-sm-3 mb-2">
                         <div class="d-flex flex-column">
                             <label for="">VALIDITY</label>
-                            <input type="date" class="form-control" id="" value="<?php echo $licence_val?>" name="licence_val[]">
+                            <input type="date" class="form-control"   name="licence_val[]">
                         </div>
                     </div>
 
@@ -207,7 +207,7 @@ var maxField = 10; //Input fields increment limitation
 var addButton = $('.add_civil_button'); //Add button selector
 var wrapper = $('.civil_wrapper'); //Input field wrapper
 var fieldHTML = 
-' <div>  <div class="form-inline"> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">TYPE</label> <select class="form-control" style="width:200px;" name="type_of[]" value="" > <option value = ""></option> <option value = "Board Examination">Board Examination</option> <option value = "Civil Service Examination">Civil Service Examination</option> </select> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">NAME OF EXAMINATION</label> <input type="text" class="form-control" id="" value="" name ="name_of_exam[]"> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">RATING <span class="text-muted"> (if applicable) </span></label> <input type="text" class="form-control" id="" value="" name="rating[]"> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">EXAMINATION DATE</label> <input type="date" class="form-control" id="" value=""  name="exam_date[]"> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">PLACE OF EXAMINATION</label> <input type="text" class="form-control" id="" value=""  name="exam_place[]"style="width:200px;"> </div> </div> <div class="d-flex justify-content-center"> <div class="form-group mx-sm-3 mb-2"> <label for="">LICENCE <span class="text-muted">(If Applicable)</span></label> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">NUMBER</label> <input type="text" class="form-control" id="" value=""  name="licence_no[]" style="width:160px;"> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">VALIDITY</label> <input type="date" class="form-control" id="" value="" name="licence_val[]"> </div> </div> </div> </div><a href="javascript:void(0);" class="remove_civil_button"><i class="fa fa-minus"></i></a></div>'; 
+' <div>  <div class="form-inline"> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">TYPE</label> <select class="form-control" style="width:200px;" name="type_of[]"  > <option value = ""></option> <option value = "Board Examination">Board Examination</option> <option value = "Civil Service Examination">Civil Service Examination</option> </select> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">NAME OF EXAMINATION</label> <input type="text" class="form-control"   name ="name_of_exam[]"> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">RATING <span class="text-muted"> (if applicable) </span></label> <input type="text" class="form-control"   name="rating[]"> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">EXAMINATION DATE</label> <input type="date" class="form-control"    name="exam_date[]"> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">PLACE OF EXAMINATION</label> <input type="text" class="form-control"    name="exam_place[]"style="width:200px;"> </div> </div> <div class="d-flex justify-content-center"> <div class="form-group mx-sm-3 mb-2"> <label for="">LICENCE <span class="text-muted">(If Applicable)</span></label> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">NUMBER</label> <input type="text" class="form-control"    name="licence_no[]" style="width:160px;"> </div> </div> <div class="form-group mx-sm-3 mb-2"> <div class="d-flex flex-column"> <label for="">VALIDITY</label> <input type="date" class="form-control"   name="licence_val[]"> </div> </div> </div> </div><a href="javascript:void(0);" class="remove_civil_button"><i class="fa fa-minus"></i></a></div>'; 
 
 //New input field html 
 var x = 1; //Initial field counter is 1

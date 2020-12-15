@@ -1,9 +1,10 @@
 
 <?php 
-    session_start();
+
+
+
 
 if(isset($_POST['submit'])){
-
 
     
 
@@ -55,10 +56,7 @@ if(isset($_POST['submit'])){
                     mysqli_stmt_execute($stmt);
 
                   
-                   // $_SESSION['emp_first_name']= $emp_first_name;
-                   // $_SESSION['emp_last_name']= $emp_last_name;
-                   
-                    // Now let's move the uploaded image into the folder: image 
+                
 
                     if (move_uploaded_file($tempname, $folder))  { 
                         $msg = "Image uploaded successfully"; 
@@ -73,7 +71,7 @@ if(isset($_POST['submit'])){
                
 
         } 
-    
+
     
 
         mysqli_stmt_close($stmt);

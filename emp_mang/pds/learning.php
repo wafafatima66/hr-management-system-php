@@ -103,7 +103,7 @@
                 <div class="form-group mx-sm-2 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">TITLE OF TRAINING PROGRAMS ATTENDED</label>
-                        <input type="text" class="form-control"  value="<?php echo $title_of_training?>" style="width:300px;" name="title_of_training[]">
+                        <input type="text" class="form-control"  style="width:300px;" name="title_of_training[]">
                     </div>
                 </div>
                 
@@ -111,7 +111,7 @@
                     <div class="d-flex flex-column">
                         <label for="">TYPE OF PROGRAM</label>
                         <select class="form-control" style="width:150px;" name="type_of_position[]">
-                            <option value = "<?php echo $type_of_position?>"><?php echo $type_of_position?></option>
+                            <option value = "">SELECT</option>
                             <option value="Technical">Technical</option>
                             <option value="Managerial">Managerial</option>
                             <option value="Supervisory">Supervisory</option>
@@ -123,7 +123,7 @@
                 <div class="form-group mx-sm-1 mb-2">
                     <div class="d-flex flex-column">
                         <label for="">NO. OF HOURS</label>
-                        <input type="text" class="form-control"  value="<?php echo $no_of_hrs?>" style="width:50px;" name="no_of_hrs[]">
+                        <input type="text" class="form-control" style="width:50px;" name="no_of_hrs[]">
                     </div>
                 </div>
 
@@ -133,9 +133,9 @@
                         <label for="">INCLUSIVE DATES</label>
                             <div class="d-flex justify-content-center">
 
-                            <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;" value="<?php echo $learn_from_date?>" name="learn_from_date[]" >
+                            <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;"  name="learn_from_date[]" >
                             
-                            <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;" value="<?php echo $learn_to_date?>" name="learn_to_date[]" >
+                            <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;"  name="learn_to_date[]" >
                             
                         </div>
                     </div>
@@ -147,7 +147,7 @@
           <div class="d-flex justify-content-center">
                     <div class="form-group mx-sm-3 mb-2">
                         <label for="">CONDUCTED/SPONSORED BY</label>
-                        <input type="text" class="form-control" id="" value="<?php echo $conducted_by?>" style="width:300px;" name="conducted_by[]">    
+                        <input type="text" class="form-control"  style="width:300px;" name="conducted_by[]">    
                     </div>
             </div>
           </div>
@@ -188,7 +188,7 @@ var maxField = 10; //Input fields increment limitation
 var addButton = $('.add_learn_button'); //Add button selector
 var wrapper = $('.learning_wrapper'); //Input field wrapper
 var fieldHTML = 
-' <div><div class="form-inline"> <div class="form-group mx-sm-2 mb-2"> <div class="d-flex flex-column"> <label for="">TITLE OF TRAINING PROGRAMS ATTENDED</label> <input type="text" class="form-control"  value="" style="width:300px;" name="title_of_training[]"> </div> </div> <div class="form-group mx-sm-1 mb-2"> <div class="d-flex flex-column"> <label for="">TYPE OF PROGRAM</label>  <select class="form-control" style="width:150px;" name="type_of_position[]">  <option value="Technical">Technical</option> <option value="Managerial">Managerial</option> <option value="Supervisory">Supervisory</option> <option value="Clerical">Clerical</option> </select> </div> </div> <div class="form-group mx-sm-1 mb-2"> <div class="d-flex flex-column"> <label for="">NO. OF HOURS</label> <input type="text" class="form-control"  value="" style="width:50px;" name="no_of_hrs[]"> </div> </div> <div class="form-group mx-sm-1 mb-2"> <div class="d-flex flex-column"> <label for="">INCLUSIVE DATES</label> <div class="d-flex justify-content-center"> <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;" value="" name="learn_from_date[]" > <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;" value="" name="learn_to_date[]" > </div> </div> </div> <div class="container text-center"> <div class="d-flex justify-content-center"> <div class="form-group mx-sm-3 mb-2"> <label for="">CONDUCTED/SPONSORED BY</label> <input type="text" class="form-control" id="" value="" style="width:300px;" name="conducted_by[]"> </div> </div> </div> </div><a href="javascript:void(0);" class="remove_learn_button"><i class="fa fa-minus"></i></a></div>'; 
+' <div><div class="form-inline"> <div class="form-group mx-sm-2 mb-2"> <div class="d-flex flex-column"> <label for="">TITLE OF TRAINING PROGRAMS ATTENDED</label> <input type="text" class="form-control"   style="width:300px;" name="title_of_training[]"> </div> </div> <div class="form-group mx-sm-1 mb-2"> <div class="d-flex flex-column"> <label for="">TYPE OF PROGRAM</label>  <select class="form-control" style="width:150px;" name="type_of_position[]">  <option value="Technical">Technical</option> <option value="Managerial">Managerial</option> <option value="Supervisory">Supervisory</option> <option value="Clerical">Clerical</option> </select> </div> </div> <div class="form-group mx-sm-1 mb-2"> <div class="d-flex flex-column"> <label for="">NO. OF HOURS</label> <input type="text" class="form-control"   style="width:50px;" name="no_of_hrs[]"> </div> </div> <div class="form-group mx-sm-1 mb-2"> <div class="d-flex flex-column"> <label for="">INCLUSIVE DATES</label> <div class="d-flex justify-content-center"> <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;"  name="learn_from_date[]" > <input type="date" class="form-control mx-sm-1 mb-2"  style="width:140px;"  name="learn_to_date[]" > </div> </div> </div> <div class="container text-center"> <div class="d-flex justify-content-center"> <div class="form-group mx-sm-3 mb-2"> <label for="">CONDUCTED/SPONSORED BY</label> <input type="text" class="form-control" id=""  style="width:300px;" name="conducted_by[]"> </div> </div> </div> </div><a href="javascript:void(0);" class="remove_learn_button"><i class="fa fa-minus"></i></a></div>'; 
 
 //New input field html 
 var x = 1; //Initial field counter is 1

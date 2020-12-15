@@ -291,8 +291,11 @@ $ele_school_name=$_POST['ele_school_name'];
 
 
             //civil service 
+          
 
-            if(isset($_POST['name_of_exam'])){
+            if(isset($_POST['name_of_exam'])  ){
+
+              
 
             $query = "SELECT * FROM civil_service WHERE emp_id = '$emp_id'";
 
@@ -301,7 +304,8 @@ $ele_school_name=$_POST['ele_school_name'];
 
                 if($rowcount != 0 ){
                     $count = count(($_POST['name_of_exam']))-1;
-                } else {
+                }
+                else {
                     $count = count(($_POST['name_of_exam']));
                 }
 
@@ -318,6 +322,8 @@ $ele_school_name=$_POST['ele_school_name'];
             
         
         
+            if(!empty( $name_of_exam)) {
+            
         
         
                     $sql="INSERT INTO civil_service (type_of,name_of_exam,rating,exam_date,exam_place,licence_no,licence_val,emp_id) VALUE (?,?,?,?,?,?,?,?) 
@@ -335,7 +341,7 @@ $ele_school_name=$_POST['ele_school_name'];
                             mysqli_stmt_execute($stmt);
 
                         }
-
+                    }
         } 
     }
         //work experience
@@ -363,6 +369,8 @@ if(isset($_POST['work_position'])){
     $monthly_sal=$_POST['monthly_sal'][$i];
     $increment=$_POST['increment'][$i];
     $work_status=$_POST['work_status'][$i];
+
+    if(!empty( $work_position)) {
     
 
             $sql="INSERT INTO emp_work (work_from_date,work_to_date,work_position,employer,govt_service,monthly_sal,increment,work_status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
@@ -381,7 +389,7 @@ if(isset($_POST['work_position'])){
                     mysqli_stmt_execute($stmt);
 
                 }
-            
+    }
             } 
     }
 
@@ -413,7 +421,7 @@ if(isset($_POST['name_org'])){
     $position=$_POST['position'][$i];
    
     
-
+    if(!empty( $name_org)) {
 
             $sql="INSERT INTO voluntary_works (name_org,org_add,vol_from_date,vol_to_date,vol_no_of_hrs,position,emp_id) VALUE (?,?,?,?,?,?,?) ";
 
@@ -428,6 +436,7 @@ if(isset($_POST['name_org'])){
                     mysqli_stmt_bind_param($stmt,"ssssisi",$name_org, $org_add, $vol_from_date,$vol_to_date,$vol_no_of_hrs,$position,$emp_id);
                     mysqli_stmt_execute($stmt);
                 }
+            }
             }
         }
 
@@ -457,7 +466,7 @@ if(isset($_POST['title_of_training'])){
         $learn_to_date=$_POST['learn_to_date'][$i];
         $conducted_by=$_POST['conducted_by'][$i];
         
-        
+        if(!empty( $title_of_training)) {
     
                 $sql="INSERT INTO emp_learning (title_of_training,type_of_position,no_of_hrs,learn_from_date,learn_to_date,conducted_by,emp_id) VALUE (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE
                 title_of_training = '$title_of_training',
@@ -478,6 +487,7 @@ if(isset($_POST['title_of_training'])){
                         mysqli_stmt_bind_param($stmt,"ssisssi",$title_of_training, $type_of_position, $no_of_hrs,$learn_from_date,$learn_to_date,$conducted_by,$emp_id);
                         mysqli_stmt_execute($stmt);
                     }
+                }
                 }
             }
 
