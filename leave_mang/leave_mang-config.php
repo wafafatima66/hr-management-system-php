@@ -42,8 +42,7 @@ if(isset($_POST['submit'])){
     $leave_from_date=$_POST['leave_from_date'];
     $leave_to_date=$_POST['leave_to_date'];
     $communication=$_POST['communication'];
-    $description=$_POST['description'];
-    $certificate_of_leave=$_POST['certificate_of_leave'];
+  
 
     $from_date = strtotime($leave_from_date); // or your date as well
     $to_date = strtotime($leave_to_date);
@@ -56,7 +55,7 @@ if(isset($_POST['submit'])){
 
    
         
-            $sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,description,certificate_of_leave,date_diff) VALUE (?,?,?,?,?,?,?,?,?)";
+            $sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,date_diff) VALUE (?,?,?,?,?,?,?)";
 
             $stmt = mysqli_stmt_init($conn);
 
@@ -66,7 +65,7 @@ if(isset($_POST['submit'])){
             }
                 else{ 
                 
-                    mysqli_stmt_bind_param($stmt,"iissssssi", $emp_id, $emp_salary, $type_of_leave,$leave_from_date,$leave_to_date,$communication,$description,$certificate_of_leave, $date_diff);
+                    mysqli_stmt_bind_param($stmt,"iissssi", $emp_id, $emp_salary, $type_of_leave,$leave_from_date,$leave_to_date,$communication,$date_diff);
                     mysqli_stmt_execute($stmt); 
                 }
 
@@ -89,6 +88,7 @@ if(isset($_POST['submit'])){
                  
 
                     $mon = date("m", strtotime($leave_from_date));
+                    $year = date("Y", strtotime($leave_from_date));
 
                    // $vacation_leave = "";
                     //$sick_leave = "";
@@ -107,8 +107,10 @@ if(isset($_POST['submit'])){
 
                     if($type_of_leave == "vacation leave"){
                         $vacation_leave = $date_diff;
+                        //$sick_leave = 1.25 ; 
                     }else  if($type_of_leave == "sick leave"){
                         $sick_leave = $date_diff;
+                        //$vacation_leave = 1.25 ; 
                     }else  if($type_of_leave == "special priviledge leave"){
                         $spl = $date_diff;
                     }else  if($type_of_leave == "force leave"){
@@ -117,7 +119,7 @@ if(isset($_POST['submit'])){
                         $lwp = $date_diff;
                     }
 
-                    $sql_3="INSERT INTO leave_credits (emp_id,vacation_leave,sick_leave,spl,force_leave,lwp,mon) VALUE (?,?,?,?,?,?,?)
+                    $sql_3="INSERT INTO leave_credits (emp_id,vacation_leave,sick_leave,spl,force_leave,lwp,mon,year) VALUE (?,?,?,?,?,?,?,?)
                   
                         ";
             
@@ -129,7 +131,7 @@ if(isset($_POST['submit'])){
                     }
                         else{ 
                         
-                            mysqli_stmt_bind_param($stmt,"iiiiiii", $emp_id,$vacation_leave,$sick_leave,$spl,$force_leave,$lwp,$mon);
+                            mysqli_stmt_bind_param($stmt,"iiiiiiii", $emp_id,$vacation_leave,$sick_leave,$spl,$force_leave,$lwp,$mon,$year);
                             mysqli_stmt_execute($stmt);
          
                         }

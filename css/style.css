@@ -502,38 +502,38 @@ text-transform: capitalize;
 }
 
 /*training modal*/
-.addtraining .modal-content{
+.training_modal .modal-content{
     background-color: #f3f3f3;
 }
-.addtraining .modal-header{
+.training_modal .modal-header{
     background-color: #345587;
     color: #fff;
 }
 
-.addtraining .modal-header button{
+.training_modal .modal-header button{
     color: #fff;
 }
-.addtraining .modal-body h6{
+.training_modal .modal-body h6{
     color: #345587;
     font-weight: bold;
 }
 
-.addtraining .modal-footer .btn{
+.training_modal .modal-footer .btn{
     color: #fff;
     font-weight: bold;
     background-color: #345587;
 }
 
-.addtraining label{
+.training_modal label{
     font-size: 12px;
     font-weight: bold;
     color:#345587 ;
     margin-right: 12px;
 }
-.addtraining input{
+.training_modal input{
     font-size: 12px;
 }
-.addtraining select{
+.training_modal select{
     font-size: 12px;
 }
 /*CALENDAR PAGE*/
@@ -573,39 +573,39 @@ text-transform: capitalize;
 }
 /*ADD EVENT*/
 
-.addevent .modal-content{
+.eventmodal .modal-content{
     background-color: #f3f3f3;
 }
-.addevent .modal-header{
+.eventmodal .modal-header{
     background-color: #345587;
     color: #fff;
 }
 
-.addevent .modal-header button{
+.eventmodal .modal-header button{
     color: #fff;
 }
-.addevent .modal-body h6{
+.eventmodal .modal-body h6{
     color: #345587;
     font-weight: bold;
 }
 
-.addevent .modal-footer .btn{
+.eventmodal .modal-footer .btn{
     color: #fff;
     font-weight: bold;
     background-color: #345587;
 }
 
-.addevent label{
+.eventmodal label{
     font-size: 12px;
     font-weight: bold;
     color:#345587 ;
     margin-right: 12px;
 }
-.addevent input{
+.eventmodal input{
     font-size: 12px;
     text-transform: capitalize;
 }
-.addevent select{
+.eventmodal select{
     font-size: 12px;
 }
 /*REPORT*/

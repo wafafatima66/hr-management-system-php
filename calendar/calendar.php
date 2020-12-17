@@ -11,7 +11,11 @@ if(isset($_GET['submit'])){
         echo'<p class="alert alert-success h6"> EVENT ADDEDD SUCCESSFULLY </p>';
     }else  if($_GET['submit']=="noid"){
       echo'<p class="alert alert-danger h6"> EMPLOYEE NOT FOUND ! </p>';
-  }
+  }else  if($_GET['submit']=="update"){
+    echo'<p class="alert alert-success h6"> EVENT UPDATED ! </p>';
+}else  if($_GET['submit']=="notupdate"){
+  echo'<p class="alert alert-danger h6"> EVENT NOT UPDATED ! </p>';
+}
 }
 ?>
 
@@ -55,45 +59,82 @@ if(isset($_GET['submit'])){
 
                            $month = date("m") ;
                            $year = date("Y");
-                          $query = "select  start , title , venue FROM table_events  WHERE MONTH(start) = '$month' AND YEAR(start) = '$year' "; 
+                          $query = "select  end, start , title , venue FROM table_events  WHERE MONTH(start) = '$month' AND YEAR(start) = '$year' "; 
 
                           if($runquery = $conn -> query($query)){
 
                             while($mydata = $runquery -> fetch_assoc()){
 
                               $start =   $mydata["start"];
+                              $end =   $mydata["end"];
                               $title =   $mydata["title"];
                               $venue =   $mydata["venue"];
 
                              // $date1 = strtotime($start);
                              // $date = date_format($date1,"d");
-                             $date = date("d", strtotime($start));
+                             $start_date = date("d", strtotime($start));
+                              $end_date = date("d", strtotime($end));
 
 
               ?>
 
 
-                <div class="row">
+                <div class="row view_event" data-toggle="modal"  data-target="#viewevent" style="cursor:pointer;" data-todo="<?php echo  $title?>">
 
                     <div class="col-lg-2">
                         <div class="text-center">
-                            <h3><?php echo $date ?></h3>
+                            <h3><?php echo $start_date ?>-<?php echo $end_date ?></h3>
                         </div> 
                     </div>
 
                     <div class="col-lg-7">
-                        <div class="text-center">
-                          <p><?php echo $title ?></p> 
+                        <div class="text-center ">
+                          <h3 style="color:#B3B3B3;"><?php echo $title ?></h3> 
                         </div>
                     </div>
 
                     <div class="col-lg-3">   
                         <div class="text-center">
-                          <p><?php echo $venue ?></p>  
+                          <h3 style="color:#B3B3B3;"><?php echo $venue ?></h3>  
                         </div>
                     </div>
 
                 </div>
+
+                <script>
+                        $('.view_event').click(function(){
+                          
+                          //var emp_id = $(this).data('id');
+                          //$('.modal-body .view_emp_id').val(emp_id);
+                          $.ajax({
+                              url:'view_event.php?',
+                              type : 'post',
+                              data: {
+                                title : $(this).data("todo") 
+                              },
+                               dataType: 'json',
+                              success : function(result){
+
+                                  $('#title').val(result.title);
+                                  $('#start').val(result.start);
+                                  $('#end').val(result.end);
+                                  $('#venue').val(result.venue);
+                                  $('#address').val(result.address);
+                                  $('#city').val(result.city);
+                                  $('#barangay').val(result.barangay);
+                                  $('#sp_last_name').val(result.sp_last_name);
+                                  $('#sp_first_name').val(result.sp_first_name);
+                                  $('#sp_middle_name').val(result.sp_middle_name);
+                                  $('#sp_ext').val(result.sp_ext);
+                                 
+                            
+                                //$('#space').html(result);
+                              }
+                          });
+                          
+                        });
+                    </script>
+
 
                             <?php    }} ?>
 
@@ -119,98 +160,10 @@ if(isset($_GET['submit'])){
                   
   -->
                   
-  <div class="calendar_section2">
-            <div id="calendar"></div>
+  <div class="calendar_section2 mx-auto" style="width:80%;" >
+            <div id="calendar" ></div>
             </div>
 
 
-
-        
- <!--button to add event-->
-            <!-- Modal -->
-
-           
-        <div class="modal fade addevent" id="addevent" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-                    <div class="modal-content">
-
-                     <div class="modal-header">
-                        <h3 class="modal-title">ADD EVENT</h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                    </div>
-
-                <div class="modal-body">
-                   <div class="pt-3">
-                   <h6>EVENT INFORMATION</h6>
-
-
-                    <form class="form-inline" method="post" action="add_event.php">
-                    
-            <div class="form-group mx-sm-2 mb-2">
-                <label for="">Title of Event</label>
-              <input type="text" class="form-control"  style="width:500px" name="title">
-            </div>
-
-            <div class="form-group mx-sm-2 mb-2">
-                <label for="">Inclusive dates</label>
-              <input type="date" class="form-control" name="start" >
-            </div>
-            <div class="form-group mx-sm-2 mb-2">
-              <input type="date" class="form-control" name="end" >
-            </div>
-
-            <div class="form-group mx-sm-2 mb-2">
-                <label for="">Venue</label>
-              <input type="text" class="form-control"  style="width:200px" name="venue">
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-                <label for="">Address</label>
-              <input class="form-control" style="width:200px" name="address">
-                
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-              <input class="form-control" style="width:200px" placeholder="City/Municility" name="city">
-                
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-              <input class="form-control" style="width:200px" placeholder="Barangay" name="barangay">
-                
-            </div>
-
-            <div class="form-group mx-sm-2 mb-2">
-            <label for="">Speaker/s</label>
-              <input type="text" class="form-control"  placeholder="LastName" style="width:100px" name="sp_last_name">
-            </div>
-
-            <div class="form-group mx-sm-2 mb-2">
-              <input type="text" class="form-control"  placeholder="FirstName" style="width:100px" name="sp_first_name">
-            </div>
-
-            <div class="form-group mx-sm-2 mb-2">
-              <input type="text" class="form-control"  placeholder="MiddleName" style="width:100px" name="sp_middle_name">
-            </div>
-
-            <div class="form-group mx-sm-2 mb-2">
-              <input type="text" class="form-control"  placeholder="Ext" style="width:60px" name="sp_ext">
-            </div>
-           
-          
-      
-                </div>
-  
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn " name="submit">Submit</button>
-                </div>
-                </div>
-            </div>
-
-            </form>
-        </div>
-    
-     
+            <?php require "calendar_modal.php";?>
+     <?php require "calendar_view_modal.php";?>

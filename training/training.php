@@ -12,15 +12,18 @@ if(isset($_GET['submit'])){
         echo'<p class="alert alert-success h6"> TRAINING ADDEDD SUCCESSFULLY </p>';
     }else  if($_GET['submit']=="noid"){
       echo'<p class="alert alert-danger h6"> EMPLOYEE NOT FOUND ! </p>';
-  }
+  }else  if($_GET['submit']=="update"){
+    echo'<p class="alert alert-success h6"> TRAINING FORM UPDATED ! </p>';
+}else  if($_GET['submit']=="notupdate"){
+  echo'<p class="alert alert-danger h6"> TRAINING FORM NOT UPDATED  ! </p>';
+}
 }
 ?>
 
 <div class="container pt-5 training_section_1">
 
   
-  
-  <div class="form-inline" >
+    <div class="form-inline" >
           <button type="button" class="btn mb-2" data-toggle="modal" data-target="#addtraining" ><i class="fas fa-plus pr-2"></i>Add Training</button> 
            
             <div class="ml-auto">
@@ -60,25 +63,43 @@ if(isset($_GET['submit'])){
             
                 $search_query=$_POST['search_query'];
 
-                  $query = "SELECT * FROM training WHERE  title_of_training = '$search_query' OR emp_name like '%$search_query%'";
-                
-              if($runquery = $conn -> query($query)){
-              
-              while($mydata = $runquery -> fetch_assoc()){
+                  $query = "SELECT training.emp_id, training.title_of_training , training.from_date , training.to_date , training.venue , training.sponsor , add_emp.emp_first_name , add_emp.emp_last_name, add_emp.emp_middle_name, add_emp.emp_image, add_emp.office_assign , pds.emp_gender from training 
+                  inner join add_emp on training.emp_id = add_emp.emp_id
+                   inner join pds on   pds.emp_id = training.emp_id 
+                   WHERE  training.title_of_training = '$search_query' OR add_emp.emp_first_name like '%$search_query%'";
 
-                $emp_name =   $mydata["emp_name"];
-                $office_assign =   $mydata["office_assign"];
-                $emp_gender =   $mydata["emp_gender"];
-                $title_of_training =   $mydata["title_of_training"];
-                $from_date =   $mydata["from_date"];
-                $to_date =   $mydata["to_date"];
-                $venue =   $mydata["venue"];
-                $sponsor =   $mydata["sponsor"];
-                $emp_image = '../uploads/image/'.$mydata["emp_image"];
-?>
+                  
+                
+                 
+              if($runquery = $conn -> query($query)){
+
+                
+                    while($mydata = $runquery -> fetch_assoc())
+                        { 
+                          $emp_first_name =   $mydata["emp_first_name"];
+                          $emp_last_name =   $mydata["emp_last_name"];
+                          $emp_middle_name =   $mydata["emp_middle_name"];
+                          $emp_image = '../uploads/image/'.$mydata["emp_image"];
+                          $office_assign =   $mydata["office_assign"];
+
+                          $emp_name =  $emp_first_name . ' ' . $emp_last_name . ' '. $emp_middle_name;
+                       
+             
+                          $emp_gender =   $mydata["emp_gender"];
+                          $title_of_training =   $mydata["title_of_training"];
+                          $from_date =   $mydata["from_date"];
+                          $to_date =   $mydata["to_date"];
+                          $venue =   $mydata["venue"];
+                          $sponsor =   $mydata["sponsor"];
+
+                          $from_date = date("d M y", strtotime($from_date));
+                          $to_date = date("d M y", strtotime($to_date));
+                        
+                ?>
 
               <tbody >
-                <tr>
+              <tr data-toggle="modal" data-id="<?php echo $mydata["emp_id"] ?>" data-target="#viewtraining" data-todo="<?php echo $mydata["title_of_training"] ?>" class="view_training">
+
                   <td scope="row"><?php echo $office_assign ?></td>
                   <td style="text-transform: capitalize;"><div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div></td>
 
@@ -89,69 +110,93 @@ if(isset($_GET['submit'])){
                   <td><?php echo $sponsor ?></td>
                 </tr>
                 
-            </tbody>
-
-            
            
 
+           <?php   
+           }} 
 
-           <?php   }
-           } else echo '<p class="alert alert-success h6"> NO EMPLOYEE OR TRAINING FOUND </p>';
-          
            ?>
+
+          <?php require "training_tr_script.php"?>
+
+          </tbody>
+         
            </table>
 
-          <?php  } else {
+         
+
+          <?php } else {
 
               require '../includes/conn.php';
 
           
-                  $query = "SELECT * FROM training ";
+                  $query = "SELECT training.emp_id,  training.title_of_training , training.from_date , training.to_date , training.venue , training.sponsor , add_emp.emp_first_name , add_emp.emp_last_name, add_emp.emp_middle_name, add_emp.emp_image , add_emp.office_assign , pds.emp_gender from training 
+                  inner join add_emp on training.emp_id = add_emp.emp_id
+                   inner join pds on   pds.emp_id = training.emp_id  ";
                 
-              if($runquery = $conn -> query($query)){
+                    if($runquery = $conn -> query($query)){
+
+                    
+                    while($mydata = $runquery -> fetch_assoc()){
+
+                     // $emp_id =   $mydata["emp_id"];
+                        $emp_first_name =   $mydata["emp_first_name"];
+                        $emp_last_name =   $mydata["emp_last_name"];
+                        $emp_middle_name =   $mydata["emp_middle_name"];
+                        $emp_image = '../uploads/image/'.$mydata["emp_image"];
+                        $office_assign =   $mydata["office_assign"];
+
+                        $emp_name =  $emp_first_name . ' ' . $emp_last_name . ' '. $emp_middle_name;
+                   
+                    
+                        $emp_gender =   $mydata["emp_gender"];
+                          $title_of_training =   $mydata["title_of_training"];
+                          $from_date =   $mydata["from_date"];
+                          $to_date =   $mydata["to_date"];
+                          $venue =   $mydata["venue"];
+                          $sponsor =   $mydata["sponsor"];
+                         // $emp_image = '../uploads/image/'.$mydata["emp_image"];
+
               
-              while($mydata = $runquery -> fetch_assoc()){
-
-                $emp_name =   $mydata["emp_name"];
-                $office_assign =   $mydata["office_assign"];
-                $emp_gender =   $mydata["emp_gender"];
-                $title_of_training =   $mydata["title_of_training"];
-                $from_date =   $mydata["from_date"];
-                $to_date =   $mydata["to_date"];
-                $venue =   $mydata["venue"];
-                $sponsor =   $mydata["sponsor"];
-                $emp_image = '../uploads/image/'.$mydata["emp_image"];
-
-               // $date = date_format( $from_date , "d/M/y");
                 $from_date = date("d M y", strtotime($from_date));
                 $to_date = date("d M y", strtotime($to_date));
-?>
-                <tbody >
-                <tr>
-                <td scope="row">Office of the president</td>
-                  <td style="text-transform: capitalize;"><div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div></td>
+                     
+
+                       
+                    ?>
+
+
+
+               <tbody >
+                        <tr data-toggle="modal" data-id="<?php echo $mydata["emp_id"] ?>" data-target="#viewtraining" data-todo="<?php echo $mydata["title_of_training"] ?>" class="view_training">
+
+                        <td scope="row">Office of the president</td>
+                          <td style="text-transform: capitalize;"><div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div></td>
                   <td><?php echo $emp_gender ?></div></td>
                   <td><?php echo $title_of_training ?></td>
                   <td><?php echo $from_date ?> - <?php echo $to_date ?></td>
                   <td><?php echo $venue ?></td>
                   <td><?php echo $sponsor ?></td>
+
+                  <?php require "training_tr_script.php"?>
+
+                  <?php   } }  ?>
+
+
                 </tr>
+
                 
             </tbody>
-
-           <?php   }}
-
-            }
-
-          ?>
+         
           
 
 
-                    </table>
+           <?php     } ?>
+           </table>
 
-                    </div>
+</div>
 
-<div class=" training_section_2 pt-5 container">
+    <div class=" training_section_2 pt-5 container">
 
 
         
@@ -182,7 +227,7 @@ if(isset($_GET['submit'])){
                               </div>
 
                           
-                          <button class="btn btn-search mx-sm-3" type="submit" name="search_date">Filter</button>
+                          <button class="btn btn-search mx-sm-3" type="submit" name="search_date">Search</button>
                          
                            
                             
@@ -295,7 +340,16 @@ if($runquery = $conn -> query($query)){
                   
 
                     </div>
+
+                   
+
                </div>
+
+               <div class="container mt-2 mb-5">
+                            <div class="text-right">
+                                <button class="btn" style="background: #345587;color:#EFE20A;" >PRINT</button>
+                            </div>
+                    </div>
             
 </div>
 
@@ -328,138 +382,5 @@ $(document).ready(function(){
 
 </script>
 
-    <div class="modal fade addtraining" id="addtraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">ADD TRAINING</h3>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                </div>
-
-                <form method="post" action="training-config.php"> 
-
-                <div class="modal-body ">
-
-                
-                 
-
-                   <h6>TRAINEES/ATTENDESS</h6>
-
-                   
-                     <div class="form-inline">
-
-                     <div class="form-group mx-sm-3 mb-2">
-                          <label for="">Employee ID</label>
-                      <input type="text" class="form-control"  placeholder="Employee Id" style="width:250px" name="emp_id" id="emp_id">
-                      </div>
-
-                      <div id="space"></div>
-                     
-                     </div>
-                  
-
-        
-        <h6 class="pt-2">TRAINING INFORMATION</h6>
-
-        <div class="form-inline">
-      
-            <div class="form-group mx-sm-3 mb-2">
-                <label  style="width:100px">Title of training</label>
-              <input type="text" class="form-control" style="width:300px;" name="title_of_training">
-            </div>
-
-
-            <div class="form-group mx-sm-3 mb-2">
-                <label >Type</label>
-              <select class="form-control" style="width:180px" name="type_of_training">
-                <option value ="status">Status</option>
-                <option>...</option>
-            </select>
-            </div>
-
-
-            <div class="form-group mx-sm-3 mb-2">
-            <label style="width:100px">Inclusive Dates</label>
-              <input type="date" class="form-control" name="from_date" >
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="date" class="form-control" name="to_date" >
-            </div>
-
-
-            <div class="form-group mx-sm-3 mb-2">
-            <label style="width:100px">No. of Hours</label>
-              <input type="text" class="form-control"  style="width:80px" name="no_of_hrs">
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-            <label style="width:100px">Venue</label>
-              <input type="text" class="form-control" style="width:450px" name="venue">
-            </div>
-           
-            <div class="form-group mx-sm-3 mb-2">
-                <label style="width:100px">Address</label>
-              <input class="form-control" style="width:160px" name="province"> 
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-              <input class="form-control" style="width:160px" name="city">
-               
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-              <input class="form-control" style="width:160px" name="barangay">
-              
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-            <label style="width:100px">Speaker/s</label>
-              <input type="text" class="form-control"  placeholder="LastName" style="width:140px" name="speaker_last_name">
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="text" class="form-control"  placeholder="FirstName" style="width:140px" name="speaker_first_name">
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="text" class="form-control" placeholder="MiddleName" style="width:140px" name="speaker_middle_name">
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-              <input type="text" class="form-control" placeholder="Ext" style="width:100px" name="speaker_ext">
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-            <label style="width:100px">Agency</label>
-              <input type="text" class="form-control"  style="width:300px" name="agency">
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-            <label >Title</label>
-              <input type="text" class="form-control" style="width:250px" name="title">
-            </div>
-
-            <div class="form-group mx-sm-3 mb-2">
-            <label >Sponsor Agency/ies</label>
-              <input type="text" class="form-control" style="width:350px" name="sponsor">
-            </div>
-          
-        </div>
-
-    </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn " name="submit">Submit</button>
-                </div>
-
-         </form>
-
-                </div>
-            </div>
-            </div>
-
-
-    
+   <?php require "training_modal.php"; ?>
+   <?php require "view_training_modal.php"; ?>

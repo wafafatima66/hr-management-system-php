@@ -321,12 +321,14 @@ $(document).ready(function(){
                                         $fl_days = $mydata["fl_days"] ;
                                         $lwp_days = $mydata["lwp_days"] ;
                                         
-                                    if($mydata["vl_days"] || $mydata["sl_days"] ){
+                                    if($mydata["vl_days"]  ){
                                 
                                         $vl_days = $mydata["vl_days"] ; //getting vacation days
                                             
                                         $vl_pts =  $vl_pts - $vl_days;
+                                    }
 
+                                    else if($mydata["sl_days"] ){
                                         $sl_days = $mydata["sl_days"] ;
                                             
                                         $sl_pts =  $sl_pts - $sl_days;

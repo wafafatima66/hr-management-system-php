@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 ?>
 
-
+<div class="container">
 
 <form  method="post" action="doc-config.php" enctype="multipart/form-data">
 
@@ -72,3 +72,4 @@ $(document).ready(function(){
   
     </div>
 
+</div>

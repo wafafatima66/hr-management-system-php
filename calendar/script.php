@@ -53,19 +53,21 @@ $(document).ready(function () {
       header: {
           left: 'title',
           center: '',
-          right: ''
+          right: 'prev,next today'
       },
       navLinks: true,
       eventLimit: true,
+     
       events: "load_event.php",
       displayEventTime: false,
       selectable: true,
       selectHelper: true,
      
-
-      eventClick:  function(event, jsEvent, view) {
-              endtime = $.fullCalendar.moment(event.end).format('dddd, MMMM Do YYYY');
-              starttime = $.fullCalendar.moment(event.start).format('dddd, MMMM Do YYYY');
+/*
+      eventClick:  function(event, jsEvent, view)
+       {
+              endtime = $.fullCalendar.moment(event.end).format('h:mm');
+              starttime = $.fullCalendar.moment(event.start).format('dddd, MMMM Do YYYY , h:mm');
               var mywhen = starttime + ' - ' + endtime;
               var myadd = (event.address) + ' ' + (event.city) + ' ' +(event.barangay) ;
               var mysp = (event.sp_first_name) + ' ' + (event.sp_middle_name) + ' ' +(event.sp_last_name) ;
@@ -78,6 +80,8 @@ $(document).ready(function () {
               $('#eventID').val(event.sno);
               $('#calendarmodal').modal();
           },
+
+          */
       
   });
 });

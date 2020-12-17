@@ -156,17 +156,6 @@ if(isset($_GET['leave'])){
                     </select>
                  </div>
 
-                 <div class="form-group mx-sm-3 mb-2">
-                        <textarea class="form-control" rows="3" placeholder="Please Specify" name="description" ></textarea>
-                </div>
-
-                <div class="form-group mx-sm-3 mb-2">
-                        <label for="">CERTIFICATE OF LEAVE CREDITS</label>
-                           <div class="d-flex flex-column">
-                           <label style="color:#C3CFD5;" >As of </label>
-                            <input type="date" class="form-control"  style="width:140px" name="certificate_of_leave">
-                            </div>
-                </div>
 
                 <div class="col-lg-4 ">
                     <table class="table table-bordered table-sm" >
@@ -243,7 +232,7 @@ if(isset($_GET['leave'])){
                 <input type="date" class="form-control" id="to_date"  style="width:140px" name="to_date">
                 </div> 
 
-                <button class="btn" name="date" >SEARCH</button>
+                <button class="btn" name="search" >SEARCH</button>
             </div>
 
             </form>
@@ -274,16 +263,21 @@ if(isset($_GET['leave'])){
                                                 
                                 $query = "select emp_id from per_emp_leaves"; // finding emp_id form date diff leave table to avoid repeat
 
-                                if($runquery = $conn -> query($query))
+                                if($runquery = $conn -> query($query)){
+                                $rowcount=mysqli_num_rows($runquery);
+                                        if($rowcount != 0 ){
 
-                                {
+                                
                                     while($mydata = $runquery -> fetch_assoc())
                                         {
                                             $emp_id =   $mydata["emp_id"];
                                             $resultarray [] =  $emp_id; // creating array to store all the employees applied for leave
                                            
                                         }
+                                } else {
+                                    $resultarray [] =  "";
                                 }
+                            }
 
                                
                                         
@@ -311,10 +305,12 @@ if(isset($_GET['leave'])){
         
                                                 $emp_name =  $emp_first_name . ' ' . $emp_last_name . ' '. $emp_middle_name;
 
-                                                echo "hi";
+                                                
                                                 ?>
 
                                                 <tbody >
+
+                                             
 
                                                 <tr class="clickable-row" data-href='../emp_mang/emp_profile.php?emp_id=<?php echo $emp_id;?>' >
                                                
@@ -327,13 +323,23 @@ if(isset($_GET['leave'])){
                                     $year = date("Y");
                                     $mon = date("m");
 
-                                
+                                    $vac_leave_dates = "" ; 
+                                  
+                                  $sick_leave_dates = "" ; 
+                                  
+                                  $spl_leave_dates = "" ; 
 
+                $query = "select * from emp_leaves ";  // to find is any data available in emp_leaves
+                    if($runquery = $conn -> query($query))
+                        $rowcount=mysqli_num_rows($runquery);
+                            if($rowcount == 0 ){
+                        
                                   $vac_leave_dates = "" ; 
                                   
                                   $sick_leave_dates = "" ; 
                                   
                                   $spl_leave_dates = "" ; 
+                            } else {
 
                                    
 $query = "select * from emp_leaves where emp_id = '$emp_id' and MONTH(leave_from_date) = $mon and year(leave_from_date)= $year and type_of_leave = 'vacation leave'"; 
@@ -402,12 +408,14 @@ while($mydata = $runquery -> fetch_assoc())
 }                     ?>
 
 
-<?php  }}?>
+
                               
                               
 <td><?php echo $vac_leave_dates?></td>
 <td><?php echo $sick_leave_dates?></td>
 <td><?php echo $spl_leave_dates?></td>
+
+<?php } }}?>
                              
 
                         </tr>
@@ -429,7 +437,7 @@ while($mydata = $runquery -> fetch_assoc())
 
                             <?php
 
-                                if(isset($_POST['date'])){
+                                if(isset($_POST['search'])){
 
                                     if(isset($_POST['from_date']) && isset($_POST['to_date'])){
                                     $from_date = $_POST['from_date'];
