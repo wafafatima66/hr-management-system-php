@@ -101,6 +101,14 @@ $gra_units = "";
 $gra_award = "";
 $gra_graduation = "";
 
+$post_school_name = "";
+$post_degree = "";
+$post_from_date = "";
+$post_to_date = "";
+$post_units = "";
+$post_award = "";
+$post_graduation = "";
+
     //civil-service 
     $type_of = "";
     $name_of_exam ="";

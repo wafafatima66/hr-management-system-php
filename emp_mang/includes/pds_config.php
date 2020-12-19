@@ -236,7 +236,15 @@ $ele_school_name=$_POST['ele_school_name'];
     $gra_award=$_POST['gra_award'];
     $gra_graduation=$_POST['gra_graduation'];
 
-    $sql="INSERT INTO edu_background (ele_school_name ,ele_degree,ele_from_date,ele_to_date,ele_units,ele_award,ele_graduation,sec_school_name ,sec_degree,sec_from_date,sec_to_date,sec_units,sec_award,sec_graduation,voc_school_name ,voc_degree,voc_from_date,voc_to_date,voc_units,voc_award,voc_graduation,coll_school_name ,coll_degree,coll_from_date,coll_to_date,coll_units,coll_award,coll_graduation,gra_school_name ,gra_degree,gra_from_date,gra_to_date,gra_units,gra_award,gra_graduation,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
+    $post_school_name=$_POST['post_school_name'];
+    $post_degree=$_POST['post_degree'];
+    $post_from_date=$_POST['post_from_date'];
+    $post_to_date=$_POST['post_to_date'];
+    $post_units=$_POST['post_units'];
+    $post_award=$_POST['post_award'];
+    $post_graduation=$_POST['post_graduation'];
+
+    $sql="INSERT INTO edu_background (ele_school_name ,ele_degree,ele_from_date,ele_to_date,ele_units,ele_award,ele_graduation,sec_school_name ,sec_degree,sec_from_date,sec_to_date,sec_units,sec_award,sec_graduation,voc_school_name ,voc_degree,voc_from_date,voc_to_date,voc_units,voc_award,voc_graduation,coll_school_name ,coll_degree,coll_from_date,coll_to_date,coll_units,coll_award,coll_graduation,gra_school_name ,gra_degree,gra_from_date,gra_to_date,gra_units,gra_award,gra_graduation,post_school_name ,post_degree,post_from_date,post_to_date,post_units,post_award,post_graduation,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
       ON DUPLICATE KEY UPDATE
       ele_school_name = '$ele_school_name',
       ele_degree = '$ele_degree',
@@ -272,7 +280,15 @@ $ele_school_name=$_POST['ele_school_name'];
       gra_to_date = '$gra_to_date',
       gra_units = '$gra_units',
       gra_award = '$gra_award',
-      gra_graduation = '$gra_graduation'
+      gra_graduation = '$gra_graduation',
+
+      post_school_name = '$post_school_name',
+      post_degree = '$post_degree',
+      post_from_date = '$post_from_date',
+      post_to_date = '$post_to_date',
+      post_units = '$post_units',
+      post_award = '$post_award',
+      post_graduation = '$post_graduation'
     ";
 
         $stmt = mysqli_stmt_init($conn);
@@ -283,7 +299,7 @@ $ele_school_name=$_POST['ele_school_name'];
             else{
 
 
-                mysqli_stmt_bind_param($stmt,"ssssissssssissssssissssssissssssissi",$ele_school_name, $ele_degree, $ele_from_date,$ele_to_date,$ele_units,$ele_award,$ele_graduation,$sec_school_name,$sec_degree,$sec_from_date,$sec_to_date,$sec_units,$sec_award,$sec_graduation,$voc_school_name,$voc_degree,$voc_from_date,$voc_to_date,$voc_units,$voc_award,$voc_graduation,$coll_school_name,$coll_degree,$coll_from_date,$coll_to_date,$coll_units,$coll_award,$coll_graduation,$gra_school_name,$gra_degree,$gra_from_date,$gra_to_date,$gra_units,$gra_award,$gra_graduation,$emp_id);
+                mysqli_stmt_bind_param($stmt,"ssssissssssissssssissssssissssssissssssissi",$ele_school_name, $ele_degree, $ele_from_date,$ele_to_date,$ele_units,$ele_award,$ele_graduation,$sec_school_name,$sec_degree,$sec_from_date,$sec_to_date,$sec_units,$sec_award,$sec_graduation,$voc_school_name,$voc_degree,$voc_from_date,$voc_to_date,$voc_units,$voc_award,$voc_graduation,$coll_school_name,$coll_degree,$coll_from_date,$coll_to_date,$coll_units,$coll_award,$coll_graduation,$gra_school_name,$gra_degree,$gra_from_date,$gra_to_date,$gra_units,$gra_award,$gra_graduation,$post_school_name,$post_degree,$post_from_date,$post_to_date,$post_units,$post_award,$post_graduation,$emp_id);
                 mysqli_stmt_execute($stmt);
 
                

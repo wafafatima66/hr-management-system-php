@@ -307,6 +307,68 @@
                 </div>
 
 
+            <!--POST GRADUATE-->
+
+                <div class="row">
+                    <div class="col-lg-2 d-flex align-items-center">
+                        <h6>POST GRADUATE</h6>
+
+                    </div>
+
+                    <div class="col-lg-10 pt-2 pb-2 mt-2 mb-2" style="background:#E6F7FF;">
+
+                         <div class="row form-inline">
+                    
+                
+                        <div class="form-group mx-sm-1 mb-2">
+                        <div class="d-flex flex-column">
+                        <label for="">NAME OF SCHOOL</label>
+                        <input type="text" class="form-control" style="width:200px" value="<?php echo $post_school_name?>" name="post_school_name">
+                        </div>
+                        </div>
+
+                        <div class="form-group mx-sm-1 mb-2">
+                       <div class="d-flex flex-column">
+                       <label for="">BASIC EDUCATION/DEGREE/COURSE</label>
+                       <input type="text" class="form-control" style="width:210px"  value="<?php echo $post_degree?>" name="post_degree">
+                       </div>
+                        </div>
+                            
+                        <div class="form-group mx-sm-1 mb-2">
+                          <div class="d-flex flex-column">
+                          <label for="">PERIOD OF ATTENDANCE</label>
+                       <div>
+                       <input type="date" class="form-control" style="width:140px"   value="<?php echo $post_from_date?>" name="post_from_date">
+
+                        <input type="date" class="form-control"  style="width:140px"   value="<?php echo $post_to_date?>" name="post_to_date">
+                       </div>
+                          </div>
+                        </div>
+                    
+                
+                        <div class="form-group mx-sm-1 mb-2">
+                        <label for="">HIGHEST UNITS EARNED</label>
+                        <input type="text" class="form-control"  style="width:80px" value="<?php echo $post_units?>" name="post_units">
+                        </div>
+
+                        <div class="form-group mx-sm-1 mb-2">
+                                <label for="">SCHOLARSHIP/AWARDS</label>
+                                <input type="text" class="form-control"  style="width:150px"  value="<?php echo $post_award?>" name="post_award">
+                        </div>
+
+                        <div class="form-group mx-sm-1 mb-2">
+                            <label for="">YEAR GRADUATED</label>
+                            <input type="text" class="form-control" style="width:140px"  value="<?php echo $post_graduation?>" name="post_graduation">
+                        </div>
+                
+                 
+
+                    </div>
+
+                    </div>
+                </div>
+
+
                   
 
                     </div>

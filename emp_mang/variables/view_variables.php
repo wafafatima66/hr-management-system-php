@@ -171,6 +171,14 @@ while($data = $runquery -> fetch_assoc()){
   $gra_units = $data["gra_units"];
   $gra_award = $data["gra_award"];
   $gra_graduation = $data["gra_graduation"];
+
+  $post_school_name = $data["post_school_name"];
+  $post_degree = $data["post_degree"];
+  $post_from_date = $data["post_from_date"];
+  $post_to_date = $data["post_to_date"];
+  $post_units = $data["post_units"];
+  $post_award = $data["post_award"];
+  $post_graduation = $data["post_graduation"];
 }
 }
 

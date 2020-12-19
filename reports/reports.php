@@ -2,7 +2,7 @@
 <?php include '../includes/header.php'; ?>
 
 
-    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
 <div class="report_section pt-5">
     
@@ -12,37 +12,41 @@
 
     <div class="container">
 
-     <div class="row pt-2">
-        <div class="col-lg-6">
-            <div class="report-1 report">
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa at cum aperiam enim reprehenderit fugit, numquam sequi ad autem similique.
-            </div>
-        </div>
+        <div class="row pt-2">
 
-        <div class="col-lg-6">
-            <div class="report-2 report">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa at cum aperiam enim reprehenderit fugit, numquam sequi ad autem similique.
+            <div class="col-lg-6">
+                <?php require "report_1.php"?>
             </div>
-        </div>
-    </div>
+
+            <div class="col-lg-6 report-2 report">
+                <?php require "report_2.php"?>
+            </div>
+
+            </div>
 
     <div class="row pt-4">
         <div class="col-lg-6">
+
             <div class="text-center">
                 <h6>Distribution According to Position /Rank</h6>
             </div>
-            <div class="report-3 report">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa at cum aperiam enim reprehenderit fugit, numquam sequi ad autem similique.
+
+            <div class="report-3 report mb-5" style="overflow-x: hidden;  overflow-y: scroll;  ">
+                <?php require "report_3.php"?>
             </div>
+
         </div>
 
         <div class="col-lg-6">
-        <div class="text-center">
-        <h6>Distribution According to Status of Appointment</h6>
-    </div>
-            <div class="report-4 report">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa at cum aperiam enim reprehenderit fugit, numquam sequi ad autem similique.
+
+            <div class="text-center">
+                <h6>Distribution According to Status of Appointment</h6>
             </div>
+
+            <div class="report-4 report">
+                <?php require "report_4.php"?>
+            </div>
+            
         </div>
     </div>
 
