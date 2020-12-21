@@ -32,12 +32,24 @@ if(isset( $_REQUEST["emp_id"])){
 
   require '../includes/conn.php';
 
-$dltquery = "DELETE FROM pds WHERE emp_id = $emp_id"; 
+//$dltquery = "DELETE FROM pds WHERE emp_id = $emp_id"; 
 
+$runquery = $conn -> query("DELETE FROM pds WHERE emp_id = $emp_id");
 
-if($conn -> query($dltquery)){
+$runquery = $conn -> query("DELETE FROM family_background WHERE emp_id = $emp_id");
+
+$runquery = $conn -> query("DELETE FROM edu_background WHERE emp_id = $emp_id");
+
+$runquery = $conn -> query("DELETE FROM emp_references WHERE emp_id = $emp_id");
+
+$runquery = $conn -> query("DELETE FROM other_inf WHERE emp_id = $emp_id");
+
+$runquery = $conn -> query("DELETE FROM skills WHERE emp_id = $emp_id");
+
+if($runquery==true){
   echo'<p class="alert alert-danger h6">Employee deleted</p>';
-}else   echo'<p class="alert alert-danger h6">Employee not  deleted</p>';
+}
+else   echo'<p class="alert alert-danger h6">Employee not  deleted</p>';
 }
 ?>
 
@@ -70,7 +82,8 @@ if($conn -> query($dltquery)){
   
 
         </div>
-      <div class="container">
+      <div class="container" style="height:300px ; overflow-x: hidden; 
+  overflow-y: scroll;">
 
         <!--Table-->
         <table class="table table-striped  table-bordered mt-3">

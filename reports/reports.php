@@ -31,7 +31,7 @@
                 <h6>Distribution According to Position /Rank</h6>
             </div>
 
-            <div class="report-3 report mb-5" style="overflow-x: hidden;  overflow-y: scroll;  ">
+            <div class="report-3 report mb-5" style="overflow-x: hidden;  overflow-y: scroll; height:300px; ">
                 <?php require "report_3.php"?>
             </div>
 
@@ -43,7 +43,7 @@
                 <h6>Distribution According to Status of Appointment</h6>
             </div>
 
-            <div class="report-4 report">
+            <div class="report-4 report" style="height:300px;">
                 <?php require "report_4.php"?>
             </div>
             

@@ -240,7 +240,7 @@ if(isset($_GET['leave'])){
         </div>
                         
     
-    <div class="leave_mang_section_body">
+    <div class="leave_mang_section_body" id="print-content">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
@@ -491,10 +491,30 @@ while($mydata = $runquery -> fetch_assoc())
 
                      <div class="container mt-2 mb-5">
                             <div class="text-right">
-                                <button class="btn" style="background: #345587;color:#EFE20A;" >PRINT</button>
+                                <button class="btn" style="background: #345587;color:#EFE20A;" onclick="printDiv()" type="button" >PRINT</button>
                             </div>
                     </div>
 
 
 </div>  <!-- /#page-content-wrapper -->
   </div> <!-- /#wrapper -->
+
+  <script type="text/javascript">
+   /* 
+   function printDiv(divName) {
+        var printContents = document.getElementById(divName).innerHTML;
+     
+        window.print(printContents)
+    }
+    */
+
+   /*
+   
+    function printDiv() {
+    var prtContent = document.getElementById("print-content");
+
+
+prtContent.print()
+    }
+    */
+    </script>

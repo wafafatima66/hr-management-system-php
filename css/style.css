@@ -1,5 +1,6 @@
 body{
     height: 100%;
+    background-color: #F3F3F3;
 }
 #wrapper {
     overflow-x: hidden; 
@@ -126,6 +127,7 @@ body{
 }
 .section4-card{
     border: #345587 solid 2px;
+    
     
 }
 .section4-card-title{

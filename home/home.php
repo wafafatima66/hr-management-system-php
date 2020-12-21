@@ -1,8 +1,14 @@
+<?php
+   include('../index/session.php');
+?>
+
+
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../emp_mang/add_emp_modal.php'; ?>
 
-<?php ?>
+
+
   
 <!---Main body-->
 <div class="container-fluid">
@@ -13,18 +19,60 @@
 
       <div class="row p-3">
 
+      <?php
+      
+      require '../includes/conn.php';
+
+      $query = "SELECT count(emp_gender) as cont_male , emp_status from pds WHERE emp_gender = 'male' and emp_status = 'contractual'"  ;
+
+      if($runquery = $conn -> query($query)) {
+              while($mydata = $runquery -> fetch_assoc()){
+              $cont_male=$mydata["cont_male"];
+             
+              }}
+
+              $query = "SELECT count(emp_gender) as perm_male , emp_status from pds WHERE emp_gender = 'male' and emp_status = 'permanent'"  ;
+
+      if($runquery = $conn -> query($query)) {
+              while($mydata = $runquery -> fetch_assoc()){
+              $perm_male=$mydata["perm_male"];
+             
+              }}
+
+              $query = "SELECT count(emp_gender) as cont_female , emp_status from pds WHERE emp_gender = 'female' and emp_status = 'contractual'"  ;
+
+      if($runquery = $conn -> query($query)) {
+              while($mydata = $runquery -> fetch_assoc()){
+              $cont_female=$mydata["cont_female"];
+             
+              }}
+
+
+              $query = "SELECT count(emp_gender) as perm_female , emp_status from pds WHERE emp_gender = 'female' and emp_status = 'permanent'"  ;
+
+      if($runquery = $conn -> query($query)) {
+              while($mydata = $runquery -> fetch_assoc()){
+              $perm_female=$mydata["perm_female"];
+             
+              }}
+
+              $total_cont = $cont_female + $cont_male;
+              $total_perm = $perm_female + $perm_male ; 
+      
+      ?>
+
           <div class="col-lg-5 section1-box"> 
             <div class="row">
               <div class="col-lg-6">
                 Male
-                <h2 class="text-right pr-5">100</h2>
+                <h2 class="text-right pr-5"><?php echo $perm_male?></h2>
               </div>
               <div class="col-lg-6">
                 Female
-                <h2 class="text-right pr-5">130</h2>
+                <h2 class="text-right pr-5"><?php echo $perm_female?></h2>
               </div>
             </div>
-              <h1 class="text-center">240</h1>
+              <h1 class="text-center"><?php echo $total_perm?></h1>
               <p class="text-center">REQULAR EMPLOYEES</p>
           </div>
 
@@ -32,14 +80,14 @@
             <div class="row">
               <div class="col-lg-6">
                 Male
-                <h2 class="text-right pr-5">100</h2>
+                <h2 class="text-right pr-5"><?php echo $cont_male?></h2>
               </div>
               <div class="col-lg-6">
                 Female
-                <h2 class="text-right pr-5">130</h2>
+                <h2 class="text-right pr-5"><?php echo $cont_female?></h2>
               </div>
             </div>
-              <h1 class="text-center">240</h1>
+              <h1 class="text-center"><?php echo $total_cont?></h1>
               <p class="text-center">CONTRACTUAL EMPLOYEES</p>
           </div>
 
@@ -84,7 +132,8 @@
       <!---section 3 -->
 
     
-<div class="container" >
+<div class="container" style="height:300px ; overflow-x: hidden; 
+  overflow-y: scroll;"  >
         <!--Table-->
         <table class="table table-striped table-bordered" style="width:100%;">
 
@@ -163,7 +212,7 @@ else {
 
   require '../includes/conn.php';
 
-  $query = "SELECT * FROM pds LIMIT 5 ";
+  $query = "SELECT * FROM pds ";
 
   $runquery = $conn -> query($query);
   if($runquery == true){
@@ -221,95 +270,23 @@ else {
         <div class="row mt-5">
 
             <div class="col-lg-4 p-3">
-              <div class="card section4-card">
-                <div class="cart-title section4-card-title"><h2>Personal Profile</h2></div>
-                <div class="card-list p-4">
-
-                <div class="list-group">
-                  <h6>DOCTORATE</h6>
-                   <div class="progress">
-                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                      <div class="progress-bar" role="progressbar" style="width: 75%;font-weight:bold;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
-                    </div>
-                 </div>
-                 
-                <div class="list-group">
-                  <h6>DOCTORATE</h6>
-                   <div class="progress">
-                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                      <div class="progress-bar" role="progressbar" style="width: 75%;font-weight:bold;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
-                    </div>
-                 </div>
-                 
-                <div class="list-group">
-                  <h6>DOCTORATE</h6>
-                   <div class="progress">
-                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
-                      <div class="progress-bar" role="progressbar" style="width: 75%;font-weight:bold;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">75%</div>
-                    </div>
-                 </div>
-             
-                </div>
-              </div>
+             <?php require "first_report.php"?>
             </div>
          
 
         <!--second-->
          
             <div class="col-lg-4 p-3">
-              <div class="card section4-card">
-                <div class="cart-title section4-card-title"><h2>On leave</h2></div>
-
-                <table class="section4-table">
-
-                  <tr class="section4-table-strip">
-                    <td>Female</td>
-                    <td>office of the president</td>
-                  </tr>
-
-                  <tr>
-                    <td>Female</td>
-                    <td>office of the president</td>
-                  </tr>
-
-                  <tr class="section4-table-strip">
-                    <td>Female</td>
-                    <td>office of the president</td>
-                  </tr>
-
-                  <tr>
-                    <td>Female</td>
-                    <td>office of the president</td>
-                  </tr>
-                  
-                </table>
-
-              </div>
+              <?php require "second_report.php"?>
             </div>
 
             <!--Third-->
             <div class="col-lg-4 p-3">
-              <div class="card section4-card">
-                <div class="cart-title section4-card-title"><h2>Calendar | Activities | Events </h2></div>
-                  <div class="row p-3">
-                    <div class="col-lg-7">
-                      <list-group>
-                        <h6 style="font-size:18px;">Admin counsil</h6>
-                        <p style="font-size:12px;">Discusion on a meeting</p>
-                      </list-group>
-                    </div>
-                    <div class="col-lg-5">
-                      <div class="list-group">
-                        <h6 style="margin:0;" >January</h6>
-                        <h1 style="color:#E6AD0F; margin:0;">26</h1>
-                        <h6 style="margin:0;">Thursday</h6>
-                      </div>
-                    </div>
-                  </div>
-              </div>
+              <?php require "third_report.php"?>
             </div>
 
           </div>
+
         </div>
 
       </div><!---end of Main body-->

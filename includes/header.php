@@ -16,7 +16,7 @@
      
         <div class="sidebar-menu" >
             <div class="list-group ">
-                <a href="../index/index.php" class="sidebar-link" >Home</a>
+                <a href="../home/home.php" class="sidebar-link" >Home</a>
                 <a href="../emp_mang/emp_mang.php" class="sidebar-link">Employee Management</a>
                 <a href="../leave_mang/leave_mang.php" class="sidebar-link" >Leave Management</a>
                 <a href="../doc/doc.php" class="sidebar-link" >Documents</a>
@@ -49,7 +49,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link">
+                <a href="../index/logout.php" class="nav-link">
                   <i class="fas fa-sign-out-alt nav-icon" style="color:#E6AD0F"></i>
                   <p>Logout</p>
                 </a>

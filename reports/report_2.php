@@ -48,6 +48,8 @@
 
 require '../includes/conn.php';
 
+
+
 //post graduates 
 
 $query = "SELECT COUNT(post_school_name) as post  from edu_background e , pds p  where e.emp_id = p.emp_id and p.emp_gender = 'female' and post_school_name IS NOT NULL AND LENGTH(`post_school_name`) > 0 "  ;
@@ -59,7 +61,9 @@ if($runquery = $conn -> query($query)) {
     } 
 
     $post_female = $post ;
-    ; 
+    if(empty($post_female)){
+        $post_female = 1; 
+    }
 
     $query = "SELECT COUNT(post_school_name) as post  from edu_background e , pds p  where e.emp_id = p.emp_id and p.emp_gender = 'male' and post_school_name IS NOT NULL AND LENGTH(`post_school_name`) > 0 "  ;
 
@@ -70,11 +74,14 @@ if($runquery = $conn -> query($query)) {
     } 
 
     $post_male = $post ; 
+    if(empty($post_male)){
+        $post_male = 1; 
+    }
    
 
     $total = $post_female + $post_male ; 
-    $post_female = ($post_female/$total) * 100 ; 
-    $post_male = ($post_male/$total) * 100 ; 
+    $post_female = floor(($post_female/$total) * 100 ); 
+    $post_male = floor(($post_male/$total) * 100 ); 
     
    
 
@@ -90,6 +97,9 @@ if($runquery = $conn -> query($query)) {
     } 
 
     $gra_female = $gra ; 
+    if(empty($gra_female)){
+        $gra_female = 1; 
+    }
 
     $query = "SELECT COUNT(gra_school_name) as gra  from edu_background e , pds p  where e.emp_id = p.emp_id and p.emp_gender = 'male' and gra_school_name IS NOT NULL AND LENGTH(`gra_school_name`) > 0 "  ;
 
@@ -100,10 +110,13 @@ if($runquery = $conn -> query($query)) {
     } 
 
     $gra_male = $gra ; 
+    if(empty($gra_male)){
+        $gra_male = 1; 
+    }
 
     $total = $gra_female + $gra_male ; 
-    $gra_female = ($gra_female/$total) * 100 ; 
-    $gra_male = ($gra_male/$total) * 100 ;
+    $gra_female = floor(($gra_female/$total) * 100) ; 
+    $gra_male = floor(($gra_male/$total) * 100 );
 
     //graduates 
 
@@ -113,10 +126,14 @@ $query = "SELECT COUNT(coll_school_name) as coll  from edu_background e , pds p 
 if($runquery = $conn -> query($query)) {
         while($mydata = $runquery -> fetch_assoc()){
         $coll=$mydata["coll"];
+       
   }
     } 
 
     $coll_female = $coll ; 
+    if(empty($coll_female)){
+        $coll_female = 1; 
+    }
 
     $query = "SELECT COUNT(coll_school_name) as coll  from edu_background e , pds p  where e.emp_id = p.emp_id and p.emp_gender = 'male' and coll_school_name IS NOT NULL AND LENGTH(`coll_school_name`) > 0 "  ;
 
@@ -126,11 +143,14 @@ if($runquery = $conn -> query($query)) {
   }
     } 
 
-    $coll_male = $coll ; 
+    $coll_male = $coll ;
+    if(empty($coll_male)){
+        $coll_male = 1; 
+    } 
 
     $total = $coll_female + $coll_male ; 
-    $coll_female = ($coll_female/$total) * 100 ; 
-    $coll_male = ($coll_male/$total) * 100 ;
+    $coll_female = floor(($coll_female/$total) * 100 ); 
+    $coll_male = floor(($coll_male/$total) * 100 );
 
     //senior high 
 
@@ -140,10 +160,14 @@ $query = "SELECT COUNT(sec_school_name) as sec  from edu_background e , pds p  w
 if($runquery = $conn -> query($query)) {
         while($mydata = $runquery -> fetch_assoc()){
         $sec=$mydata["sec"];
+       
   }
     } 
 
     $sec_female = $sec ; 
+    if(empty($sec_female)){
+        $sec_female = 1; 
+    }
 
     $query = "SELECT COUNT(sec_school_name) as sec  from edu_background e , pds p  where e.emp_id = p.emp_id and p.emp_gender = 'male' and sec_school_name IS NOT NULL AND LENGTH(`sec_school_name`) > 0 "  ;
 
@@ -154,10 +178,13 @@ if($runquery = $conn -> query($query)) {
     } 
 
     $sec_male = $sec ; 
+    if(empty($sec_male)){
+        $sec_male = 1; 
+    }
 
     $total = $sec_female + $sec_male ; 
-    $sec_female = ($sec_female/$total) * 100 ; 
-    $sec_male = ($sec_male/$total) * 100 ;
+    $sec_female = floor(($sec_female/$total) * 100) ; 
+    $sec_male =floor (($sec_male/$total) * 100 );
 
 ?>
 

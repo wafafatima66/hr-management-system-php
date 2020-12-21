@@ -19,6 +19,9 @@ $query = "SELECT COUNT(post_school_name) as post  from edu_background WHERE post
 if($runquery = $conn -> query($query)) {
         while($mydata = $runquery -> fetch_assoc()){
         $post=$mydata["post"];
+        if(empty($post)){
+            $post = 1; 
+        }
   }
     } 
 
@@ -27,6 +30,9 @@ if($runquery = $conn -> query($query)) {
         if($runquery = $conn -> query($query)) {
                 while($mydata = $runquery -> fetch_assoc()){
                 $gra=$mydata["gra"];
+                if(empty($gra)){
+                    $gra = 1; 
+                }
         }
             } 
 
@@ -35,6 +41,9 @@ if($runquery = $conn -> query($query)) {
         if($runquery = $conn -> query($query)) {
                 while($mydata = $runquery -> fetch_assoc()){
                 $coll=$mydata["coll"];
+                if(empty($coll)){
+                    $coll = 1; 
+                }
         }
             } 
 
@@ -43,6 +52,9 @@ if($runquery = $conn -> query($query)) {
   if($runquery = $conn -> query($query)) {
     while($mydata = $runquery -> fetch_assoc()){
     $sec=$mydata["sec"];
+    if(empty($sec)){
+        $sec = 1; 
+    }
     }
         } 
         

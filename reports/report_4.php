@@ -83,7 +83,7 @@ if($runquery = $conn -> query($query)) {
 
 ?>
 
-<div class="container " style="height:100%">
+<div class="container " >
 
     <div class="row">
         <div class="col-lg-4">
