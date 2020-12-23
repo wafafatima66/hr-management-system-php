@@ -68,7 +68,6 @@ $(document).ready(function(){
 
 
 
-
 <?php
 
 if(isset($_GET['leave'])){
@@ -116,12 +115,12 @@ if(isset($_GET['leave'])){
             </div>
             <div class="form-group mx-sm-1 mb-2">
                 <label for="">SALARY</label>
-                <input type="text" class="form-control"  placeholder="" name="emp_salary" style="width:100px;">
+                <input type="text" class="form-control"  placeholder="" name="emp_salary" id="emp_salary" style="width:100px;">
             </div>
 
             <div class="form-group mx-sm-3 mb-2">
                 <label for="">TYPE OF LEAVE</label>
-              <select class="form-control" style="width:190px;" name="type_of_leave" id="type_of_leave">
+              <select class="form-control" style="width:190px;" name="type_of_leave" id="type_of_leave" required>
                 <option value="0">Select</option>
                 <option value="vacation leave">Vacation Leave</option>
                 <option value="sick leave">Sick Leave</option>
@@ -135,7 +134,7 @@ if(isset($_GET['leave'])){
                         <label >INCLUSIVE DATES</label>
                         <div class="d-flex flex-column">
                             <label style="color:#C3CFD5;" >From </label>
-                            <input type="date" class="form-control" name="leave_from_date" style="width:140px" id="leave_from_date" >
+                            <input type="date" class="form-control" name="leave_from_date" style="width:140px" id="leave_from_date" required>
                             
                         </div>   
                 </div>
@@ -143,18 +142,20 @@ if(isset($_GET['leave'])){
                 <div class="form-group mx-sm-2 mb-2">
                         <div class="d-flex flex-column">
                             <label style="color:#C3CFD5;" >To</label>
-                            <input type="date" class="form-control" name="leave_to_date" style="width:140px" id="leave_to_date">
+                            <input type="date" class="form-control" name="leave_to_date" style="width:140px" id="leave_to_date" required>
                         </div>   
                 </div>
              
 
                 <div class="form-group mx-sm-3 mb-2">
                     <label for="">COMMUNICATION</label>
-                    <select class="form-control" style="width:100px;" name="communication">
+                    <select class="form-control" style="width:100px;" name="communication" id="communication">
                         <option selected>Select</option>
                         <option>...</option>
                     </select>
                  </div>
+
+                 <input type="hidden" id="sno" name="sno">
 
 
                 <div class="col-lg-4 ">
@@ -253,7 +254,7 @@ if(isset($_GET['leave'])){
                             <th scope="col">Vacation</th>
                             <th scope="col">Sick</th>
                             <th scope="col">SPL</th>
-                            <th scope="col">Total Balance</th>
+                            <th scope="col">Action</th>
                             </tr>
                         </thead>
 
@@ -312,10 +313,12 @@ if(isset($_GET['leave'])){
 
                                              
 
-                                                <tr class="clickable-row" data-href='../emp_mang/emp_profile.php?emp_id=<?php echo $emp_id;?>' >
+                                                <tr  >
                                                
 
-                                                    <td style="text-transform: capitalize;"><div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div style="font-weight:bold;"><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div></td>
+                                                <td style="text-transform: capitalize;" class="clickable-row" data-href='../emp_mang/emp_profile.php?emp_id=<?php echo $emp_id;?>'>
+                                                    <div class="d-flex flex-row "><img src="<?php echo $emp_image?>" alt="" style="width:50px; height:50px; border-radius: 50%;"><div class="d-flex flex-column ml-3"><div style="font-weight:bold;"><?php echo $emp_name ?></div><div><?php echo $office_assign ?></div></div>
+                                                </td>
 
                         <?php 
 
@@ -353,8 +356,8 @@ while($mydata = $runquery -> fetch_assoc())
     {
         $leave_from_date =   date("m/d/y", strtotime($mydata["leave_from_date"]));
         $leave_to_date =   date("m/d/y", strtotime($mydata["leave_to_date"]));
-       
-        
+        $vac_sno = $mydata["sno"];
+        $sno = $mydata["sno"];
 
         $vac_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
     }
@@ -376,8 +379,8 @@ while($mydata = $runquery -> fetch_assoc())
     {
         $leave_from_date =   date("m/d/y", strtotime($mydata["leave_from_date"]));
         $leave_to_date =   date("m/d/y", strtotime($mydata["leave_to_date"]));
-        
-
+        $sick_sno = $mydata["sno"];
+        $sno = $mydata["sno"];
 
         $sick_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
     }
@@ -399,7 +402,8 @@ while($mydata = $runquery -> fetch_assoc())
     {
         $leave_from_date =   date("m/d/y", strtotime($mydata["leave_from_date"]));
         $leave_to_date =   date("m/d/y", strtotime($mydata["leave_to_date"]));
-      
+        $spl_sno = $mydata["sno"];
+        $sno = $mydata["sno"];
 
 
         $spl_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
@@ -409,18 +413,82 @@ while($mydata = $runquery -> fetch_assoc())
 
 
 
-                              
-                              
-<td><?php echo $vac_leave_dates?></td>
-<td><?php echo $sick_leave_dates?></td>
-<td><?php echo $spl_leave_dates?></td>
+                                        
+                                        
+            <td data-todo="<?php echo  $emp_id?>" data-id="<?php echo  $vac_sno?>" class="leave_edit"><?php echo $vac_leave_dates?></td>
+            <td data-todo="<?php echo  $emp_id?>" data-id="<?php echo  $sick_sno?>" class="leave_edit"><?php echo $sick_leave_dates?></td>
+            <td data-todo="<?php echo  $emp_id?>" data-id="<?php echo  $spl_sno?>" class="leave_edit"><?php echo $spl_leave_dates?></td>
+
+           
+
+            <td class="text-center">
+                <a  data-todo="<?php echo  $emp_id?>" data-id="<?php echo  $sno?>" class="leave_edit" ><i class="fas fa-edit"></i></a> 
+                <a href="../leave_mang/leave-delete.php?emp_id=<?php echo $emp_id;?>"> <i class="fas fa-trash-alt"></i></a>
+            </td>
+
+            </tr>
 
 <?php } }}?>
-                             
+          
 
-                        </tr>
+                    <script>
+                        $('.leave_edit').click(function(){
+                          
+                          $.ajax({
+                              url:'view_leave.php?',
+                              type : 'post',
+                              data: {
+                                emp_id : $(this).data("todo") ,
+                                sno : $(this).data("id")
+                              },
+                             dataType: 'json',
+                                success : function(result){
+                                   
+                                    $('#emp_first_name').val(result.emp_first_name);
+                                    $('#emp_middle_name').val(result.emp_middle_name);
+                                    $('#emp_last_name').val(result.emp_last_name);
+                                    $('#emp_ext').val(result.emp_ext);
+                                    $('#emp_status').val(result.emp_status);
+                                    $('#emp_id').val(result.emp_id);
+
+                                    $('#type_of_leave').val(result.type_of_leave);
+                                    $('#emp_salary').val(result.emp_salary);
+                                    $('#leave_from_date').val(result.leave_from_date);
+                                    $('#leave_to_date').val(result.leave_to_date);
+                                    $('#communication').val(result.communication);
+
+                                    $('#sno').val(result.sno);
+                                    
+                                    $('#vl_pts').html(result.vl_pts); // getting vacation  leaves points from database
+                                    $('#sl_pts').html(result.sl_pts); // getting sick  leaves points from database
+                                
+                                
+                                    $('#pts_total').html(result.pts_total); // getting total points from calculing vl_pts and sl_pts
+                                    $('#total_pts_now').html(result.total_pts_now); // getting pints calculating from vi_now-pts and sl_now_pts
+                                    $('#vl_bal').html(result.vl_bal); // vl_pts - vl_now_pts
+                                    $('#sl_bal').html(result.sl_bal); // sl_pts - sl_now_pts
+                                    $('#total_bal').html(result.total_bal); //vl_bal - sl_bal
+                                        
+                                    //$('#space').html(result);
+                                    
+                                    $('#vl_now_pts').html(result.vl_now_pts); // getting vacation  leaves points date given 
+                                    $('#sl_now_pts').html(result.sl_now_pts); 
+
+                                   
+                                   
+
+                                   // $('#leave-space').html(result);
+                                }
+                          });
+                          
+                        });
+                    </script>
+
                         
+
                             </tbody>
+
+                            <div id="leave-space"></div>
                              
                             <?php }?>
 

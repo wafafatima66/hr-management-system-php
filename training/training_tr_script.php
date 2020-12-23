@@ -22,8 +22,7 @@
                                   $('#no_of_hrs').val(result.no_of_hrs);
                                   $('#venue').val(result.venue);
                                   $('#province').val(result.province);
-                                  $('#city').val(result.city);
-                                  $('#barangay').val(result.barangay);
+                                  
                                   $('#agency').val(result.agency);
                                   $('#title').val(result.title);
 

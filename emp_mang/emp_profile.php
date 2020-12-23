@@ -1,5 +1,5 @@
 
-<?php session_start();?>
+<?php// session_start();?>
 
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
@@ -44,6 +44,14 @@
                     echo'<p class="alert alert-danger h6">ERROR TO UPLOAD FILE</p>';
                   }
                
+                }
+
+                if(isset($_GET['image'])){
+                  if($_GET['upload']=="update"){
+                    echo'<p class="alert alert-success h6">EMPLOYEE IMAGE UPDATED</p>';
+                  }else  if($_GET['upload']=="notupdate"){
+                    echo'<p class="alert alert-success h6">EMPLOYEE IMAGE NOT UPDATED</p>';
+                  }
                 }
      
 ?>
@@ -92,14 +100,14 @@ if(isset($_GET['submit'])){
                   //$emp_id = $mydata["emp_id"];
                   $office_assign= $mydata["office_assign"];
 
-                
+                /*
                   $_SESSION['emp_id']= $emp_id;
                   $_SESSION['emp_first_name']= $emp_first_name;
                   $_SESSION['emp_last_name']= $emp_last_name;
                   $_SESSION['office_assign']= $office_assign;
                   $_SESSION['emp_status']= $emp_status;
 
-                
+                */
 
                   $query = "SELECT * FROM pds WHERE emp_id = '$emp_id'";
                   $runquery = $conn -> query($query);
@@ -131,6 +139,7 @@ if(isset($_GET['submit'])){
             </h6>
             <h4 style="text-transform: uppercase;"> <?php echo $emp_first_name?> <?php echo $emp_middle_name?> <?php echo $emp_last_name?> </h4>
             <p style="text-transform: uppercase; font-weight:bold;"><?php echo $emp_status?> > <span style="text-transform: capitalize;font-weight:bold;"><?php echo $office_assign?></span></p>
+            <h4><?php echo $emp_id?></h4>
 
            
             

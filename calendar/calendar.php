@@ -19,7 +19,7 @@ if(isset($_GET['submit'])){
 }
 ?>
 
-        <div class="container pt-5" style=" padding: 5px; margin: 20px;">
+        <div class="container pt-5" style="  width:80%">
         <form class="form-inline">
 
             <button type="button" class="btn mb-2" data-toggle="modal" data-target="#addevent" ><i class="fas fa-plus pr-2"></i>Add Event</button> 
@@ -27,26 +27,26 @@ if(isset($_GET['submit'])){
             </form>
         </div>
 
-        <div class="calendar_section1">
-            <div class="container">
+        <div class="container" style="width:85%;">
+            <div class="calendar_section1" >
 
-                <div class="row">
+                <div class="row mb-2">
 
-                    <div class="col-lg-2">
+                    <div class="col-lg-3 ">
                         <div class="text-center">
-                            <h4 style="text-transform:uppercase;"><?php echo date("M") ?></h4>
+                            <h4 style="text-transform:uppercase;font-size: 35px;"><?php echo date("M") ?></h4>
                         </div>  
                     </div>
 
-                    <div class="col-lg-7">
+                    <div class="col-lg-6">
                         <div class="text-center">
-                            <h4>EVENT</h4>
+                            <h4 style="text-transform:uppercase;font-size: 35px;">EVENT</h4>
                         </div>
                     </div>
 
                     <div class="col-lg-3">     
                       <div class="text-center">
-                          <h4>VENUE</h4>
+                          <h4 style="text-transform:uppercase;font-size: 35px;">VENUE</h4>
                       </div>
                     </div>
 
@@ -79,23 +79,23 @@ if(isset($_GET['submit'])){
               ?>
 
 
-                <div class="row view_event" data-toggle="modal"  data-target="#viewevent" style="cursor:pointer;" data-todo="<?php echo  $title?>">
+                <div class="row view_event " data-toggle="modal"  data-target="#viewevent" style="cursor:pointer;" data-todo="<?php echo  $title?>">
 
-                    <div class="col-lg-2">
+                    <div class="col-lg-3 pr-5 pl-5 " style="border-right:solid 1px #D3D3D3">
                         <div class="text-center">
                             <h3><?php echo $start_date ?>-<?php echo $end_date ?></h3>
                         </div> 
                     </div>
 
-                    <div class="col-lg-7">
+                    <div class="col-lg-6 pr-5 pl-5" style="border-right:solid 1px #D3D3D3">
                         <div class="text-center ">
-                          <h3 style="color:#B3B3B3;"><?php echo $title ?></h3> 
+                          <h4 style="color:#696969;text-transform:capitalize; font-size:20px;font-style:italic;"><?php echo $title ?></h4> 
                         </div>
                     </div>
 
                     <div class="col-lg-3">   
                         <div class="text-center">
-                          <h3 style="color:#B3B3B3;"><?php echo $venue ?></h3>  
+                          <h4 style="color:#696969;text-transform:capitalize;font-size:20px;font-style:italic;"><?php echo $venue ?></h4>  
                         </div>
                     </div>
 

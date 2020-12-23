@@ -28,7 +28,7 @@
              <div class="form-inline add_emp_id_wrapper">
 
                 <div class="form-group mx-sm-3 mb-2" style="width:100%;">
-                      <label for="">Employee ID</label>
+                      <label for="">Employee</label>
                   <input type="text" class="form-control"  placeholder="Employee Id" style="width:250px" name="emp_id" id="emp_id" >
 
                 
@@ -82,18 +82,10 @@
    
     <div class="form-group mx-sm-3 mb-2">
         <label style="width:100px">Address</label>
-      <input class="form-control" style="width:160px" name="province" id="province"> 
+      <input class="form-control" style="width:450px" name="province" id="province"> 
     </div>
 
-    <div class="form-group mx-sm-3 mb-2">
-      <input class="form-control" style="width:160px" name="city" id="city">
-       
-    </div>
-
-    <div class="form-group mx-sm-3 mb-2">
-      <input class="form-control" style="width:160px" name="barangay" id="barangay">
-      
-    </div>
+   
 
    <div class="add_speaker_wrapper" id="add_speaker_wrapper">
    </div>

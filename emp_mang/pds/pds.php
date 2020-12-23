@@ -1,4 +1,11 @@
 
+<style>
+
+.emp_profile_image { position: relative; }
+.emp_profile_image img { display: block; }
+.emp_profile_image .fa-camera { position: absolute; top:0; right:0; font-size:25px;padding:10px; color: #345587 }
+
+</style>
 <!--PDS--->
 
 <div class=" emp_profile_section2_tab " id="tab-1" style="display:block;">
@@ -23,11 +30,40 @@
                     </div>
                 </div>
               
+               
+
+           
+
                 <div class="col-lg-3 pl-0">
                     <div class="emp_profile_image" style="height:250px"> 
+                        <a class="emp_image" data-toggle="modal" data-target="#emp_image" data-todo="<?php echo  $emp_id?>" ><i class="fas fa-camera"></i></a>
                         <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
                     </div>
                 </div>
+
+
+                <script>
+                        $('.emp_image').click(function(){
+                          
+                          
+                          $.ajax({
+                              url:'../emp_mang/emp_image-config.php',
+                              type : 'post',
+                              data: {
+                                emp_id : $(this).data("todo") 
+                              },
+                               //dataType: 'json',
+                              success : function(result){
+                                $('#emp_id').val(result);
+                            }
+                          });
+                          
+                        });
+
+                                
+                </script>
+
+                <?php require "../emp_mang/emp_image.php"?>
 
             </div>
         </div>
@@ -48,7 +84,9 @@
                         <div class="row ">
                             <div class="col-lg-9  form-inline">
 
-                           
+                           <input type="hidden" name="emp_id" value="<?php echo $emp_id?>">
+                           <input type="hidden" name="office_assign" value="<?php echo $office_assign?>">
+                           <input type="hidden" name="emp_status" value="<?php echo $emp_status?>">
 
                             <div class="form-group mx-sm-2 mb-2">
                                 <label for="">NAME</label>
@@ -64,7 +102,7 @@
                             </div>
 
                             <div class="form-group mx-sm-1 mb-2">
-                            <input type="text" class="form-control" style="width:50px;"  value="<?php echo $mydata["emp_ext"];?>" name="emp_ext">
+                            <input type="text" class="form-control" style="width:50px;"  value="<?php echo $emp_ext ?>" name="emp_ext">
                             </div>
 
 
@@ -233,7 +271,68 @@
                     
                 </div>
 
-                
+               
+    
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
+<script>
+$(document).ready(function(){
+    $("#emp_tel_no").on('keyup', function (){
+    
+    var phone = $("#emp_tel_no").val(),
+    intRegex = /[0-9 -()+]+$/;
+    
+    if((phone.length < 9) || (!intRegex.test(phone))){
+            $("#tel-phone").html("Invalid telephone number!");
+            } else 
+            $("#tel-phone").html("");
+            
+        }); 
+    
+});
+</script> 
+
+<script>
+$(document).ready(function(){
+    $("#emp_mb_no").on('keyup', function (){
+    
+    var phone = $("#emp_mb_no").val(),
+    intRegex = /[0-9 -()+]+$/;
+    
+    if((phone.length < 10) || (!intRegex.test(phone))){
+            $("#mbl-phone").html("Invalid Mobile number!");
+            } else 
+            $("#mbl-phone").html("");
+            
+        }); 
+    
+});
+</script> 
+
+<script>
+$(document).ready(function(){
+    $("#emp_email").on('keyup', function (){
+    
+    
+    var email = $("#emp_email").val();
+     var emailReg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    
+    if((!emailReg.test(email))) {
+        $("#val-email").html("Invalid mail address");
+    }else  $("#val-email").html("");
+    
+      
+     
+        }); 
+    
+    });
+
+
+</script> 
+
+
+
                     
                <div class="row">
 
@@ -244,26 +343,29 @@
                                 </div>
                             </div>
 
-
                              <div class="col-lg-5 m-2 text-center form-inline " style="background-color:#E6F7FF;">
                              <div class="form-group mx-sm-1 mb-2" >
                                     <div class="d-flex flex-column">
-                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_tel_no ?>" name="emp_tel_no">
-                                        <label for="">Telephone No.</label>
+                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_tel_no ?>" name="emp_tel_no" id="emp_tel_no" >
+                                        <label >Telephone No.</label>
+                                        <small id="tel-phone" style="color:red;"></small>
+
                                     </div>
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-2">
                                     <div class="d-flex flex-column">
-                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_mb_no ?>" name="emp_mb_no">
+                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_mb_no ?>" name="emp_mb_no" id="emp_mb_no">
                                         <label for="">Mobile No.</label>
+                                        <small id="mbl-phone" style="color:red;"></small>
                                     </div>
                                 </div>
 
                                 <div class="form-group mx-sm-1 mb-2">
                                     <div class="d-flex flex-column">
-                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_email ?>" name="emp_email">
+                                        <input type="text" class="form-control" style="width:120px;" value="<?php echo  $emp_email ?>" name="emp_email" id="emp_email">
                                         <label for="">Email Address</label>
+                                        <small id="val-email" style="color:red;"></small>
                                     </div>
                                 </div>
                              </div>
@@ -318,7 +420,7 @@
              
         </div>         
 
-
+    
 
              
   

@@ -47,10 +47,10 @@
                                             <label for="">TYPE OF PROGRAM</label>
                                             <select class="form-control" style="width:150px;" name="type_of_position[]">
                                                 <option value = "<?php echo $type_of_position[$i]?>"><?php echo $type_of_position[$i]?></option>
-                                                <option value="Technical">Technical</option>
-                                                <option value="Managerial">Managerial</option>
-                                                <option value="Supervisory">Supervisory</option>
-                                                <option value="Clerical">Clerical</option>
+                                                <option value="technical">Technical</option>
+                                                <option value="managerial">Managerial</option>
+                                                <option value="supervisory">Supervisory</option>
+                                                <option value="clerical">Clerical</option>
                                             </select>
                                         </div>
                                     </div>
@@ -112,10 +112,10 @@
                         <label for="">TYPE OF PROGRAM</label>
                         <select class="form-control" style="width:150px;" name="type_of_position[]">
                             <option value = "">SELECT</option>
-                            <option value="Technical">Technical</option>
-                            <option value="Managerial">Managerial</option>
-                            <option value="Supervisory">Supervisory</option>
-                            <option value="Clerical">Clerical</option>
+                            <option value="technical">Technical</option>
+                            <option value="managerial">Managerial</option>
+                            <option value="supervisory">Supervisory</option>
+                            <option value="clerical">Clerical</option>
                         </select>
                     </div>
                 </div>

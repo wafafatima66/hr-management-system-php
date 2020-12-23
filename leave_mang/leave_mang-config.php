@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
     $leave_from_date=$_POST['leave_from_date'];
     $leave_to_date=$_POST['leave_to_date'];
     $communication=$_POST['communication'];
-  
+    
 
     $from_date = strtotime($leave_from_date); // or your date as well
     $to_date = strtotime($leave_to_date);
@@ -53,9 +53,19 @@ if(isset($_POST['submit'])){
     
     require '../includes/conn.php';
 
-   
+    if(isset($_POST['sno']) && (!empty($_POST['sno']))){
+        $sno=$_POST['sno'];
+
+        $query = "UPDATE emp_leaves SET emp_salary='$emp_salary',type_of_leave='$type_of_leave',leave_from_date='$leave_from_date',leave_to_date='$leave_to_date',communication='$communication',date_diff='$date_diff' WHERE sno= '$sno' " ;
+
+
+   $runquery = $conn -> query($query);
+
+   } else 
         
-            $sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,date_diff) VALUE (?,?,?,?,?,?,?)";
+           {$sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,date_diff) VALUE (?,?,?,?,?,?,?)
+           
+            ";
 
             $stmt = mysqli_stmt_init($conn);
 
@@ -68,6 +78,8 @@ if(isset($_POST['submit'])){
                     mysqli_stmt_bind_param($stmt,"iissssi", $emp_id, $emp_salary, $type_of_leave,$leave_from_date,$leave_to_date,$communication,$date_diff);
                     mysqli_stmt_execute($stmt); 
                 }
+
+            }
 
 
                 $sql_2="INSERT INTO per_emp_leaves (emp_id) VALUE (?)";

@@ -13,13 +13,12 @@ if(isset($_POST['submit'])){
     $no_of_hrs=$_POST['no_of_hrs'];
     $venue=$_POST['venue'];
     $province=$_POST['province'];
-    $city=$_POST['city'];
-    $barangay=$_POST['barangay'];
+   
     $agency=$_POST['agency'];
     $title=$_POST['title'];
     
 
-$query = "UPDATE training SET type_of_training= '$type_of_training',  from_date= '$from_date' , to_date= '$to_date' , no_of_hrs= '$no_of_hrs' , venue= '$venue' , province= '$province' , city= '$city' , barangay= '$barangay' , agency= '$agency' , title= '$title'   where title_of_training = '$title_of_training' and emp_id =$emp_id";
+$query = "UPDATE training SET type_of_training= '$type_of_training',  from_date= '$from_date' , to_date= '$to_date' , no_of_hrs= '$no_of_hrs' , venue= '$venue' , province= '$province'  , agency= '$agency' , title= '$title'   where title_of_training = '$title_of_training' and emp_id =$emp_id";
 $runquery = $conn -> query($query);
     if($runquery == true){
         header("Location:training.php?submit=update");

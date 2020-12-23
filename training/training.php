@@ -363,10 +363,11 @@ if($runquery = $conn -> query($query)){
 
 
 $(document).ready(function(){
-    $("#emp_id").keyup(function(){
+    $(".emp_id").keyup(function(){
         $.ajax({
             url:'training-message.php',
             type : 'post',
+            
             data: {emp_id : $(this).val()},
             success : function(result){
                 

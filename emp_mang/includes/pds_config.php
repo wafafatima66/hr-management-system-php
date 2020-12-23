@@ -1,20 +1,29 @@
 
 <?php 
 
-session_start();
+
 if(isset($_POST['submit'])){
 
     
-    $emp_id = $_SESSION['emp_id'];      
+    //$emp_id = $_SESSION['emp_id'];      
     
     require '../../includes/conn.php';
 
 
     //pds
-    $office_assign = $_SESSION['office_assign'];
-    $emp_first_name = $_SESSION['emp_first_name'];
-    $emp_last_name = $_SESSION['emp_last_name'];
-    $emp_status = $_SESSION['emp_status'];
+   // $office_assign = $_SESSION['office_assign'];
+    //$emp_first_name = $_SESSION['emp_first_name'];
+    //$emp_last_name = $_SESSION['emp_last_name'];
+    //$emp_status = $_SESSION['emp_status'];
+
+    $emp_id=$_POST['emp_id'];
+    $office_assign=$_POST['office_assign'];
+    $emp_first_name=$_POST['emp_first_name'];
+    $emp_last_name=$_POST['emp_last_name'];
+    $emp_status=$_POST['emp_status'];
+    $emp_middle_name=$_POST['emp_middle_name'];
+    $emp_ext=$_POST['emp_ext'];
+  
 
     $emp_sex=$_POST['emp_sex'];
     $emp_gender=$_POST['emp_gender'];
@@ -34,11 +43,7 @@ if(isset($_POST['submit'])){
     $emp_citizen_chk_arr=$_POST['emp_citizen_chk'];
     $emp_citizen_chk = implode(',',$emp_citizen_chk_arr);
 
-   /* $emp_citizen_chk="";  
-    foreach($emp_citizen_chk_arr as $chk1)  
-       {  
-          $emp_citizen_chk.= $chk1.",";  
-       }*/
+    
 
     $emp_resi_add=$_POST['emp_resi_add'];
     $emp_resi_add_street=$_POST['emp_resi_add_street'];
@@ -66,11 +71,13 @@ if(isset($_POST['submit'])){
     
 
 
-            $sql="INSERT INTO pds (emp_id,office_assign,emp_first_name,emp_last_name,emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_email,emp_tel_no,emp_mb_no,emp_citizen,emp_dual_citizen,emp_citizen_chk,emp_resi_add,emp_resi_add_street,emp_resi_add_subdivision,emp_resi_add_barangay,emp_resi_add_municipal,emp_resi_add_province,emp_resi_add_zipcode,emp_per_add,emp_per_add_street,emp_per_add_subdivision,emp_per_add_barangay,emp_per_add_municipal,emp_per_add_province,emp_per_add_zipcode,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency,emp_status,emp_sex) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
+            $sql="INSERT INTO pds (emp_id,office_assign,emp_first_name,emp_last_name,emp_gender,emp_civil_status,emp_dob,emp_height,emp_weight,emp_blood,emp_email,emp_tel_no,emp_mb_no,emp_citizen,emp_dual_citizen,emp_citizen_chk,emp_resi_add,emp_resi_add_street,emp_resi_add_subdivision,emp_resi_add_barangay,emp_resi_add_municipal,emp_resi_add_province,emp_resi_add_zipcode,emp_per_add,emp_per_add_street,emp_per_add_subdivision,emp_per_add_barangay,emp_per_add_municipal,emp_per_add_province,emp_per_add_zipcode,emp_contact_gs,emp_contact_pag,emp_contact_ph,emp_contact_ss,emp_contact_tin,emp_contact_agency,emp_status,emp_sex,emp_middle_name,emp_ext) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) 
             ON DUPLICATE KEY UPDATE
             office_assign = '$office_assign',
             emp_first_name = '$emp_first_name',
             emp_last_name = '$emp_last_name',
+            emp_middle_name = '$emp_middle_name',
+            emp_ext = '$emp_ext',
             emp_gender = '$emp_gender',
             emp_civil_status = '$emp_civil_status',
             emp_dob = '$emp_dob',
@@ -115,7 +122,7 @@ if(isset($_POST['submit'])){
                 else{
 
 
-                    mysqli_stmt_bind_param($stmt,"issssssiissiisssssssssssssssssiiiiiiss",$emp_id, $office_assign, $emp_first_name,$emp_last_name,$emp_gender,$emp_civil_status,$emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_email,$emp_tel_no,$emp_mb_no,$emp_citizen,$emp_dual_citizen,$emp_citizen_chk,$emp_resi_add,$emp_resi_add_street,$emp_resi_add_subdivision,$emp_resi_add_barangay,$emp_resi_add_municipal,$emp_resi_add_province,$emp_resi_add_zipcode,$emp_per_add,$emp_per_add_street,$emp_per_add_subdivision,$emp_per_add_barangay,$emp_per_add_municipal,$emp_per_add_province,$emp_per_add_zipcode,$emp_contact_gs,$emp_contact_pag,$emp_contact_ph,$emp_contact_ss,$emp_contact_tin,$emp_contact_agency,$emp_status,$emp_sex);
+                    mysqli_stmt_bind_param($stmt,"issssssiissiisssssssssssssssssiiiiiissss",$emp_id, $office_assign, $emp_first_name,$emp_last_name,$emp_gender,$emp_civil_status,$emp_dob,$emp_height,$emp_weight,$emp_blood,$emp_email,$emp_tel_no,$emp_mb_no,$emp_citizen,$emp_dual_citizen,$emp_citizen_chk,$emp_resi_add,$emp_resi_add_street,$emp_resi_add_subdivision,$emp_resi_add_barangay,$emp_resi_add_municipal,$emp_resi_add_province,$emp_resi_add_zipcode,$emp_per_add,$emp_per_add_street,$emp_per_add_subdivision,$emp_per_add_barangay,$emp_per_add_municipal,$emp_per_add_province,$emp_per_add_zipcode,$emp_contact_gs,$emp_contact_pag,$emp_contact_ph,$emp_contact_ss,$emp_contact_tin,$emp_contact_agency,$emp_status,$emp_sex,$emp_middle_name,$emp_ext);
                     mysqli_stmt_execute($stmt);
 
                   

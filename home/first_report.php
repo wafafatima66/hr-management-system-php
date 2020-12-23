@@ -118,24 +118,24 @@ if($runquery = $conn -> query($query)) {
                 <div class="list-group">
                   <h6>DOCTORATE</h6>
                    <div class="progress">
-                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: 50%;"><?php echo $post_less_percent?>%</div>
-                      <div class="progress-bar " role="progressbar" style="width: 50%;font-weight:bold; font-size:35px" ><?php echo $post_more_percent?>%</div>
+                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: <?php echo $post_less_percent?>%;"><?php echo $post_less_percent?>%</div>
+                      <div class="progress-bar " role="progressbar" style="width: <?php echo $post_more_percent?>%;font-weight:bold; font-size:35px" ><?php echo $post_more_percent?>%</div>
                     </div>
                  </div>
                  
                 <div class="list-group">
                   <h6>MASTERAL</h6>
                   <div class="progress">
-                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: 50%;"><?php echo $gra_less_percent?>%</div>
-                      <div class="progress-bar " role="progressbar" style="width: 50%;font-weight:bold; font-size:35px" ><?php echo $gra_more_percent?>%</div>
+                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: <?php echo $gra_less_percent?>%;"><?php echo $gra_less_percent?>%</div>
+                      <div class="progress-bar " role="progressbar" style="width: <?php echo $gra_more_percent?>%;font-weight:bold; font-size:35px" ><?php echo $gra_more_percent?>%</div>
                     </div>
                  </div>
                  
                 <div class="list-group">
                   <h6>UNDERGRADUATE</h6>
                   <div class="progress">
-                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: 50%;"><?php echo $coll_less_percent?>%</div>
-                      <div class="progress-bar " role="progressbar" style="width: 50%;font-weight:bold; font-size:35px" ><?php echo $coll_more_percent?>%</div>
+                      <div class="progress-bar progress-bar-less" role="progressbar" style="width: <?php echo $coll_less_percent?>%;"><?php echo $coll_less_percent?>%</div>
+                      <div class="progress-bar " role="progressbar" style="width: <?php echo $coll_more_percent?>%;font-weight:bold; font-size:35px" ><?php echo $coll_more_percent?>%</div>
                     </div>
                  </div>
              

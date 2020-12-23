@@ -24,6 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       // session_register("username");
        $_SESSION['login_user'] = $username;
        
+       
        header("location:../home/home.php");
     }else {
         header("location: login.php?error");
@@ -44,7 +45,7 @@ body{
 
 #login .container #login-row #login-column #login-box {
     
-  margin-top: 120px;
+  margin-top: 20px;
   max-width: 600px;
   height: 320px;
   border: 1px solid #345587;
@@ -76,8 +77,8 @@ body{
 
 
 
-    <nav class="navbar navbar-expand-lg main-header ">
-      <h4 class="navbar-brand " >HUMAN RESOURCES MANAGEMENT SYSTEM</h4>
+    <nav class="navbar  main-header ">
+      <h4 class="mx-auto" >HUMAN RESOURCES MANAGEMENT SYSTEM</h4>
    </nav>
 
    <?php
@@ -94,6 +95,12 @@ if(isset($_GET['error'])){
 
 
 ?>
+
+<div class="container">
+<div class="text-center mt-3" >
+    <img src="../img/logo-2.png" alt="" style="height:150px; weight:150px;">
+</div>
+</div>
 
     <div id="login">
        
@@ -127,5 +134,20 @@ if(isset($_GET['error'])){
             </div>
         </div>
         
+    </div>
+
+    <div class="login-footer mt-5" style="background-color:#FBC01C;">
+           <div class="d-flex justify-content-between">
+          
+         
+
+          
+         <h6 class="mt-5 pl-3 pt-2 font_blue_color" >HRIS Version 1.01</h6>
+         <img src="../img/logo-1.png"  style="height:80px; weight:80px;  ">
+           </div>
+               
+         
+             
+           
     </div>
 

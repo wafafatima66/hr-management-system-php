@@ -118,7 +118,7 @@
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" value="<?php echo $condition_4_des?>" name="condition_4_des" >
+        <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_4_des?>" name="condition_4_des" >
     </div>
 
 </div>
@@ -176,7 +176,7 @@
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" value="<?php echo $condition_6_des?>" name="condition_6_des">
+        <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_6_des?>" name="condition_6_des">
     </div>
 
 </div>
@@ -279,7 +279,7 @@
     </div>
 
     <div class="form-group mx-sm-1 mb-2">
-        <input type="text" class="form-control" style="width:200px;" id="" value="<?php echo $condition_9_des?>" name="condition_9_des" >
+        <input type="text" class="form-control" style="width:200px;"  value="<?php echo $condition_9_des?>" name="condition_9_des" >
     </div>
 
 </div>

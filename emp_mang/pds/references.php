@@ -140,9 +140,9 @@ while($data = $runquery -> fetch_assoc()){
                             <label for="">GOVERNMENT ISSUED ID <span>(i.e.Passport,GSIS,SSS,PRC,Driver's Licence ,etc)</span></label>
                                 <input type="text" class="form-control mb-2 mt-2" style="width:200px;" name= "emp_gov_id" value="<?php echo $emp_gov_id?>" >
 
-                                <input type="text" class="form-control mb-2"   style="width:200px;" name="emp_passport_no" value="<?php echo $emp_passport_no?>">
+                                <input type="text" class="form-control mb-2"   style="width:200px;" name="emp_passport_no" value="<?php echo $emp_passport_no?>" >
 
-                                <input type="text" class="form-control mb-2"   style="width:200px;" name="emp_place_of_insurance" value="<?php echo $emp_place_of_insurance?>" >
+                                <input type="date" class="form-control mb-2"   style="width:200px;" name="emp_place_of_insurance" value="<?php echo $emp_place_of_insurance?>" >
                         </div>
 
                         

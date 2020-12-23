@@ -206,7 +206,7 @@ if($runquery = $conn -> query($query)) {
                             <div class="progress"  >
                                 <div class="progress-bar progress-bar-purple" role="progressbar" style="width:<?php echo $post_female .'%'; ?>;"  > 
                                 </div> 
-                                <span class="percentage_span"><?php echo $post_female; ?></span>
+                                <span class="percentage_span"><?php echo $post_female; ?>%</span>
                             </div>
 
                         </div>
@@ -217,7 +217,7 @@ if($runquery = $conn -> query($query)) {
                             <div class="progress"  >
                                 <div class="progress-bar progress-bar-blue" role="progressbar" style="width: <?php echo $post_male.'%'; ?>;"> 
                                 </div> 
-                                <span class="percentage_span"><?php echo $post_male; ?></span>
+                                <span class="percentage_span"><?php echo $post_male; ?>%</span>
                             </div>
                             
                         </div>
@@ -247,7 +247,7 @@ if($runquery = $conn -> query($query)) {
                         <div class="progress"  >
                             <div class="progress-bar progress-bar-purple" role="progressbar" style="width:<?php echo $gra_female.'%'; ?>;" > 
                             </div> 
-                            <span class="percentage_span"><?php echo $gra_female; ?></span>
+                            <span class="percentage_span"><?php echo $gra_female; ?>%</span>
                         </div>
 
                     </div>
@@ -258,7 +258,7 @@ if($runquery = $conn -> query($query)) {
                         <div class="progress"  >
                             <div class="progress-bar progress-bar-blue" role="progressbar" style="width: <?php echo $gra_male.'%'; ?>"  > 
                             </div> 
-                            <span class="percentage_span"><?php echo $gra_male; ?></span>
+                            <span class="percentage_span"><?php echo $gra_male; ?>%</span>
                         </div>
                         
                     </div>
@@ -287,7 +287,7 @@ if($runquery = $conn -> query($query)) {
                     <div class="progress"  >
                     <div class="progress-bar progress-bar-purple" role="progressbar" style="width:<?php echo $coll_female.'%'; ?>;"  > 
                     </div> 
-                    <span class="percentage_span"><?php echo $coll_female; ?></span>
+                    <span class="percentage_span"><?php echo $coll_female; ?>%</span>
                     </div>
 
                     </div>
@@ -298,7 +298,7 @@ if($runquery = $conn -> query($query)) {
                     <div class="progress"  >
                     <div class="progress-bar progress-bar-blue" role="progressbar" style="width: <?php echo $coll_male.'%'; ?>"  > 
                     </div> 
-                    <span class="percentage_span"><?php echo $coll_male; ?></span>
+                    <span class="percentage_span"><?php echo $coll_male; ?>%</span>
                     </div>
 
                     </div>
@@ -326,7 +326,7 @@ if($runquery = $conn -> query($query)) {
                     <div class="progress"  >
                     <div class="progress-bar progress-bar-purple" role="progressbar" style="width:<?php echo $sec_female.'%'; ?>;"  > 
                     </div> 
-                    <span class="percentage_span"><?php echo $sec_female; ?></span>
+                    <span class="percentage_span"><?php echo $sec_female; ?>%</span>
                     </div>
 
                      </div>
@@ -337,7 +337,7 @@ if($runquery = $conn -> query($query)) {
                     <div class="progress"  >
                     <div class="progress-bar progress-bar-blue" role="progressbar" style="width: <?php echo $sec_male.'%'; ?>"  > 
                     </div> 
-                    <span class="percentage_span"><?php echo $sec_male; ?></span>
+                    <span class="percentage_span"><?php echo $sec_male; ?>%</span>
                     </div>
 
                     </div>

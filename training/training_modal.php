@@ -1,5 +1,6 @@
 
 
+
 <div class="modal fade training_modal" id="addtraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -33,16 +34,17 @@
 
 
            <h6>TRAINEES/ATTENDESS</h6>
+          
 
-<div id="space"></div>
+
 
    
            
              <div class="form-inline add_emp_id_wrapper">
 
                 <div class="form-group mx-sm-3 mb-2" style="width:100%;">
-                      <label for="">Employee ID</label>
-                  <input type="text" class="form-control"  placeholder="Employee Id" style="width:250px" name="emp_id[]"  >
+                      <label for="">Employee</label>
+                  <input type="text" class="form-control emp_id"  placeholder="Employee Id" style="width:250px" name="emp_id[]"  >
 
                   <a href="javascript:void(0);" class="add_emp_id ml-3" title="Add field"><i class="fa fa-plus"></i></a>
 
@@ -97,18 +99,10 @@
    
     <div class="form-group mx-sm-3 mb-2">
         <label style="width:100px">Address</label>
-      <input class="form-control" style="width:160px" name="province" > 
+      <input class="form-control" style="width:450px" name="province" > 
     </div>
 
-    <div class="form-group mx-sm-3 mb-2">
-      <input class="form-control" style="width:160px" name="city" >
-       
-    </div>
-
-    <div class="form-group mx-sm-3 mb-2">
-      <input class="form-control" style="width:160px" name="barangay" >
-      
-    </div>
+  
 
    <div class="add_speaker_wrapper">
    
@@ -186,7 +180,7 @@ var maxField = 5; //Input fields increment limitation
 var addButton = $('.add_emp_id'); //Add button selector
 var wrapper = $('.add_emp_id_wrapper'); //Input field wrapper
 var fieldHTML = 
-'<div class="form-group mx-sm-3 mb-2" style="width:100%;"> <label for="">Employee ID</label> <input type="text" class="form-control"  placeholder="Employee Id" style="width:250px" name="emp_id[]" id="emp_id"><a href="javascript:void(0);" class="remove_emp_id ml-3"><i class="fa fa-minus"></i></a> </div>'; 
+'<div class="form-group mx-sm-3 mb-2" style="width:100%;"> <label for="">Employee</label> <input type="text" class="form-control emp_id"  placeholder="Employee Id" style="width:250px" name="emp_id[]" ><a href="javascript:void(0);" class="remove_emp_id ml-3"><i class="fa fa-minus"></i></a> </div>'; 
 
 //New input field html 
 var x = 1; //Initial field counter is 1

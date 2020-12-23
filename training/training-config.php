@@ -21,8 +21,7 @@ if(isset($_POST['submit'])){
     $no_of_hrs=$_POST['no_of_hrs'];
     $venue=$_POST['venue'];
     $province=$_POST['province'];
-    $city=$_POST['city'];
-    $barangay=$_POST['barangay'];
+    
     $agency=$_POST['agency'];
     $title=$_POST['title'];
 
@@ -53,7 +52,7 @@ if(isset($_POST['submit'])){
  
 
     
-            $sql="INSERT INTO training (emp_id, title_of_training, type_of_training,from_date,to_date,no_of_hrs,venue,province,city,barangay,speaker_name,agency,title,sponsor) VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $sql="INSERT INTO training (emp_id, title_of_training, type_of_training,from_date,to_date,no_of_hrs,venue,province,speaker_name,agency,title,sponsor) VALUE (?,?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 header("Location:training.php?submit=error");
@@ -61,10 +60,24 @@ if(isset($_POST['submit'])){
             }
                 else{
                 
-                    mysqli_stmt_bind_param($stmt,"issssissssssss", $emp_id, $title_of_training , $type_of_training, $from_date,$to_date, $no_of_hrs, $venue, $province, $city, $barangay, $speaker_name,  $agency, $title, $sponsor);
+                    mysqli_stmt_bind_param($stmt,"issssissssss", $emp_id, $title_of_training , $type_of_training, $from_date,$to_date, $no_of_hrs, $venue, $province,  $speaker_name,  $agency, $title, $sponsor);
 
                     mysqli_stmt_execute($stmt);
                 }
+
+                
+                $sql="INSERT INTO emp_learning (title_of_training,type_of_position,no_of_hrs,learn_from_date,learn_to_date,conducted_by,emp_id) VALUE (?,?,?,?,?,?,?) ";
+                $stmt = mysqli_stmt_init($conn);
+                if(!mysqli_stmt_prepare($stmt,$sql)){
+                    header("Location:.training.php?submit=error");
+                    exit();
+                }
+                    else{
+    
+    
+                        mysqli_stmt_bind_param($stmt,"ssisssi",$title_of_training, $type_of_training, $no_of_hrs,$from_date,$to_date,$sponsor,$emp_id);
+                        mysqli_stmt_execute($stmt);
+                    }
               }
                    header("Location:training.php?submit=success");
                             exit();

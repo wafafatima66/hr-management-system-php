@@ -12,6 +12,10 @@
       
   while($data = $runquery -> fetch_assoc()){
 
+    $emp_first_name = $data["emp_first_name"];
+    $emp_last_name = $data["emp_last_name"];
+    $emp_middle_name = $data["emp_middle_name"];
+    $emp_ext = $data["emp_ext"];
 
     $emp_gender = $data["emp_gender"];
     $emp_civil_status = $data["emp_civil_status"];

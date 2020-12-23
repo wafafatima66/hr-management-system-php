@@ -120,7 +120,7 @@ if(isset($_POST['submit'])){
 
         
 
-        $query = "SELECT * FROM pds WHERE  emp_id = '$search_id' OR emp_first_name = '$search_name' OR emp_status = '$search_status'";
+    $query = "SELECT * FROM pds WHERE  emp_id = '$search_id' OR emp_first_name = '$search_name' OR emp_status = '$search_status'  OR emp_last_name = '$search_name' OR CONCAT( emp_first_name, ' ', emp_last_name )  = '$search_name' ";
       
 
    

@@ -1,14 +1,24 @@
-<?php
-   include('../index/session.php');
-?>
+
 
 
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
 <?php include '../emp_mang/add_emp_modal.php'; ?>
 
-
-
+<?php
+if(isset($_GET['photo'])){
+		if($_GET['photo']=="notchanged"){
+			echo'<p class="alert alert-danger h6">Please insert your photo again !</p>';
+    }
+  }
+if(isset($_GET['pass'])){
+      if($_GET['pass']=="notchanged"){
+        echo'<p class="alert alert-danger h6">Password not changed !</p>';
+      } else  if($_GET['pass']=="changed"){
+        echo'<p class="alert alert-sucess h6">Password  changed !</p>';
+      } 
+    }
+?>
   
 <!---Main body-->
 <div class="container-fluid">
@@ -165,7 +175,7 @@ if(isset($_POST['submit'])){
 
     require '../includes/conn.php';
 
-    $query = "SELECT * FROM pds WHERE  emp_id = '$search_id' OR emp_first_name = '$search_name' OR emp_status = '$search_status'";
+    $query = "SELECT * FROM pds WHERE  emp_id = '$search_id' OR emp_first_name = '$search_name' OR emp_status = '$search_status'  OR emp_last_name = '$search_name' OR CONCAT( emp_first_name, ' ', emp_last_name )  = '$search_name' ";
 
     $runquery = $conn -> query($query);
     if($runquery == true){

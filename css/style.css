@@ -21,11 +21,14 @@ body{
 .sidebar-header{
     background-color: #E6AD0F;
 }
+
+/*
 .sidebar-header img{
     width: 210px;
     height: 100px;
     
 }
+*/
 .sidebar-header span{
     color: #fff;
 }
@@ -547,7 +550,7 @@ text-transform: capitalize;
 }
 .calendar_section1 h4{
     color: #FCC62F;
-    font-weight: bold;
+    
 }
 .calendar_section1 h3{
     color: #345587;
