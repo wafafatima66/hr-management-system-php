@@ -1,5 +1,7 @@
 <?php
 
+//when rw is clicked , the employee information is shown 
+
 require '../includes/conn.php';
 
 if(isset($_POST['emp_id']) && isset($_POST['sno'])){
@@ -11,7 +13,7 @@ $sno = $_POST['sno'];
 //$_SESSION['emp_id']= $emp_id;
 
 
-$query = "SELECT e.emp_first_name , e.emp_middle_name, e.emp_last_name , e.emp_ext, e.emp_status,  l.type_of_leave ,  l.emp_salary, l.leave_from_date , l.leave_to_date , l.communication from add_emp e , emp_leaves l where e.emp_id = l.emp_id and sno = $sno  " ;
+$query = "SELECT e.emp_first_name , e.emp_middle_name, e.emp_last_name , e.emp_ext, e.emp_status,  l.type_of_leave ,  e.emp_salary, l.leave_from_date , l.leave_to_date , l.communication from add_emp e , emp_leaves l where e.emp_id = l.emp_id and sno = $sno  " ;
   
 $runquery = $conn -> query($query);
 if($runquery == true){

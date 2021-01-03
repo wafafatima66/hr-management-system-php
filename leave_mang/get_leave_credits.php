@@ -2,6 +2,7 @@
 session_start();
 require '../includes/conn.php';
 
+//to fill up the table points in leave management first box
    
 if(isset($_POST['leave_to_date'])){
 

@@ -31,6 +31,7 @@
                 </div>
               
                
+           
 
            
 
@@ -64,7 +65,7 @@
                 </script>
 
                 <?php require "../emp_mang/emp_image.php"?>
-
+                
             </div>
         </div>
 

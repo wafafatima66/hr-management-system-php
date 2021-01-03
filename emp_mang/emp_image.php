@@ -48,24 +48,26 @@
  if(isset($_POST['emp_image'])){
 
     $emp_id=$_POST['emp_id'];
+
   
 
     $emp_image = $_FILES["emp_image"]["name"]; 
     $tempname = $_FILES["emp_image"]["tmp_name"];     
-        $folder = "../uploads/image/".$emp_image; 
+    $folder = "../uploads/image/".$emp_image; 
 
-        if (move_uploaded_file($tempname, $folder))  { 
-                       
-                    
+    if (move_uploaded_file($tempname, $folder))  { 
 
-          
-$query = "UPDATE add_emp SET emp_image='$emp_image' WHERE emp_id= '$emp_id' " ;
+    
+
+         
+        $query = "UPDATE add_emp SET emp_image='$emp_image' WHERE emp_id= '$emp_id' " ;
 
 
-$runquery = $conn -> query($query);
+        $runquery = $conn -> query($query);
   
 }
  }
+
  ?>
 
 

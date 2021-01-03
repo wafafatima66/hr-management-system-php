@@ -1,6 +1,8 @@
 
 <?php
-if(isset($_POST['vl_pts']) || isset($_POST['sl_pts']) ){
+
+
+if(isset($_POST['vl_pts']) || isset($_POST['sl_pts'])   ){
 
     $vl_pts = $_POST['vl_pts'];
     $sl_pts = $_POST['sl_pts'];
@@ -26,7 +28,7 @@ if(isset($_POST['vl_pts']) || isset($_POST['sl_pts']) ){
         
             mysqli_stmt_bind_param($stmt,"iddi", $emp_id, $vl_pts, $sl_pts,$year);
             mysqli_stmt_execute($stmt);
-            echo "saved";
+            echo "Saved";
             exit();
         }
 
@@ -34,5 +36,6 @@ if(isset($_POST['vl_pts']) || isset($_POST['sl_pts']) ){
         mysqli_close($conn);
 
    
-} else echo "hi";
+}
+  else echo "hi";
 ?>

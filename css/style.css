@@ -122,6 +122,12 @@ body{
     background-color: #E6F7FF;
 }
 
+ td {
+    text-align: center;
+    vertical-align: middle;
+    text-transform: capitalize;
+  }
+
 .fa-edit{
     color: green;
 }

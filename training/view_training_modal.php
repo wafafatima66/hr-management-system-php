@@ -1,4 +1,5 @@
 
+
 <div class="modal fade training_modal" id="viewtraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
 <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -97,10 +98,7 @@
       <input type="text" class="form-control"  style="width:300px" name="agency" id="agency">
     </div>
 
-    <div class="form-group mx-sm-3 mb-2">
-    <label >Title</label>
-      <input type="text" class="form-control" style="width:250px" name="title" id="title">
-    </div>
+   
 
     <div class="add_sponsor_wrapper form-inline" id="add_sponsor_wrapper">
 

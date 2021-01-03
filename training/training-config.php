@@ -1,6 +1,7 @@
 
 <?php 
    
+   //to add training
 
 if(isset($_POST['submit'])){
 
@@ -23,7 +24,7 @@ if(isset($_POST['submit'])){
     $province=$_POST['province'];
     
     $agency=$_POST['agency'];
-    $title=$_POST['title'];
+    //$title=$_POST['title'];
 
 
     $count = count(($_POST['speaker_last_name']));
@@ -34,8 +35,9 @@ if(isset($_POST['submit'])){
     $speaker_first_name_arr=$_POST['speaker_first_name'][$i];
     $speaker_middle_name_arr=$_POST['speaker_middle_name'][$i];
     $speaker_ext_arr=$_POST['speaker_ext'][$i];
+    $title=$_POST['title'][$i];
 
-    $speaker_name_arr[$i]= $speaker_first_name_arr . ' ' . $speaker_middle_name_arr . ' '. $speaker_last_name_arr . ' ' .$speaker_ext_arr;
+    $speaker_name_arr[$i]= $speaker_first_name_arr . ' ' . $speaker_middle_name_arr . ' '. $speaker_last_name_arr . ' ' .$speaker_ext_arr. ' ' .$title;
 
     }
 
@@ -52,7 +54,7 @@ if(isset($_POST['submit'])){
  
 
     
-            $sql="INSERT INTO training (emp_id, title_of_training, type_of_training,from_date,to_date,no_of_hrs,venue,province,speaker_name,agency,title,sponsor) VALUE (?,?,?,?,?,?,?,?,?,?,?,?)";
+            $sql="INSERT INTO training (emp_id, title_of_training, type_of_training,from_date,to_date,no_of_hrs,venue,province,speaker_name,agency,sponsor) VALUE (?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 header("Location:training.php?submit=error");
@@ -60,7 +62,7 @@ if(isset($_POST['submit'])){
             }
                 else{
                 
-                    mysqli_stmt_bind_param($stmt,"issssissssss", $emp_id, $title_of_training , $type_of_training, $from_date,$to_date, $no_of_hrs, $venue, $province,  $speaker_name,  $agency, $title, $sponsor);
+                    mysqli_stmt_bind_param($stmt,"issssisssss", $emp_id, $title_of_training , $type_of_training, $from_date,$to_date, $no_of_hrs, $venue, $province,  $speaker_name,  $agency, $sponsor);
 
                     mysqli_stmt_execute($stmt);
                 }

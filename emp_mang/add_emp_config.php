@@ -16,6 +16,7 @@ if(isset($_POST['submit'])){
     $from_date=$_POST['from_date'];
     $to_date=$_POST['to_date'];
     $office_assign=$_POST['office_assign'];
+    $office_dept=$_POST['office_dept'];
     $emp_id=$_POST['emp_id'];
     
     // File upload path
@@ -44,7 +45,7 @@ if(isset($_POST['submit'])){
     else
         {
         
-            $sql="INSERT INTO add_emp (emp_first_name, emp_last_name, emp_middle_name,emp_ext,emp_status,from_date,to_date,office_assign,emp_image,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)";
+            $sql="INSERT INTO add_emp (emp_first_name, emp_last_name, emp_middle_name,emp_ext,emp_status,from_date,to_date,office_assign,emp_image,emp_id,office_dept) VALUE (?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = mysqli_stmt_init($conn);
             if(!mysqli_stmt_prepare($stmt,$sql)){
                 header("Location:emp_mang.php?error=sqlerror");
@@ -52,7 +53,7 @@ if(isset($_POST['submit'])){
             }
                 else{
                 
-                    mysqli_stmt_bind_param($stmt,"sssssssssi", $emp_first_name, $emp_last_name, $emp_middle_name,$emp_ext,$emp_status,$from_date,$to_date,$office_assign,$emp_image,$emp_id);
+                    mysqli_stmt_bind_param($stmt,"sssssssssis", $emp_first_name, $emp_last_name, $emp_middle_name,$emp_ext,$emp_status,$from_date,$to_date,$office_assign,$emp_image,$emp_id,$office_dept);
                     mysqli_stmt_execute($stmt);
 
                   

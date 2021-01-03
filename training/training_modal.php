@@ -1,5 +1,5 @@
 
-
+<!--modal to add training-->
 
 <div class="modal fade training_modal" id="addtraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 
@@ -13,33 +13,15 @@
         </div>
 
 
-       
-
-              <?php
-              /*
-
-              if(empty('#viewspace')){
-                $emp_id = "" ; 
-
-              }
-*/
-              ?>
 
         <form method="post" action="training-config.php"> 
 
-
-
-        <div class="modal-body ">
+          <div class="modal-body ">
 
 
 
            <h6>TRAINEES/ATTENDESS</h6>
           
-
-
-
-   
-           
              <div class="form-inline add_emp_id_wrapper">
 
                 <div class="form-group mx-sm-3 mb-2" style="width:100%;">
@@ -104,9 +86,9 @@
 
   
 
-   <div class="add_speaker_wrapper">
+   <div class="add_speaker_wrapper mt-3 mb-3 ">
    
-      <div class="form-inline">
+      <div class="form-inline ">
       
       <div class="form-group mx-sm-3 mb-2">
         <label style="width:100px">Speaker/s</label>
@@ -125,6 +107,11 @@
           <input type="text" class="form-control" placeholder="Ext" style="width:100px" name="speaker_ext[]">
         </div>
 
+        <div class="form-group mx-sm-3 mb-2">
+          <label style="width:100px">Title</label>
+            <input type="text" class="form-control" style="width:250px" name="title[]" >
+          </div>
+
 
         <a href="javascript:void(0);" class="add_speaker" title="Add field"><i class="fa fa-plus"></i></a>
       
@@ -141,11 +128,7 @@
       <input type="text" class="form-control"  style="width:300px" name="agency" >
     </div>
 
-    <div class="form-group mx-sm-3 mb-2">
-    <label >Title</label>
-      <input type="text" class="form-control" style="width:250px" name="title" >
-    </div>
-
+    
     <div class="add_sponsor_wrapper form-inline">
 
         <div class="form-group mx-sm-3 mb-2">
@@ -211,7 +194,7 @@ var maxField = 5; //Input fields increment limitation
 var addButton = $('.add_speaker'); //Add button selector
 var wrapper = $('.add_speaker_wrapper'); //Input field wrapper
 var fieldHTML = 
-' <div class="form-inline"><div class="form-group mx-sm-3 mb-2"> <label style="width:100px">Speaker/s</label> <input type="text" class="form-control"  placeholder="LastName" style="width:140px" name="speaker_last_name[]"> </div> <div class="form-group mx-sm-1 mb-2"> <input type="text" class="form-control"  placeholder="FirstName" style="width:140px" name="speaker_first_name[]"> </div> <div class="form-group mx-sm-1 mb-2"> <input type="text" class="form-control" placeholder="MiddleName" style="width:140px" name="speaker_middle_name[]"> </div> <div class="form-group mx-sm-1 mb-2"> <input type="text" class="form-control" placeholder="Ext" style="width:100px" name="speaker_ext[]"> </div><a href="javascript:void(0);" class="remove_speaker "><i class="fa fa-minus"></i></a></div> '; 
+' <div class="form-inline"><div class="form-group mx-sm-3 mb-2"> <label style="width:100px">Speaker/s</label> <input type="text" class="form-control"  placeholder="LastName" style="width:140px" name="speaker_last_name[]"> </div> <div class="form-group mx-sm-1 mb-2"> <input type="text" class="form-control"  placeholder="FirstName" style="width:140px" name="speaker_first_name[]"> </div> <div class="form-group mx-sm-1 mb-2"> <input type="text" class="form-control" placeholder="MiddleName" style="width:140px" name="speaker_middle_name[]"> </div> <div class="form-group mx-sm-1 mb-2"> <input type="text" class="form-control" placeholder="Ext" style="width:100px" name="speaker_ext[]"></div><div class="form-group mx-sm-3 mb-2"> <label style="width:100px">Title</label> <input type="text" class="form-control" style="width:250px" name="title[]" > </div><a href="javascript:void(0);" class="remove_speaker "><i class="fa fa-minus"></i></a></div> '; 
 
 //New input field html 
 var x = 1; //Initial field counter is 1

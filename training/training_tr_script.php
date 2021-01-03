@@ -1,4 +1,9 @@
+
+
 <script>
+
+// it is run at every loop to view data when clicked -- flow from training first box 
+
                         $('.view_training').click(function(){
                           
                           var emp_id = $(this).data('id');
@@ -24,7 +29,7 @@
                                   $('#province').val(result.province);
                                   
                                   $('#agency').val(result.agency);
-                                  $('#title').val(result.title);
+                                 // $('#title').val(result.title);
 
                                   $('#add_speaker_wrapper').html(result.speakers);
                                   $('#add_sponsor_wrapper').html(result.sponsors);

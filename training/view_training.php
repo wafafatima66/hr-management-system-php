@@ -1,10 +1,8 @@
 
 
-
-
 <?php
 
-
+// flow coming from training_tr_script.php -- fetching data from database to view 
 
 if(isset($_POST['emp_id'])){
 
@@ -13,9 +11,6 @@ if(isset($_POST['emp_id'])){
   $emp_id =   $_POST['emp_id'];
   $title_of_training =   $_POST['title_of_training'];
   //$title_of_training =   $_POST['title_of_training'];
-
-  
-  
 
   $query = "SELECT * FROM training WHERE  emp_id = '$emp_id' and title_of_training = '$title_of_training' " ;
        
@@ -33,10 +28,10 @@ if(isset($_POST['emp_id'])){
     $no_of_hrs=$mydata['no_of_hrs'];
     $venue=$mydata['venue'];
     $province=$mydata['province'];
-    $city=$mydata['city'];
-    $barangay=$mydata['barangay'];
+   // $city=$mydata['city'];
+    //$barangay=$mydata['barangay'];
     $agency=$mydata['agency'];
-    $title=$mydata['title'];
+   // $title=$mydata['title'];
 
     $sponsor=$mydata['sponsor'];
     $sponsor_arr = explode(",",$sponsor);
@@ -45,12 +40,6 @@ if(isset($_POST['emp_id'])){
     $speaker_name_arr = explode(",",$speaker_name);
 
     
-
-    //$spe = $speaker_name_arr[0];
-
-    //$count=count($speaker_name_arr);
-
-  //$i = 0 ;
 
   $speakers = "";
 
@@ -80,6 +69,10 @@ if(isset($_POST['emp_id'])){
           <input type="text" class="form-control" placeholder="Ext" style="width:100px" name="speaker_ext[]" value="'.$speaker_name_per_arr [3].'" readonly  >
         </div>
 
+        <div class="form-group mx-sm-3 mb-2">
+        <label style="width:100px">Title</label>
+          <input type="text" class="form-control" style="width:250px" name="title[]" value="'.$speaker_name_per_arr [4].'"  readonly >
+        </div>
       
       </div>';
 
@@ -98,7 +91,7 @@ if(isset($_POST['emp_id'])){
 
     }
   
-  echo json_encode( array('emp_id'=>$emp_id,'title_of_training'=>$title_of_training,'type_of_training'=>$type_of_training,'from_date'=>$from_date,'to_date'=>$to_date,'no_of_hrs'=>$no_of_hrs,'venue'=>$venue,'province'=>$province,'city'=>$city,'barangay'=>$barangay,'agency'=>$agency,'title'=>$title,'speakers'=>$speakers,'sponsors'=>$sponsors));
+  echo json_encode( array('emp_id'=>$emp_id,'title_of_training'=>$title_of_training,'type_of_training'=>$type_of_training,'from_date'=>$from_date,'to_date'=>$to_date,'no_of_hrs'=>$no_of_hrs,'venue'=>$venue,'province'=>$province,'agency'=>$agency,'speakers'=>$speakers,'sponsors'=>$sponsors));
 
 
 }}

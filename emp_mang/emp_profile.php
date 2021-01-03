@@ -99,6 +99,7 @@ if(isset($_GET['submit'])){
 
                   //$emp_id = $mydata["emp_id"];
                   $office_assign= $mydata["office_assign"];
+                   $office_dept= $mydata["office_dept"];
 
                 /*
                   $_SESSION['emp_id']= $emp_id;
@@ -138,7 +139,7 @@ if(isset($_GET['submit'])){
                 <button  onclick="opentab('tab-3')" type="button" class="btn emp_profile_section1_tab " >File 201</button>
             </h6>
             <h4 style="text-transform: uppercase;"> <?php echo $emp_first_name?> <?php echo $emp_middle_name?> <?php echo $emp_last_name?> </h4>
-            <p style="text-transform: uppercase; font-weight:bold;"><?php echo $emp_status?> > <span style="text-transform: capitalize;font-weight:bold;"><?php echo $office_assign?></span></p>
+            <p style="text-transform: uppercase; font-weight:bold;"><?php echo $emp_status?> > <span style="text-transform: capitalize;font-weight:bold;"><?php echo $office_assign?> > </span><span style="text-transform: capitalize;font-weight:bold;"><?php echo $office_dept?></span></p>
             <h4><?php echo $emp_id?></h4>
 
            
@@ -159,7 +160,7 @@ if(isset($_GET['submit'])){
         <?php include 'pds/pds.php'; ?>
            
     
-        <?php include 'ledger.php'; ?>
+        <?php include 'leave-ledger/ledger.php'; ?>
         <?php include 'file.php'; ?>
 
       

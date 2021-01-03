@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+//to get information after getting id in leave management first box 
+
 require '../includes/conn.php';
 
 if(isset($_POST['emp_id'])){
@@ -21,8 +24,9 @@ if(isset($_POST['emp_id'])){
         $emp_last_name = $mydata["emp_last_name"];
         $emp_ext = $mydata["emp_ext"];
         $emp_status = $mydata["emp_status"];
+        $emp_salary = $mydata["emp_salary"];
 
-        echo json_encode( array('emp_first_name'=>$emp_first_name,'emp_middle_name'=>$emp_middle_name,'emp_last_name'=>$emp_last_name,'emp_ext'=>$emp_ext,'emp_status'=>$emp_status));
+        echo json_encode( array('emp_first_name'=>$emp_first_name,'emp_middle_name'=>$emp_middle_name,'emp_last_name'=>$emp_last_name,'emp_ext'=>$emp_ext,'emp_status'=>$emp_status,'emp_salary'=>$emp_salary));
 
 }
     }
@@ -30,7 +34,7 @@ if(isset($_POST['emp_id'])){
 
  
 
- 
+ // to save information from leave management first box
 
 if(isset($_POST['submit'])){
 
@@ -51,19 +55,20 @@ if(isset($_POST['submit'])){
     $date_diff = round(($to_date - $from_date )/ (60 * 60 * 24));
 
     
-    require '../includes/conn.php';
+    // if getting particular data through sno -- then update
 
     if(isset($_POST['sno']) && (!empty($_POST['sno']))){
         $sno=$_POST['sno'];
 
-        $query = "UPDATE emp_leaves SET emp_salary='$emp_salary',type_of_leave='$type_of_leave',leave_from_date='$leave_from_date',leave_to_date='$leave_to_date',communication='$communication',date_diff='$date_diff' WHERE sno= '$sno' " ;
+        $query = "UPDATE emp_leaves SET type_of_leave='$type_of_leave',leave_from_date='$leave_from_date',leave_to_date='$leave_to_date',communication='$communication',date_diff='$date_diff' WHERE sno= '$sno' " ;
 
 
-   $runquery = $conn -> query($query);
+        $runquery = $conn -> query($query);
 
-   } else 
+        } else 
         
-           {$sql="INSERT INTO emp_leaves (emp_id, emp_salary, type_of_leave,leave_from_date,leave_to_date,communication,date_diff) VALUE (?,?,?,?,?,?,?)
+           {    //inseting into leave records 
+               $sql="INSERT INTO emp_leaves (emp_id, type_of_leave,leave_from_date,leave_to_date,communication,date_diff) VALUE (?,?,?,?,?,?)
            
             ";
 
@@ -75,13 +80,14 @@ if(isset($_POST['submit'])){
             }
                 else{ 
                 
-                    mysqli_stmt_bind_param($stmt,"iissssi", $emp_id, $emp_salary, $type_of_leave,$leave_from_date,$leave_to_date,$communication,$date_diff);
+                    mysqli_stmt_bind_param($stmt,"issssi", $emp_id,  $type_of_leave,$leave_from_date,$leave_to_date,$communication,$date_diff);
                     mysqli_stmt_execute($stmt); 
                 }
 
             }
 
 
+                // inserting emp id to table to identify employee applied for leave
                 $sql_2="INSERT INTO per_emp_leaves (emp_id) VALUE (?)";
             
                
@@ -97,27 +103,20 @@ if(isset($_POST['submit'])){
      
                     }
 
+                    //inserting emp salary to add employees
+                    $query = "UPDATE add_emp SET emp_salary='$emp_salary' WHERE emp_id= '$emp_id' " ;
+
+
+                    $runquery = $conn -> query($query);
                  
 
+                            //getting month year and difference to store to leave credits 
                     $mon = date("m", strtotime($leave_from_date));
                     $year = date("Y", strtotime($leave_from_date));
 
-                   // $vacation_leave = "";
-                    //$sick_leave = "";
-                    // $spl = "";
-                    // $force_leave = "";
-                    // $lwp = "";
-
-                      /*
-                    ON DUPLICATE KEY UPDATE
-                    vacation_leave = '$vacation_leave',
-                    sick_leave = '$sick_leave',
-                    spl = '$spl',
-                    force_leave = '$force_leave',
-                    lwp = '$lwp'
-                    */
 
                     if($type_of_leave == "vacation leave"){
+
                         $vacation_leave = $date_diff;
                         //$sick_leave = 1.25 ; 
                     }else  if($type_of_leave == "sick leave"){
@@ -154,7 +153,7 @@ if(isset($_POST['submit'])){
                     exit();
 
                 mysqli_stmt_close($stmt);
-        mysqli_close($conn);
+                mysqli_close($conn);
         } 
     
     
