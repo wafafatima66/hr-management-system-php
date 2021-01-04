@@ -1,4 +1,11 @@
+
+
+
+
+
 <?php
+
+
 
 //to get the information
 
@@ -28,8 +35,8 @@ if(isset($_POST['title_of_training'])){
 
        $ids .= ' <div class="form-group mx-sm-3 mb-2" style="width:100%;">
         <label for="">Employee</label>
-        <input type="text" class="form-control emp_id"  placeholder="Employee Id" style="width:250px" value="'. $emp_id .'"  ></div>';
-      
+        <input type="text" class="form-control edit_emp_id"  placeholder="Employee Id" style="width:250px" value="'. $emp_id .'" name="emp_id[]" > <a href="javascript:void(0);" data-id="'. $emp_id .'" class="edit_remove_employee ml-3 " ><i class="fa fa-minus"></i></a></div>';
+     
   
       // $ids = "hi";
 
@@ -103,7 +110,7 @@ if(isset($_POST['title_of_training'])){
 
     $sponsors .= ' <div class="form-group mx-sm-3 mb-2">
     <label >Sponsor Agency/ies</label>
-      <input type="text" class="form-control" style="width:350px" value="'.$sponsor_arr [$i].'" readonly>
+      <input type="text" class="form-control" style="width:350px" value="'.$sponsor_arr [$i].'" name="sponsor[]" readonly>
     </div>';
 
     }
@@ -124,3 +131,4 @@ echo json_encode(array('ids'=>$ids,'title_of_training'=>$title_of_training,'type
 
 
 ?>
+

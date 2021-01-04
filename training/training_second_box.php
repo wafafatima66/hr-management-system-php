@@ -130,7 +130,8 @@ else {
                <td class="text-center">
                 <a  data-toggle="modal" data-id="<?php echo $title_of_training ?>" data-target="#edit_training" class="edit_training" ><i class="fas fa-edit"></i></a> 
 
-                <a href="../training/delete_training.php?name=<?php echo $title_of_training?>"> <i class="fas fa-trash-alt"></i></a>
+                <a href="sec_box-config/delete.php?title=<?php echo $title_of_training?>"> <i class="fas fa-trash-alt"></i></a>
+
               </td>
 
              </tr>

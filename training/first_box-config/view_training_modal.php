@@ -13,7 +13,7 @@
 
 
 
-        <form method="post" action="training_update.php"> 
+        <form method="post" action="first_box-config/training_update.php"> 
 
 
 

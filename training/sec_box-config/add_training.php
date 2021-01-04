@@ -3,17 +3,15 @@
    
    //to add training
 
-if(isset($_POST['submit'])){
+if(isset($_POST['emp_id'])){
 
-  require '../includes/conn.php';
+  require '../../includes/conn.php';
 
 
-  $emp_id_arr=$_POST['emp_id'];
+  $emp_id=$_POST['emp_id'];
   
 
-  foreach ($emp_id_arr as $emp_id)
-{
-   
+
 
     $title_of_training=$_POST['title_of_training'];
     $type_of_training=$_POST['type_of_training'];
@@ -75,7 +73,7 @@ if(isset($_POST['submit'])){
                         mysqli_stmt_bind_param($stmt,"ssisssi",$title_of_training, $type_of_training, $no_of_hrs,$from_date,$to_date,$sponsor,$emp_id);
                         mysqli_stmt_execute($stmt);
                     }
-              }
+              
                    header("Location:training.php?submit=success");
                             exit();
 
@@ -85,11 +83,12 @@ if(isset($_POST['submit'])){
   mysqli_close($conn);
                 
        
-              
+      echo "saved";        
       
       }
     else
     {
+        echo "nt saved";
         header("Location:training.php");
         exit();
     }

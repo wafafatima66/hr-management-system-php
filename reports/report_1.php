@@ -100,8 +100,8 @@ var myChart = new Chart(ctx, {
             padding : 20
         }
       }
-     
     }
+   
 });
 
 

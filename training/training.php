@@ -18,6 +18,15 @@ if(isset($_GET['submit'])){
   echo'<p class="alert alert-danger h6"> TRAINING FORM NOT UPDATED  ! </p>';
 }
 }
+
+if(isset($_GET['delete'])){
+
+    if($_GET['delete']=="error"){
+        echo'<p class="alert alert-danger h6">TRAINING NOT DELETED ! TRY AGAIN</p>';
+    }else  if($_GET['delete']=="success"){
+        echo'<p class="alert alert-success h6"> TRAINING DELETED SUCCESSFULLY </p>';
+    }
+}
 ?>
 
 
@@ -40,7 +49,9 @@ $(document).ready(function(){
             url:'training-message.php',
             type : 'post',
             
-            data: {emp_id : $(this).val()},
+            data: {
+                emp_id : $(this).val()
+                },
             success : function(result){
                 
                 $('#space').html(result);

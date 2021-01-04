@@ -3,11 +3,9 @@
 <script>
 
 // to edit training 
-
+//to get data for the modal
                         $('.edit_training').click(function(){
-                          
                          
-                          //$('.modal-body .view_emp_id').val(emp_id);
                           $.ajax({
                               url:'sec_box-config/edit_training.php?',
                               type : 'post',
@@ -44,6 +42,8 @@
                         });
                     </script>
 
+
+
                 
 
                 
@@ -62,16 +62,20 @@
 
 
 
-        <form method="post" action="update.php"> 
+        <form method="post" action="sec_box-config/update.php"> 
 
           <div class="modal-body ">
 
               <div id="space"></div>
+              <div id="sp"></div>
 
            <h6>TRAINEES/ATTENDESS</h6>
           
-             <div class="form-inline add_emp_id_wrapper" id="edit_emp_id_wrapper"> </div>
+             <div class="form-inline edit_emp_id_wrapper" id="edit_emp_id_wrapper">
+            
+              </div>
           
+              <a href="javascript:void(0);" class="edit_add_employee ml-3" title="Add field"><i class="fa fa-plus" ></i></a>
 
 
 <h6 class="pt-2">TRAINING INFORMATION</h6>
@@ -149,7 +153,7 @@
 
 
         <div class="modal-footer">
-            <button type="submit" class="btn " name="submit">Submit</button>
+            <button type="submit" class="btn " name="submit">UPDATE</button>
         </div>
 
  </form>
@@ -162,4 +166,148 @@
 
 
 
+    <script type="text/javascript">
+$(document).ready(function(){
 
+ 
+  
+var maxField = 5; //Input fields increment limitation
+var addButton = $('.edit_add_employee'); //Add button selector
+var wrapper = $('.edit_emp_id_wrapper'); //Input field wrapper
+var fieldHTML = 
+' <div class="form-group mx-sm-3 mb-2" style="width:100%;"> <label for="">Employee</label> <input type="text" class="form-control edit_emp_id"  placeholder="Employee Id" style="width:250px" name="emp_id[]" > <a href="javascript:void(0);" class="edit_remove_employee ml-3 "><i class="fa fa-minus"></i></a></div>'; 
+
+//New input field html 
+var x = 1; //Initial field counter is 1
+
+//Once add button is clicked
+$(addButton).click(function(){
+//Check maximum number of input fields
+if(x < maxField){ 
+x++; //Increment field counter 
+$(wrapper).append(fieldHTML); //Add field html
+
+ 
+}
+});
+
+
+
+//Once remove button is clicked
+$(wrapper).on('click', '.edit_remove_employee', function(e){
+e.preventDefault();
+$(this).parent('div').remove(); //Remove field html
+x--; //Decrement field counter
+
+$.ajax({
+      url:'sec_box-config/delete_training.php',
+      type : 'post',
+      data: {
+        emp_id : $(this).data("id") ,
+        title_of_training : $('#edit_title_of_training').val()
+      },
+      
+      success : function(result){
+
+        
+          $('#space').html(result);
+
+         
+
+      }
+  });
+
+});
+
+
+
+
+
+});
+
+
+
+ 
+
+</script>
+
+
+ 
+
+
+
+<script>
+/*
+
+$('.edit_remove_employee').click(function(){
+    
+  $.ajax({
+      url:'sec_box-config/delete_training.php',
+      type : 'post',
+      data: {
+        emp_id : $(this).data("id") 
+      },
+      
+      success : function(result){
+
+        
+          $('#space').html(result);
+
+         
+
+      }
+  });
+  
+});
+
+
+$.ajax({
+      url:'sec_box-config/add_training.php',
+      type : 'post',
+      data: {
+        emp_id :  $(this).val()
+      },
+      
+      success : function(result){
+
+        
+          $('#sp').html(result);
+
+         
+
+      }
+  });
+*/
+
+
+/*
+$('.edit_emp_id').keyup(function(){
+        $.ajax({
+            url:'sec_box-config/add_training.php',
+            type : 'post',
+            data: {
+              emp_id : $('.edit_emp_id').val(),
+
+
+              title_of_training : $('#edit_title_of_training').val(),
+              type_of_training : $('#edit_type_of_training').val(),
+              from_date : $('#edit_from_date').val(),
+              to_date : $('#edit_to_date').val(),
+              no_of_hrs : $('#edit_no_of_hrs').val(),
+              venue : $('#edit_venue').val(),
+              province : $('#edit_province').val(),
+              agency : $('#edit_agency').val(),
+              speaker_last_name : $('#speaker_last_name').val(),
+              speaker_first_name : $('#speaker_first_name').val(),
+              speaker_middle_name : $('#speaker_middle_name').val(),
+              speaker_ext : $('#speaker_ext').val(),
+              title : $('#title').val(),
+              sponsor : $('#sponsor').val()
+              },
+            success : function(result){
+                $('#sp').html(result);
+            }
+        });
+    });
+*/
+</script>

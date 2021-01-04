@@ -79,8 +79,9 @@
                 ?>
 
               <tbody >
+              <!--<tr data-toggle="modal" data-id="<?php echo $mydata["emp_id"] ?>" data-target="#viewtraining" data-todo="<?php echo $mydata["title_of_training"] ?>" class="view_training">-->
 
-            <tr data-toggle="modal" data-id="<?php echo $mydata["emp_id"] ?>" data-target="#viewtraining" data-todo="<?php echo $mydata["title_of_training"] ?>" class="view_training">
+            <tr >
 
                 <td scope="row"><?php echo $office_dept ?></td>
                 
@@ -153,7 +154,8 @@
 
 
                <tbody >
-                    <tr data-toggle="modal" data-id="<?php echo $mydata["emp_id"] ?>" data-target="#viewtraining" data-todo="<?php echo $mydata["title_of_training"] ?>" class="view_training">
+               <!-- <tr data-toggle="modal" data-id="<?php echo $mydata["emp_id"] ?>" data-target="#viewtraining" data-todo="<?php echo $mydata["title_of_training"] ?>" class="view_training">-->
+                    <tr >
 
                         <td scope="row"><?php  echo $office_dept?></td>
 
