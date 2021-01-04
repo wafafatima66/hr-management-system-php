@@ -1,4 +1,4 @@
-
+<!-- the infrmatin flow comes from training_tr_script.php-->
 
 <div class="modal fade training_modal" id="viewtraining" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 

@@ -9,7 +9,7 @@
                           var emp_id = $(this).data('id');
                           //$('.modal-body .view_emp_id').val(emp_id);
                           $.ajax({
-                              url:'view_training.php?',
+                              url:'first_box-config/view_training.php?',
                               type : 'post',
                               data: {
                                 emp_id : $(this).data("id") , title_of_training : $(this).data("todo")

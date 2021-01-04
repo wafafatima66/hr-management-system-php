@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
 body{
     height: 100%;
     background-color: #F3F3F3;
+    font-family: 'Merriweather', serif;
 }
+
+td{
+    vertical-align: middle; 
+    text-align:center;
+}
+
+
 #wrapper {
     overflow-x: hidden; 
  }
@@ -643,8 +653,4 @@ text-transform: capitalize;
 }
 .fa-plus .fa-minus{
     color:#E6AD0F;
-}
-table td{
-    vertical-align: middle; 
-    text-align:center;
 }

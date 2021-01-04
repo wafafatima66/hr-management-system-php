@@ -56,4 +56,4 @@ $(document).ready(function(){
 </script>
 
    <?php require "training_modal.php"; ?>
-   <?php require "view_training_modal.php"; ?>
+   <?php require "first_box-config/view_training_modal.php"; ?>

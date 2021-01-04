@@ -48,6 +48,7 @@
                     <th scope="col">No. of Hours</th>
                     <th scope="col">Venue</th>
                     <th scope="col">Sponsors/Office In-Charge</th>
+                    <th scope="col">Action</th>
                     </tr>
                 </thead>
 
@@ -83,6 +84,10 @@
                <td><?php echo $no_of_hrs ?></td>
                <td><?php echo $venue ?></td>
                <td><?php echo $sponsor ?></td>
+               <td class="text-center">
+                <a href="../emp_mang/emp_profile.php?emp_id=<?php echo $mydata["emp_id"];?>"><i class="fas fa-edit"></i></a> 
+                <a href="../emp_mang/emp_mang.php?emp_id=<?php echo $mydata["emp_id"];?>"> <i class="fas fa-trash-alt"></i></a>
+              </td>
              </tr>
          </tbody>
 
@@ -110,6 +115,7 @@ else {
         $venue =   $mydata["venue"];
         $sponsor =   $mydata["sponsor"];
         $no_of_participants =   $mydata["count(title_of_training)"];
+        
         ?>
 
 
@@ -120,6 +126,13 @@ else {
                <td><?php echo $no_of_hrs ?></td>
                <td><?php echo $venue ?></td>
                <td><?php echo $sponsor ?></td>
+
+               <td class="text-center">
+                <a  data-toggle="modal" data-id="<?php echo $title_of_training ?>" data-target="#edit_training" class="edit_training" ><i class="fas fa-edit"></i></a> 
+
+                <a href="../training/delete_training.php?name=<?php echo $title_of_training?>"> <i class="fas fa-trash-alt"></i></a>
+              </td>
+
              </tr>
          </tbody>
 
@@ -148,3 +161,6 @@ else {
      </div>
 
 </div>
+
+<?php //edit training modal
+  require "sec_box-config/edit_training_modal.php" ?>

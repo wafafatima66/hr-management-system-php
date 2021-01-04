@@ -101,7 +101,7 @@
 
            ?>
 
-          <?php require "training_tr_script.php"?>
+          <?php require "first_box-config/training_tr_script.php"?>
 
           </tbody>
          
@@ -165,7 +165,7 @@
                         <td><?php echo $venue ?></td>
                         <td><?php echo $sponsor ?></td>
 
-                        <?php require "training_tr_script.php"?>
+                        <?php require "first_box-config/training_tr_script.php"?>
 
                         <?php   } }  ?>
 
