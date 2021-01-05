@@ -1,6 +1,26 @@
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
 
+<style>
+.file-upload{
+    width:95%;
+    border:solid 1px #40A6EB;
+    height:120px;
+    padding:20px;
+    margin:20px;
+    color: blue;
+    text-transform:italic;
+    font-weight:bold;
+}
+.file{
+    width:900px;
+    height:120px;
+   
+}
+
+
+</style>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -40,20 +60,30 @@ $(document).ready(function(){
 
 ?>
 
+
+
 <div class="container">
 
 <form  method="post" action="doc-config.php" enctype="multipart/form-data">
 
     <div class="doc_section">
         <div class="file-upload-wrapper">
-        <input type="file"  class="file-upload" name="upload_file" multiple />
+        <label  class="file-upload  "  >  CLICK AND DRAG YOUR FILES HERE 
+            <input  type="file" multiple  name="upload_file[]"  class="file"  />
+            
+        </label>
+      
         </div>
+
     </div>
 
     <div class="text-center">
         <button class="btn doc_section_btn" name="upload" type="submit">UPLOAD</button>
     </div>
 </form>
+
+
+
 
 
 
@@ -73,3 +103,9 @@ $(document).ready(function(){
     </div>
 
 </div>
+
+<script>
+
+
+
+</script>

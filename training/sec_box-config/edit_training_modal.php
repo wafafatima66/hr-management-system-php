@@ -84,7 +84,7 @@
 
     <div class="form-group mx-sm-3 mb-2">
         <label  style="width:100px">Title of training</label>
-      <input type="text" class="form-control" style="width:300px;" name="title_of_training" id="edit_title_of_training" >
+      <input type="text" class="form-control" style="width:300px;" name="title_of_training" id="edit_title_of_training" readonly >
     </div>
 
 

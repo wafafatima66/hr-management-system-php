@@ -1,20 +1,22 @@
 <?php
    
-
-
 if(isset($_POST['upload'])){
 
    
-    
     require '../includes/conn.php';
 
-    $doc_date = date("Y-m-d");
-    
+    $total = count($_FILES['upload_file']['name']);
 
-    $doc_name =  $_FILES['upload_file']['name'];
-    $doc_loc = $_FILES['upload_file']['tmp_name'];
-    $doc_size = $_FILES['upload_file']['size'];
-    $doc_type = $_FILES['upload_file']['type'];
+   
+
+
+    for( $i=0 ; $i < $total ; $i++ ) {
+  
+        $doc_date = date("Y-m-d");
+    $doc_name =  $_FILES['upload_file']['name'][$i];
+    $doc_loc = $_FILES['upload_file']['tmp_name'][$i];
+    $doc_size = $_FILES['upload_file']['size'][$i];
+    $doc_type = $_FILES['upload_file']['type'][$i];
     $path="../uploads/";
 
  
@@ -41,31 +43,39 @@ $query = "SELECT * FROM doc WHERE doc_name = '$doc_name' ";
             
                 mysqli_stmt_bind_param($stmt,"ssisi", $doc_name, $doc_type, $doc_size,$doc_date,$doc_no);
                 mysqli_stmt_execute($stmt);
-
-              
-                header("Location:doc.php?upload=success");
-                exit();
-    
-                
-                          
+            
+                         
                   
             }
-
-                
+        
             
 
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
+        } else {
+            header("Location:doc.php?upload=failed");
+            exit();
 
-        } header("Location:doc.php?upload=failed");
-        exit();
-           
-        } 
+        }
+
+    }else {
         header("Location:doc.php?upload=exist");
         exit();
+}
+
+   
+   
+}
+     
+       
+     
+header("Location:doc.php?upload=success");
+exit();
+
+mysqli_stmt_close($stmt);
+mysqli_close($conn);
+      
 
 
-                  
+                
 
         
        
@@ -75,7 +85,9 @@ $query = "SELECT * FROM doc WHERE doc_name = '$doc_name' ";
 
     header("Location:doc.php");
     exit();
-                        
+  
+
+
 }
 
 
