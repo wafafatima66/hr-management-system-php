@@ -51,5 +51,26 @@
     </div>
 
 
+    <div class="row pt-4">
+        <div class="col-lg-6">
+
+            <div class="text-center">
+                <h6>Summary Reports</h6>
+            </div>
+
+            <div class="report-5 report mb-5" style="height:300px;  background-color: #DDAAF2;">
+             <?php require "report_5.php"?>
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+
+           
+            
+        </div>
+    </div>
+
+
 </div>
 </div>

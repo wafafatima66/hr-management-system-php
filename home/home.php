@@ -118,7 +118,7 @@ if(isset($_GET['pass'])){
         <!---first coluum--->
         <div class="container">
 
-        <div class="row mt-5">
+        <div class="row mt-5 mb-5">
 
             <div class="col-lg-4 p-3">
              <?php require "first_report.php"?>

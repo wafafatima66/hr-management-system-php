@@ -5,7 +5,7 @@ $sl_last_year_pts = 7.5 ;
 
 $total_last_year_pts = $vl_last_year_pts + $sl_last_year_pts ;
 
-require '../includes/conn.php';
+require '../../includes/conn.php';
 
  
 

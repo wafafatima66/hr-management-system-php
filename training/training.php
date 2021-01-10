@@ -68,3 +68,16 @@ $(document).ready(function(){
 
    <?php require "training_modal.php"; ?>
    <?php require "first_box-config/view_training_modal.php"; ?>
+
+   <script>
+    function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>

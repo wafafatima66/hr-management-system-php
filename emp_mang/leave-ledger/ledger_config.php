@@ -10,7 +10,7 @@ if(isset($_POST['vl_pts']) || isset($_POST['sl_pts'])   ){
     $year = date("Y")-1;
 
     
-    require '../includes/conn.php';
+    require '../../includes/conn.php';
 
 
     $sql="INSERT INTO leave_credits_year (emp_id , vl_pts, sl_pts, year) VALUE (?,?,?,?)

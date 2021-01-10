@@ -8,7 +8,7 @@ if(isset($_POST['upload'])){
     
     require '../../includes/conn.php';
 
-    $file_date = date("l jS \of F Y ");
+    $file_date = date("Y-m-d"); //date("l jS \of F Y ");
     $file_folder = $_POST["folder"];
 
     $file_name =  $emp_id."-".$_FILES['upload_file']['name'];

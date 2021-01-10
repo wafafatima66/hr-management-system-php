@@ -3,6 +3,8 @@
 
 <div class="card section4-card" style="height:300px;  overflow-x: hidden; 
   overflow-y: scroll;">
+
+  <div class="card_body" style="height:90%">
                 <div class="cart-title section4-card-title"><h2>On leave</h2></div>
 
                 <table class="section4-table">
@@ -31,4 +33,8 @@ if($runquery = $conn -> query($query)) {
                   
                 </table>
 
-              </div>
+      </div>
+                
+                <a href="../leave_mang/leave_mang.php" class="text-right">View More</a>
+            
+  </div>

@@ -65,7 +65,7 @@ $(document).ready(function(){
     $("#vl_pts , #sl_pts").keyup(function()
     {
         $.ajax({
-            url:'../emp_mang/ledger_config.php',
+            url:'../emp_mang/leave-ledger/ledger_config.php',
             type : 'post',
             data: {vl_pts : $("#vl_pts").val(), sl_pts: $("#sl_pts").val(),emp_id: $("#leave_emp_id").val()},
             //dataType: 'json',

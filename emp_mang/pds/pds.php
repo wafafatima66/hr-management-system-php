@@ -281,10 +281,10 @@
 $(document).ready(function(){
     $("#emp_tel_no").on('keyup', function (){
     
-    var phone = $("#emp_tel_no").val(),
-    intRegex = /[0-9 -()+]+$/;
+    var tel = $("#emp_tel_no").val();
+    var tel_check = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}-$/im;//^[0-9 -()+]+$/
     
-    if((phone.length < 9) || (!intRegex.test(phone))){
+    if((tel.length <= 9) && (!tel_check.test(tel))){
             $("#tel-phone").html("Invalid telephone number!");
             } else 
             $("#tel-phone").html("");
@@ -298,10 +298,10 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#emp_mb_no").on('keyup', function (){
     
-    var phone = $("#emp_mb_no").val(),
-    intRegex = /[0-9 -()+]+$/;
+    var phone = $("#emp_mb_no").val();
+    var intRegex = /([0-9 -()+])+$/;
     
-    if((phone.length < 10) || (!intRegex.test(phone))){
+    if((phone.length <= 10) && (!intRegex.test(phone))){
             $("#mbl-phone").html("Invalid Mobile number!");
             } else 
             $("#mbl-phone").html("");

@@ -34,6 +34,8 @@
 
     </div>
        
+
+    <div id="printableArea_training_summary">
          
     <div class="training_section_2_body">
 
@@ -155,9 +157,11 @@ else {
 
 </div>
 
+</div>
+
 <div class="container mt-2 mb-5">
              <div class="text-right">
-                 <button class="btn" style="background: #345587;color:#EFE20A;" >PRINT</button>
+                 <button class="btn" style="background: #345587;color:#EFE20A;" onclick="printDiv('printableArea_training_summary')" >PRINT</button>
              </div>
      </div>
 

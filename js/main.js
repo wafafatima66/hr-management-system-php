@@ -69,4 +69,6 @@ function openpanel2(index) {
 }
 
 
+//for printing
+
 

@@ -89,7 +89,7 @@ $(document).ready(function(){
                             
                               <option value="permanent"> Permanent</option>
                               <option value="contractual" >contractual</option>
-                              <option value="job_order" >job_order</option>
+                              <option value="Job order" >Job order</option>
                           </select>
                         </div>
 

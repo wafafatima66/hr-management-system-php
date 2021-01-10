@@ -119,6 +119,32 @@ $post_graduation = "";
     $licence_val = "";
 
     //work experience
+
+    $query = "SELECT * FROM emp_work WHERE emp_id = '$emp_id'";
+
+    $runquery = $conn -> query($query);
+    if($runquery == true){
+        $rowcount=mysqli_num_rows($runquery);
+        
+        for($i= 0; $i <=  $rowcount ; $i++ )
+        {
+               
+               while($data = $runquery -> fetch_assoc()){
+  
+                $work_from_date[$i] = $data["work_from_date"];
+                $work_to_date[$i] = $data["work_to_date"];
+                $work_position[$i] = $data["work_position"];
+                $employer[$i] = $data["employer"];
+                $monthly_sal[$i] = $data["monthly_sal"];
+                $increment[$i] = $data["increment"];
+                $govt_service[$i] = $data["govt_service"];
+                $work_status[$i] = $data["work_status"];
+        }
+  
+    }
+  }
+
+  /*
     $work_from_date = "";
     $work_to_date ="";
     $work_position = "";
@@ -128,6 +154,7 @@ $post_graduation = "";
     $govt_service_yes="";
     $govt_service_no="";
     $work_status="";
+    */
     
     //voluntary works
     $name_org = "";

@@ -24,9 +24,9 @@
 
 </div>
      
+<div id="printableArea_leave_summary">
 
-
-<div class="leave_mang_section_body" >
+<div class="leave_mang_section_body pt-5"  >
         <div class="container">
             <div class="row">
                 <div class="col-lg-10">
@@ -39,7 +39,7 @@
                             <th scope="col">Vacation</th>
                             <th scope="col">Sick</th>
                             <th scope="col">SPL</th>
-                            <th scope="col">Action</th>
+                            <th scope="col" id="action">Action</th>
                             </tr>
                         </thead>
 
@@ -335,5 +335,7 @@
                 </div>
             </div>
         </div>
+
+    </div>
 
     </div>

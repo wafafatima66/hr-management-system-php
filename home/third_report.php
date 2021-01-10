@@ -3,6 +3,8 @@
 
 <div class="card section4-card" style="height:300px;">
 
+<div class="card_body" style="height:90%">
+
                 <div class="cart-title section4-card-title"><h2>Calendar | Activities | Events </h2></div>
                   <div class="row p-3">
 
@@ -39,4 +41,8 @@
                     </div>
 
                   </div>
+
+                  </div>
+
+                  <a href="../calendar/calendar.php" class="text-right">View More</a>
               </div>

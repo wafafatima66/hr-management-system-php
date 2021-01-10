@@ -65,15 +65,43 @@ if(isset($_POST['submit'])){
                         $msg = "Failed to upload image"; 
                         }
 
-                    header("Location:emp_profile.php?register=success&emp_id=$emp_id");
-                            exit();
+                   
                 }
+//to insert into work experince of the employee
 
-               
+/*
+$employer="";
+$govt_service="";
+$monthly_sal="";
+$increment="";
+*/
 
-        } 
+                        $sql="INSERT INTO emp_work (work_from_date,work_to_date,work_position,employer,govt_service,monthly_sal,increment,work_status,office_assign,emp_id) VALUE (?,?,?,?,?,?,?,?,?,?)
+                        
+                        ";
+            
+                        $stmt = mysqli_stmt_init($conn);
+                        if(!mysqli_stmt_prepare($stmt,$sql)){
+                            header("Location:../emp_profile.php?error=sqlerror");
+                            exit();
+                        }
+                            else{
+            
+            
+                                mysqli_stmt_bind_param($stmt,"sssssiissi",$from_date, $to_date, $office_assign,$employer,$govt_service,$monthly_sal,$increment,$emp_status,$office_assign,$emp_id);
+                                mysqli_stmt_execute($stmt);
+            
+                            }
 
+
+
+                            header("Location:emp_profile.php?register=success&emp_id=$emp_id");
+                            exit();
     
+               
+                        } 
+               
+                       
 
         mysqli_stmt_close($stmt);
         mysqli_close($conn);

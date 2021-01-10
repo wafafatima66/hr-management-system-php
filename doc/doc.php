@@ -17,7 +17,9 @@
     height:120px;
    
 }
-
+input[type="file"] { 
+    outline: none;
+}
 
 </style>
 
@@ -87,18 +89,47 @@ $(document).ready(function(){
 
 
 
-    <div class="doc_section_header">
+    <div class="doc_section_header form-inline p-4">
+
+<!--
         <div class="d-flex flex-column">
-        <div class="text-center">
-            <span>Search Document</span>
-            <input class="form-control mx-auto" type="text" placeholder="Search"  style="width:250px;" id="search" name="search" >
+            <div class="text-center">
+                <span>Search Document</span>
+                <input class="form-control mx-auto" type="text" placeholder="Search"  style="width:250px;" id="search" name="search" >
+
+                
+            </div>
         </div>
-        </div>
+
+-->
+
+            <span class="mr-4">Search Document</span>
+
+            <input class="form-control " type="text" placeholder="Search"  style="width:250px;" id="search" name="search" >
+
+
+            <form action="" method="post" class="form-inline">
+
+                <div class="form-group mx-sm-1">
+                <input type="date" class="form-control" id="from_date"  style="width:140px" name="from_date">
+                </div>  
+
+                <div class="form-group mx-sm-1">
+                <input type="date" class="form-control" id="to_date"  style="width:140px" name="to_date">
+                </div> 
+
+                <button class="btn" name="search" style="font-size:10px;" >SEARCH</button>
+
+            </form>
+
+
     </div>
 
     
 
     <div class="doc_section" id="search_section">
+
+    <?php include "doc_filter.php"?>
   
     </div>
 

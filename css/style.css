@@ -6,9 +6,18 @@ body{
     font-family: 'Merriweather', serif;
 }
 
-td{
+.table td{
     vertical-align: middle; 
     text-align:center;
+    text-transform: capitalize;
+
+}
+
+.table th{
+    vertical-align: middle; 
+    text-align:center;
+    text-transform: capitalize;
+
 }
 
 
@@ -647,6 +656,9 @@ text-transform: capitalize;
 }
 .report-4{
     background-color: #F9BA95;
+}
+.report-5{
+    background-color: #DDAAF2;
 }
  .in{
     display: block;

@@ -89,6 +89,7 @@ if(isset($_GET['submit'])){
                   $emp_first_name = $mydata["emp_first_name"];
                   $emp_last_name = $mydata["emp_last_name"];
                   $emp_middle_name = $mydata["emp_middle_name"];
+                  $emp_ext = $mydata["emp_ext"];
                   $office_assign = $mydata["office_assign"];
                   $emp_status = $mydata["emp_status"];
 

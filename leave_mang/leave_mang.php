@@ -1,7 +1,15 @@
 <?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
 
+<style type="text/css">
 
+
+@media print
+{
+    #printableArea { display:block;}
+    #action { visibility: hidden; }
+}
+</style>
 
 
 <script>
@@ -97,11 +105,22 @@ require "leave_mang_second_box.php"  ?>
 
                      <div class="container mt-2 mb-5">
                             <div class="text-right">
-                                <button class="btn" style="background: #345587;color:#EFE20A;" onclick="printDiv()" type="button" >PRINT</button>
+                                <button class="btn" style="background: #345587;color:#EFE20A;" onclick="printDiv('printableArea_leave_summary')" type="button" >PRINT</button>
                             </div>
                     </div>
 
     </div>
 
 
- 
+    <script>
+    function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+
+     document.body.innerHTML = printContents;
+
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
