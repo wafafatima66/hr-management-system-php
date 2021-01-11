@@ -20,11 +20,12 @@ if(isset($_POST['upload'])){
     $path="../uploads/";
 
  
-$query = "SELECT * FROM doc WHERE doc_name = '$doc_name' ";
+$query = "SELECT * FROM emp_file WHERE doc_name = '$doc_name' ";
 
   $runquery = $conn -> query($query);
   $rowcount=mysqli_num_rows($runquery);
   if($rowcount == 0 ){
+
 
 
  
@@ -33,7 +34,7 @@ $query = "SELECT * FROM doc WHERE doc_name = '$doc_name' ";
 
     
 
-        $sql="INSERT INTO doc (doc_name, doc_type, doc_size,doc_date,doc_no) VALUE (?,?,?,?,?)";
+        $sql="INSERT INTO emp_file (file_name, file_type, file_size,file_date) VALUE (?,?,?,?)";
         $stmt = mysqli_stmt_init($conn);
         if(!mysqli_stmt_prepare($stmt,$sql)){
             header("Location:doc.php?upload=error");
@@ -41,7 +42,7 @@ $query = "SELECT * FROM doc WHERE doc_name = '$doc_name' ";
         }
             else{
             
-                mysqli_stmt_bind_param($stmt,"ssisi", $doc_name, $doc_type, $doc_size,$doc_date,$doc_no);
+                mysqli_stmt_bind_param($stmt,"ssis", $doc_name, $doc_type, $doc_size,$doc_date);
                 mysqli_stmt_execute($stmt);
             
                          

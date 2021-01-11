@@ -36,7 +36,7 @@ while($mydata = $runquery -> fetch_assoc()){
 
     $from_date = strtotime($leave_from_date); // or your date as well
      $to_date = strtotime($leave_to_date);
-     $date_diff = round(($to_date - $from_date )/ (60 * 60 * 24));
+     $date_diff = round(($to_date - $from_date )/ (60 * 60 * 24))+1;
 
      $vl_now_pts = 0;
      $sl_now_pts = 0;

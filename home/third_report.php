@@ -3,7 +3,7 @@
 
 <div class="card section4-card" style="height:300px;">
 
-<div class="card_body" style="height:90%">
+
 
                 <div class="cart-title section4-card-title"><h2>Calendar | Activities | Events </h2></div>
                   <div class="row p-3">
@@ -12,10 +12,14 @@
 
                     <?php   
                     
+                    
+$year = date("Y");
+$month = date("m");
+
                                                     
                             require '../includes/conn.php';
 
-                            $query = "SELECT title , venue from table_events where DATE_FORMAT(start, '%Y-%m-%d') = curdate()"  ;
+                            $query = "SELECT title , venue from table_events where month(DATE_FORMAT(start, '%Y-%m-%d')) = '$month' and year(DATE_FORMAT(start, '%Y-%m-%d')) = '$year'"  ; //curdate()
 
                             if($runquery = $conn -> query($query)) {
                                     while($mydata = $runquery -> fetch_assoc()){
@@ -24,7 +28,7 @@
                     ?>
 
                       <list-group>
-                        <h6 style="font-size:18px;"><?php echo $title?></h6>
+                        <h6 style="font-size:18px;font-weight:bold"><?php echo $title?></h6>
                         <p style="font-size:12px;"><?php echo $venue?></p>
                       </list-group>
 
@@ -42,7 +46,7 @@
 
                   </div>
 
-                  </div>
+                  
 
-                  <a href="../calendar/calendar.php" class="text-right">View More</a>
+                  <a href="../calendar/calendar.php" class="text-right p-2">View More</a>
               </div>

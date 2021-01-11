@@ -46,7 +46,7 @@ if($runquery = $conn -> query($query)) {
   }
     } 
 
-    $query = "select COUNT(e.emp_status) as status from add_emp e , pds p where p.emp_id = e.emp_id and emp_gender = 'male' and e.emp_status = 'job_order'";
+    $query = "select COUNT(e.emp_status) as status from add_emp e , pds p where p.emp_id = e.emp_id and emp_gender = 'male' and e.emp_status = 'Job order'";
 
 if($runquery = $conn -> query($query)) {
         while($mydata = $runquery -> fetch_assoc()){
@@ -70,7 +70,7 @@ if($runquery = $conn -> query($query)) {
   }
     } 
 
-    $query = "select COUNT(e.emp_status) as status from add_emp e , pds p where p.emp_id = e.emp_id and emp_gender = 'female' and e.emp_status = 'job_order'";
+    $query = "select COUNT(e.emp_status) as status from add_emp e , pds p where p.emp_id = e.emp_id and emp_gender = 'female' and e.emp_status = 'Job order'";
 
     if($runquery = $conn -> query($query)) {
             while($mydata = $runquery -> fetch_assoc()){

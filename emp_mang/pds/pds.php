@@ -278,6 +278,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
 
 <script>
+
+
 $(document).ready(function(){
     $("#emp_tel_no").on('keyup', function (){
     
@@ -292,6 +294,7 @@ $(document).ready(function(){
         }); 
     
 });
+
 </script> 
 
 <script>
@@ -299,7 +302,7 @@ $(document).ready(function(){
     $("#emp_mb_no").on('keyup', function (){
     
     var phone = $("#emp_mb_no").val();
-    var intRegex = /([0-9 -()+])+$/;
+    var intRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}-$/im;;
     
     if((phone.length <= 10) && (!intRegex.test(phone))){
             $("#mbl-phone").html("Invalid Mobile number!");
