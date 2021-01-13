@@ -30,6 +30,10 @@
     
                     echo'<p class="alert alert-success h6"> EMPLOYEE INFORMATION UPDATED SUCCESSFULLY</p>';
                 } 
+                if(($_GET['submit']=="leave")){
+    
+                  echo'<p class="alert alert-success h6"> LEAVE BALANCE UPGRADED</p>';
+              } 
               }
   
               if(isset($_GET['upload'])){

@@ -364,6 +364,9 @@ $ele_school_name=$_POST['ele_school_name'];
                             mysqli_stmt_execute($stmt);
 
                         }
+
+                         
+
                     }
         } 
     }

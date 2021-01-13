@@ -41,19 +41,23 @@
 
 <p class="text-center">BALANCE FORWARDED AS OF <span style="font-style:italic;">12/31/<?php echo $year?></span></p>
 
+<form action="../emp_mang/leave-ledger/ledger_config.php" method="post" >
+
     <div class="d-flex align-items-center justify-content-center">
 
-    <input type="hidden" id="leave_emp_id" value="<?php echo $emp_id?>">
+
+
+    <input type="hidden" name="leave_emp_id" value="<?php echo $emp_id?>">
 
         <div class="d-flex flex-column" style=" border-right: 1px solid #000; padding:0 20px ">
             <input type="text" size="1" class="text-center h4 pts" style="background: none;
-                    border: none; background-color:#E6F7FF; color:#345587 ;" value="<?php echo $vl_pts?>" id="vl_pts" > 
+                    border: none; background-color:#E6F7FF; color:#345587 ;" value="<?php echo $vl_pts?>" name="vl_pts" > 
                 <span class="text-center">VL</span>
         </div>
 
         <div class="d-flex flex-column" style=" border-right: 1px solid #000; padding:0 20px ">
         <input type="text" size="1" class="text-center h4 pts" style="background: none;
-                    border: none; background-color:#E6F7FF; color:#345587 ;" value="<?php echo $sl_pts?>" id="sl_pts" > 
+                    border: none; background-color:#E6F7FF; color:#345587 ;" value="<?php echo $sl_pts?>" name="sl_pts" > 
                 <span class="text-center">SL</span>
         </div>
 
@@ -62,8 +66,17 @@
                     border: none; background-color:#E6F7FF; color:#345587 ;" value="<?php echo $total_pts?>" > 
                 <span class="text-center">Total</span>
         </div>
-        
+
+
     </div>
+
+    <div class="container">
+            <div class="text-center">
+                <input type="submit" class="btn m-3" name="upgrade" value="Upgrade" style="background: #345587; color:#fff;">
+            </div>
+    </div>
+
+    </form>   
 
 </div>
 
@@ -164,37 +177,39 @@
                     
                             $vl_days = $mydata["vl_days"] ; //getting vacation days
                                 
-                            $vl_pts =  $vl_pts - $vl_days;
+                            $vl_pts =  $vl_pts - ($vl_days*1.25);
 
                             $sl_days = $mydata["sl_days"] ;
                                 
-                            $sl_pts =  $sl_pts - $sl_days;
+                            $sl_pts =  $sl_pts - ($sl_days*1.25);
                             
                         }
 
                         else if(!empty($mydata["sl_days"] )){
                             $sl_days = $mydata["sl_days"] ;
-                                
-                            $sl_pts =  $sl_pts - $sl_days;
-                            $vl_days = 1.25 ;
+                            $sl_pts =  $sl_pts - ($sl_days*1.25);
+
+                            $vl_days = 1.25;
+                            $vl_pts =  $vl_pts + 1.25;//when no vc
                             
                         }  else if(!empty($mydata["vl_days"]) ){
                             $vl_days = $mydata["vl_days"] ; //getting vacation days
-                                
-                            $vl_pts =  $vl_pts - $vl_days;
+                            $vl_pts =  $vl_pts - ($vl_days*1.25);
+
                             $sl_days = 1.25 ;
+                            $sl_pts =  $sl_pts + 1.25; //when no sick leaves 
                         }
                         
                         else {
                             $vl_days = 1.25 ; //when no leave has taken 
                             
                             
-                            $vl_pts =  $vl_pts + $vl_days;
+                            $vl_pts =  $vl_pts + 1.25;
 
                             $sl_days = 1.25 ; //when no leave has taken 
                             
                             
-                            $sl_pts =  $sl_pts + $sl_days;
+                            $sl_pts =  $sl_pts + 1.25;
                             
                         }
                     

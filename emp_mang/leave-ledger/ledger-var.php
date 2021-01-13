@@ -24,7 +24,7 @@
         {
             $leave_from_date =   date("m/d/Y", strtotime($mydata["leave_from_date"]));
             $leave_to_date =   date("m/d/Y", strtotime($mydata["leave_to_date"]));
-            $vac_date_diff =   $mydata["date_diff"]+1;
+            $vac_date_diff =   $mydata["date_diff"];
             
 
             $vac_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
@@ -46,7 +46,7 @@
         {
             $leave_from_date =   date("m/d/Y", strtotime($mydata["leave_from_date"]));
             $leave_to_date =   date("m/d/Y", strtotime($mydata["leave_to_date"]));
-            $sick_date_diff =   $mydata["date_diff"]+1;
+            $sick_date_diff =   $mydata["date_diff"];
 
 
             $sick_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
@@ -69,7 +69,7 @@
         {
             $leave_from_date =   date("m/d/Y", strtotime($mydata["leave_from_date"]));
             $leave_to_date =   date("m/d/Y", strtotime($mydata["leave_to_date"]));
-            $spl_date_diff =   $mydata["date_diff"]+1;
+            $spl_date_diff =   $mydata["date_diff"];
 
 
             $spl_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 
@@ -92,7 +92,7 @@
         {
             $leave_from_date =   date("m/d/Y", strtotime($mydata["leave_from_date"]));
             $leave_to_date =   date("m/d/Y", strtotime($mydata["leave_to_date"]));
-            $lwp_date_diff =   $mydata["date_diff"]+1;
+            $lwp_date_diff =   $mydata["date_diff"];
     
     
             $lwp_leave_dates = $leave_from_date . ' '.'-'.' ' . $leave_to_date ; 

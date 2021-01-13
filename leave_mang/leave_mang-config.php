@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
     $to_date = strtotime($leave_to_date);
 
 
-    $date_diff = round(($to_date - $from_date )/ (60 * 60 * 24));
+    $date_diff = round(($to_date - $from_date )/ (60 * 60 * 24))+1;
 
     
     // if getting particular data through sno -- then update

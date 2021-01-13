@@ -60,6 +60,8 @@
 
 
 <script>
+/*
+
 $(document).ready(function(){
     
     $("#vl_pts , #sl_pts").keyup(function()
@@ -80,5 +82,5 @@ $(document).ready(function(){
 
     });
 
-
+*/
 </script>
