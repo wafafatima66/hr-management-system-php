@@ -1,10 +1,8 @@
 <?php
-   
-session_start();
-
+ 
 if(isset($_POST['upload'])){
 
-    $emp_id = $_SESSION['emp_id'];  
+    $emp_id = $_POST['emp_id'];  
     
     require '../../includes/conn.php';
 

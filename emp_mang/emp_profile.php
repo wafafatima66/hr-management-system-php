@@ -1,8 +1,8 @@
 
-<?php// session_start();?>
 
-<?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
+<?php include '../includes/local-link.php'; ?>
+
 
 <?php
 
@@ -147,6 +147,29 @@ if(isset($_GET['submit'])){
             <p style="text-transform: uppercase; font-weight:bold;"><?php echo $emp_status?> > <span style="text-transform: capitalize;font-weight:bold;"><?php echo $office_assign?> > </span><span style="text-transform: capitalize;font-weight:bold;"><?php echo $office_dept?></span></p>
             <h4><?php echo $emp_id?></h4>
 
+            
+                <span id="messageform"></span>
+
+                    <form method="post" id="import_excel_form" enctype="multipart/form-data" 
+                    style="width:50px;" class="mt-3">
+                        <input type="hidden" name="emp_id" value="<?php echo $emp_id?>">
+                        
+                        <input type="hidden" value="<?php echo $emp_first_name?>" id="emp_first_name" name="emp_first_name" >
+
+                        <input type="hidden"  value="<?php echo  $emp_last_name ?>" id="emp_last_name" name="emp_last_name">
+
+                          <input type="hidden" value="<?php echo  $emp_middle_name ?>" id="emp_middle_name" name="emp_middle_name">
+
+                        <input type="hidden"  value="<?php echo $emp_ext ?>"  name="emp_ext">
+
+                        <input type="hidden"  value="<?php echo $emp_status ?>"  name="emp_status">
+                  
+                        <input type="file" name="import_excel" id="import_excel" />
+
+                        <input type="submit" name="import" id="import" class="btn mt-2" value="Import" style="background: #E6AD0F; color:#fff;" /> 
+                    </form>
+                
+
            
             
         </div>
@@ -190,3 +213,33 @@ if(isset($_GET['submit'])){
     
 
     ?>   
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+<script>
+$(document).ready(function(){
+$('#import_excel_form').on('submit', function(event){
+event.preventDefault();
+$.ajax({
+url:"includes/import.php",
+method:"POST",
+data:new FormData(this), emp_id : $("#emp_id").val() , emp_first_name : $("#emp_first_name").val() , emp_last_name : $("#emp_last_name").val() , emp_middle_name : $("#emp_middle_name").val() , emp_ext : $("#emp_ext").val() , emp_status : $("#emp_status").val(),
+contentType:false,
+cache:false,
+processData:false,
+beforeSend:function(){
+$('#import').attr('disabled', 'disabled');
+$('#import').val('Importing...');
+},
+success:function(data)
+{
+$('#messageform').html(data);
+$('#import_excel_form')[0].reset();
+$('#import').attr('disabled', false);
+$('#import').val('Import');
+}
+})
+});
+});
+</script>

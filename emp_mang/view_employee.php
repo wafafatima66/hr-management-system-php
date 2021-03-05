@@ -11,11 +11,11 @@
         <form class="form-inline" method="post" action="">
           
             <div class="form-group mx-sm-2 mb-2">
-              <input type="text" class="form-control" id="" placeholder="Employee ID" name="search_id">
+              <input type="text" class="form-control"  placeholder="Employee ID" name="search_id">
             </div>
 
             <div class="form-group mx-sm-2 mb-2">
-              <input type="text" class="form-control" id="" placeholder="Employee name" name="search_name">
+              <input type="text" class="form-control" placeholder="Employee name" name="search_name">
             </div>
 
             <div class="form-group mx-sm-2 mb-2">

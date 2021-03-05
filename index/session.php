@@ -1,6 +1,6 @@
-<?php
+<?php session_start();
   require '../includes/conn.php';
-   session_start();
+   
    
    $user_check = $_SESSION['login_user'];
    

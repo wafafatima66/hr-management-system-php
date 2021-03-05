@@ -1,4 +1,3 @@
-
 <style>
 
 .emp_profile_image { position: relative; }
@@ -42,11 +41,10 @@
                     </div>
                 </div>
 
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 
                 <script>
                         $('.emp_image').click(function(){
-                          
-                          
                           $.ajax({
                               url:'../emp_mang/emp_image-config.php',
                               type : 'post',
@@ -442,5 +440,3 @@ $(document).ready(function(){
         <?php include 'references.php'; ?>
 
         </div>
-
-     

@@ -1,8 +1,7 @@
-<?php
-   include('../index/session.php');
+<?php include('../index/session.php');
 ?>
 
-<?php include 'link.php'; ?>
+<?php include 'local-link.php'; ?>
 
 <?php
 

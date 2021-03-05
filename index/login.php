@@ -1,7 +1,4 @@
-<?php 
-
-
-require '../includes/conn.php';
+<?php require '../includes/conn.php';
 session_start();
 
 
@@ -35,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<?php include '../includes/link.php'; ?>
+<?php include '../includes/local-link.php'; ?>
 
 <style>
 body{
@@ -120,7 +117,7 @@ if(isset($_GET['error'])){
 
                             <div class="form-group">
                                 <label for="password" class="font_blue_color">Password:</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
+                                <input type="password" name="password" id="password" class="form-control">
                             </div>
 
                             <div class="form-group">

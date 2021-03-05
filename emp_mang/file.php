@@ -121,7 +121,7 @@
 
                    
                     
-                  
+                        <input type="hidden" name="emp_id" value="<?php echo $emp_id?>" id="emp_id">
 
                       <div class="doc_section" style="width:100%">
                     <div class="file-upload-wrapper">
@@ -187,9 +187,10 @@
 
 <?php
 
+if(isset( $_REQUEST["emp_id"])){
 
-$emp_id = $_SESSION['emp_id'];  
-
+  $emp_id = $_REQUEST["emp_id"];
+}
     
 require '../includes/conn.php';
 
@@ -267,8 +268,10 @@ while($data = $runquery -> fetch_assoc()){
 
 <?php
 
+if(isset( $_REQUEST["emp_id"])){
 
-$emp_id = $_SESSION['emp_id'];  
+  $emp_id = $_REQUEST["emp_id"];
+}
 
     
 require '../includes/conn.php';
@@ -347,7 +350,10 @@ while($data = $runquery -> fetch_assoc()){
 <?php
 
 
-$emp_id = $_SESSION['emp_id'];  
+if(isset( $_REQUEST["emp_id"])){
+
+  $emp_id = $_REQUEST["emp_id"];
+} 
 
     
 require '../includes/conn.php';
@@ -426,7 +432,10 @@ while($data = $runquery -> fetch_assoc()){
 <?php
 
 
-$emp_id = $_SESSION['emp_id'];  
+if(isset( $_REQUEST["emp_id"])){
+
+  $emp_id = $_REQUEST["emp_id"];
+}
 
     
 require '../includes/conn.php';

@@ -45,7 +45,10 @@
  <?php
  require '../includes/conn.php';
 
- if(isset($_POST['emp_image'])){
+ if(isset($_POST['emp_image'])  ){
+
+
+    
 
     $emp_id=$_POST['emp_id'];
 
@@ -66,7 +69,8 @@
         $runquery = $conn -> query($query);
   
 }
- }
+ } 
+
 
  ?>
 
@@ -97,13 +101,13 @@
 
                             <form action="" method="post" enctype="multipart/form-data">
 
-                            <input type="hidden" name="emp_id"  id="emp_id">
-                            
+                            <input type="hidden" name="emp_id" id="emp_id" >
+                           
 
                                 <div class="form-inline mx-sm-3 mb-2 mt-4">
                                 
                                 <label for="">Change Image</label>
-                                    <input type="file" name="emp_image"   >
+                                    <input type="file" name="emp_image">
                                 </div>
 
                             

@@ -82,7 +82,7 @@
                                     <div class="d-flex justify-content-center">
                                         <div class="form-group mx-sm-3 mb-2">
                                             <label for="">CONDUCTED/SPONSORED BY</label>
-                                            <input type="text" class="form-control" id="" value="<?php echo $conducted_by[$i]?>" style="width:300px;" name="conducted_by[$i]">    
+                                            <input type="text" class="form-control"  value="<?php echo $conducted_by[$i]?>" style="width:300px;" name="conducted_by[$i]">    
                                         </div>
                                     </div>
                                     </div>

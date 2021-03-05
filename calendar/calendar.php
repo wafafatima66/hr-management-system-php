@@ -1,6 +1,7 @@
-<?php include '../includes/link.php'; ?>
 <?php include '../includes/header.php'; ?>
-<?php include 'script.php'; ?>
+<?php include '../includes/local-link.php'; ?>
+
+<?php include 'local-script.php'; ?>
 
 
 <?php

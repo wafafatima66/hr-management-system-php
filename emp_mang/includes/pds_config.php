@@ -203,7 +203,7 @@ if(isset($_POST['submit'])){
 
 //education background
 
-$ele_school_name=$_POST['ele_school_name'];
+    $ele_school_name=$_POST['ele_school_name'];
     $ele_degree=$_POST['ele_degree'];
     $ele_from_date=$_POST['ele_from_date'];
     $ele_to_date=$_POST['ele_to_date'];
@@ -447,7 +447,7 @@ if(isset($_POST['name_org'])){
     $position=$_POST['position'][$i];
    
     
-    if(!empty( $name_org)) {
+    if(!empty($name_org)) {
 
             $sql="INSERT INTO voluntary_works (name_org,org_add,vol_from_date,vol_to_date,vol_no_of_hrs,position,emp_id) VALUE (?,?,?,?,?,?,?) ";
 
