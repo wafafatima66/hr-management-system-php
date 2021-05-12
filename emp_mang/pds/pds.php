@@ -7,6 +7,8 @@
 </style>
 <!--PDS--->
 
+
+
 <div class=" emp_profile_section2_tab " id="tab-1" style="display:block;">
 <div class="container">
         <!--menu section-->
@@ -61,7 +63,8 @@
 
                                 
                 </script>
-
+                
+                
                 <?php require "../emp_mang/emp_image.php"?>
                 
             </div>

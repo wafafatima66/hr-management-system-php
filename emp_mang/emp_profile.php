@@ -66,9 +66,7 @@ if(isset( $_REQUEST["emp_id"])){
 
     $emp_id = $_REQUEST["emp_id"];
     
-       
-
-if(isset($_GET['register'])){
+  if(isset($_GET['register'])){
     if(($_GET['register']=="success")){
         echo'<p class="alert alert-success h6">Registration done successfully</p>';
     }

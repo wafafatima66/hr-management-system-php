@@ -1,25 +1,25 @@
     <!--File uploaad-->
-                        <div class=" emp_profile_section2_tab mb-5" id="tab-3">  
+        <div class=" emp_profile_section2_tab mb-5" id="tab-3">  
 
 
-                   <div class="container">
-                        <div class="row">
-                                    <div class="col-lg-9 d-flex align-items-end pr-0">
-                                    
-                                            <div class="emp_profile_section2_header " style="width:100%">
-                                                <h3 class="p-2 m-2" > FILE 201 </h3>
-                                            </div>
-                                    </div>
-
-                                    <div class="col-lg-3 pl-0">
-                    <div class="emp_profile_image" style="height:250px"> 
-                        <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
+    <div class="container">
+        <div class="row">
+                    <div class="col-lg-9 d-flex align-items-end pr-0">
+                    
+                            <div class="emp_profile_section2_header " style="width:100%">
+                                <h3 class="p-2 m-2" > FILE 201 </h3>
+                            </div>
                     </div>
-                </div>
-                                    
-                        
-                        </div>
-                   </div>
+
+                    <div class="col-lg-3 pl-0">
+    <div class="emp_profile_image" style="height:250px"> 
+        <img src="<?php echo $emp_image?>" alt="" style="width:100%;height:100%">
+    </div>
+</div>
+                    
+        
+        </div>
+    </div>
 
 
                        <div class="container">
@@ -27,12 +27,6 @@
                                 <div class="container file_section_body_container p-4">
 
                                         <div class="row">
-
-                                        
-
-
-                                         
-
 
                                           <div class="col-lg-2">
                                                 <h6>PDS</h6>

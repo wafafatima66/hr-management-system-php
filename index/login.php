@@ -112,12 +112,12 @@ if(isset($_GET['error'])){
 
                             <div class="form-group">
                                 <label for="username" class="font_blue_color">Username:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
+                                <input type="text" name="username" id="username" class="form-control" value="hr">
                             </div>
 
                             <div class="form-group">
                                 <label for="password" class="font_blue_color">Password:</label><br>
-                                <input type="password" name="password" id="password" class="form-control">
+                                <input type="password" name="password" id="password" class="form-control" value="hr">
                             </div>
 
                             <div class="form-group">

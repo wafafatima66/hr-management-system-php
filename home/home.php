@@ -4,11 +4,17 @@
 <?php include '../emp_mang/add_emp_modal.php'; ?>
 
 <?php
+
 if(isset($_GET['photo'])){
 		if($_GET['photo']=="notchanged"){
 			echo'<p class="alert alert-danger h6">Please insert your photo again !</p>';
+    }else if($_GET['photo']=="changed"){
+			echo'<p class="alert alert-success h6">Admin Photo updated Successfully !</p>';
+    }else if($_GET['photo']=="wrongextension"){
+			echo'<p class="alert alert-danger h6">Extension must br JPEG,JPG or PNG file !</p>';
     }
   }
+
 if(isset($_GET['pass'])){
       if($_GET['pass']=="notchanged"){
         echo'<p class="alert alert-danger h6">Password not changed !</p>';

@@ -89,13 +89,13 @@ $('#newPass, #newPassConfirm').on('keyup', function () {
                         <div class="form-inline mx-sm-3 mb-2 mt-2">
                            
                             <label  style="width:150px">New password</label>
-                            <input type="password"  class="form-control" name="newPass" id="newPass">
+                            <input type="password"  class="form-control" name="newPass" id="newPass" disabled>
                         </div>
 
                         <div class="form-inline mx-sm-3 mb-2 mt-2">
                          
                             <label  style="width:150px">Confirm password</label>
-                            <input type="text"  class="form-control" name="newPassConfirm" id="newPassConfirm">
+                            <input type="text"  class="form-control" name="newPassConfirm" id="newPassConfirm" disabled>
 
                         </div>
 

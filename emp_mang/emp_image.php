@@ -42,35 +42,38 @@
   
 }
 </style>
- <?php
- require '../includes/conn.php';
-
+ <?php require '../includes/conn.php';
+ 
  if(isset($_POST['emp_image'])  ){
 
-
     
-
     $emp_id=$_POST['emp_id'];
-
-  
 
     $emp_image = $_FILES["emp_image"]["name"]; 
     $tempname = $_FILES["emp_image"]["tmp_name"];     
     $folder = "../uploads/image/".$emp_image; 
 
-    if (move_uploaded_file($tempname, $folder))  { 
-
+    //checking file extension
     
+    $text1 = explode('.',$_FILES['emp_image']['name']);
+    $text=strtolower(end($text1));
+    $file_ext=strtolower($text);
+    $extensions= array("jpeg","jpg","png");
+    
+    if(in_array($file_ext,$extensions)=== false){
+       $msg="Extension not allowed, please choose a JPEG,JPG or PNG file.";
+        echo "<script type='text/javascript'>alert('$msg');</script>";
+    }
 
-         
+   else {
+    move_uploaded_file($tempname, $folder) ;
+
         $query = "UPDATE add_emp SET emp_image='$emp_image' WHERE emp_id= '$emp_id' " ;
-
-
         $runquery = $conn -> query($query);
-  
-}
- } 
-
+        $msg="Employee image uploaded succesfully";
+        echo "<script type='text/javascript'>alert('$msg');</script>";
+            }
+        } 
 
  ?>
 
@@ -88,47 +91,32 @@
 
                  <div class="modal-body">
 
-                                                <!--Section: Block Content-->
-               
-                                               
                 <div class="container">
+                    <section class="mb-5 text-center">
 
-              
+                        <h6>Set Profile Photo</h6>
 
-                        <section class="mb-5 text-center">
+                        <form action="" method="post" enctype="multipart/form-data">
 
-                            <h6>Set Profile Photo</h6>
-
-                            <form action="" method="post" enctype="multipart/form-data">
-
-                            <input type="hidden" name="emp_id" id="emp_id" >
-                           
-
-                                <div class="form-inline mx-sm-3 mb-2 mt-4">
-                                
-                                <label for="">Change Image</label>
-                                    <input type="file" name="emp_image">
-                                </div>
-
-                            
-
-                                <button type="submit" class="btn btn-two mt-2" name="emp_image">Change/Set Photo</button>
-
-                        </form>
-                         </section>
-                </div>
-
-
-               
-                <!--Section: Block Content-->  
-                            
-                </div>
+                        <input type="hidden" name="emp_id" id="emp_id" >
                         
 
-               
+                            <div class="form-inline mx-sm-3 mb-2 mt-4" >
+                            
+                            <label for="">Change Image</label>
+                                <input type="file" name="emp_image" >
+                            </div>
 
+                        
 
-               
+                            <button type="submit" class="btn btn-two mt-2" name="emp_image">Change/Set Photo</button>
+
+                        </form>
+                    </section>
+                </div>
+
+                            
+                </div>
             </div>
         </div>
       </div>
